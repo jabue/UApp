@@ -79,7 +79,8 @@ public class MainActivity extends ActionBarActivity {
                             break;
                         case 2:
                             // end of welcome page. skip to register page
-                            Log.i("todo:", "skip to register page..");
+                            Intent intent = new Intent(MainActivity.this, SelectCampusActivity.class);
+                            startActivity(intent);
                             break;
                         default:
                             break;

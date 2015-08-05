@@ -48,6 +48,10 @@
             android:name=".HomeActivity"
             android:label="@string/title_activity_home" >
         </activity>
+        <activity
+            android:name=".MeMainActivity"
+            android:label="@string/title_activity_me_main" >
+        </activity>
     </application>
 
 </manifest>

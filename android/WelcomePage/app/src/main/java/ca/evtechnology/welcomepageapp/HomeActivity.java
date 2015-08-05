@@ -274,5 +274,9 @@ public class HomeActivity extends AppCompatActivity {
         ImageButton btnMe = (ImageButton)findViewById(R.id.button_me);
         btnMe.setImageResource(R.drawable.mecolor);
 
+        // skip to 'Me' page
+        Intent intent = new Intent(this, MeMainActivity.class);
+        startActivity(intent);
+
     }
 }
