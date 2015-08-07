@@ -1,5 +1,6 @@
 package ca.evtechnology.welcomepageapp;
 
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,7 +13,11 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.amazonaws.mobileconnectors.lambdainvoker.*;
+import com.amazonaws.auth.CognitoCachingCredentialsProvider;
+import com.amazonaws.regions.Regions;
 
 public class MeMainActivity extends ActionBarActivity {
 
@@ -21,8 +26,8 @@ public class MeMainActivity extends ActionBarActivity {
     private Button registerFbBtn;
     private RelativeLayout relLayout;
 
-    private int EMAIL_TEXT = 500;
-    private int NICKNAME_TEXT = 501;
+    private int USERID_TEXT = 500;
+    private int PASSWORD_TEXT = 501;
     private int SUBMIT_EMAIL_BTN = 502;
 
     @Override
@@ -34,7 +39,7 @@ public class MeMainActivity extends ActionBarActivity {
 
         relLayout = (RelativeLayout) findViewById(R.id.RegisterPage);
         registerEmailBtn = (Button) findViewById(R.id.register_email_btn);
-        registerFbBtn = (Button) findViewById(R.id.register_fb_btn);
+        //registerFbBtn = (Button) findViewById(R.id.register_fb_btn);
 
         registerEmailBtn.setOnClickListener(onClick());
     }
@@ -59,12 +64,12 @@ public class MeMainActivity extends ActionBarActivity {
         {
             case 0:
                 lparams.addRule(RelativeLayout.BELOW, R.id.register_email_btn);
-                editText.setId(EMAIL_TEXT);
+                editText.setId(USERID_TEXT);
                 break;
             case 1:
 
-                lparams.addRule(RelativeLayout.BELOW, EMAIL_TEXT);
-                editText.setId(NICKNAME_TEXT);
+                lparams.addRule(RelativeLayout.BELOW, USERID_TEXT);
+                editText.setId(PASSWORD_TEXT);
                 break;
         }
 
@@ -80,7 +85,7 @@ public class MeMainActivity extends ActionBarActivity {
         final RelativeLayout.LayoutParams lparams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
 
-        lparams.addRule(RelativeLayout.BELOW, NICKNAME_TEXT);
+        lparams.addRule(RelativeLayout.BELOW, PASSWORD_TEXT);
         lparams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         Button button = new Button(this);
         button.setText(text);
@@ -96,7 +101,55 @@ public class MeMainActivity extends ActionBarActivity {
     }
 
     private View.OnClickListener onClickSubmitEmail() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText etEmail, etNickName;
+                etEmail = (EditText)findViewById(USERID_TEXT);
+                etNickName =(EditText)findViewById(PASSWORD_TEXT);
+                Log.d(TAG, "submit email:" + etEmail.getText() + ", " + etNickName.getText());
 
+                // Create an instance of CognitoCachingCredentialsProvider
+                CognitoCachingCredentialsProvider cognitoProvider = new CognitoCachingCredentialsProvider(
+                        MeMainActivity.this.getApplicationContext(), "us-east-1:cab334cf-8514-4060-82e7-13afbdd331f5", Regions.US_EAST_1);
+
+                // Create LambdaInvokerFactory, to be used to instantiate the Lambda proxy.
+                LambdaInvokerFactory factory = new LambdaInvokerFactory(MeMainActivity.this.getApplicationContext(),
+                        Regions.US_EAST_1, cognitoProvider);
+
+                // Create the Lambda proxy object with a default Json data binder.
+                // You can provide your own data binder by implementing
+                // LambdaDataBinder.
+                final MyInterface myInterface = factory.build(MyInterface.class);
+
+                NameInfo nameInfo = new NameInfo(etEmail.getText().toString(), etNickName.getText().toString());
+                // The Lambda function invocation results in a network call.
+                // Make sure it is not called from the main thread.
+                new AsyncTask<NameInfo, Void, String>() {
+                    @Override
+                    protected String doInBackground(NameInfo... params) {
+                        // invoke "echo" method. In case it fails, it will throw a
+                        // LambdaFunctionException.
+                        try {
+                            return myInterface.simpleWriteDynamoDB(params[0]);
+                        } catch (LambdaFunctionException lfe) {
+                            Log.e("Tag", "Failed to invoke echo", lfe);
+                            return null;
+                        }
+                    }
+
+                    @Override
+                    protected void onPostExecute(String result) {
+                        if (result == null) {
+                            return;
+                        }
+
+                        // Do a toast
+                        Toast.makeText(MeMainActivity.this, result, Toast.LENGTH_LONG).show();
+                    }
+                }.execute(nameInfo);
+            }
+        };
     }
 
     @Override

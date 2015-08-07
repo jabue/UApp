@@ -1,0 +1,19 @@
+#create lambda function
+aws lambda create-function --region us-east-1 --function-name ProcessDynamoDBStream --zip-file fileb://./ProcessDynamoDBStream.zip --role arn:aws:iam::812833778746:role/welcomRole --handler ProcessDynamoDBStream.handler --runtime nodejs
+
+#invode the function
+aws lambda invoke \
+--invocation-type RequestResponse \
+--function-name ProcessDynamoDBStream \
+--region us-east-1 \
+--payload file://./input.txt \
+outputfile.txt
+
+#create event socurce mapping in aws lambda
+aws lambda create-event-source-mapping \
+--region us-east-1 \
+--function-name ProcessDynamoDBStream \
+--event-source arn:aws:dynamodb:us-east-1:812833778746:table/user_info/stream/2015-08-05T23:13:38.953 \
+--batch-size 100 \
+--starting-position TRIM_HORIZON
+
