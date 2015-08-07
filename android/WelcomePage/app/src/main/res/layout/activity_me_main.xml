@@ -112,7 +112,8 @@
         android:id="@+id/image_facebook"
         android:layout_alignParentBottom="true"
         android:src="@drawable/facebook"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="80dp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -120,8 +121,10 @@
         android:id="@+id/image_gplus"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/image_facebook"
-        android:layout_alignEnd="@+id/image_facebook"
-        android:src="@drawable/googleplus"/>
+        android:src="@drawable/googleplus"
+        android:layout_marginRight="80dp"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="true" />
 
 
 </RelativeLayout>
