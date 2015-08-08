@@ -1,5 +1,8 @@
 package ca.evtechnology.welcomepageapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -37,11 +40,11 @@ public class MeMainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_me_main);
 
-        relLayout = (RelativeLayout) findViewById(R.id.RegisterPage);
-        registerEmailBtn = (Button) findViewById(R.id.register_email_btn);
+       // relLayout = (RelativeLayout) findViewById(R.id.RegisterPage);
+        //registerEmailBtn = (Button) findViewById(R.id.register_email_btn);
         //registerFbBtn = (Button) findViewById(R.id.register_fb_btn);
 
-        registerEmailBtn.setOnClickListener(onClick());
+        //registerEmailBtn.setOnClickListener(onClick());
     }
 
     private View.OnClickListener onClick() {
@@ -184,9 +187,181 @@ public class MeMainActivity extends ActionBarActivity {
         tv.setText("Type in your email");
         tv.setLayoutParams(lpView);
         linLayout.addView(tv);
+    }
+
+    public void signUp(View view){
+        Button loginBtn = null;
+        Button signUpBtn = null;
+
+
+        loginBtn = (Button) findViewById(R.id.btn_login);
+        signUpBtn = (Button) findViewById(R.id.btn_signup);
+
+        loginBtn.setBackgroundColor(view.getContext().getResources().getColor(R.color.background_material_light));
+        loginBtn.setTextColor(view.getContext().getResources().getColor(R.color.styleColor));
+
+        signUpBtn.setBackgroundColor(view.getContext().getResources().getColor(R.color.styleColor));
+        signUpBtn.setTextColor(view.getContext().getResources().getColor(R.color.white));
+
+        // Initiate input box
+        EditText emailTxt = null;
+        EditText pwdTxt = null;
+        EditText pwdConfirmTxt = null;
+
+        emailTxt = (EditText) findViewById(R.id.editTextEmail);
+        emailTxt.setText("");
+
+        pwdTxt = (EditText) findViewById(R.id.editTextPwd);
+        pwdTxt.setText("");
+
+        pwdConfirmTxt = (EditText) findViewById(R.id.editTextPwd2);
+        pwdConfirmTxt.setVisibility(View.VISIBLE);
 
 
 
+    }
 
+    public void login(View view){
+        Button loginBtn = null;
+        Button signUpBtn = null;
+
+        loginBtn = (Button) findViewById(R.id.btn_login);
+        signUpBtn = (Button) findViewById(R.id.btn_signup);
+
+        // set color as focused when button click.
+        signUpBtn.setBackgroundColor(view.getContext().getResources().getColor(R.color.background_material_light));
+        signUpBtn.setTextColor(view.getContext().getResources().getColor(R.color.styleColor));
+
+        loginBtn.setBackgroundColor(view.getContext().getResources().getColor(R.color.styleColor));
+        loginBtn.setTextColor(view.getContext().getResources().getColor(R.color.white));
+
+        // Initiate input box
+        EditText emailTxt = null;
+        EditText pwdTxt = null;
+        EditText pwdConfirmTxt = null;
+
+        emailTxt = (EditText) findViewById(R.id.editTextEmail);
+        emailTxt.setText("");
+
+        pwdTxt = (EditText) findViewById(R.id.editTextPwd);
+        pwdTxt.setText("");
+
+        pwdConfirmTxt = (EditText) findViewById(R.id.editTextPwd2);
+        pwdConfirmTxt.setVisibility(View.INVISIBLE);
+
+
+    }
+
+    public void submitRegister(View view){
+        EditText emailTxt = null;
+        EditText pwdTxt = null;
+        EditText pwdConfirmTxt = null;
+
+        Log.d(TAG, "sign up submit..");
+        emailTxt = (EditText) findViewById(R.id.editTextEmail);
+
+        if (checkEmail(emailTxt.getText().toString()) == false){
+            Log.d(TAG, "email is wrong.");
+            new AlertDialog.Builder(this)
+                    .setTitle("Error")
+                    .setMessage("Please type your email.")
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // do nothing.
+                        }
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+            return;
+        }
+
+        pwdTxt = (EditText) findViewById(R.id.editTextPwd);
+        pwdConfirmTxt = (EditText) findViewById(R.id.editTextPwd2);
+
+        if (checkPassword(pwdTxt.getText().toString(), pwdConfirmTxt.getText().toString()) == false){
+            Log.d(TAG, "password is wrong.");
+            new AlertDialog.Builder(this)
+                    .setTitle("Error")
+                    .setMessage("Password does not match.")
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // do nothing.
+                        }
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+            return;
+        }
+        Log.d(TAG, "begin to call lambda..");
+        // Create an instance of CognitoCachingCredentialsProvider
+        CognitoCachingCredentialsProvider cognitoProvider = new CognitoCachingCredentialsProvider(
+                MeMainActivity.this.getApplicationContext(), "us-east-1:cab334cf-8514-4060-82e7-13afbdd331f5", Regions.US_EAST_1);
+
+        // Create LambdaInvokerFactory, to be used to instantiate the Lambda proxy.
+        LambdaInvokerFactory factory = new LambdaInvokerFactory(MeMainActivity.this.getApplicationContext(),
+                Regions.US_EAST_1, cognitoProvider);
+
+        // Create the Lambda proxy object with a default Json data binder.
+        // You can provide your own data binder by implementing
+        // LambdaDataBinder.
+        final MyInterface myInterface = factory.build(MyInterface.class);
+
+        NameInfo nameInfo = new NameInfo(emailTxt.getText().toString(), pwdTxt.getText().toString());
+        // The Lambda function invocation results in a network call.
+        // Make sure it is not called from the main thread.
+        new AsyncTask<NameInfo, Void, String>() {
+            @Override
+            protected String doInBackground(NameInfo... params) {
+                // invoke "echo" method. In case it fails, it will throw a
+                // LambdaFunctionException.
+                try {
+                    return myInterface.simpleWriteDynamoDB(params[0]);
+                } catch (LambdaFunctionException lfe) {
+                    Log.e("Tag", "Failed to invoke echo", lfe);
+                    return null;
+                }
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                if (result == null) {
+                    return;
+                }
+
+                // Do a toast
+                //Toast.makeText(MeMainActivity.this, result, Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MeMainActivity.this, NewHomeActivity.class);
+                startActivity(intent);
+
+            }
+        }.execute(nameInfo);
+
+
+    }
+
+    private boolean checkEmail(String email){
+        if(email ==null || email.isEmpty()){
+            return false;
+        }
+        else{
+            Log.d(TAG, "email=|" + email + "|");
+            return true;
+        }
+    }
+
+    private boolean checkPassword(String pwd1, String pwd2){
+        if(pwd1 ==null || pwd1.isEmpty()){
+            return false;
+        }
+        Log.d(TAG, "password is " + pwd1);
+        if (pwd2 != null)
+            Log.d(TAG, "re password is " + pwd2);
+        if(pwd1.equals(pwd2)){
+            return true;
+        }
+        else {
+
+            return false;
+        }
     }
 }

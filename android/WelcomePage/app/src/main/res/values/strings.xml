@@ -18,4 +18,5 @@
     <string name="no_results">No results found for \"%s\"</string>
     <string name="home_button">home</string>
     <string name="title_activity_me_main">MeMainActivity</string>
+    <string name="title_activity_new_home">Home</string>
 </resources>

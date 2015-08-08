@@ -24,22 +24,24 @@
         android:text="SignUp"
         android:id="@+id/btn_signup"
         android:layout_below="@+id/uapp_logo"
-        android:background="@drawable/customerboder2"
+        android:background="@drawable/customerboder"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="50dp"
-        android:textColor="#2c83a8" />
+        android:textColor="@color/white"
+        android:onClick="signUp"/>
 
     <Button
         android:layout_width="120dp"
         android:layout_height="30dp"
         android:text="Login"
-        android:background="@drawable/customerboder"
+        android:background="@drawable/customerboder2"
         android:id="@+id/btn_login"
         android:layout_below="@+id/uapp_logo"
         android:layout_toRightOf="@+id/btn_signup"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="0dp"
-        android:textColor="#FFFFFF" />
+        android:textColor="@color/styleColor"
+        android:onClick="login"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -86,14 +88,15 @@
         android:layout_height="40dp"
         android:text="Submit"
         android:id="@+id/register_email_btn"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:layout_below="@+id/editTextPwd2"
         android:layout_alignLeft="@+id/editTextPwd2"
         android:layout_alignStart="@+id/editTextPwd2"
         android:layout_alignRight="@+id/editTextPwd2"
         android:layout_alignEnd="@+id/editTextPwd2"
         android:background="@drawable/customerboder3"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="15dp"
+        android:onClick="submitRegister"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -113,18 +116,36 @@
         android:layout_alignParentBottom="true"
         android:src="@drawable/facebook"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="80dp" />
+        android:layout_marginLeft="20dp" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/image_gplus"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/image_facebook"
         android:src="@drawable/googleplus"
-        android:layout_marginRight="80dp"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentRight="true" />
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="CONNECT"
+        android:id="@+id/textView3"
+        android:layout_toEndOf="@id/image_facebook"
+        android:layout_alignTop="@+id/image_facebook"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="CONNECT"
+        android:id="@+id/textView4"
+         android:layout_toEndOf="@id/image_gplus"
+        android:layout_alignTop="@+id/image_gplus"
+        android:layout_marginTop="15dp" />
 
 
 </RelativeLayout>

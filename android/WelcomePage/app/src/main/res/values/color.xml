@@ -2,4 +2,6 @@
 <resources>
     <color name="errorColor">#f00</color>
     <color name="titleColor">#f0f</color>
+    <color name="styleColor">#2c83a8</color>
+    <color name="white">#ffffff</color>
 </resources>

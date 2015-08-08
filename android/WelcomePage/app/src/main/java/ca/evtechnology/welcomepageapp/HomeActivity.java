@@ -221,8 +221,8 @@ public class HomeActivity extends AppCompatActivity {
         ImageButton btnDiscover = (ImageButton)findViewById(R.id.button_discover);
         btnDiscover.setImageResource(R.drawable.discover);
 
-        ImageButton btnMe = (ImageButton)findViewById(R.id.button_me);
-        btnMe.setImageResource(R.drawable.me);
+        //ImageButton btnMe = (ImageButton)findViewById(R.id.button_me);
+        //btnMe.setImageResource(R.drawable.me);
 
 
 
@@ -271,7 +271,7 @@ public class HomeActivity extends AppCompatActivity {
         ImageButton btnDiscover = (ImageButton)findViewById(R.id.button_discover);
         btnDiscover.setImageResource(R.drawable.discover);
 
-        ImageButton btnMe = (ImageButton)findViewById(R.id.button_me);
+       ImageButton btnMe = (ImageButton)findViewById(R.id.button_me);
         btnMe.setImageResource(R.drawable.mecolor);
 
         // skip to 'Me' page

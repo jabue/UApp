@@ -23,11 +23,11 @@ public class NameInfo {
         this.user_id = email;
     }
 
-    public String getNickName() {
+    public String getPassword() {
         return password;
     }
 
-    public void setNickName(String nickName) {
-        this.password = nickName;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
