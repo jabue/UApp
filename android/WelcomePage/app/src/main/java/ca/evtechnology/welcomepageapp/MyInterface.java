@@ -13,4 +13,9 @@ public interface MyInterface {
     @LambdaFunction
     String simpleWriteDynamoDB(NameInfo nameInfo);
 
+    @LambdaFunction
+    String queryDB(NameInfo nameInfo);
+
 }
+
+

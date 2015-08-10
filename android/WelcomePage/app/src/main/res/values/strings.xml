@@ -19,4 +19,7 @@
     <string name="home_button">home</string>
     <string name="title_activity_me_main">MeMainActivity</string>
     <string name="title_activity_new_home">Home</string>
+
+    <!-- Error Message -->
+    <string name="user_id_unavailable">User name unavailable. Please change another one.</string>
 </resources>

@@ -1,9 +1,11 @@
 package ca.evtechnology.welcomepageapp;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.renderscript.Script;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,6 +34,11 @@ public class MeMainActivity extends ActionBarActivity {
     private int USERID_TEXT = 500;
     private int PASSWORD_TEXT = 501;
     private int SUBMIT_EMAIL_BTN = 502;
+
+    private int RegisterOrLogin = 0; // 0: login; 1: register
+    private String AsyncResult = null;
+
+    //MyAsyncTask asyncTask =new MyAsyncTask();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,14 +102,14 @@ public class MeMainActivity extends ActionBarActivity {
         button.setLayoutParams(lparams);
         button.setId(SUBMIT_EMAIL_BTN);
 
-        button.setOnClickListener(onClickSubmitEmail());
+        //button.setOnClickListener(onClickSubmitEmail());
 
         final RelativeLayout.LayoutParams lparams1 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         lparams1.addRule(RelativeLayout.BELOW, SUBMIT_EMAIL_BTN);
         registerFbBtn.setLayoutParams(lparams1);
         return button;
     }
-
+/*
     private View.OnClickListener onClickSubmitEmail() {
         return new View.OnClickListener() {
             @Override
@@ -154,7 +161,7 @@ public class MeMainActivity extends ActionBarActivity {
             }
         };
     }
-
+*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -193,7 +200,7 @@ public class MeMainActivity extends ActionBarActivity {
         Button loginBtn = null;
         Button signUpBtn = null;
 
-
+        RegisterOrLogin = 1; // it is signup when submit.
         loginBtn = (Button) findViewById(R.id.btn_login);
         signUpBtn = (Button) findViewById(R.id.btn_signup);
 
@@ -225,6 +232,7 @@ public class MeMainActivity extends ActionBarActivity {
         Button loginBtn = null;
         Button signUpBtn = null;
 
+        RegisterOrLogin = 0; // it is login when submit.
         loginBtn = (Button) findViewById(R.id.btn_login);
         signUpBtn = (Button) findViewById(R.id.btn_signup);
 
@@ -252,10 +260,12 @@ public class MeMainActivity extends ActionBarActivity {
 
     }
 
-    public void submitRegister(View view){
+    public void submitClick(View view){
         EditText emailTxt = null;
         EditText pwdTxt = null;
         EditText pwdConfirmTxt = null;
+
+        int FLAG_USERID_UNAVIABLE = 0; // flag to indicate if the user_id can be used.
 
         Log.d(TAG, "sign up submit..");
         emailTxt = (EditText) findViewById(R.id.editTextEmail);
@@ -276,23 +286,6 @@ public class MeMainActivity extends ActionBarActivity {
         }
 
         pwdTxt = (EditText) findViewById(R.id.editTextPwd);
-        pwdConfirmTxt = (EditText) findViewById(R.id.editTextPwd2);
-
-        if (checkPassword(pwdTxt.getText().toString(), pwdConfirmTxt.getText().toString()) == false){
-            Log.d(TAG, "password is wrong.");
-            new AlertDialog.Builder(this)
-                    .setTitle("Error")
-                    .setMessage("Password does not match.")
-                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            // do nothing.
-                        }
-                    })
-                    .setIcon(android.R.drawable.ic_dialog_alert)
-                    .show();
-            return;
-        }
-        Log.d(TAG, "begin to call lambda..");
         // Create an instance of CognitoCachingCredentialsProvider
         CognitoCachingCredentialsProvider cognitoProvider = new CognitoCachingCredentialsProvider(
                 MeMainActivity.this.getApplicationContext(), "us-east-1:cab334cf-8514-4060-82e7-13afbdd331f5", Regions.US_EAST_1);
@@ -300,41 +293,63 @@ public class MeMainActivity extends ActionBarActivity {
         // Create LambdaInvokerFactory, to be used to instantiate the Lambda proxy.
         LambdaInvokerFactory factory = new LambdaInvokerFactory(MeMainActivity.this.getApplicationContext(),
                 Regions.US_EAST_1, cognitoProvider);
-
+Log.d(TAG, "create LambadInvokerFactroy successfully.");
         // Create the Lambda proxy object with a default Json data binder.
         // You can provide your own data binder by implementing
         // LambdaDataBinder.
         final MyInterface myInterface = factory.build(MyInterface.class);
 
         NameInfo nameInfo = new NameInfo(emailTxt.getText().toString(), pwdTxt.getText().toString());
-        // The Lambda function invocation results in a network call.
-        // Make sure it is not called from the main thread.
-        new AsyncTask<NameInfo, Void, String>() {
-            @Override
-            protected String doInBackground(NameInfo... params) {
-                // invoke "echo" method. In case it fails, it will throw a
-                // LambdaFunctionException.
-                try {
-                    return myInterface.simpleWriteDynamoDB(params[0]);
-                } catch (LambdaFunctionException lfe) {
-                    Log.e("Tag", "Failed to invoke echo", lfe);
-                    return null;
-                }
+        Log.d(TAG, "RegisterOrLogin? " + RegisterOrLogin);
+        if(RegisterOrLogin == 1){
+            // sign up
+            pwdConfirmTxt = (EditText) findViewById(R.id.editTextPwd2);
+            Log.d(TAG, "start to register.");
+            if (checkPassword(pwdTxt.getText().toString(), pwdConfirmTxt.getText().toString()) == false){
+                Log.d(TAG, "password is wrong.");
+                new AlertDialog.Builder(this)
+                        .setTitle("Error")
+                        .setMessage("Password does not match.")
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // do nothing.
+                            }
+                        })
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
+                return;
             }
 
-            @Override
-            protected void onPostExecute(String result) {
-                if (result == null) {
-                    return;
+            Log.d(TAG, "begin to call lambda..");
+
+
+            CheckUseridAsyncTask someTask = new CheckUseridAsyncTask(getApplicationContext(), nameInfo, new AsyncResponse<String>() {
+                @Override
+                public void onSuccess(String result) {
+                    Toast.makeText(getApplicationContext(), "SUCCESS: "+result, Toast.LENGTH_LONG).show();
+                    if( result.equals("NotFound")){
+
+                    }
+                    else{
+                        dialog();
+                    }
                 }
 
-                // Do a toast
-                //Toast.makeText(MeMainActivity.this, result, Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(MeMainActivity.this, NewHomeActivity.class);
-                startActivity(intent);
+                @Override
+                public void onFailure(Exception e) {
+                    Toast.makeText(getApplicationContext(), "ERROR: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            });
+            someTask.execute();
 
-            }
-        }.execute(nameInfo);
+
+
+        }
+        else{
+            // login
+            Log.d(TAG, "start to login.");
+        }
+
 
 
     }
@@ -348,6 +363,21 @@ public class MeMainActivity extends ActionBarActivity {
             return true;
         }
     }
+
+    protected void dialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MeMainActivity.this);
+        builder.setMessage("The email you typed is used already. Please choose another one.");
+        builder.setTitle("UApp");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                //MeMainActivity.this.finish();
+            }
+        });
+        builder.create().show();
+    }
+
 
     private boolean checkPassword(String pwd1, String pwd2){
         if(pwd1 ==null || pwd1.isEmpty()){
@@ -363,5 +393,9 @@ public class MeMainActivity extends ActionBarActivity {
 
             return false;
         }
+    }
+
+    void processFinish(String output){
+        //this you will received result fired from async class of onPostExecute(result) method.
     }
 }

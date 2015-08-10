@@ -2,7 +2,7 @@
 query the user_info table.
 */
 console.log('Loading event');
-var doc = require('dynamodb-doc');
+var doc = require('aws-sdk');
 var dynamodb = new doc.DynamoDB();
 
 exports.handler = function(event, context) {
