@@ -22,4 +22,6 @@
 
     <!-- Error Message -->
     <string name="user_id_unavailable">User name unavailable. Please change another one.</string>
+    <string name="password_wrong">Wrong password. Please try again.</string>
+    <string name="signup_succeed">Sign Up successfully.</string>
 </resources>

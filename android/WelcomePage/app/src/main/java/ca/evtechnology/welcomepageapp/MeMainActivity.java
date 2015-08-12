@@ -35,7 +35,7 @@ public class MeMainActivity extends ActionBarActivity {
     private int PASSWORD_TEXT = 501;
     private int SUBMIT_EMAIL_BTN = 502;
 
-    private int RegisterOrLogin = 0; // 0: login; 1: register
+    private int RegisterOrLogin = 1; // 0: login; 1: register
     private String AsyncResult = null;
 
     //MyAsyncTask asyncTask =new MyAsyncTask();
@@ -326,12 +326,46 @@ Log.d(TAG, "create LambadInvokerFactroy successfully.");
             CheckUseridAsyncTask someTask = new CheckUseridAsyncTask(getApplicationContext(), nameInfo, new AsyncResponse<String>() {
                 @Override
                 public void onSuccess(String result) {
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.signup_succeed), Toast.LENGTH_LONG).show();
+                    if( result.equals("NotFound")){ // user name available. go to home page.
+                        Intent homeIntent = new Intent(MeMainActivity.this, NewHomeActivity.class);
+                        startActivity(homeIntent);
+                    }
+                    else{ // user name used. ask user change another one.
+                        dialog("UApp", getResources().getString(R.string.user_id_unavailable) );
+                    }
+                }
+
+                @Override
+                public void onFailure(Exception e) {
+                    Toast.makeText(getApplicationContext(), "ERROR: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            });
+            someTask.execute();
+        }
+        else{
+            // login
+            Log.d(TAG, "start to login.");
+            final CheckUseridAsyncTask someTask = new CheckUseridAsyncTask(getApplicationContext(), nameInfo, new AsyncResponse<String>() {
+                EditText etPassword = null;
+
+                @Override
+                public void onSuccess(String result) {
                     Toast.makeText(getApplicationContext(), "SUCCESS: "+result, Toast.LENGTH_LONG).show();
                     if( result.equals("NotFound")){
-
+                        dialog("UApp", "No such user.");
                     }
                     else{
-                        dialog();
+                        etPassword = (EditText) findViewById(R.id.editTextPwd);
+                        if (result.equals(etPassword.getText().toString())){
+                            Log.d(TAG, "password right.");
+                            Intent homeIntent = new Intent(MeMainActivity.this, NewHomeActivity.class);
+                            startActivity(homeIntent);
+                        }
+                        else {
+                            Log.d(TAG, "password wrong");
+                            dialog("UApp", getResources().getString(R.string.password_wrong));
+                        }
                     }
                 }
 
@@ -342,12 +376,6 @@ Log.d(TAG, "create LambadInvokerFactroy successfully.");
             });
             someTask.execute();
 
-
-
-        }
-        else{
-            // login
-            Log.d(TAG, "start to login.");
         }
 
 
@@ -364,10 +392,10 @@ Log.d(TAG, "create LambadInvokerFactroy successfully.");
         }
     }
 
-    protected void dialog() {
+    protected void dialog(String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(MeMainActivity.this);
-        builder.setMessage("The email you typed is used already. Please choose another one.");
-        builder.setTitle("UApp");
+        builder.setMessage(message);
+        builder.setTitle(title);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
