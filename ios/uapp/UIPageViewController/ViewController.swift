@@ -18,16 +18,16 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     {
         super.viewDidLoad()
        
-        self.pageTitles = NSArray(objects: "App", "Campus","Welcome","EVTech")
-        self.pageImages = NSArray(objects: "page1", "page2","page3","page4")
+        self.pageTitles = NSArray(objects: "App", "Campus","Welcome")
+        self.pageImages = NSArray(objects: "page1", "page2","page3")
 
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         self.pageViewController.dataSource = self
 
-        var startVC = self.viewControllerAtIndex(0) as ContentViewController
-        var viewControllers = NSArray(object: startVC)
+        let startVC = self.viewControllerAtIndex(0) as ContentViewController
+        let viewControllers = NSArray(object: startVC)
         
-        self.pageViewController.setViewControllers(viewControllers as [AnyObject], direction: .Forward, animated: true, completion: nil)
+        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
         
         self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 60)
         
@@ -58,7 +58,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
             return ContentViewController()
         }
         
-        var vc: ContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ContentViewController") as! ContentViewController
+        let vc: ContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ContentViewController") as! ContentViewController
         
         vc.imageFile = self.pageImages[index] as! String
         vc.titleText = self.pageTitles[index]as! String
@@ -75,10 +75,11 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
     {
         
-        var vc = viewController as! ContentViewController
+        let vc = viewController as! ContentViewController
         var index = vc.pageIndex as Int
         
-        
+        NSLog("flip left: index= %d", index)
+
         if (index == 0 || index == NSNotFound)
         {
             return nil
@@ -92,8 +93,10 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
-        var vc = viewController as! ContentViewController
+        let vc = viewController as! ContentViewController
         var index = vc.pageIndex as Int
+        
+        NSLog("flip right: index= %d", index)
         
         if (index == NSNotFound)
         {
@@ -104,17 +107,19 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         
         if (index == self.pageTitles.count)
         {   
-       
-
+            NSLog("flip right,come to the end: index= %d", index)
+           // self.performSegueWithIdentifier("showSchoolChoice", sender: self)
             return nil
+            
             
             
         }
         
         
         if (index  > self.pageTitles.count){
+            NSLog("flip right, show home page now: index= %d", index)
         
-          self.performSegueWithIdentifier("myResultBoard", sender: self)
+          self.performSegueWithIdentifier("showSchoolChoice", sender: self)
             
           
         }
@@ -133,6 +138,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     {
         return 0
     }
+    
+    
 
 }
 
