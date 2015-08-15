@@ -12,6 +12,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let cognitoAccountId = "xxxxxxxxxxxxxxxxx"
+    let cognitoIdentityPoolId = "xxxxxxxxxxxxxxxxx"
+    let cognitoUnauthRoleArn = "xxxxxxxxxxxxxxxxx"
+    let cognitoAuthRoleArn = "xxxxxxxxxxxxxxxxx"
+
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -21,6 +26,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
         pageControl.currentPageIndicatorTintColor = UIColor.blackColor()
         pageControl.backgroundColor = UIColor.whiteColor()
+        
+        let credentialsProvider = AWSCognitoCredentialsProvider.credentialsWithRegionType(
+            AWSRegionType.USEast1,
+            accountId: cognitoAccountId,
+            identityPoolId: cognitoIdentityPoolId,
+            unauthRoleArn: cognitoUnauthRoleArn,
+            authRoleArn: cognitoAuthRoleArn)
+        let defaultServiceConfiguration = AWSServiceConfiguration(
+            region: AWSRegionType.USEast1,
+            credentialsProvider: credentialsProvider)
+        AWSServiceManager.defaultServiceManager().setDefaultServiceConfiguration(defaultServiceConfiguration)
+        
+        
         
         return true
     }
@@ -45,6 +63,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func applicationDidFinishLaunching(application: UIApplication) {
+        let credentialsProvider = AWSCognitoCredentialsProvider(
+            regionType: CognitoRegionType,
+            identityPoolId: CognitoIdentityPoolId)
+        let configuration = AWSServiceConfiguration(
+            region: DefaultServiceRegionType,
+            credentialsProvider: credentialsProvider)
+        AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
     }
 
 
