@@ -63,6 +63,9 @@
                                 <scopeButtonTitles>
                                     <string>Title</string>
                                 </scopeButtonTitles>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="40" y="114" width="340" height="45"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="V5N-e9-IJ5" id="NVp-Ia-ERB"/>
                                 </connections>

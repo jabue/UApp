@@ -1,0 +1,17 @@
+PODS:
+  - AWSCognito (2.2.3):
+    - AWSCore (= 2.2.3)
+  - AWSCore (2.2.3)
+  - AWSLambda (2.2.3):
+    - AWSCore (= 2.2.3)
+
+DEPENDENCIES:
+  - AWSCognito
+  - AWSLambda
+
+SPEC CHECKSUMS:
+  AWSCognito: ae340057e5f8c535aabd39234c7bd5b704b1955e
+  AWSCore: 30510dc1bf3e4cc975868ed4cc9ae16ba402790b
+  AWSLambda: e65dd2fbec1c56fff17ccca243d6922ebf7517e9
+
+COCOAPODS: 0.38.2

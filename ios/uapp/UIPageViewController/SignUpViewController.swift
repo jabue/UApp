@@ -116,8 +116,26 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
    
     @IBAction func buttonSubmit(sender: UIButton) {
         print("button submit clicked.")
+        
+        let Lambda = AWSLambda(forKey: "USEast1Lambda")
+       
+        let request = AWSLambdaInvocationRequest()
+        
+        request.functionName = "queryDB"
+        request.clientContext = ""
+        //request.payload = "{"":"", "":""}"
+        
+        //request.invokeArgs = ("":"", "",:"")
+        
+        Lambda.invoke(request)
+        
+        
+       
+
+        
+       
+        }
     }
     
     
 
-}

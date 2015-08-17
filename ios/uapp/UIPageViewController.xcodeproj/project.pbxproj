@@ -17,26 +17,9 @@
 		A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0B31B7D35F7004B3E1B /* FindSchoolViewController.swift */; };
 		A445F0B61B7D3827004B3E1B /* SchoolItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0B51B7D3827004B3E1B /* SchoolItem.swift */; };
 		A445F0F21B7D645A004B3E1B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0F11B7D645A004B3E1B /* SignUpViewController.swift */; };
+		A4BC4856735B1C8D1C45A1B6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BDFD18188BFE32ECE26A67 /* libPods.a */; };
 		A4D3EA701B7EA67500A0480E /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = A4D3EA6F1B7EA67500A0480E /* podfile */; };
-		A4D3EA751B7EB80800A0480E /* AWSLambda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA741B7EB80800A0480E /* AWSLambda.framework */; };
-		A4D3EA771B7EB82700A0480E /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA761B7EB82700A0480E /* AWSCore.framework */; };
-		A4D3EA791B7EB85F00A0480E /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA781B7EB85F00A0480E /* AWSCognito.framework */; };
-		A4D3EA7B1B7EB8DB00A0480E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA7A1B7EB8DB00A0480E /* libsqlite3.tbd */; };
-		A4D3EA7D1B7EB91400A0480E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA7C1B7EB91400A0480E /* libz.tbd */; };
-		A4D3EA7F1B7EB92700A0480E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA7E1B7EB92700A0480E /* SystemConfiguration.framework */; };
-		A4D3EA821B7EC01A00A0480E /* AWSAutoScaling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA811B7EC01A00A0480E /* AWSAutoScaling.framework */; };
-		A4D3EA911B7EC06300A0480E /* AWSCloudWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA831B7EC06200A0480E /* AWSCloudWatch.framework */; };
-		A4D3EA931B7EC06300A0480E /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA851B7EC06200A0480E /* AWSDynamoDB.framework */; };
-		A4D3EA941B7EC06300A0480E /* AWSEC2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA861B7EC06200A0480E /* AWSEC2.framework */; };
-		A4D3EA951B7EC06300A0480E /* AWSElasticLoadBalancing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA871B7EC06200A0480E /* AWSElasticLoadBalancing.framework */; };
-		A4D3EA961B7EC06300A0480E /* AWSKinesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA881B7EC06200A0480E /* AWSKinesis.framework */; };
-		A4D3EA981B7EC06300A0480E /* AWSMachineLearning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA8A1B7EC06200A0480E /* AWSMachineLearning.framework */; };
-		A4D3EA991B7EC06300A0480E /* AWSMobileAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA8B1B7EC06200A0480E /* AWSMobileAnalytics.framework */; };
-		A4D3EA9A1B7EC06300A0480E /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA8C1B7EC06200A0480E /* AWSS3.framework */; };
-		A4D3EA9B1B7EC06300A0480E /* AWSSES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA8D1B7EC06200A0480E /* AWSSES.framework */; };
-		A4D3EA9C1B7EC06300A0480E /* AWSSimpleDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA8E1B7EC06200A0480E /* AWSSimpleDB.framework */; };
-		A4D3EA9D1B7EC06300A0480E /* AWSSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA8F1B7EC06200A0480E /* AWSSNS.framework */; };
-		A4D3EA9E1B7EC06300A0480E /* AWSSQS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3EA901B7EC06300A0480E /* AWSSQS.framework */; };
+		A4F36C3E1B82573E002CC587 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F36C3D1B82573E002CC587 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44DE8D6FE573C50F52B21B64 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		58E46A51F82C31CF7C5EE6F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		78E75F3C1AC5FC48001A93F1 /* UIPageViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIPageViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E75F401AC5FC48001A93F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78E75F411AC5FC48001A93F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,30 +49,10 @@
 		A445F0B31B7D35F7004B3E1B /* FindSchoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindSchoolViewController.swift; sourceTree = "<group>"; };
 		A445F0B51B7D3827004B3E1B /* SchoolItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolItem.swift; sourceTree = "<group>"; };
 		A445F0F11B7D645A004B3E1B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		A4D3EA6F1B7EA67500A0480E /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
-		A4D3EA721B7EB7D900A0480E /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSCore.framework"; sourceTree = "<group>"; };
-		A4D3EA741B7EB80800A0480E /* AWSLambda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSLambda.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSLambda.framework"; sourceTree = "<group>"; };
-		A4D3EA761B7EB82700A0480E /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSCore.framework"; sourceTree = "<group>"; };
-		A4D3EA781B7EB85F00A0480E /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognito.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/extras/AWSCognito.framework"; sourceTree = "<group>"; };
-		A4D3EA7A1B7EB8DB00A0480E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		A4D3EA7C1B7EB91400A0480E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		A4D3EA7E1B7EB92700A0480E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A4D3EA6F1B7EA67500A0480E /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A4D3EA801B7EB98500A0480E /* ObjectiveC_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ObjectiveC_Bridging_Header.h; path = ../ObjectiveC_Bridging_Header.h; sourceTree = "<group>"; };
-		A4D3EA811B7EC01A00A0480E /* AWSAutoScaling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSAutoScaling.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSAutoScaling.framework"; sourceTree = "<group>"; };
-		A4D3EA831B7EC06200A0480E /* AWSCloudWatch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCloudWatch.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSCloudWatch.framework"; sourceTree = "<group>"; };
-		A4D3EA841B7EC06200A0480E /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSCore.framework"; sourceTree = "<group>"; };
-		A4D3EA851B7EC06200A0480E /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSDynamoDB.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSDynamoDB.framework"; sourceTree = "<group>"; };
-		A4D3EA861B7EC06200A0480E /* AWSEC2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSEC2.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSEC2.framework"; sourceTree = "<group>"; };
-		A4D3EA871B7EC06200A0480E /* AWSElasticLoadBalancing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSElasticLoadBalancing.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSElasticLoadBalancing.framework"; sourceTree = "<group>"; };
-		A4D3EA881B7EC06200A0480E /* AWSKinesis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSKinesis.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSKinesis.framework"; sourceTree = "<group>"; };
-		A4D3EA891B7EC06200A0480E /* AWSLambda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSLambda.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSLambda.framework"; sourceTree = "<group>"; };
-		A4D3EA8A1B7EC06200A0480E /* AWSMachineLearning.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSMachineLearning.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSMachineLearning.framework"; sourceTree = "<group>"; };
-		A4D3EA8B1B7EC06200A0480E /* AWSMobileAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSMobileAnalytics.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSMobileAnalytics.framework"; sourceTree = "<group>"; };
-		A4D3EA8C1B7EC06200A0480E /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSS3.framework"; sourceTree = "<group>"; };
-		A4D3EA8D1B7EC06200A0480E /* AWSSES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSES.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSSES.framework"; sourceTree = "<group>"; };
-		A4D3EA8E1B7EC06200A0480E /* AWSSimpleDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSimpleDB.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSSimpleDB.framework"; sourceTree = "<group>"; };
-		A4D3EA8F1B7EC06200A0480E /* AWSSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSNS.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSSNS.framework"; sourceTree = "<group>"; };
-		A4D3EA901B7EC06300A0480E /* AWSSQS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSQS.framework; path = "../../../../aws-ios-sdk-2.2.3/frameworks/AWSSQS.framework"; sourceTree = "<group>"; };
+		A4F36C3D1B82573E002CC587 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
+		C9BDFD18188BFE32ECE26A67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,25 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4D3EA7F1B7EB92700A0480E /* SystemConfiguration.framework in Frameworks */,
-				A4D3EA9A1B7EC06300A0480E /* AWSS3.framework in Frameworks */,
-				A4D3EA961B7EC06300A0480E /* AWSKinesis.framework in Frameworks */,
-				A4D3EA7D1B7EB91400A0480E /* libz.tbd in Frameworks */,
-				A4D3EA991B7EC06300A0480E /* AWSMobileAnalytics.framework in Frameworks */,
-				A4D3EA941B7EC06300A0480E /* AWSEC2.framework in Frameworks */,
-				A4D3EA821B7EC01A00A0480E /* AWSAutoScaling.framework in Frameworks */,
-				A4D3EA9C1B7EC06300A0480E /* AWSSimpleDB.framework in Frameworks */,
-				A4D3EA951B7EC06300A0480E /* AWSElasticLoadBalancing.framework in Frameworks */,
-				A4D3EA7B1B7EB8DB00A0480E /* libsqlite3.tbd in Frameworks */,
-				A4D3EA9D1B7EC06300A0480E /* AWSSNS.framework in Frameworks */,
-				A4D3EA931B7EC06300A0480E /* AWSDynamoDB.framework in Frameworks */,
-				A4D3EA9E1B7EC06300A0480E /* AWSSQS.framework in Frameworks */,
-				A4D3EA911B7EC06300A0480E /* AWSCloudWatch.framework in Frameworks */,
-				A4D3EA751B7EB80800A0480E /* AWSLambda.framework in Frameworks */,
-				A4D3EA791B7EB85F00A0480E /* AWSCognito.framework in Frameworks */,
-				A4D3EA9B1B7EC06300A0480E /* AWSSES.framework in Frameworks */,
-				A4D3EA771B7EB82700A0480E /* AWSCore.framework in Frameworks */,
-				A4D3EA981B7EC06300A0480E /* AWSMachineLearning.framework in Frameworks */,
+				A4BC4856735B1C8D1C45A1B6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,32 +77,12 @@
 		78E75F331AC5FC48001A93F1 = {
 			isa = PBXGroup;
 			children = (
-				A4D3EA831B7EC06200A0480E /* AWSCloudWatch.framework */,
-				A4D3EA841B7EC06200A0480E /* AWSCore.framework */,
-				A4D3EA851B7EC06200A0480E /* AWSDynamoDB.framework */,
-				A4D3EA861B7EC06200A0480E /* AWSEC2.framework */,
-				A4D3EA871B7EC06200A0480E /* AWSElasticLoadBalancing.framework */,
-				A4D3EA881B7EC06200A0480E /* AWSKinesis.framework */,
-				A4D3EA891B7EC06200A0480E /* AWSLambda.framework */,
-				A4D3EA8A1B7EC06200A0480E /* AWSMachineLearning.framework */,
-				A4D3EA8B1B7EC06200A0480E /* AWSMobileAnalytics.framework */,
-				A4D3EA8C1B7EC06200A0480E /* AWSS3.framework */,
-				A4D3EA8D1B7EC06200A0480E /* AWSSES.framework */,
-				A4D3EA8E1B7EC06200A0480E /* AWSSimpleDB.framework */,
-				A4D3EA8F1B7EC06200A0480E /* AWSSNS.framework */,
-				A4D3EA901B7EC06300A0480E /* AWSSQS.framework */,
-				A4D3EA811B7EC01A00A0480E /* AWSAutoScaling.framework */,
-				A4D3EA7E1B7EB92700A0480E /* SystemConfiguration.framework */,
-				A4D3EA7C1B7EB91400A0480E /* libz.tbd */,
-				A4D3EA7A1B7EB8DB00A0480E /* libsqlite3.tbd */,
-				A4D3EA781B7EB85F00A0480E /* AWSCognito.framework */,
-				A4D3EA761B7EB82700A0480E /* AWSCore.framework */,
-				A4D3EA741B7EB80800A0480E /* AWSLambda.framework */,
-				A4D3EA721B7EB7D900A0480E /* AWSCore.framework */,
 				A4D3EA6F1B7EA67500A0480E /* podfile */,
 				78E75F3E1AC5FC48001A93F1 /* UIPageViewController */,
 				78E75F541AC5FC48001A93F1 /* UIPageViewControllerTests */,
 				78E75F3D1AC5FC48001A93F1 /* Products */,
+				C03F8C97DFD76D3E4D9554CB /* Pods */,
+				E50F66C935583CC1A2B44AF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				78E75F411AC5FC48001A93F1 /* AppDelegate.swift */,
+				A4F36C3D1B82573E002CC587 /* Constants.swift */,
 				78E75F431AC5FC48001A93F1 /* ViewController.swift */,
 				78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */,
 				A445F0B31B7D35F7004B3E1B /* FindSchoolViewController.swift */,
@@ -211,6 +139,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C03F8C97DFD76D3E4D9554CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58E46A51F82C31CF7C5EE6F9 /* Pods.debug.xcconfig */,
+				44DE8D6FE573C50F52B21B64 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E50F66C935583CC1A2B44AF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9BDFD18188BFE32ECE26A67 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -218,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78E75F5B1AC5FC48001A93F1 /* Build configuration list for PBXNativeTarget "UIPageViewController" */;
 			buildPhases = (
+				2733EEFD7BBBBCD6F2108F20 /* Check Pods Manifest.lock */,
 				78E75F381AC5FC48001A93F1 /* Sources */,
 				78E75F391AC5FC48001A93F1 /* Frameworks */,
 				78E75F3A1AC5FC48001A93F1 /* Resources */,
+				DC36780A6BAFA4ADBE3792E9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,6 +256,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2733EEFD7BBBBCD6F2108F20 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DC36780A6BAFA4ADBE3792E9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		78E75F381AC5FC48001A93F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -318,6 +298,7 @@
 				A445F0F21B7D645A004B3E1B /* SignUpViewController.swift in Sources */,
 				A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift in Sources */,
 				78E75F621AC5FCF1001A93F1 /* ContentViewController.swift in Sources */,
+				A4F36C3E1B82573E002CC587 /* Constants.swift in Sources */,
 				78E75F421AC5FC48001A93F1 /* AppDelegate.swift in Sources */,
 				A445F0B61B7D3827004B3E1B /* SchoolItem.swift in Sources */,
 			);
@@ -441,6 +422,7 @@
 		};
 		78E75F5C1AC5FC48001A93F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58E46A51F82C31CF7C5EE6F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -454,6 +436,7 @@
 		};
 		78E75F5D1AC5FC48001A93F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44DE8D6FE573C50F52B21B64 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
