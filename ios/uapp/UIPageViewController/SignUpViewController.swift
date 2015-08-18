@@ -122,12 +122,25 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         let request = AWSLambdaInvocationRequest()
         
         request.functionName = "queryDB"
-        request.clientContext = ""
-        //request.payload = "{"":"", "":""}"
+        //request.clientContext = ""
+        request.payload = [
+            "user_id": "a@s.on"
+        ]
+        print(NSJSONSerialization.isValidJSONObject(request.payload))
         
+               
         //request.invokeArgs = ("":"", "",:"")
         
-        Lambda.invoke(request)
+        var awsReturn: AWSTask = Lambda.invoke(request)
+        print(awsReturn.description)
+        if (awsReturn.error != nil){
+            print("error: \(awsReturn.error)")
+        }
+        if(awsReturn.result != nil)
+        {
+            print(awsReturn.result)
+        }
+        
         
         
        
