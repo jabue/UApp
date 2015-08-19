@@ -113,42 +113,74 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
 
     }
     
-   
-    @IBAction func buttonSubmit(sender: UIButton) {
-        print("button submit clicked.")
-        
-        let Lambda = AWSLambda(forKey: "USEast1Lambda")
-       
-        let request = AWSLambdaInvocationRequest()
-        
-        request.functionName = "queryDB"
-        //request.clientContext = ""
-        request.payload = [
-            "user_id": "a@s.on"
-        ]
-        print(NSJSONSerialization.isValidJSONObject(request.payload))
-        
-               
-        //request.invokeArgs = ("":"", "",:"")
-        
-        var awsReturn: AWSTask = Lambda.invoke(request)
-        print(awsReturn.description)
-        if (awsReturn.error != nil){
-            print("error: \(awsReturn.error)")
+    func checkEmail(emailAddress : String) -> Bool{
+        print(emailAddress)
+        if(emailAddress.isEmpty){
+            return false
         }
-        if(awsReturn.result != nil)
-        {
-            print(awsReturn.result)
+        else{
+            return true
         }
         
         
-        
-       
-
-        
-       
-        }
     }
-    
+    @IBAction func buttonSubmit(sender: UIButton) {
+        let emailInput = String(emailTextField.text!)
+        
+        if(checkEmail(emailInput) == false){
+            let alertController = UIAlertController(title: "UApp", message:
+                "Invalid Email", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            return
+        }
+        
+        let Lambda = AWSLambda.defaultLambda()
+        var pwd = ""
+        AWSLogger.defaultLogger().logLevel = .Verbose
+        
+        let request = AWSLambdaInvocationRequest()
+        request.functionName = "queryDB"
+        
+        
+        request.payload = "{\"user_id\": \"\(emailInput)\"}"
+        print(request)
+        
+        
+        
+        Lambda.invoke(request).continueWithBlock({(task) -> AnyObject! in
+            if let error = task.error {
+                print("lambda invoke failed: [\(error)]")
+            }
+            else if let exception = task.exception {
+                print("lambda invoke failed: [\(exception)]")
+            }
+            else{
+                print("DEBUG: call lambda sucessfully")
+                print(task.result)
+                pwd = String(task.result.payload)
+                print("password= \(pwd)")
+                if (pwd == "NotFund"){ // user_id not used. load home page.
+                    
+                }
+                else{ // return password. it means that this user_id had been used.
+                    let alertController = UIAlertController(title: "UApp", message:
+                        "the user id \(emailInput) is taken. Please try another one!", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                    
+                }
+                
+            }
+            return nil
+        })
+    }
+}
+
+
+
+
     
 
