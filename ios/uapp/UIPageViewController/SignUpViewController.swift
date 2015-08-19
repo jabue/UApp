@@ -16,6 +16,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var pwdAgainTextField: UITextField!
     @IBOutlet weak var pwdTextField: UITextField!
     @IBOutlet weak var btnSubmit: UIButton!
+    @IBOutlet weak var forgotPwdTextField: UITextView!
     
     var loginOrSignup = 1 // default signup
     
@@ -26,7 +27,15 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         emailTextField.delegate = self //set delegate to textfile
         pwdAgainTextField.delegate = self //set delegate to textfile
         pwdTextField.delegate = self //set delegate to textfile
+        
+        
+        forgotPwdTextField.hidden == true
+        let value = UIInterfaceOrientation.Portrait.rawValue
+        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+
         print("SignuUpViewController begin...")
+        
+        
     
     }
     
@@ -59,6 +68,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         
         pwdAgainTextField.layer.addSublayer(border3)
          pwdAgainTextField.layer.masksToBounds = true
+        
     }
     
     
@@ -69,6 +79,12 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
+    
+    
     @IBAction func indexChanged(sender: UISegmentedControl) {
         switch segmentControl.selectedSegmentIndex
         {
@@ -76,6 +92,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                 print("signup")
                 loginOrSignup = 1 // sign up flag
                 pwdAgainTextField.hidden = false
+                forgotPwdTextField.hidden = true
                 emailTextField.text = ""
                 pwdTextField.text = ""
                 pwdAgainTextField.text = ""
@@ -83,6 +100,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                 print("login")
                 loginOrSignup = 0 // login flag
                 pwdAgainTextField.hidden = true
+                forgotPwdTextField.hidden = false
                 emailTextField.text = ""
                 pwdTextField.text = ""
                 pwdAgainTextField.text = ""
@@ -110,45 +128,161 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return true
-
+        
     }
     
-   
+    func checkEmail(emailAddress : String) -> Bool{
+        if(emailAddress.isEmpty){
+            return false
+        }
+        else{
+            return true
+        }
+        
+        
+    }
+    
+    func checkPassword(pwd1:String, pwd2:String) -> Bool{
+        print("pwd1 = \(pwd1), pwd2=\(pwd2)")
+        if(pwd1.isEmpty){
+            return false
+        }
+        if(pwd1 != pwd2){
+            return false
+        }
+        return true
+    }
+    
     @IBAction func buttonSubmit(sender: UIButton) {
-        print("button submit clicked.")
         
-        let Lambda = AWSLambda(forKey: "USEast1Lambda")
-       
+        
+        if(checkEmail(emailTextField.text!) == false){
+            let alertController = UIAlertController(title: "UApp", message:
+                "Invalid Email", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            return
+            
+        }
+        let Lambda = AWSLambda.defaultLambda()
+        var pwd = ""
+        //AWSLogger.defaultLogger().logLevel = .Verbose
+        
+        
+        
         let request = AWSLambdaInvocationRequest()
+        request.functionName = LambdaGetPassword
+        let emailInput = emailTextField.text!
+        request.payload = "{\"user_id\": \"\(emailInput)\"}"
+        print(request)
         
-        request.functionName = "queryDB"
-        //request.clientContext = ""
-        request.payload = [
-            "user_id": "a@s.on"
-        ]
-        print(NSJSONSerialization.isValidJSONObject(request.payload))
-        
-               
-        //request.invokeArgs = ("":"", "",:"")
-        
-        var awsReturn: AWSTask = Lambda.invoke(request)
-        print(awsReturn.description)
-        if (awsReturn.error != nil){
-            print("error: \(awsReturn.error)")
-        }
-        if(awsReturn.result != nil)
-        {
-            print(awsReturn.result)
-        }
-        
-        
-        
-       
+        if (loginOrSignup == 0){ // login
+            if pwdTextField.text == nil {
+                let alertController = UIAlertController(title: "UApp", message:
+                    "Please input password.", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+                return
+            }
+            Lambda.invoke(request).continueWithBlock({(task) -> AnyObject! in
+                if let error = task.error {
+                    print("lambda invoke failed: [\(error)]")
+                }
+                else if let exception = task.exception {
+                    print("lambda invoke failed: [\(exception)]")
+                }
+                else{
+                    print("DEBUG: call lambda sucessfully")
+                    print(task.result)
+                    pwd = String(task.result.payload)
+                    print("password= \"\(pwd)\"")
+                    if (pwd == "NotFound"){ // user_id not found
+                        let alertController = UIAlertController(title: "UApp", message:
+                            "the user id \'\(emailInput)\' is not existed.", preferredStyle: UIAlertControllerStyle.Alert)
+                        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                        
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    }
+                    else{ // return and compare password
+                        if (pwd != self.pwdTextField.text){
+                            let alertController = UIAlertController(title: "UApp", message:
+                                "Wrong password.", preferredStyle: UIAlertControllerStyle.Alert)
+                            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                            
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        }
+                        else
+                        {
+                            print("skip to home page.")
+                        }
+                        
+                    }
+                    
+                }
+                return nil
+            })
 
-        
-       
+            
+        }
+        else // signup
+        {
+            if(checkPassword(pwdTextField.text!, pwd2: pwdAgainTextField.text!) == false){
+                let alertController = UIAlertController(title: "UApp", message:
+                    "Password does not match the confirm password.", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+                return
+            }
+            
+            Lambda.invoke(request).continueWithBlock({(task) -> AnyObject! in
+                if let error = task.error {
+                    print("lambda invoke failed: [\(error)]")
+                }
+                else if let exception = task.exception {
+                    print("lambda invoke failed: [\(exception)]")
+                }
+                else{
+                    print("DEBUG: call lambda sucessfully")
+                    print(task.result)
+                    pwd = String(task.result.payload)
+                    print("password= \"\(pwd)\"")
+                    if (pwd == "NotFound"){ // user_id not used. load home page.
+                        request.functionName = LambdaSignUp
+                        request.payload = "{\"user_id\": \"\(emailInput)\",\"password\":\"\(self.pwdTextField.text!)\" }"
+                        Lambda.invoke(request).continueWithBlock({(task1) -> AnyObject! in
+                            if let error1 = task1.error {
+                                print("lambda invode failed:[\(error1)]")
+                            }
+                            else if let exception1 = task1.exception{
+                                print("lambda invoke failed: [\(exception1)]")
+                            }
+                            else{
+                                 self.performSegueWithIdentifier("segueShowHome", sender: self)
+                            }
+                            return nil
+                        })
+                        print("skip to home page now..")
+                    }
+                    else{ // return password. it means that this user_id had been used.
+                        let alertController = UIAlertController(title: "UApp", message:
+                            "the user id \(emailInput) is taken. Please try another one!", preferredStyle: UIAlertControllerStyle.Alert)
+                        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                        
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                        
+                    }
+                    
+                }
+                return nil
+            })
+            
         }
     }
+}
+
     
     
 
