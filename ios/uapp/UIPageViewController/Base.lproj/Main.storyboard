@@ -9,6 +9,7 @@
     <customFonts key="customFonts">
         <mutableArray key="GurmukhiMN.ttc">
             <string>GurmukhiMN-Bold</string>
+            <string>GurmukhiMN-Bold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -109,9 +110,6 @@
                                                 <exclude reference="Dtm-Mw-wsy"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="77" y="22" width="255" height="42"/>
-                                        </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.17254901959999999" green="0.51372549020000002" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
@@ -143,8 +141,7 @@
                                         <exclude reference="acw-3N-Gpl"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="176" width="400" height="44"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="acw-3N-Gpl"/>
                                     </mask>
@@ -487,10 +484,110 @@
             </objects>
             <point key="canvasLocation" x="849" y="1323"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Jot-kk-owH">
+            <objects>
+                <viewController id="eII-TD-Ccs" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C8W-Np-2WT"/>
+                        <viewControllerLayoutGuide type="bottom" id="fLo-Ce-FCt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SRg-HW-OLW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fl6-38-atI">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="255" translatesAutoresizingMaskIntoConstraints="NO" id="v8g-Rk-gdn">
+                                        <rect key="frame" x="173.5" y="14" width="254.5" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="v8g-Rk-gdn" secondAttribute="height" multiplier="85:12" id="nN8-RL-S2c"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="nN8-RL-S2c"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.51372549020000002" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="v8g-Rk-gdn" firstAttribute="centerX" secondItem="fl6-38-atI" secondAttribute="centerX" id="6aY-qu-BTm"/>
+                                    <constraint firstItem="v8g-Rk-gdn" firstAttribute="centerY" secondItem="fl6-38-atI" secondAttribute="centerY" id="WbH-Ek-aHu"/>
+                                    <constraint firstAttribute="height" constant="88" id="cbb-Bc-p9e">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="70"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="v8g-Rk-gdn"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="cbb-Bc-p9e"/>
+                                        <exclude reference="6aY-qu-BTm"/>
+                                        <exclude reference="WbH-Ek-aHu"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="v8g-Rk-gdn"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="cbb-Bc-p9e"/>
+                                        <include reference="6aY-qu-BTm"/>
+                                        <include reference="WbH-Ek-aHu"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LIz-Jk-oD8">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="62" y="139" width="80" height="80"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fl6-38-atI" firstAttribute="top" secondItem="C8W-Np-2WT" secondAttribute="bottom" id="0Jf-OR-yCF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fl6-38-atI" secondAttribute="trailing" constant="-20" id="KIc-Wh-AJV"/>
+                            <constraint firstItem="fl6-38-atI" firstAttribute="leading" secondItem="SRg-HW-OLW" secondAttribute="leadingMargin" constant="-20" id="PzN-QS-7ze"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="fl6-38-atI"/>
+                                <exclude reference="LIz-Jk-oD8"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0Jf-OR-yCF"/>
+                                <exclude reference="KIc-Wh-AJV"/>
+                                <exclude reference="PzN-QS-7ze"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fl6-38-atI"/>
+                                <include reference="LIz-Jk-oD8"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0Jf-OR-yCF"/>
+                                <include reference="KIc-Wh-AJV"/>
+                                <include reference="PzN-QS-7ze"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SS3-QK-U9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540.5" y="1521"/>
+        </scene>
     </scenes>
     <resources>
         <image name="facebook" width="584" height="576"/>
         <image name="gplus" width="455" height="455"/>
-        <image name="logo" width="259" height="395"/>
+        <image name="logo" width="259" height="262"/>
     </resources>
 </document>
