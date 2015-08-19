@@ -25,8 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Sets up the AWS Mobile SDK for IOS
         let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: "us-east-1:cab334cf-8514-4060-82e7-13afbdd331f5")
         let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialProvider)
-        AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
-                
+        AWSLambda.registerLambdaWithConfiguration(configuration, forKey: "USEast1Lambda")
+        
+        return true
+
+        
         return true
     }
 
