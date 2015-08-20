@@ -116,12 +116,12 @@ class FindSchoolViewController: UIViewController, UITableViewDataSource, UITable
             
         })
         NSLog("not found.")
-        let alertController = UIAlertController(title: "UApp", message:
+        /*let alertController = UIAlertController(title: "UApp", message:
             "Not found. Please search another school.", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
         
         self.presentViewController(alertController, animated: true, completion: nil)
-        
+        */
         
     }
     

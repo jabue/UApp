@@ -252,12 +252,23 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                     if (pwd == "NotFound"){ // user_id not used. load home page.
                         request.functionName = LambdaSignUp
                         request.payload = "{\"user_id\": \"\(emailInput)\",\"password\":\"\(self.pwdTextField.text!)\" }"
+                        print(request)
                         Lambda.invoke(request).continueWithBlock({(task1) -> AnyObject! in
                             if let error1 = task1.error {
-                                print("lambda invode failed:[\(error1)]")
+                                print("lambda invoke failed:[\(error1)]")
+                                let alertController = UIAlertController(title: "UApp", message:
+                                    "Server busy. Please try later.", preferredStyle: UIAlertControllerStyle.Alert)
+                                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                                
+                                self.presentViewController(alertController, animated: true, completion: nil)
                             }
                             else if let exception1 = task1.exception{
                                 print("lambda invoke failed: [\(exception1)]")
+                                let alertController = UIAlertController(title: "UApp", message:
+                                    "Server busy. Please try later.", preferredStyle: UIAlertControllerStyle.Alert)
+                                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                                
+                                self.presentViewController(alertController, animated: true, completion: nil)
                             }
                             else{
                                  self.performSegueWithIdentifier("segueShowHome", sender: self)
