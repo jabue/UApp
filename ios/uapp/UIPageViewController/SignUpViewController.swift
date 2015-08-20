@@ -216,6 +216,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                         else
                         {
                             print("skip to home page.")
+                            self.performSegueWithIdentifier("segueShowHome", sender: self)
                         }
                         
                     }
