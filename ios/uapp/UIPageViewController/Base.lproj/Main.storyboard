@@ -98,8 +98,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjc-xm-Pew">
                                 <rect key="frame" x="0.0" y="20" width="600" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Your School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="255" translatesAutoresizingMaskIntoConstraints="NO" id="SKC-E6-OZL">
-                                        <rect key="frame" x="173.5" y="14" width="254.5" height="42"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Find Your School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="255" translatesAutoresizingMaskIntoConstraints="NO" id="SKC-E6-OZL">
+                                        <rect key="frame" x="174" y="14" width="255" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="SKC-E6-OZL" secondAttribute="height" multiplier="85:12" id="Dtm-Mw-wsy"/>
                                         </constraints>
@@ -332,7 +332,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR LINK TO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OH8-Mv-7QS">
-                                <rect key="frame" x="259" y="485" width="82" height="14.5"/>
+                                <rect key="frame" x="259" y="485" width="82" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OH8-Mv-7QS" secondAttribute="height" multiplier="79:14" id="HsJ-xD-rf6"/>
                                     <constraint firstAttribute="width" constant="42" id="MVY-Ju-7e3"/>
@@ -419,8 +419,8 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnGplus" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fez-pG-rBX">
-                                <rect key="frame" x="361" y="511" width="50.5" height="50.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="btnGplus" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fez-pG-rBX">
+                                <rect key="frame" x="361" y="511" width="51" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="MxA-Ca-GMl"/>
                                     <constraint firstAttribute="width" secondItem="Fez-pG-rBX" secondAttribute="height" multiplier="1:1" id="O6i-E7-fBv"/>
@@ -436,7 +436,7 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Forgot password?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3Dr-ox-Lah">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="txtFogotPwd" text="Forgot password?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3Dr-ox-Lah">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="127" id="S8a-oz-jji"/>
@@ -560,14 +560,16 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="3WG-i7-WLz" id="dPj-pa-E3v"/>
+                        <outlet property="forgotPwdTextField" destination="3Dr-ox-Lah" id="mbs-Ne-rGe"/>
                         <outlet property="pwdAgainTextField" destination="cGe-Nb-e69" id="rMv-ZZ-c4o"/>
                         <outlet property="pwdTextField" destination="UQr-qh-u2b" id="Rnv-ah-Qs3"/>
                         <outlet property="segmentControl" destination="5Yu-Na-MsY" id="Ltr-DT-O78"/>
+                        <segue destination="eII-TD-Ccs" kind="show" identifier="segueShowHome" id="Scf-YM-sDd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8VV-Fn-Cl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="1323"/>
+            <point key="canvasLocation" x="987" y="1323.75"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Jot-kk-owH">
@@ -668,7 +670,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xp8-KR-rZM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="Xp8-KR-rZM">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Xp8-KR-rZM" secondAttribute="height" multiplier="1:1" id="G2r-sw-WHJ"/>
@@ -687,7 +689,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ybM-Tx-aFO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Schedule" translatesAutoresizingMaskIntoConstraints="NO" id="ybM-Tx-aFO">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="92" id="Eei-5B-Kom"/>
@@ -706,7 +708,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FwE-Uj-Ik0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Message" translatesAutoresizingMaskIntoConstraints="NO" id="FwE-Uj-Ik0">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="92" id="5Ow-Jv-C9v"/>
@@ -725,7 +727,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cfe-fl-D8c">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Setting" translatesAutoresizingMaskIntoConstraints="NO" id="Cfe-fl-D8c">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="92" id="IXv-Mf-Ehu"/>
@@ -744,7 +746,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yJS-iY-fPg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QOTD" translatesAutoresizingMaskIntoConstraints="NO" id="yJS-iY-fPg">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yJS-iY-fPg" secondAttribute="height" multiplier="1:1" id="0sE-uA-qLO"/>
@@ -763,7 +765,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Akd-qr-7Ty">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Activites" translatesAutoresizingMaskIntoConstraints="NO" id="Akd-qr-7Ty">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Akd-qr-7Ty" secondAttribute="height" multiplier="1:1" id="KGP-Fi-w7J"/>
@@ -782,7 +784,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Qa-Yo-1dx">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Storage" translatesAutoresizingMaskIntoConstraints="NO" id="1Qa-Yo-1dx">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="92" id="BHk-0s-XeA"/>
@@ -801,7 +803,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XEI-mG-0A5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Class" translatesAutoresizingMaskIntoConstraints="NO" id="XEI-mG-0A5">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XEI-mG-0A5" secondAttribute="height" multiplier="1:1" id="N0r-Do-6XF"/>
@@ -820,7 +822,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uEZ-yr-B3r">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Snap" translatesAutoresizingMaskIntoConstraints="NO" id="uEZ-yr-B3r">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="92" id="beC-Mn-Bd5"/>
@@ -884,27 +886,27 @@
                                 <exclude reference="uEZ-yr-B3r"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0Jf-OR-yCF"/>
-                                <exclude reference="KIc-Wh-AJV"/>
-                                <exclude reference="PzN-QS-7ze"/>
-                                <exclude reference="72j-Hc-3Xe"/>
-                                <exclude reference="hpt-K0-J5V"/>
-                                <exclude reference="iBN-xg-7r8"/>
-                                <exclude reference="qSF-Gb-ET0"/>
-                                <exclude reference="vU2-ri-ANT"/>
-                                <exclude reference="OyX-Om-PJ8"/>
-                                <exclude reference="s28-PT-FnI"/>
                                 <exclude reference="8lf-Ep-7CC"/>
                                 <exclude reference="CMN-dC-WnE"/>
                                 <exclude reference="mXb-uP-2PQ"/>
+                                <exclude reference="vU2-ri-ANT"/>
+                                <exclude reference="bfS-qB-Xpf"/>
+                                <exclude reference="OyX-Om-PJ8"/>
+                                <exclude reference="s28-PT-FnI"/>
                                 <exclude reference="O1V-hy-msq"/>
                                 <exclude reference="PwT-l1-Wdk"/>
-                                <exclude reference="bfS-qB-Xpf"/>
+                                <exclude reference="72j-Hc-3Xe"/>
+                                <exclude reference="0Jf-OR-yCF"/>
+                                <exclude reference="KIc-Wh-AJV"/>
+                                <exclude reference="PzN-QS-7ze"/>
                                 <exclude reference="1ib-Cz-LWy"/>
                                 <exclude reference="55g-eR-uhJ"/>
                                 <exclude reference="Gzv-Xc-YDE"/>
                                 <exclude reference="VJ4-A4-eOu"/>
                                 <exclude reference="tNt-Uo-hLb"/>
+                                <exclude reference="hpt-K0-J5V"/>
+                                <exclude reference="iBN-xg-7r8"/>
+                                <exclude reference="qSF-Gb-ET0"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -921,34 +923,34 @@
                                 <include reference="uEZ-yr-B3r"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0Jf-OR-yCF"/>
-                                <include reference="KIc-Wh-AJV"/>
-                                <include reference="PzN-QS-7ze"/>
-                                <include reference="72j-Hc-3Xe"/>
-                                <include reference="hpt-K0-J5V"/>
-                                <include reference="iBN-xg-7r8"/>
-                                <include reference="qSF-Gb-ET0"/>
-                                <include reference="vU2-ri-ANT"/>
-                                <include reference="OyX-Om-PJ8"/>
-                                <include reference="s28-PT-FnI"/>
                                 <include reference="8lf-Ep-7CC"/>
                                 <include reference="CMN-dC-WnE"/>
                                 <include reference="mXb-uP-2PQ"/>
+                                <include reference="vU2-ri-ANT"/>
+                                <include reference="bfS-qB-Xpf"/>
+                                <include reference="OyX-Om-PJ8"/>
+                                <include reference="s28-PT-FnI"/>
                                 <include reference="O1V-hy-msq"/>
                                 <include reference="PwT-l1-Wdk"/>
-                                <include reference="bfS-qB-Xpf"/>
+                                <include reference="72j-Hc-3Xe"/>
+                                <include reference="0Jf-OR-yCF"/>
+                                <include reference="KIc-Wh-AJV"/>
+                                <include reference="PzN-QS-7ze"/>
                                 <include reference="1ib-Cz-LWy"/>
                                 <include reference="55g-eR-uhJ"/>
                                 <include reference="Gzv-Xc-YDE"/>
                                 <include reference="VJ4-A4-eOu"/>
                                 <include reference="tNt-Uo-hLb"/>
+                                <include reference="hpt-K0-J5V"/>
+                                <include reference="iBN-xg-7r8"/>
+                                <include reference="qSF-Gb-ET0"/>
                             </mask>
                         </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SS3-QK-U9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1512" y="1323"/>
+            <point key="canvasLocation" x="1719" y="1329"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="me6-B1-PAZ">
@@ -970,6 +972,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Activites" width="1904" height="1904"/>
+        <image name="Class" width="1904" height="1904"/>
+        <image name="Message" width="1904" height="1904"/>
+        <image name="Profile" width="1904" height="1904"/>
+        <image name="QOTD" width="1904" height="1904"/>
+        <image name="Schedule" width="1904" height="1904"/>
+        <image name="Setting" width="1904" height="1904"/>
+        <image name="Snap" width="1904" height="1904"/>
+        <image name="Storage" width="1904" height="1904"/>
         <image name="facebook" width="584" height="576"/>
         <image name="gplus" width="455" height="455"/>
         <image name="logo w app name" width="259" height="395"/>
