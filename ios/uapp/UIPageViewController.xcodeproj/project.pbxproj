@@ -28,6 +28,7 @@
 		A4DB51311B8995FF00976222 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB51301B8995FF00976222 /* DetailViewController.swift */; };
 		A4DB51331B89A93400976222 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB51321B89A93400976222 /* ContainerViewController.swift */; };
 		A4DB51351B89B65100976222 /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB51341B89B65100976222 /* HamburgerView.swift */; };
+		A4ED19611B8B881F004B3D1B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ED19601B8B881F004B3D1B /* libsqlite3.tbd */; };
 		A4F36C3E1B82573E002CC587 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F36C3D1B82573E002CC587 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		A4DB51301B8995FF00976222 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A4DB51321B89A93400976222 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		A4DB51341B89B65100976222 /* HamburgerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
+		A4ED19601B8B881F004B3D1B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A4F36C3D1B82573E002CC587 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
 		C9BDFD18188BFE32ECE26A67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4ED19611B8B881F004B3D1B /* libsqlite3.tbd in Frameworks */,
 				A4BC4856735B1C8D1C45A1B6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,6 +189,7 @@
 		E50F66C935583CC1A2B44AF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A4ED19601B8B881F004B3D1B /* libsqlite3.tbd */,
 				C9BDFD18188BFE32ECE26A67 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -243,11 +247,11 @@
 				TargetAttributes = {
 					78E75F3B1AC5FC48001A93F1 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = UR4X4CMCXP;
+						DevelopmentTeam = V39EF4QG4J;
 					};
 					78E75F501AC5FC48001A93F1 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = X2NR53W56Q;
+						DevelopmentTeam = V39EF4QG4J;
 						TestTargetID = 78E75F3B1AC5FC48001A93F1;
 					};
 				};
@@ -475,7 +479,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp3;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;
@@ -492,7 +496,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp3;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;

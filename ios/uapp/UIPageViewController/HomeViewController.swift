@@ -16,9 +16,13 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
+    
     @IBAction func showProfile(sender: UIButton) {
-        self.performSegueWithIdentifier("showProfileSegue", sender: self)
+        self.performSegueWithIdentifier("showProfile", sender: self)
     }
+   
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

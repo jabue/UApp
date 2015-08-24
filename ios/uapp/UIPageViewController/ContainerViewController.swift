@@ -12,6 +12,7 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var menuContainerView: UIView!
+    
     private var detailViewController: DetailViewController?
     var showingMenu = false
     
