@@ -14,11 +14,20 @@
 		78E75F4C1AC5FC48001A93F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E75F4A1AC5FC48001A93F1 /* LaunchScreen.xib */; };
 		78E75F581AC5FC48001A93F1 /* UIPageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */; };
 		78E75F621AC5FCF1001A93F1 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */; };
+		A43DA9C61B85A3DF00DA1B6B /* schools.txt in Resources */ = {isa = PBXBuildFile; fileRef = A43DA9C51B85A3DF00DA1B6B /* schools.txt */; };
 		A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0B31B7D35F7004B3E1B /* FindSchoolViewController.swift */; };
 		A445F0B61B7D3827004B3E1B /* SchoolItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0B51B7D3827004B3E1B /* SchoolItem.swift */; };
 		A445F0F21B7D645A004B3E1B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0F11B7D645A004B3E1B /* SignUpViewController.swift */; };
 		A4BC4856735B1C8D1C45A1B6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BDFD18188BFE32ECE26A67 /* libPods.a */; };
 		A4D3EA701B7EA67500A0480E /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = A4D3EA6F1B7EA67500A0480E /* podfile */; };
+		A4DB51251B8944BD00976222 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB51241B8944BD00976222 /* MenuViewController.swift */; };
+		A4DB51271B8954C700976222 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB51261B8954C700976222 /* HomeViewController.swift */; };
+		A4DB51291B89904400976222 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB51281B89904400976222 /* Extensions.swift */; };
+		A4DB512D1B8991B700976222 /* MenuItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4DB512C1B8991B700976222 /* MenuItems.plist */; };
+		A4DB512F1B89928600976222 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB512E1B89928600976222 /* MenuItemCell.swift */; };
+		A4DB51311B8995FF00976222 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB51301B8995FF00976222 /* DetailViewController.swift */; };
+		A4DB51331B89A93400976222 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB51321B89A93400976222 /* ContainerViewController.swift */; };
+		A4DB51351B89B65100976222 /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB51341B89B65100976222 /* HamburgerView.swift */; };
 		A4F36C3E1B82573E002CC587 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F36C3D1B82573E002CC587 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,11 +55,20 @@
 		78E75F561AC5FC48001A93F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerTests.swift; sourceTree = "<group>"; };
 		78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		A43DA9C51B85A3DF00DA1B6B /* schools.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = schools.txt; path = UIPageViewController/schools.txt; sourceTree = "<group>"; };
 		A445F0B31B7D35F7004B3E1B /* FindSchoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindSchoolViewController.swift; sourceTree = "<group>"; };
 		A445F0B51B7D3827004B3E1B /* SchoolItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolItem.swift; sourceTree = "<group>"; };
 		A445F0F11B7D645A004B3E1B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A4D3EA6F1B7EA67500A0480E /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A4D3EA801B7EB98500A0480E /* ObjectiveC_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ObjectiveC_Bridging_Header.h; path = ../ObjectiveC_Bridging_Header.h; sourceTree = "<group>"; };
+		A4DB51241B8944BD00976222 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		A4DB51261B8954C700976222 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A4DB51281B89904400976222 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A4DB512C1B8991B700976222 /* MenuItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MenuItems.plist; sourceTree = "<group>"; };
+		A4DB512E1B89928600976222 /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		A4DB51301B8995FF00976222 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A4DB51321B89A93400976222 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		A4DB51341B89B65100976222 /* HamburgerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
 		A4F36C3D1B82573E002CC587 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
 		C9BDFD18188BFE32ECE26A67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,6 +95,7 @@
 		78E75F331AC5FC48001A93F1 = {
 			isa = PBXGroup;
 			children = (
+				A43DA9C71B85A74D00DA1B6B /* Resource */,
 				A4D3EA6F1B7EA67500A0480E /* podfile */,
 				78E75F3E1AC5FC48001A93F1 /* UIPageViewController */,
 				78E75F541AC5FC48001A93F1 /* UIPageViewControllerTests */,
@@ -98,14 +117,22 @@
 		78E75F3E1AC5FC48001A93F1 /* UIPageViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A4DB51261B8954C700976222 /* HomeViewController.swift */,
 				78E75F411AC5FC48001A93F1 /* AppDelegate.swift */,
 				A4F36C3D1B82573E002CC587 /* Constants.swift */,
+				A4DB51321B89A93400976222 /* ContainerViewController.swift */,
+				A4DB51341B89B65100976222 /* HamburgerView.swift */,
 				78E75F431AC5FC48001A93F1 /* ViewController.swift */,
+				A4DB512C1B8991B700976222 /* MenuItems.plist */,
 				78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */,
 				A445F0B31B7D35F7004B3E1B /* FindSchoolViewController.swift */,
 				A445F0B51B7D3827004B3E1B /* SchoolItem.swift */,
 				A445F0F11B7D645A004B3E1B /* SignUpViewController.swift */,
 				78E75F451AC5FC48001A93F1 /* Main.storyboard */,
+				A4DB51301B8995FF00976222 /* DetailViewController.swift */,
+				A4DB51281B89904400976222 /* Extensions.swift */,
+				A4DB512E1B89928600976222 /* MenuItemCell.swift */,
+				A4DB51241B8944BD00976222 /* MenuViewController.swift */,
 				78E75F481AC5FC48001A93F1 /* Images.xcassets */,
 				78E75F4A1AC5FC48001A93F1 /* LaunchScreen.xib */,
 				78E75F3F1AC5FC48001A93F1 /* Supporting Files */,
@@ -137,6 +164,14 @@
 				78E75F561AC5FC48001A93F1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A43DA9C71B85A74D00DA1B6B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A43DA9C51B85A3DF00DA1B6B /* schools.txt */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 		C03F8C97DFD76D3E4D9554CB /* Pods */ = {
@@ -243,7 +278,9 @@
 			files = (
 				78E75F471AC5FC48001A93F1 /* Main.storyboard in Resources */,
 				78E75F4C1AC5FC48001A93F1 /* LaunchScreen.xib in Resources */,
+				A4DB512D1B8991B700976222 /* MenuItems.plist in Resources */,
 				A4D3EA701B7EA67500A0480E /* podfile in Resources */,
+				A43DA9C61B85A3DF00DA1B6B /* schools.txt in Resources */,
 				78E75F491AC5FC48001A93F1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,8 +334,15 @@
 			files = (
 				78E75F441AC5FC48001A93F1 /* ViewController.swift in Sources */,
 				A445F0F21B7D645A004B3E1B /* SignUpViewController.swift in Sources */,
+				A4DB51331B89A93400976222 /* ContainerViewController.swift in Sources */,
+				A4DB512F1B89928600976222 /* MenuItemCell.swift in Sources */,
+				A4DB51351B89B65100976222 /* HamburgerView.swift in Sources */,
+				A4DB51311B8995FF00976222 /* DetailViewController.swift in Sources */,
 				A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift in Sources */,
+				A4DB51251B8944BD00976222 /* MenuViewController.swift in Sources */,
 				78E75F621AC5FCF1001A93F1 /* ContentViewController.swift in Sources */,
+				A4DB51291B89904400976222 /* Extensions.swift in Sources */,
+				A4DB51271B8954C700976222 /* HomeViewController.swift in Sources */,
 				A4F36C3E1B82573E002CC587 /* Constants.swift in Sources */,
 				78E75F421AC5FC48001A93F1 /* AppDelegate.swift in Sources */,
 				A445F0B61B7D3827004B3E1B /* SchoolItem.swift in Sources */,
@@ -431,7 +475,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;
@@ -448,7 +492,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;

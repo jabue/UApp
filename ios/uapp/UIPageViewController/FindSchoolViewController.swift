@@ -21,7 +21,24 @@ class FindSchoolViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
+        let filePath = NSBundle.mainBundle().pathForResource("schools", ofType: "txt")
+        print(filePath!)
+        let contents: NSString?
+        do {
+            contents = try NSString(contentsOfFile: filePath!, encoding: NSUTF8StringEncoding)
+        } catch _ {
+            print("read schools faild:\(filePath)")
+            contents = nil
+        }
         
+        print(contents!)
+        while  (contents?.rangeOfString("\n") != nil)
+        {
+            print(contents?.substringWithRange(NSMakeRange(0, contents!.rangeOfString("\n"))))
+            contents =
+            
+        }*/
         self.schoolsArray += [SchoolItem(name: "Vea Software")]
         self.schoolsArray += [SchoolItem(name: "Apple")]
         self.schoolsArray += [SchoolItem(name: "iTunes")]

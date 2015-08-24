@@ -1,0 +1,18 @@
+bcit : British Columbia Institute of Technology
+sfu : Simon Fraser University
+SFU : Simon Fraser University
+ECUAD: Emily Carr University of Art + Design
+KPU: Kwantlen Polytechnic University
+RRU: Royal Roads University
+SFU: Simon Fraser University
+TRU: Thompson Rivers University
+UBC: University of British Columbia
+UNBC: University of Northern British Columbia
+UVic: University of Victoria
+CU: Capilano University
+FDU: Fairleign Dickinson University
+TWU: Trinity Western University
+VIU: Vancouver Island University
+UFV: University of the Fraser Valley
+QU: Quest University
+UCW: University Canada West
