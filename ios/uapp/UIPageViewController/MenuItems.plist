@@ -18,17 +18,17 @@
 		<key>image</key>
 		<string>Storage</string>
 		<key>bigImage</key>
-		<string>Storage</string>
+		<string>Profile</string>
 		<key>colors</key>
 		<array>
-			<integer>96</integer>
-			<integer>104</integer>
-			<integer>96</integer>
+			<integer>36</integer>
+			<integer>138</integer>
+			<integer>177</integer>
 		</array>
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>favourite</string>
+		<string>favouriteW</string>
 		<key>bigImage</key>
 		<string>SmileBig</string>
 		<key>colors</key>
@@ -40,7 +40,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>Message</string>
+		<string>MessageW</string>
 		<key>bigImage</key>
 		<string>ActivitiesBig</string>
 		<key>colors</key>
@@ -52,7 +52,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>Activites</string>
+		<string>ActivitesW</string>
 		<key>bigImage</key>
 		<string>DrinksBig</string>
 		<key>colors</key>
