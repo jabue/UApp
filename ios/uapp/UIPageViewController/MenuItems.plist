@@ -4,6 +4,18 @@
 <array>
 	<dict>
 		<key>image</key>
+		<string>logo</string>
+		<key>bigImage</key>
+		<string>logo</string>
+		<key>colors</key>
+		<array>
+			<integer>96</integer>
+			<integer>104</integer>
+			<integer>96</integer>
+		</array>
+	</dict>
+	<dict>
+		<key>image</key>
 		<string>Storage</string>
 		<key>bigImage</key>
 		<string>Storage</string>
