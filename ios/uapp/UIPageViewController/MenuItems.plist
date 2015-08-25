@@ -4,9 +4,21 @@
 <array>
 	<dict>
 		<key>image</key>
-		<string>Profile</string>
+		<string>logo</string>
 		<key>bigImage</key>
-		<string>Profile</string>
+		<string>logo</string>
+		<key>colors</key>
+		<array>
+			<integer>96</integer>
+			<integer>104</integer>
+			<integer>96</integer>
+		</array>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>StorageW</string>
+		<key>bigImage</key>
+		<string>Storage</string>
 		<key>colors</key>
 		<array>
 			<integer>36</integer>
@@ -18,7 +30,7 @@
 		<key>image</key>
 		<string>favouriteW</string>
 		<key>bigImage</key>
-		<string>SmileBig</string>
+		<string>favouriteW</string>
 		<key>colors</key>
 		<array>
 			<integer>96</integer>
@@ -30,7 +42,7 @@
 		<key>image</key>
 		<string>MessageW</string>
 		<key>bigImage</key>
-		<string>ActivitiesBig</string>
+		<string>MessageW</string>
 		<key>colors</key>
 		<array>
 			<integer>96</integer>
@@ -42,7 +54,7 @@
 		<key>image</key>
 		<string>ActivitesW</string>
 		<key>bigImage</key>
-		<string>DrinksBig</string>
+		<string>ActivitesW</string>
 		<key>colors</key>
 		<array>
 			<integer>96</integer>
