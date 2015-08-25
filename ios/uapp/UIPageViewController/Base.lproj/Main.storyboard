@@ -950,10 +950,10 @@
             </objects>
             <point key="canvasLocation" x="3060" y="924.75"/>
         </scene>
-        <!--View Controller-->
+        <!--My Pics-->
         <scene sceneID="Cps-vj-MLb">
             <objects>
-                <viewController id="Nmd-ey-tBS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="My Pic" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nmd-ey-tBS" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vyX-Ew-Ugc"/>
                         <viewControllerLayoutGuide type="bottom" id="pii-sh-OXZ"/>
@@ -963,11 +963,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="54W-Rp-gGM"/>
+                    <navigationItem key="navigationItem" title="My Pics" id="54W-Rp-gGM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1O7-PX-G0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1422" y="1701.75"/>
+            <point key="canvasLocation" x="2236.5" y="1701.75"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="S0o-sh-HiK">
+            <objects>
+                <viewController id="eIm-MU-A0F" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="avK-tj-Sgv"/>
+                        <viewControllerLayoutGuide type="bottom" id="7wo-O9-kKn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="drW-fx-JRD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MI7-zf-fzU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2913" y="1701.75"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="654-gj-wER">
@@ -1042,7 +1060,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8i-Ey-INh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3345" y="1647.75"/>
+            <point key="canvasLocation" x="4263" y="1647.75"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Pl8-E9-6Sp">
@@ -1077,7 +1095,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsL-uj-KgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4767" y="1647.75"/>
+            <point key="canvasLocation" x="5685" y="1647.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eMN-e3-afD">
@@ -1119,7 +1137,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iw7-T1-DST" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4092" y="1647.75"/>
+            <point key="canvasLocation" x="5010" y="1647.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jlF-g7-W8M">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Oho-zz-0x5" customClass="NavigationController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hDE-zz-ICY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Nmd-ey-tBS" kind="relationship" relationship="rootViewController" id="3u8-uz-OEt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DJy-Gm-L3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1422" y="1701.75"/>
         </scene>
     </scenes>
     <resources>
