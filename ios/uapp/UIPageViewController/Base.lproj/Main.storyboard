@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -981,24 +980,6 @@
             </objects>
             <point key="canvasLocation" x="789" y="1641"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="S0o-sh-HiK">
-            <objects>
-                <viewController id="eIm-MU-A0F" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="avK-tj-Sgv"/>
-                        <viewControllerLayoutGuide type="bottom" id="7wo-O9-kKn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="drW-fx-JRD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MI7-zf-fzU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2209.5" y="1631.25"/>
-        </scene>
         <!--Container View Controller-->
         <scene sceneID="654-gj-wER">
             <objects>
@@ -1205,7 +1186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsL-uj-KgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3049.5" y="1647.75"/>
+            <point key="canvasLocation" x="3033" y="2033"/>
         </scene>
         <!--My Pics-->
         <scene sceneID="pFo-nc-hBg">
@@ -1236,7 +1217,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EY3-l1-gHa">
@@ -1294,7 +1275,7 @@
                     <navigationItem key="navigationItem" id="lAZ-7l-MAR">
                         <nil key="title"/>
                         <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" minimumFontSize="17" id="RvZ-qB-agA">
-                            <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                            <rect key="frame" x="252" y="7" width="97" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="search"/>
@@ -1306,7 +1287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikd-j9-c7z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3513" y="1631.25"/>
+            <point key="canvasLocation" x="3749" y="2582"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eMN-e3-afD">
@@ -1348,7 +1329,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iw7-T1-DST" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2850" y="1631.25"/>
+            <point key="canvasLocation" x="2274" y="1967"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jlF-g7-W8M">
@@ -1407,6 +1388,6 @@
         <image name="pic" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qZl-hY-h3h"/>
+        <segue reference="ufu-DF-Kt7"/>
     </inferredMetricsTieBreakers>
 </document>
