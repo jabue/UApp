@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FA8D65E1B8CEC5D00172D19 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA8D65D1B8CEC5D00172D19 /* NavigationController.swift */; };
 		78E75F421AC5FC48001A93F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F411AC5FC48001A93F1 /* AppDelegate.swift */; };
 		78E75F441AC5FC48001A93F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F431AC5FC48001A93F1 /* ViewController.swift */; };
 		78E75F471AC5FC48001A93F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E75F451AC5FC48001A93F1 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FA8D65D1B8CEC5D00172D19 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		44DE8D6FE573C50F52B21B64 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		58E46A51F82C31CF7C5EE6F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		78E75F3C1AC5FC48001A93F1 /* UIPageViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIPageViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +140,7 @@
 				A445F0B51B7D3827004B3E1B /* SchoolItem.swift */,
 				A445F0F11B7D645A004B3E1B /* SignUpViewController.swift */,
 				78E75F451AC5FC48001A93F1 /* Main.storyboard */,
+				0FA8D65D1B8CEC5D00172D19 /* NavigationController.swift */,
 				A4DB51301B8995FF00976222 /* DetailViewController.swift */,
 				A4DB51281B89904400976222 /* Extensions.swift */,
 				A4DB512E1B89928600976222 /* MenuItemCell.swift */,
@@ -351,6 +354,7 @@
 				A4DB51311B8995FF00976222 /* DetailViewController.swift in Sources */,
 				A409437A1B8D26EF009E824C /* FlickrSearcher.swift in Sources */,
 				A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift in Sources */,
+				0FA8D65E1B8CEC5D00172D19 /* NavigationController.swift in Sources */,
 				A4DB51251B8944BD00976222 /* MenuViewController.swift in Sources */,
 				78E75F621AC5FCF1001A93F1 /* ContentViewController.swift in Sources */,
 				A4DB51291B89904400976222 /* Extensions.swift in Sources */,
