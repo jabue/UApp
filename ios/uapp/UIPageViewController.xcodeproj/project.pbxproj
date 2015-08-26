@@ -14,6 +14,8 @@
 		78E75F4C1AC5FC48001A93F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E75F4A1AC5FC48001A93F1 /* LaunchScreen.xib */; };
 		78E75F581AC5FC48001A93F1 /* UIPageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */; };
 		78E75F621AC5FCF1001A93F1 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */; };
+		A40943781B8D18A6009E824C /* MyPicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40943771B8D18A6009E824C /* MyPicsViewController.swift */; };
+		A409437A1B8D26EF009E824C /* FlickrSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40943791B8D26EF009E824C /* FlickrSearcher.swift */; };
 		A43DA9C61B85A3DF00DA1B6B /* schools.txt in Resources */ = {isa = PBXBuildFile; fileRef = A43DA9C51B85A3DF00DA1B6B /* schools.txt */; };
 		A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0B31B7D35F7004B3E1B /* FindSchoolViewController.swift */; };
 		A445F0B61B7D3827004B3E1B /* SchoolItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0B51B7D3827004B3E1B /* SchoolItem.swift */; };
@@ -56,6 +58,8 @@
 		78E75F561AC5FC48001A93F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerTests.swift; sourceTree = "<group>"; };
 		78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		A40943771B8D18A6009E824C /* MyPicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPicsViewController.swift; sourceTree = "<group>"; };
+		A40943791B8D26EF009E824C /* FlickrSearcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrSearcher.swift; sourceTree = "<group>"; };
 		A43DA9C51B85A3DF00DA1B6B /* schools.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = schools.txt; path = UIPageViewController/schools.txt; sourceTree = "<group>"; };
 		A445F0B31B7D35F7004B3E1B /* FindSchoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindSchoolViewController.swift; sourceTree = "<group>"; };
 		A445F0B51B7D3827004B3E1B /* SchoolItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolItem.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 		78E75F331AC5FC48001A93F1 = {
 			isa = PBXGroup;
 			children = (
+				A40943771B8D18A6009E824C /* MyPicsViewController.swift */,
 				A43DA9C71B85A74D00DA1B6B /* Resource */,
 				A4D3EA6F1B7EA67500A0480E /* podfile */,
 				78E75F3E1AC5FC48001A93F1 /* UIPageViewController */,
@@ -127,6 +132,7 @@
 				A4DB51341B89B65100976222 /* HamburgerView.swift */,
 				78E75F431AC5FC48001A93F1 /* ViewController.swift */,
 				A4DB512C1B8991B700976222 /* MenuItems.plist */,
+				A40943791B8D26EF009E824C /* FlickrSearcher.swift */,
 				78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */,
 				A445F0B31B7D35F7004B3E1B /* FindSchoolViewController.swift */,
 				A445F0B51B7D3827004B3E1B /* SchoolItem.swift */,
@@ -337,11 +343,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				78E75F441AC5FC48001A93F1 /* ViewController.swift in Sources */,
+				A40943781B8D18A6009E824C /* MyPicsViewController.swift in Sources */,
 				A445F0F21B7D645A004B3E1B /* SignUpViewController.swift in Sources */,
 				A4DB51331B89A93400976222 /* ContainerViewController.swift in Sources */,
 				A4DB512F1B89928600976222 /* MenuItemCell.swift in Sources */,
 				A4DB51351B89B65100976222 /* HamburgerView.swift in Sources */,
 				A4DB51311B8995FF00976222 /* DetailViewController.swift in Sources */,
+				A409437A1B8D26EF009E824C /* FlickrSearcher.swift in Sources */,
 				A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift in Sources */,
 				A4DB51251B8944BD00976222 /* MenuViewController.swift in Sources */,
 				78E75F621AC5FCF1001A93F1 /* ContentViewController.swift in Sources */,
