@@ -47,7 +47,7 @@ class MenuViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         // adjust row height so items all fit into view
-        return max(80, CGRectGetHeight(view.bounds) / CGFloat(menuItems.count))
+        return max(60, CGRectGetHeight(view.bounds) / CGFloat(menuItems.count))
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

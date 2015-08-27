@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "QOTD.png",
+      "filename" : "QOTDW.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "QOTDWbig.png",
       "scale" : "2x"
     },
     {

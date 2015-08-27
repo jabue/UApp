@@ -4,21 +4,9 @@
 <array>
 	<dict>
 		<key>image</key>
-		<string>logo</string>
+		<string>logousmall</string>
 		<key>bigImage</key>
-		<string>logo</string>
-		<key>colors</key>
-		<array>
-			<integer>96</integer>
-			<integer>104</integer>
-			<integer>96</integer>
-		</array>
-	</dict>
-	<dict>
-		<key>image</key>
-		<string>StorageW</string>
-		<key>bigImage</key>
-		<string>Storage</string>
+		<string>logousmall</string>
 		<key>colors</key>
 		<array>
 			<integer>36</integer>
@@ -28,14 +16,26 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>favouriteW</string>
+		<string>ActivitiesW</string>
 		<key>bigImage</key>
-		<string>favouriteW</string>
+		<string>ActivitiesW</string>
 		<key>colors</key>
 		<array>
-			<integer>96</integer>
-			<integer>104</integer>
-			<integer>96</integer>
+			<integer>36</integer>
+			<integer>138</integer>
+			<integer>177</integer>
+		</array>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>SettingW</string>
+		<key>bigImage</key>
+		<string>SettingW</string>
+		<key>colors</key>
+		<array>
+			<integer>36</integer>
+			<integer>138</integer>
+			<integer>177</integer>
 		</array>
 	</dict>
 	<dict>
@@ -45,21 +45,45 @@
 		<string>MessageW</string>
 		<key>colors</key>
 		<array>
-			<integer>96</integer>
-			<integer>104</integer>
-			<integer>96</integer>
+			<integer>36</integer>
+			<integer>138</integer>
+			<integer>177</integer>
 		</array>
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>ActivitesW</string>
+		<string>picW</string>
 		<key>bigImage</key>
-		<string>ActivitesW</string>
+		<string>picW</string>
 		<key>colors</key>
 		<array>
-			<integer>96</integer>
-			<integer>104</integer>
-			<integer>96</integer>
+			<integer>36</integer>
+			<integer>138</integer>
+			<integer>177</integer>
+		</array>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>StorageW</string>
+		<key>bigImage</key>
+		<string>StorageW</string>
+		<key>colors</key>
+		<array>
+			<integer>36</integer>
+			<integer>138</integer>
+			<integer>177</integer>
+		</array>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>ScheduleW</string>
+		<key>bigImage</key>
+		<string>ScheduleW</string>
+		<key>colors</key>
+		<array>
+			<integer>36</integer>
+			<integer>138</integer>
+			<integer>177</integer>
 		</array>
 	</dict>
 </array>
