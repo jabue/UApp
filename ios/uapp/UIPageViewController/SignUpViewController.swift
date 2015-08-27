@@ -39,6 +39,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     
     }
     
+    
     override func viewDidLayoutSubviews() {
         
         
@@ -216,7 +217,10 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                         else
                         {
                             print("skip to home page.")
-                            self.performSegueWithIdentifier("segueShowHome", sender: self)
+                            dispatch_async(dispatch_get_main_queue(),{
+                                self.performSegueWithIdentifier("segueShowHome", sender: self)
+                                });
+                            
                         }
                         
                     }
@@ -272,7 +276,9 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                 self.presentViewController(alertController, animated: true, completion: nil)
                             }
                             else{
-                                 self.performSegueWithIdentifier("segueShowHome", sender: self)
+                                dispatch_async(dispatch_get_main_queue(),{
+                                    self.performSegueWithIdentifier("segueShowHome", sender: self)
+                                });
                             }
                             return nil
                         })

@@ -23,6 +23,10 @@ class HomeViewController: UIViewController {
     }
    
     
+    @IBAction func showActivities(sender: UIButton) {
+        self.performSegueWithIdentifier("showActivities", sender: self)
+    }
+   
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

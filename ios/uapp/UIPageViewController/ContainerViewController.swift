@@ -37,6 +37,10 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
             let navigationController = segue.destinationViewController as! UINavigationController
             detailViewController = navigationController.topViewController as? DetailViewController
         }
+        if segue.identifier == "ActivitiesViewSegue" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            detailViewController = navigationController.topViewController as? DetailViewController
+        }
     }
     
     // MARK: ContainerViewController
