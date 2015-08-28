@@ -16,6 +16,8 @@
 		78E75F581AC5FC48001A93F1 /* UIPageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */; };
 		78E75F621AC5FCF1001A93F1 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */; };
 		A409437A1B8D26EF009E824C /* FlickrSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40943791B8D26EF009E824C /* FlickrSearcher.swift */; };
+		A4200F261B8FA353000B3BD2 /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4200F251B8FA353000B3BD2 /* SwitchViewController.swift */; };
+		A4200F281B8FABA7000B3BD2 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */; };
 		A4335A371B8E5E3300C14B54 /* MyPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4335A361B8E5E3300C14B54 /* MyPhotoViewController.swift */; };
 		A4335A391B8E694500C14B54 /* MyPhotoCellViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4335A381B8E694500C14B54 /* MyPhotoCellViewCell.swift */; };
 		A4335A3B1B8E903C00C14B54 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4335A3A1B8E903C00C14B54 /* ActivitiesViewController.swift */; };
@@ -63,6 +65,8 @@
 		78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerTests.swift; sourceTree = "<group>"; };
 		78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		A40943791B8D26EF009E824C /* FlickrSearcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrSearcher.swift; sourceTree = "<group>"; };
+		A4200F251B8FA353000B3BD2 /* SwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
+		A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
 		A4335A361B8E5E3300C14B54 /* MyPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPhotoViewController.swift; sourceTree = "<group>"; };
 		A4335A381B8E694500C14B54 /* MyPhotoCellViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPhotoCellViewCell.swift; sourceTree = "<group>"; };
 		A4335A3A1B8E903C00C14B54 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				A445F0B51B7D3827004B3E1B /* SchoolItem.swift */,
 				A445F0F11B7D645A004B3E1B /* SignUpViewController.swift */,
 				78E75F451AC5FC48001A93F1 /* Main.storyboard */,
+				A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */,
+				A4200F251B8FA353000B3BD2 /* SwitchViewController.swift */,
 				A4335A381B8E694500C14B54 /* MyPhotoCellViewCell.swift */,
 				A4335A361B8E5E3300C14B54 /* MyPhotoViewController.swift */,
 				0FA8D65D1B8CEC5D00172D19 /* NavigationController.swift */,
@@ -353,6 +359,7 @@
 			files = (
 				78E75F441AC5FC48001A93F1 /* ViewController.swift in Sources */,
 				A4335A391B8E694500C14B54 /* MyPhotoCellViewCell.swift in Sources */,
+				A4200F261B8FA353000B3BD2 /* SwitchViewController.swift in Sources */,
 				A4335A3B1B8E903C00C14B54 /* ActivitiesViewController.swift in Sources */,
 				A445F0F21B7D645A004B3E1B /* SignUpViewController.swift in Sources */,
 				A4DB51331B89A93400976222 /* ContainerViewController.swift in Sources */,
@@ -367,6 +374,7 @@
 				78E75F621AC5FCF1001A93F1 /* ContentViewController.swift in Sources */,
 				A4DB51291B89904400976222 /* Extensions.swift in Sources */,
 				A4DB51271B8954C700976222 /* HomeViewController.swift in Sources */,
+				A4200F281B8FABA7000B3BD2 /* EmptySegue.swift in Sources */,
 				A4F36C3E1B82573E002CC587 /* Constants.swift in Sources */,
 				78E75F421AC5FC48001A93F1 /* AppDelegate.swift in Sources */,
 				A445F0B61B7D3827004B3E1B /* SchoolItem.swift in Sources */,

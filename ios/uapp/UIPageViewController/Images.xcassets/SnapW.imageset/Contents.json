@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Snap.png",
+      "filename" : "SnapW.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "SnapWbig.png",
       "scale" : "2x"
     },
     {

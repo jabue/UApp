@@ -13,13 +13,21 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var menuContainerView: UIView!
     
+    var buttonClickedinHome : String? // to indicate which button at the home page user clicked.
+    
     private var detailViewController: DetailViewController?
+    private var activitiesController: ActivitiesViewController?
+    
     var showingMenu = false
     
     var menuItem: NSDictionary? {
         didSet {
             if let detailViewController = detailViewController {
                 detailViewController.menuItem = menuItem
+                hideOrShowMenu(false, animated: true)
+            }
+            if let activitiesController = activitiesController {
+                activitiesController.menuItem = menuItem
                 hideOrShowMenu(false, animated: true)
             }
         }
@@ -30,17 +38,34 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLayoutSubviews()
         hideOrShowMenu(showingMenu, animated: false)
         menuContainerView.layer.anchorPoint = CGPoint(x: 1.0, y: 0.5)
+        print("the \(buttonClickedinHome!) is clicked")
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "DetailViewSegue" {
-            let navigationController = segue.destinationViewController as! UINavigationController
-            detailViewController = navigationController.topViewController as? DetailViewController
+        print("in ContainerView: segue = \(segue.identifier)")
+        
+        let destinationVC = segue.destinationViewController as! SwitchViewController
+        destinationVC.buttonClickedinHome = buttonClickedinHome
+        /*
+        switch buttonClickedinHome!{
+            case "Profile":
+                if segue.identifier == "DetailViewSegue" {
+                    let navigationController = segue.destinationViewController as! UINavigationController
+                    
+                    detailViewController = navigationController.topViewController as? DetailViewController
+                    
+            }
+            case "Activities":
+                if segue.identifier == "DetailViewSegue" {
+                    let navigationController = segue.destinationViewController as! UINavigationController
+                    activitiesController = navigationController.topViewController as? ActivitiesViewController
+            }
+            default:
+                return
         }
-        if segue.identifier == "ActivitiesViewSegue" {
-            let navigationController = segue.destinationViewController as! UINavigationController
-            detailViewController = navigationController.topViewController as? DetailViewController
-        }
+        
+        */
+        
     }
     
     // MARK: ContainerViewController
