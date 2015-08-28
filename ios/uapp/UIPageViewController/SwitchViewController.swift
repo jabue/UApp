@@ -13,6 +13,7 @@ let SegueIdentifierSecond = "switchActivitiesSegue"
 
 class SwitchViewController: UIViewController {
     
+   var hamburgerView: HamburgerView?
     var firstViewController: UIViewController!
     var secondViewController: UIViewController!
     var trasitionInProgress : Bool!
@@ -23,25 +24,41 @@ class SwitchViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.trasitionInProgress = false
-        self.currentSegueIdentifier = SegueIdentifierFirst
+        print("switch page load")
+        print("button clike is: \(buttonClickedinHome)")
+        navigationController!.navigationBar.clipsToBounds = true
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hamburgerViewTapped")
+        hamburgerView = HamburgerView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        hamburgerView!.addGestureRecognizer(tapGestureRecognizer)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hamburgerView!)
+        
+        switch buttonClickedinHome! {
+        case "Profile":
+            print("go profile")
+            self.currentSegueIdentifier = SegueIdentifierFirst
+        case "Activities":
+            print("go activities")
+            self.currentSegueIdentifier = SegueIdentifierSecond
+            
+            
+        default:
+            print("switch error")
+        }
+
         self.performSegueWithIdentifier(currentSegueIdentifier, sender: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-       
-    
-        // Instead of creating new VCs on each seque we want to hang on to existing
-        // instances if we have it. Remove the second condition of the following
-        // two if statements to get new VC instances instead.
+        print("go \(buttonClickedinHome)")
+        
         if (segue.identifier == SegueIdentifierFirst) {
             self.firstViewController = segue.destinationViewController;
         }
-    
+        
         if (segue.identifier == SegueIdentifierSecond) {
             self.secondViewController = segue.destinationViewController;
         }
-    
+        
         // If we're going to the first view controller.
         if (segue.identifier == SegueIdentifierFirst) {
             // If this is not the first time we're loading this.
@@ -59,10 +76,16 @@ class SwitchViewController: UIViewController {
                 segue.destinationViewController.didMoveToParentViewController(self)
             }
         }
-        // By definition the second view controller will always be swapped with the
+            // By definition the second view controller will always be swapped with the
             // first one.
         else if (segue.identifier == SegueIdentifierSecond){
-            self.swapFromViewController(self.childViewControllers[0], toViewController: self.secondViewController!)
+            self.addChildViewController(segue.destinationViewController)
+            let destView : UIView = (segue.destinationViewController).view
+            //destView.autoresizingMask = UIViewAutoresizingFlexibleWith | UIViewAutoresizingflexibleHeight;
+            destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            self.view.addSubview(destView)
+            segue.destinationViewController.didMoveToParentViewController(self)
+
             
         }
     }
@@ -110,6 +133,41 @@ class SwitchViewController: UIViewController {
         self.performSegueWithIdentifier(self.currentSegueIdentifier, sender: nil)
         
     }
+    
+    
+    
+    var menuItem: NSDictionary? {
+        didSet {
+            if let newMenuItem = menuItem{
+                //view.backgroundColor = UIColor(colorArray: newMenuItem["colors"] as! NSArray)
+                //backgroundImageView?.image = UIImage(named: newMenuItem["bigImage"] as! String)
+                print(newMenuItem["image"]!)
+                switch newMenuItem["image"] as! String{
+                case "Storage":
+                    print("this is Storage")
+                    
+                case "logo":
+                    print("this is logo")
+                    //[[self navigationController] setNavigationBarHidden:YES animated:YES];
+                    self.navigationController?.setNavigationBarHidden(true, animated: true)
+                    self.performSegueWithIdentifier("backHomeSegue", sender: self)
+                    
+                    
+                case "favourite":
+                    print("this is favourite")
+                    
+                case "Message":
+                    print("this is message")
+                case "Activites":
+                    print("this is Activites")
+                default:
+                    print("something wrong")
+                }
+                
+            }
+        }
+    }
+
     
 
     

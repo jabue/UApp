@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("profile page loading...")
         // Remove the drop shadow from the navigation bar
         navigationController!.navigationBar.clipsToBounds = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hamburgerViewTapped")

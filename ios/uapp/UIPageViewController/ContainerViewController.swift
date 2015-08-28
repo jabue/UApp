@@ -15,15 +15,15 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     
     var buttonClickedinHome : String? // to indicate which button at the home page user clicked.
     
-    private var detailViewController: DetailViewController?
+    private var switchViewController: SwitchViewController?
     private var activitiesController: ActivitiesViewController?
     
     var showingMenu = false
     
     var menuItem: NSDictionary? {
         didSet {
-            if let detailViewController = detailViewController {
-                detailViewController.menuItem = menuItem
+            if let switchViewController = switchViewController {
+                switchViewController.menuItem = menuItem
                 hideOrShowMenu(false, animated: true)
             }
             if let activitiesController = activitiesController {
@@ -43,9 +43,12 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print("in ContainerView: segue = \(segue.identifier)")
+        let navigationController = segue.destinationViewController as! UINavigationController
         
-        let destinationVC = segue.destinationViewController as! SwitchViewController
-        destinationVC.buttonClickedinHome = buttonClickedinHome
+        switchViewController = navigationController.topViewController as? SwitchViewController
+        switchViewController?.buttonClickedinHome = buttonClickedinHome!
+        
+        
         /*
         switch buttonClickedinHome!{
             case "Profile":
@@ -93,8 +96,8 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         menuContainerView.layer.transform = transformForFraction(fraction)
         menuContainerView.alpha = fraction
         
-        if let detailViewController = detailViewController {
-            if let rotatingView = detailViewController.hamburgerView {
+        if let switchViewController = switchViewController {
+            if let rotatingView = switchViewController.hamburgerView {
                 rotatingView.rotate(fraction)
             }
         }
