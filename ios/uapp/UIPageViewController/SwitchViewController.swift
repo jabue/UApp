@@ -10,16 +10,19 @@ import UIKit
 
 let SegueIdentifierFirst = "switchProfileSegue"
 let SegueIdentifierSecond = "switchActivitiesSegue"
+let SegueIdentifierThird = "switchMessageSegue"
 
 class SwitchViewController: UIViewController {
     
-   var hamburgerView: HamburgerView?
+    var hamburgerView: HamburgerView?
     var firstViewController: UIViewController!
     var secondViewController: UIViewController!
+    var thirdViewController: UIViewController!
+    
     var trasitionInProgress : Bool!
     var currentSegueIdentifier = String()
     
-    var buttonClickedinHome : String? // to indicate which button at the home page user clicked.
+    var buttonClickedinHome : String? // to indicate which button at the home page user clicked, passed from the parent view.
     
     override func viewDidLoad()
     {
@@ -32,13 +35,16 @@ class SwitchViewController: UIViewController {
         hamburgerView!.addGestureRecognizer(tapGestureRecognizer)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hamburgerView!)
         
-        switch buttonClickedinHome! {
+        switch buttonClickedinHome! { // buttonClickedinHome is passed from the HomeViewController.
         case "Profile":
             print("go profile")
             self.currentSegueIdentifier = SegueIdentifierFirst
         case "Activities":
             print("go activities")
             self.currentSegueIdentifier = SegueIdentifierSecond
+        case "Message":
+            print("go Message")
+            self.currentSegueIdentifier = SegueIdentifierThird
             
             
         default:
@@ -50,7 +56,7 @@ class SwitchViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print("go \(buttonClickedinHome)")
-        
+        /*
         if (segue.identifier == SegueIdentifierFirst) {
             self.firstViewController = segue.destinationViewController;
         }
@@ -58,36 +64,28 @@ class SwitchViewController: UIViewController {
         if (segue.identifier == SegueIdentifierSecond) {
             self.secondViewController = segue.destinationViewController;
         }
+        */
+        print("segue = \(segue.identifier)")
+        switch segue.identifier! {
+        case SegueIdentifierFirst:
+                self.firstViewController = segue.destinationViewController
+        case SegueIdentifierSecond:
+                self.secondViewController = segue.destinationViewController
+        case SegueIdentifierThird:
+            self.thirdViewController = segue.destinationViewController
+        case "backHomeSegue":
+            print("go back to home page")
+        default:
+            print("error: no such segue.")
+        }
         
-        // If we're going to the first view controller.
-        if (segue.identifier == SegueIdentifierFirst) {
-            // If this is not the first time we're loading this.
-            if (self.childViewControllers.count > 0) {
-                self.swapFromViewController(self.childViewControllers[0], toViewController: self.firstViewController!)
-            }
-            else {
-                // If this is the very first time we're loading this we need to do
-                // an initial load and not a swap.
-                self.addChildViewController(segue.destinationViewController)
-                let destView : UIView = (segue.destinationViewController).view
-                //destView.autoresizingMask = UIViewAutoresizingFlexibleWith | UIViewAutoresizingflexibleHeight;
-                destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-                self.view.addSubview(destView)
-                segue.destinationViewController.didMoveToParentViewController(self)
-            }
-        }
-            // By definition the second view controller will always be swapped with the
-            // first one.
-        else if (segue.identifier == SegueIdentifierSecond){
-            self.addChildViewController(segue.destinationViewController)
-            let destView : UIView = (segue.destinationViewController).view
-            //destView.autoresizingMask = UIViewAutoresizingFlexibleWith | UIViewAutoresizingflexibleHeight;
-            destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-            self.view.addSubview(destView)
-            segue.destinationViewController.didMoveToParentViewController(self)
-
-            
-        }
+        self.addChildViewController(segue.destinationViewController)
+        let destView : UIView = (segue.destinationViewController).view
+        
+        //destView.autoresizingMask = UIViewAutoresizingFlexibleWith | UIViewAutoresizingflexibleHeight;
+        destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        self.view.addSubview(destView)
+        segue.destinationViewController.didMoveToParentViewController(self)
     }
     
     func swapFromViewController(fromViewController: UIViewController, toViewController: UIViewController) -> Void {
@@ -146,11 +144,11 @@ class SwitchViewController: UIViewController {
                 case "Storage":
                     print("this is Storage")
                     
-                case "logo":
+                case "logousmall":
                     print("this is logo")
                     //[[self navigationController] setNavigationBarHidden:YES animated:YES];
                     self.navigationController?.setNavigationBarHidden(true, animated: true)
-                    self.performSegueWithIdentifier("backHomeSegue", sender: self)
+                    self.performSegueWithIdentifier("backHomeSegue", sender: nil)
                     
                     
                 case "favourite":
@@ -161,7 +159,7 @@ class SwitchViewController: UIViewController {
                 case "Activites":
                     print("this is Activites")
                 default:
-                    print("something wrong")
+                    print("SwitchViewController: something wrong")
                 }
                 
             }

@@ -21,6 +21,7 @@
 		A4335A371B8E5E3300C14B54 /* MyPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4335A361B8E5E3300C14B54 /* MyPhotoViewController.swift */; };
 		A4335A391B8E694500C14B54 /* MyPhotoCellViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4335A381B8E694500C14B54 /* MyPhotoCellViewCell.swift */; };
 		A4335A3B1B8E903C00C14B54 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4335A3A1B8E903C00C14B54 /* ActivitiesViewController.swift */; };
+		A43CFD131B90CC25007342A9 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43CFD121B90CC25007342A9 /* MessageViewController.swift */; };
 		A43DA9C61B85A3DF00DA1B6B /* schools.txt in Resources */ = {isa = PBXBuildFile; fileRef = A43DA9C51B85A3DF00DA1B6B /* schools.txt */; };
 		A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0B31B7D35F7004B3E1B /* FindSchoolViewController.swift */; };
 		A445F0B61B7D3827004B3E1B /* SchoolItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0B51B7D3827004B3E1B /* SchoolItem.swift */; };
@@ -70,6 +71,7 @@
 		A4335A361B8E5E3300C14B54 /* MyPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPhotoViewController.swift; sourceTree = "<group>"; };
 		A4335A381B8E694500C14B54 /* MyPhotoCellViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPhotoCellViewCell.swift; sourceTree = "<group>"; };
 		A4335A3A1B8E903C00C14B54 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
+		A43CFD121B90CC25007342A9 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		A43DA9C51B85A3DF00DA1B6B /* schools.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = schools.txt; path = UIPageViewController/schools.txt; sourceTree = "<group>"; };
 		A445F0B31B7D35F7004B3E1B /* FindSchoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindSchoolViewController.swift; sourceTree = "<group>"; };
 		A445F0B51B7D3827004B3E1B /* SchoolItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolItem.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				A445F0B51B7D3827004B3E1B /* SchoolItem.swift */,
 				A445F0F11B7D645A004B3E1B /* SignUpViewController.swift */,
 				78E75F451AC5FC48001A93F1 /* Main.storyboard */,
+				A43CFD121B90CC25007342A9 /* MessageViewController.swift */,
 				A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */,
 				A4200F251B8FA353000B3BD2 /* SwitchViewController.swift */,
 				A4335A381B8E694500C14B54 /* MyPhotoCellViewCell.swift */,
@@ -268,11 +271,11 @@
 				TargetAttributes = {
 					78E75F3B1AC5FC48001A93F1 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = UR4X4CMCXP;
+						DevelopmentTeam = V39EF4QG4J;
 					};
 					78E75F501AC5FC48001A93F1 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = UR4X4CMCXP;
+						DevelopmentTeam = V39EF4QG4J;
 						TestTargetID = 78E75F3B1AC5FC48001A93F1;
 					};
 				};
@@ -375,6 +378,7 @@
 				A4DB51291B89904400976222 /* Extensions.swift in Sources */,
 				A4DB51271B8954C700976222 /* HomeViewController.swift in Sources */,
 				A4200F281B8FABA7000B3BD2 /* EmptySegue.swift in Sources */,
+				A43CFD131B90CC25007342A9 /* MessageViewController.swift in Sources */,
 				A4F36C3E1B82573E002CC587 /* Constants.swift in Sources */,
 				78E75F421AC5FC48001A93F1 /* AppDelegate.swift in Sources */,
 				A445F0B61B7D3827004B3E1B /* SchoolItem.swift in Sources */,
@@ -507,7 +511,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp11;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;
@@ -524,7 +528,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp11;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;

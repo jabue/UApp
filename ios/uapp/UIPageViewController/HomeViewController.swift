@@ -17,8 +17,11 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
     
+    @IBAction func showMessage(sender: UIButton) {
+        buttonClicked = "Message"
+        self.performSegueWithIdentifier("showProfile", sender: self)
+    }
     
     @IBAction func showProfile(sender: UIButton) {
         buttonClicked = "Profile"
@@ -26,8 +29,6 @@ class HomeViewController: UIViewController {
         
     }
    
-    
-       
     @IBAction func showActivities(sender: UIButton) {
         buttonClicked = "Activities"
         self.performSegueWithIdentifier("showProfile", sender: self)
