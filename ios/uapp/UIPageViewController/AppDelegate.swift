@@ -7,7 +7,7 @@
 //
 
 import UIKit
-let themeColor = UIColor(red: 0.01, green: 0.41, blue: 0.22, alpha: 1.0)
+//let themeColor = UIColor(red: 0.01, green: 0.41, blue: 0.22, alpha: 1.0)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialProvider)
         AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
         
-        window?.tintColor = themeColor
+       // window?.tintColor = themeColor
         return true
     }
     

@@ -55,7 +55,7 @@ class ActivitiesViewController: UIViewController {
                 case "Activites":
                     print("this is Activites")
                 default:
-                    print("something wrong")
+                    print("ActivitiesViewController: something wrong")
                 }
                 
             }
