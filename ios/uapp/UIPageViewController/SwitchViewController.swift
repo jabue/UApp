@@ -28,12 +28,16 @@ class SwitchViewController: UIViewController {
     {
         super.viewDidLoad()
         print("switch page load")
-        print("button clike is: \(buttonClickedinHome)")
-        navigationController!.navigationBar.clipsToBounds = true
+         print("button clike is: \(buttonClickedinHome!)")
+       
+       // navigationController!.navigationBar.clipsToBounds = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hamburgerViewTapped")
         hamburgerView = HamburgerView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        print("debug 1")
         hamburgerView!.addGestureRecognizer(tapGestureRecognizer)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hamburgerView!)
+        
+       print("debug 2")
         
         switch buttonClickedinHome! { // buttonClickedinHome is passed from the HomeViewController.
         case "Profile":
@@ -49,7 +53,7 @@ class SwitchViewController: UIViewController {
             
         default:
             print("switch error")
-        }
+            }
 
         self.performSegueWithIdentifier(currentSegueIdentifier, sender: nil)
     }

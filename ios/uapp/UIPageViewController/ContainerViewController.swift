@@ -33,7 +33,11 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-       
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("ContainerViewController loaded ...")
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         hideOrShowMenu(showingMenu, animated: false)
@@ -43,11 +47,12 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print("in ContainerView: segue = \(segue.identifier)")
-        let navigationController = segue.destinationViewController as! UINavigationController
+        if segue.identifier != nil{
+            let switchViewController = segue.destinationViewController as! SwitchViewController
         
-        switchViewController = navigationController.topViewController as? SwitchViewController
-        switchViewController?.buttonClickedinHome = buttonClickedinHome!
-        
+        //switchViewController = navigationController.topViewController as? SwitchViewController
+            switchViewController.buttonClickedinHome = buttonClickedinHome!
+        }
         
         /*
         switch buttonClickedinHome!{
