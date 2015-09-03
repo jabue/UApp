@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UBC</key>
+	<string>University of British Columbia</string>
+	<key>SFU</key>
+	<string>Simon Fraser University</string>
+	<key>UVic</key>
+	<string>University of Victoria</string>
+</dict>
+</plist>

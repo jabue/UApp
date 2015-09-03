@@ -612,7 +612,8 @@
                                         <exclude reference="dYs-Dq-pDQ"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="485" y="210" width="80" height="80"/>
                                     <mask key="constraints">
                                         <include reference="LDa-yU-8Fn"/>
                                         <include reference="dYs-Dq-pDQ"/>
@@ -658,7 +659,8 @@
                                         <exclude reference="zEk-pa-27O"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="260" y="310" width="80" height="80"/>
                                     <mask key="constraints">
                                         <include reference="ydp-C7-ebb"/>
                                         <include reference="zEk-pa-27O"/>
@@ -678,7 +680,8 @@
                                         <exclude reference="mIp-Vs-ce5"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="485" y="310" width="80" height="80"/>
                                     <mask key="constraints">
                                         <include reference="IGq-wA-cK8"/>
                                         <include reference="mIp-Vs-ce5"/>
@@ -718,7 +721,8 @@
                                         <exclude reference="Y51-1H-DFP"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="260" y="417" width="80" height="80"/>
                                     <mask key="constraints">
                                         <include reference="7f0-Yv-r2b"/>
                                         <include reference="Y51-1H-DFP"/>
@@ -738,7 +742,8 @@
                                         <exclude reference="jEg-RY-5XX"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="485" y="417" width="80" height="80"/>
                                     <mask key="constraints">
                                         <include reference="Mqi-Ad-Fnn"/>
                                         <include reference="jEg-RY-5XX"/>
@@ -758,7 +763,8 @@
                                         <exclude reference="rOt-6T-lt6"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="255" y="60" width="90" height="90"/>
                                     <mask key="constraints">
                                         <include reference="E72-6l-bdF"/>
                                         <include reference="rOt-6T-lt6"/>
@@ -801,7 +807,8 @@
                                         <exclude reference="t3n-ni-xGS"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="260" y="210" width="80" height="80"/>
                                     <mask key="constraints">
                                         <include reference="fKs-t2-Mjs"/>
                                         <include reference="t3n-ni-xGS"/>
