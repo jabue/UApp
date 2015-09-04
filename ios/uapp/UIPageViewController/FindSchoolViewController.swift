@@ -39,11 +39,15 @@ class FindSchoolViewController: UIViewController, UITableViewDataSource, UITable
             contents =
             
         }*/
-        self.schoolsArray += [SchoolItem(name: "Vea Software")]
-        self.schoolsArray += [SchoolItem(name: "Apple")]
-        self.schoolsArray += [SchoolItem(name: "iTunes")]
-        self.schoolsArray += [SchoolItem(name: "iPhone")]
-        self.schoolsArray += [SchoolItem(name: "Mac")]
+        // 读取plist
+        let plistPath = NSBundle.mainBundle().pathForResource("school name", ofType:"plist")
+        let plistDict = NSDictionary(contentsOfFile: plistPath!)
+        var totalNum = plistDict?.objectForKey("totalNum") as! Int
+        print("The Number is:\(totalNum)")
+        for var i=1;i<=totalNum;i++ {
+            var schoolName:String = ((plistDict?.objectForKey(String(i))!)! as? String)!
+            self.schoolsArray += [SchoolItem(name: schoolName)]
+        }
         
         self.tableView.reloadData()
         
@@ -123,13 +127,21 @@ class FindSchoolViewController: UIViewController, UITableViewDataSource, UITable
     {
         print("search: \(searchText)")
         self.filteredSchools = self.schoolsArray.filter({( school : SchoolItem) -> Bool in
+            if searchText.isEmpty {
+                return false
+            }
+            
+            let lowSchool = school.name.lowercaseString;
+            let lowSearchText = searchText.lowercaseString;
+            let startLetterSchool = (lowSchool as NSString).substringToIndex(1)
+            let startLetterSearch = (lowSearchText as NSString).substringToIndex(1)
             
             let categoryMatch = (scope == "Title")
-            let stringMatch = school.name.rangeOfString(searchText)
+            let stringMatch = lowSchool.rangeOfString(lowSearchText)
             
             print("category=\(categoryMatch)")
             print ("stringMatch=\(stringMatch)")
-            return categoryMatch && (stringMatch != nil)
+            return categoryMatch && (startLetterSchool == startLetterSearch) && (stringMatch != nil)
             
         })
         NSLog("not found.")
