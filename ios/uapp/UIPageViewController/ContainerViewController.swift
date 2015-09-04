@@ -22,14 +22,16 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     
     var menuItem: NSDictionary? {
         didSet {
-            if let switchViewController = switchViewController {
-                switchViewController.menuItem = menuItem
+            
+           if switchViewController == nil {
+                switchViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SwitchViewController") as? SwitchViewController
+            }
+            
+            if let switchView = switchViewController {
+                switchView.menuItem = menuItem
                 hideOrShowMenu(false, animated: true)
             }
-            if let activitiesController = activitiesController {
-                activitiesController.menuItem = menuItem
-                hideOrShowMenu(false, animated: true)
-            }
+            
         }
     }
     
@@ -49,30 +51,9 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         print("in ContainerView: segue = \(segue.identifier)")
         if segue.identifier != nil{
             let switchViewController = segue.destinationViewController as! SwitchViewController
-        
-        //switchViewController = navigationController.topViewController as? SwitchViewController
             switchViewController.buttonClickedinHome = buttonClickedinHome!
         }
         
-        /*
-        switch buttonClickedinHome!{
-            case "Profile":
-                if segue.identifier == "DetailViewSegue" {
-                    let navigationController = segue.destinationViewController as! UINavigationController
-                    
-                    detailViewController = navigationController.topViewController as? DetailViewController
-                    
-            }
-            case "Activities":
-                if segue.identifier == "DetailViewSegue" {
-                    let navigationController = segue.destinationViewController as! UINavigationController
-                    activitiesController = navigationController.topViewController as? ActivitiesViewController
-            }
-            default:
-                return
-        }
-        
-        */
         
     }
     

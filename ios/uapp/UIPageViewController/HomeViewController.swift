@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("home page load...")
 
         // Do any additional setup after loading the view.
     }
@@ -42,21 +43,8 @@ class HomeViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         // Create a new variable to store the instance of ContainerViewController
+        print("HomeViewConroller debug")
         let destinationVC = segue.destinationViewController as! ContainerViewController
         destinationVC.buttonClickedinHome = buttonClicked
     }
 }
-    
-   
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
