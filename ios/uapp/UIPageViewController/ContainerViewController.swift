@@ -24,7 +24,11 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         didSet {
             
            if switchViewController == nil {
-                switchViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SwitchViewController") as? SwitchViewController
+            print("no switcheViewController exists")
+            let storyBoard = UIStoryboard(name: "Main",
+                bundle: NSBundle.mainBundle())
+            switchViewController = storyBoard.instantiateViewControllerWithIdentifier("SwitchViewController") as? SwitchViewController
+            
             }
             
             if let switchView = switchViewController {
@@ -50,6 +54,8 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print("in ContainerView: segue = \(segue.identifier)")
         if segue.identifier != nil{
+            
+
             let switchViewController = segue.destinationViewController as! SwitchViewController
             switchViewController.buttonClickedinHome = buttonClickedinHome!
         }

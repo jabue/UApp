@@ -84,8 +84,8 @@ class SwitchViewController: UIViewController {
             self.addChildViewController(segue.destinationViewController)
             let destView : UIView = (segue.destinationViewController).view
         
-        //destView.autoresizingMask = UIViewAutoresizingFlexibleWith | UIViewAutoresizingflexibleHeight;
-            destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        destView.autoresizingMask = [.FlexibleWidth , .FlexibleHeight]
+            destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
             self.view.addSubview(destView)
             segue.destinationViewController.didMoveToParentViewController(self)
         }else{
@@ -106,16 +106,26 @@ class SwitchViewController: UIViewController {
                     print("this is Storage")
                     
                 case "logousmall":
-                    print("this is logo")
-                    self.performSegueWithIdentifier("backHomeSegue", sender: nil)
+                    print("this is logo, will go home page")
+                    // home button on sidebar is clicked
+                    let storyBoard = UIStoryboard(name: "Main",
+                        bundle: NSBundle.mainBundle())
+                    //self.performSegueWithIdentifier("backHomeSegue", sender: nil)
+                    let herbDetails = storyBoard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
+                   
+                    presentViewController(herbDetails, animated: true, completion: nil)
+
                     
                 case "favourite":
                     print("this is favourite")
                     
-                case "Message":
+                case "MessageW":
                     print("this is message")
-                case "Activites":
+                    
+                    self.performSegueWithIdentifier("switchMessageSegue", sender: nil)
+                case "ActivitiesW":
                     print("this is Activites")
+                    self.performSegueWithIdentifier("switchActivitiesSegue", sender: nil)
                 default:
                     print("SwitchViewController: something wrong")
                 }

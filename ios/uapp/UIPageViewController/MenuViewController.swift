@@ -35,7 +35,7 @@ class MenuViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         print("row = \(indexPath.row), parent = \(self.parentViewController)")
         let menuItem = menuItems[indexPath.row] as! NSDictionary
-        (self.parentViewController as! ContainerViewController).menuItem = menuItem
+         (self.parentViewController as! ContainerViewController).menuItem = menuItem
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

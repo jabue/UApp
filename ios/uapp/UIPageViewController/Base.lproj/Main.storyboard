@@ -990,7 +990,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GY4-pL-sBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2122.5" y="1423.5"/>
+            <point key="canvasLocation" x="-1204.5" y="1423.5"/>
         </scene>
         <!--My Contacts-->
         <scene sceneID="NlX-mc-G6K">
@@ -1054,13 +1054,13 @@
                                                     <constraint firstAttribute="width" constant="80" id="Vex-KD-5Sp"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="q4v-rA-6ie" kind="embed" id="Pwe-mC-NSx"/>
+                                                    <segue destination="q4v-rA-6ie" kind="embed" id="Et4-5S-IAE"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQl-D5-a7S" userLabel="Detail Container View">
                                                 <rect key="frame" x="80" y="0.0" width="600" height="600"/>
                                                 <connections>
-                                                    <segue destination="sQs-ZG-aOL" kind="embed" identifier="DetailViewSegue" id="H2n-MK-521"/>
+                                                    <segue destination="sQs-ZG-aOL" kind="embed" identifier="DetailViewSegue" id="WVb-ca-O8U"/>
                                                 </connections>
                                             </containerView>
                                         </subviews>
@@ -1121,14 +1121,13 @@
                     <navigationItem key="navigationItem" id="7Av-xR-pD6"/>
                     <connections>
                         <segue destination="o03-QZ-vJs" kind="custom" identifier="switchActivitiesSegue" customClass="EmptySegue" customModule="UIPageViewController" customModuleProvider="target" id="Z3a-nY-hcW"/>
-                        <segue destination="v5f-oP-nA8" kind="showDetail" identifier="backHomeSegue" id="HQf-ez-g2I"/>
                         <segue destination="lSa-xb-hXX" kind="show" identifier="switchMessageSegue" id="9Bb-at-aBn"/>
                         <segue destination="Utp-Mp-ado" kind="show" identifier="switchProfileSegue" id="OuM-My-p43"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvo-bv-wLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-822" y="2174.25"/>
+            <point key="canvasLocation" x="-1723.5" y="2070"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Pl8-E9-6Sp">
@@ -1770,7 +1769,4 @@
         <image name="logo w app name" width="259" height="395"/>
         <image name="pic" width="128" height="128"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="HQf-ez-g2I"/>
-    </inferredMetricsTieBreakers>
 </document>
