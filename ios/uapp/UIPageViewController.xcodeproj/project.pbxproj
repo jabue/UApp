@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F140FFA1B97D1C800B8FAFE /* school name.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F140FF91B97D1C800B8FAFE /* school name.plist */; };
 		0FA8D65E1B8CEC5D00172D19 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA8D65D1B8CEC5D00172D19 /* NavigationController.swift */; };
 		78E75F421AC5FC48001A93F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F411AC5FC48001A93F1 /* AppDelegate.swift */; };
 		78E75F441AC5FC48001A93F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F431AC5FC48001A93F1 /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F140FF91B97D1C800B8FAFE /* school name.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "school name.plist"; sourceTree = "<group>"; };
 		0FA8D65D1B8CEC5D00172D19 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		44DE8D6FE573C50F52B21B64 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		58E46A51F82C31CF7C5EE6F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				A445F0B51B7D3827004B3E1B /* SchoolItem.swift */,
 				A445F0F11B7D645A004B3E1B /* SignUpViewController.swift */,
 				78E75F451AC5FC48001A93F1 /* Main.storyboard */,
+				0F140FF91B97D1C800B8FAFE /* school name.plist */,
 				A43CFD121B90CC25007342A9 /* MessageViewController.swift */,
 				A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */,
 				A4200F251B8FA353000B3BD2 /* SwitchViewController.swift */,
@@ -273,8 +276,9 @@
 				ORGANIZATIONNAME = "Vea Software";
 				TargetAttributes = {
 					78E75F3B1AC5FC48001A93F1 = {
-						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 9J6MV3Q25J;
+
+						DevelopmentTeam = LD7DY78L8K;
+
 					};
 					78E75F501AC5FC48001A93F1 = {
 						CreatedOnToolsVersion = 6.2;
@@ -312,6 +316,7 @@
 				9368C4761B97CD5100BE6608 /* userinf.plist in Resources */,
 				A4DB512D1B8991B700976222 /* MenuItems.plist in Resources */,
 				A4D3EA701B7EA67500A0480E /* podfile in Resources */,
+				0F140FFA1B97D1C800B8FAFE /* school name.plist in Resources */,
 				A43DA9C61B85A3DF00DA1B6B /* schools.txt in Resources */,
 				78E75F491AC5FC48001A93F1 /* Images.xcassets in Resources */,
 			);
@@ -515,7 +520,9 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+
 				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp99;
+
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;
@@ -533,6 +540,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp99;
+
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;

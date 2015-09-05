@@ -1,3 +1,4 @@
 ./android/WelcomePage/.idea/misc.xml
 .DS_Store
 ./ios/uapp/UIPageViewController.xcodeproj/project.pbxproj
+./ios/uapp/Constants.swift
