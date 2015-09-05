@@ -11,6 +11,8 @@ import UIKit
 
 class SignUpViewController: UIViewController,UITextFieldDelegate {
     
+    @IBOutlet var test: UILabel!
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var pwdAgainTextField: UITextField!
@@ -19,6 +21,8 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var forgotPwdTextField: UITextView!
     
     var loginOrSignup = 1 // default signup
+    
+    var listVidos:NSMutableArray!//userinfor
     
     override func viewDidLoad()
     {
@@ -34,9 +38,52 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         UIDevice.currentDevice().setValue(value, forKey: "orientation")
 
         print("SignuUpViewController begin...")
+        /*
+        var ban = NSBundle.mainBundle()
+        //读取plist文件路径
+        let plistpath = ban.pathForResource("tgs", ofType: "plist")!
+        //读取plist内容放到NSMutableArray内
+        listVidos = NSMutableArray(contentsOfFile: plistpath)
+        */
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        let documentsDirectory = paths.objectAtIndex(0) as! NSString
+        let path = documentsDirectory.stringByAppendingPathComponent("userinf.plist")
         
         
+        var listData1: NSDictionary = NSDictionary()
+        listData1 = NSDictionary(contentsOfFile: path)!
+        
+        var semaill = listData1.objectForKey("email")
+        var spww = listData1.objectForKey("pw")
+        
+        //var spw = listData.objectForKey("pw")
+        //print(semaill!)
+        //test.text = String(semaill!)
+        
+        
+        var listData: NSDictionary = NSDictionary()
+        
+        var filePath = NSBundle.mainBundle().pathForResource("userinf.plist", ofType:nil )
+        listData = NSDictionary(contentsOfFile: filePath!)!
     
+        var semail = listData.objectForKey("email")
+        var spw = listData.objectForKey("pw")
+        print(semail!)
+        if semail != nil {
+            segmentControl.selectedSegmentIndex = 1
+            pwdAgainTextField.hidden = true
+            forgotPwdTextField.hidden = true
+            loginOrSignup = 0
+            //segmentControl.selectedSegmentIndex{}
+            
+            emailTextField.text = String(semaill!)
+            pwdTextField.text = String(spww!)
+            trylogin()
+            
+        }
+        resetemailandpw()
+        
     }
     
     
@@ -155,7 +202,103 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     }
     
     @IBAction func buttonSubmit(sender: UIButton) {
+        trylogin()
+    }
+    
+    func checkEmailTypeOK(emailstr : String) -> Bool{
+        //emailstr.hasPrefix("1")
+        let at = "@"
+        let dot = "."
+        //let subString = (emailstr as NSString).substringWithRange(at)
+        //var nsString: NSString = emailstr
+        let subRangeat = (emailstr as NSString).rangeOfString(at)   //子范围
+        let subRangedot = (emailstr as NSString).rangeOfString(dot)
+        //let subString = (emailstr as NSString).substringWithRange(subRange)
+        if (subRangeat.length != 0 && subRangedot.length != 0){
+            return true
+            
+        }
+        //test.text=subString
+        return false
+    }
+    
+    func trylogin(){
+        if checkEmailTypeOK(emailTextField.text!) {
+            trylogin1()
+        }
+    }
+    
+    func trylogin1(){
         
+        /*
+        print("//////////////////")
+        print(pwdTextField.text)
+        print(emailTextField.text)
+        print(loginOrSignup)
+        print("//////////////////")
+        */
+        
+        /*
+        var listData: NSDictionary = NSDictionary()
+        
+        var filePath = NSBundle.mainBundle().pathForResource("userinf.plist", ofType:nil )
+        listData = NSDictionary(contentsOfFile: filePath!)!
+        
+        var semail = listData.objectForKey("email")
+        var spw = listData.objectForKey("pw")
+        
+        listData.setValue("3", forKeyPath: "emailll")
+        //listData.setValue("3", forKey: "emailll")
+        //listData.objectForKey("email")?.willAccessValueForKey("3")
+        //listData.writeToFile(filePath!, atomically: true)
+        var ssemail = listData.objectForKey("emailll")
+        print("//////////////////")
+        print(ssemail)
+        print("//////////////////")
+        */
+        
+        saveemailandpw()
+        // copy email and pw to plist
+        
+        /*
+        var playersDictionaryPath = NSBundle.mainBundle().pathForResource("userinf", ofType: "plist")
+        
+        var playersDictionary = NSMutableDictionary(contentsOfFile: playersDictionaryPath!)
+        
+        var playersNamesArray = playersDictionary?.objectForKey("email") as! NSDictionary
+        
+        //this is a label I have called player1Name
+        */
+        
+        //playersDictionary?.writeToFile(playersDictionaryPath!, atomically: true)
+        //println(myDictionary)
+        /*
+        var paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true) as NSArray
+        var documentsDirectory:AnyObject = paths[0]
+        var path = documentsDirectory.stringByAppendingPathComponent("userinf.plist")
+        var fileManager = NSFileManager.defaultManager()
+        var fileExists:Bool = fileManager.fileExistsAtPath(path)
+        var data : NSMutableDictionary?
+        
+        data?.setValue(emailTextField.text, forKey: "email")
+        data?.setValue(pwdTextField.text, forKey: "pw")
+        data?.writeToFile(path, atomically: true)
+        */
+        /*
+        var listData: NSDictionary = NSDictionary()
+        
+        var filePath = NSBundle.mainBundle().pathForResource("userinf.plist", ofType:nil )
+        listData = NSDictionary(contentsOfFile: filePath!)!
+        
+        
+        
+        listData.setValue(5, forKey: "email")
+        listData.setValue(pwdTextField.text, forKey: "pw")
+        listData.writeToFile(<#T##path: String##String#>, atomically: <#T##Bool#>)
+        //listData.objectForKey("email") = emailTextField.text
+        //listData.objectForKey("pw") = pwdTextField.text
+        
+        */
         
         if(checkEmail(emailTextField.text!) == false){
             let alertController = UIAlertController(title: "UApp", message:
@@ -198,7 +341,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                     print("DEBUG: call lambda sucessfully")
                     print(task.result)
                     pwd = String(task.result.payload)
-                    print("password= \"\(pwd)\"")
+                   // print("password= \"\(pwd)\"")
                     if (pwd == "NotFound"){ // user_id not found
                         let alertController = UIAlertController(title: "UApp", message:
                             "the user id \'\(emailInput)\' is not existed.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -298,6 +441,49 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
             })
             
         }
+    }
+    
+    func saveemailandpw() {
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        let documentsDirectory = paths.objectAtIndex(0) as! NSString
+        let path = documentsDirectory.stringByAppendingPathComponent("userinf.plist")
+        
+        var dict: NSMutableDictionary = ["XInitializerItem": "DoNotEverChangeMe"]
+        //saving values
+        dict.setObject(emailTextField.text!, forKey: "email")
+        dict.setObject(pwdTextField.text!, forKey: "pw")
+        //...
+        
+        //writing to GameData.plist
+        //dict.writeToFile(path, atomically: false)
+        dict.writeToFile(path, atomically: true)
+        
+        let resultDictionary = NSMutableDictionary(contentsOfFile: path)
+        
+        print("Saved GameData.plist file is --> \(resultDictionary?.description)")
+        
+        
+    }
+
+    func resetemailandpw(){
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        let documentsDirectory = paths.objectAtIndex(0) as! NSString
+        let path = documentsDirectory.stringByAppendingPathComponent("userinf.plist")
+        
+        var dict: NSMutableDictionary = ["XInitializerItem": "DoNotEverChangeMe"]
+        //saving values
+        dict.setObject("", forKey: "email")
+        dict.setObject("", forKey: "pw")
+        //...
+        
+        //writing to GameData.plist
+        //dict.writeToFile(path, atomically: false)
+        dict.writeToFile(path, atomically: true)
+        
+        let resultDictionary = NSMutableDictionary(contentsOfFile: path)
+        
+        print("Saved GameData.plist file is --> \(resultDictionary?.description)")
     }
 }
 

@@ -15,6 +15,7 @@
 		78E75F4C1AC5FC48001A93F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E75F4A1AC5FC48001A93F1 /* LaunchScreen.xib */; };
 		78E75F581AC5FC48001A93F1 /* UIPageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */; };
 		78E75F621AC5FCF1001A93F1 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */; };
+		9368C4761B97CD5100BE6608 /* userinf.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9368C4751B97CD5100BE6608 /* userinf.plist */; };
 		A409437A1B8D26EF009E824C /* FlickrSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40943791B8D26EF009E824C /* FlickrSearcher.swift */; };
 		A4200F261B8FA353000B3BD2 /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4200F251B8FA353000B3BD2 /* SwitchViewController.swift */; };
 		A4200F281B8FABA7000B3BD2 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */; };
@@ -65,6 +66,7 @@
 		78E75F561AC5FC48001A93F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerTests.swift; sourceTree = "<group>"; };
 		78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		9368C4751B97CD5100BE6608 /* userinf.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userinf.plist; sourceTree = "<group>"; };
 		A40943791B8D26EF009E824C /* FlickrSearcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrSearcher.swift; sourceTree = "<group>"; };
 		A4200F251B8FA353000B3BD2 /* SwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				78E75F481AC5FC48001A93F1 /* Images.xcassets */,
 				78E75F4A1AC5FC48001A93F1 /* LaunchScreen.xib */,
 				78E75F3F1AC5FC48001A93F1 /* Supporting Files */,
+				9368C4751B97CD5100BE6608 /* userinf.plist */,
 			);
 			path = UIPageViewController;
 			sourceTree = "<group>";
@@ -271,7 +274,7 @@
 				TargetAttributes = {
 					78E75F3B1AC5FC48001A93F1 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = V39EF4QG4J;
+						DevelopmentTeam = 9J6MV3Q25J;
 					};
 					78E75F501AC5FC48001A93F1 = {
 						CreatedOnToolsVersion = 6.2;
@@ -306,6 +309,7 @@
 			files = (
 				78E75F471AC5FC48001A93F1 /* Main.storyboard in Resources */,
 				78E75F4C1AC5FC48001A93F1 /* LaunchScreen.xib in Resources */,
+				9368C4761B97CD5100BE6608 /* userinf.plist in Resources */,
 				A4DB512D1B8991B700976222 /* MenuItems.plist in Resources */,
 				A4D3EA701B7EA67500A0480E /* podfile in Resources */,
 				A43DA9C61B85A3DF00DA1B6B /* schools.txt in Resources */,
@@ -511,7 +515,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;
@@ -528,7 +532,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;
