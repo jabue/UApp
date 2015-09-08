@@ -117,7 +117,7 @@ class FindSchoolViewController: UIViewController, UITableViewDataSource, UITable
         }
         NSLog("tableview2")
         print(school.name)
-        
+        saveSchoolName(school.name)
         
     }
     
@@ -183,8 +183,27 @@ class FindSchoolViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
-    
-    
+    // save school name to plist
+    func saveSchoolName(name:String) {
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        let documentsDirectory = paths.objectAtIndex(0) as! NSString
+        let path = documentsDirectory.stringByAppendingPathComponent("userinf.plist")
+        
+        //var dict: NSMutableDictionary = ["XInitializerItem": "DoNotEverChangeMe"]
+        var dict: NSMutableDictionary = NSMutableDictionary()
+        //saving values
+        dict.setObject(name, forKey: "school")
+        //...
+        dict.writeToFile(path, atomically: true)
+        
+        let resultDictionary = NSMutableDictionary(contentsOfFile: path)
+        
+        let schoolName:String = "school"
+        print("Saved \(resultDictionary?.objectForKey(schoolName))")
+        
+        
+    }
 
     
 }

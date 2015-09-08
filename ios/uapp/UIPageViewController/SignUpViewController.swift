@@ -45,7 +45,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         //读取plist内容放到NSMutableArray内
         listVidos = NSMutableArray(contentsOfFile: plistpath)
         */
-        
+        saveemailandpw()
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
         let documentsDirectory = paths.objectAtIndex(0) as! NSString
         let path = documentsDirectory.stringByAppendingPathComponent("userinf.plist")
