@@ -111,9 +111,10 @@ class SwitchViewController: UIViewController {
                     let storyBoard = UIStoryboard(name: "Main",
                         bundle: NSBundle.mainBundle())
                     //self.performSegueWithIdentifier("backHomeSegue", sender: nil)
-                    let herbDetails = storyBoard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
-                   
-                    presentViewController(herbDetails, animated: true, completion: nil)
+                    let home = storyBoard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
+                  
+                    //print("current = \(self.view.window!.rootViewController)")
+                    self.presentViewController(home, animated: true, completion: nil)
 
                     
                 case "favourite":

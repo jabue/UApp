@@ -21,11 +21,13 @@ class HomeViewController: UIViewController {
     
     @IBAction func showMessage(sender: UIButton) {
         buttonClicked = "Message"
+        print("showMessage")
         self.performSegueWithIdentifier("showProfile", sender: self)
     }
     
     @IBAction func showProfile(sender: UIButton) {
         buttonClicked = "Profile"
+        print("showProfile")
         self.performSegueWithIdentifier("showProfile", sender: self)
         
     }

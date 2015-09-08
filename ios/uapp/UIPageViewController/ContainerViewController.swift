@@ -23,18 +23,61 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     var menuItem: NSDictionary? {
         didSet {
             
-           if switchViewController == nil {
-            print("no switcheViewController exists")
-            let storyBoard = UIStoryboard(name: "Main",
-                bundle: NSBundle.mainBundle())
-            switchViewController = storyBoard.instantiateViewControllerWithIdentifier("SwitchViewController") as? SwitchViewController
-            
+            if switchViewController == nil {
+                print("no switcheViewController exists")
+                //let storyBoard = UIStoryboard(name: "Main",bundle: NSBundle.mainBundle())
+                //switchViewController = storyBoard.instantiateViewControllerWithIdentifier("SwitchViewController") as? SwitchViewController
+                var topViewController :UIViewController = (UIApplication.sharedApplication().keyWindow?.rootViewController)!
+                print("current is \(topViewController)")
+                while ((topViewController.presentedViewController) != nil) {
+                    topViewController = topViewController.presentedViewController!;
+                }
+                print("current is \(topViewController)")
+                if let newMenuItem = menuItem{
+                    print(newMenuItem["image"]!)
+                    
+                    switch newMenuItem["image"] as! String{
+                    case "Storage":
+                        print("this is Storage")
+                        
+                    case "logousmall":
+                        print("this is logo, will go home page")
+                        // home button on sidebar is clicked
+                        let storyBoard = UIStoryboard(name: "Main",
+                            bundle: NSBundle.mainBundle())
+                        //self.performSegueWithIdentifier("backHomeSegue", sender: nil)
+                        let home = storyBoard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
+                        
+                        //print("current = \(self.view.window!.rootViewController)")
+                        self.presentViewController(home, animated: true, completion: nil)
+                        
+                        //topViewController.presentationController(home, animated: true, completion: nil)
+                        
+                    case "favourite":
+                        print("this is favourite")
+                        
+                    case "MessageW":
+                        print("this is message")
+                        
+                        self.performSegueWithIdentifier("switchMessageSegue", sender: nil)
+                    case "ActivitiesW":
+                        print("this is Activites")
+                        self.performSegueWithIdentifier("switchActivitiesSegue", sender: nil)
+                    default:
+                        print("SwitchViewController: something wrong")
+                    }
+                    
+                }
+
+                
+            }else{
+                if let switchView = switchViewController {
+                    switchView.menuItem = menuItem
+                    hideOrShowMenu(false, animated: true)
+                }
             }
             
-            if let switchView = switchViewController {
-                switchView.menuItem = menuItem
-                hideOrShowMenu(false, animated: true)
-            }
+            
             
         }
     }
