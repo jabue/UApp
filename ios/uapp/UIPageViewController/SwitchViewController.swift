@@ -84,7 +84,7 @@ class SwitchViewController: UIViewController {
             self.addChildViewController(segue.destinationViewController)
             let destView : UIView = (segue.destinationViewController).view
         
-        destView.autoresizingMask = [.FlexibleWidth , .FlexibleHeight]
+            destView.autoresizingMask = [.FlexibleWidth , .FlexibleHeight]
             destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
             self.view.addSubview(destView)
             segue.destinationViewController.didMoveToParentViewController(self)
@@ -107,15 +107,6 @@ class SwitchViewController: UIViewController {
                     
                 case "logousmall":
                     print("this is logo, will go home page")
-                    // home button on sidebar is clicked
-                    let storyBoard = UIStoryboard(name: "Main",
-                        bundle: NSBundle.mainBundle())
-                    //self.performSegueWithIdentifier("backHomeSegue", sender: nil)
-                    let home = storyBoard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
-                  
-                    //print("current = \(self.view.window!.rootViewController)")
-                    self.presentViewController(home, animated: true, completion: nil)
-
                     
                 case "favourite":
                     print("this is favourite")

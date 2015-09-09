@@ -22,8 +22,7 @@ class MenuViewController: UITableViewController {
        // navigationController!.navigationBar.clipsToBounds = true
         print("parent=\(self.parentViewController)")
         
-       //(parentViewController as! ContainerViewController).menuItem =
-            (menuItems[0] as! NSDictionary)
+      
     }
         
    
