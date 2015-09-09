@@ -279,7 +279,9 @@
 				ORGANIZATIONNAME = "Vea Software";
 				TargetAttributes = {
 					78E75F3B1AC5FC48001A93F1 = {
+
 						DevelopmentTeam = V39EF4QG4J;
+
 					};
 					78E75F501AC5FC48001A93F1 = {
 						CreatedOnToolsVersion = 6.2;

@@ -2,3 +2,4 @@
 .DS_Store
 ./ios/uapp/UIPageViewController.xcodeproj/project.pbxproj
 ./ios/uapp/Constants.swift
+.ios/uapp/UIPageViewController.xcworkspace/xcuserdata/CiCi.xcuserdatad/UserInterfaceState.xcuserstate
