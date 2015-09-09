@@ -45,11 +45,11 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         //读取plist内容放到NSMutableArray内
         listVidos = NSMutableArray(contentsOfFile: plistpath)
         */
-        saveemailandpw()
+        
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
         let documentsDirectory = paths.objectAtIndex(0) as! NSString
         let path = documentsDirectory.stringByAppendingPathComponent("userinf.plist")
-        
+        saveemailandpw()
         
         var listData1: NSDictionary = NSDictionary()
         listData1 = NSDictionary(contentsOfFile: path)!
@@ -79,10 +79,10 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
             
             emailTextField.text = String(semaill!)
             pwdTextField.text = String(spww!)
-            trylogin()
+            //trylogin()
             
         }
-        resetemailandpw()
+        //resetemailandpw()
         
     }
     
@@ -471,7 +471,9 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         let documentsDirectory = paths.objectAtIndex(0) as! NSString
         let path = documentsDirectory.stringByAppendingPathComponent("userinf.plist")
         
-        var dict: NSMutableDictionary = ["XInitializerItem": "DoNotEverChangeMe"]
+        
+        let dict: NSMutableDictionary = NSMutableDictionary(contentsOfFile: path)!
+        //var dict: NSMutableDictionary = ["XInitializerItem": "DoNotEverChangeMe"]
         //saving values
         dict.setObject("", forKey: "email")
         dict.setObject("", forKey: "pw")

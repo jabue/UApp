@@ -188,7 +188,7 @@ class FindSchoolViewController: UIViewController, UITableViewDataSource, UITable
         
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
         let documentsDirectory = paths.objectAtIndex(0) as! NSString
-        let path = documentsDirectory.stringByAppendingPathComponent("userinf.plist")
+        let path = documentsDirectory.stringByAppendingPathComponent("school name.plist")
         
         //var dict: NSMutableDictionary = ["XInitializerItem": "DoNotEverChangeMe"]
         var dict: NSMutableDictionary = NSMutableDictionary()
