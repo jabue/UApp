@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F140FFA1B97D1C800B8FAFE /* school name.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F140FF91B97D1C800B8FAFE /* school name.plist */; };
 		0FA8D65E1B8CEC5D00172D19 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA8D65D1B8CEC5D00172D19 /* NavigationController.swift */; };
+		2F6EFBFD1B9F9AD4002487DD /* LaunchAfter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EFBFC1B9F9AD4002487DD /* LaunchAfter.swift */; };
 		78E75F421AC5FC48001A93F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F411AC5FC48001A93F1 /* AppDelegate.swift */; };
 		78E75F441AC5FC48001A93F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F431AC5FC48001A93F1 /* ViewController.swift */; };
 		78E75F471AC5FC48001A93F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E75F451AC5FC48001A93F1 /* Main.storyboard */; };
@@ -15,6 +17,7 @@
 		78E75F4C1AC5FC48001A93F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E75F4A1AC5FC48001A93F1 /* LaunchScreen.xib */; };
 		78E75F581AC5FC48001A93F1 /* UIPageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */; };
 		78E75F621AC5FCF1001A93F1 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */; };
+		9368C4761B97CD5100BE6608 /* userinf.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9368C4751B97CD5100BE6608 /* userinf.plist */; };
 		A409437A1B8D26EF009E824C /* FlickrSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40943791B8D26EF009E824C /* FlickrSearcher.swift */; };
 		A4200F261B8FA353000B3BD2 /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4200F251B8FA353000B3BD2 /* SwitchViewController.swift */; };
 		A4200F281B8FABA7000B3BD2 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */; };
@@ -51,7 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F140FF91B97D1C800B8FAFE /* school name.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "school name.plist"; sourceTree = "<group>"; };
 		0FA8D65D1B8CEC5D00172D19 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		2F6EFBFC1B9F9AD4002487DD /* LaunchAfter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchAfter.swift; sourceTree = "<group>"; };
 		44DE8D6FE573C50F52B21B64 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		58E46A51F82C31CF7C5EE6F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		78E75F3C1AC5FC48001A93F1 /* UIPageViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIPageViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +70,7 @@
 		78E75F561AC5FC48001A93F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerTests.swift; sourceTree = "<group>"; };
 		78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		9368C4751B97CD5100BE6608 /* userinf.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userinf.plist; sourceTree = "<group>"; };
 		A40943791B8D26EF009E824C /* FlickrSearcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrSearcher.swift; sourceTree = "<group>"; };
 		A4200F251B8FA353000B3BD2 /* SwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 				A445F0B51B7D3827004B3E1B /* SchoolItem.swift */,
 				A445F0F11B7D645A004B3E1B /* SignUpViewController.swift */,
 				78E75F451AC5FC48001A93F1 /* Main.storyboard */,
+				0F140FF91B97D1C800B8FAFE /* school name.plist */,
 				A43CFD121B90CC25007342A9 /* MessageViewController.swift */,
 				A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */,
 				A4200F251B8FA353000B3BD2 /* SwitchViewController.swift */,
@@ -163,6 +170,8 @@
 				78E75F481AC5FC48001A93F1 /* Images.xcassets */,
 				78E75F4A1AC5FC48001A93F1 /* LaunchScreen.xib */,
 				78E75F3F1AC5FC48001A93F1 /* Supporting Files */,
+				9368C4751B97CD5100BE6608 /* userinf.plist */,
+				2F6EFBFC1B9F9AD4002487DD /* LaunchAfter.swift */,
 			);
 			path = UIPageViewController;
 			sourceTree = "<group>";
@@ -270,7 +279,6 @@
 				ORGANIZATIONNAME = "Vea Software";
 				TargetAttributes = {
 					78E75F3B1AC5FC48001A93F1 = {
-						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = V39EF4QG4J;
 					};
 					78E75F501AC5FC48001A93F1 = {
@@ -306,8 +314,10 @@
 			files = (
 				78E75F471AC5FC48001A93F1 /* Main.storyboard in Resources */,
 				78E75F4C1AC5FC48001A93F1 /* LaunchScreen.xib in Resources */,
+				9368C4761B97CD5100BE6608 /* userinf.plist in Resources */,
 				A4DB512D1B8991B700976222 /* MenuItems.plist in Resources */,
 				A4D3EA701B7EA67500A0480E /* podfile in Resources */,
+				0F140FFA1B97D1C800B8FAFE /* school name.plist in Resources */,
 				A43DA9C61B85A3DF00DA1B6B /* schools.txt in Resources */,
 				78E75F491AC5FC48001A93F1 /* Images.xcassets in Resources */,
 			);
@@ -367,6 +377,7 @@
 				A445F0F21B7D645A004B3E1B /* SignUpViewController.swift in Sources */,
 				A4DB51331B89A93400976222 /* ContainerViewController.swift in Sources */,
 				A4DB512F1B89928600976222 /* MenuItemCell.swift in Sources */,
+				2F6EFBFD1B9F9AD4002487DD /* LaunchAfter.swift in Sources */,
 				A4DB51351B89B65100976222 /* HamburgerView.swift in Sources */,
 				A4DB51311B8995FF00976222 /* DetailViewController.swift in Sources */,
 				A409437A1B8D26EF009E824C /* FlickrSearcher.swift in Sources */,
@@ -511,7 +522,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uappc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;
@@ -528,7 +539,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uapp;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uappc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;

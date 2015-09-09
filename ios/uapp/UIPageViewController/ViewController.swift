@@ -49,6 +49,23 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         //var viewControllers = NSArray(object: startVC)
         
         //self.pageViewController.setViewControllers(viewControllers as [AnyObject], direction: .Forward, animated: true, completion: nil)
+        //print("Running here!")
+        // search local school info first
+        // saveSchoolName("")
+        let schoolName:String = findSchoolInfo()
+        if schoolName.isEmpty
+        {
+            // turn to select school view
+            self.performSegueWithIdentifier("FindSchool", sender: self)
+            
+        } else
+        {
+            // turn to login view
+            self.performSegueWithIdentifier("passFindSchool", sender: self)
+        }
+        //
+        
+
        
     }
     
@@ -139,7 +156,25 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         return 0
     }
     
-    
+    // query if there is any selected school before
+    func findSchoolInfo() -> String {
+        var result:String = ""
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        let documentsDirectory = paths.objectAtIndex(0) as! NSString
+        let path = documentsDirectory.stringByAppendingPathComponent("userinf.plist")
+        
+        let resultDictionary = NSMutableDictionary(contentsOfFile: path)
+        
+        let schoolName:String = "school"
+        if resultDictionary?.objectForKey(schoolName) != nil{
+            result = (resultDictionary?.objectForKey(schoolName)) as! String
+        }
+        
+        print("School Info \(result)")
+        
+        return result
+    }
 
 }
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>totalNum</key>
+	<integer>15</integer>
+	<key>1</key>
+	<string>University of British Columbia(UBC)</string>
+	<key>2</key>
+	<string>Simon Fraser University(SFU)</string>
+	<key>3</key>
+	<string>University of Victoria(UVic)</string>
+	<key>4</key>
+	<string>Emily Carr University of Art + Design(ECUAD)</string>
+	<key>5</key>
+	<string>Kwantlen Polytechnic University(KPU)</string>
+	<key>6</key>
+	<string>Royal Roads University(RRU)</string>
+	<key>7</key>
+	<string>Thompson Rivers University(TRU)</string>
+	<key>8</key>
+	<string>University of Northern British Columiba(UNBC)</string>
+	<key>9</key>
+	<string>Capilano Univeristy(CU)</string>
+	<key>10</key>
+	<string>Fairleign Dickinson University(FDU)</string>
+	<key>11</key>
+	<string>Trinity Western University(TWU)</string>
+	<key>12</key>
+	<string>Vancouver Island University(VIU)</string>
+	<key>13</key>
+	<string>University of the Fraser Valley(UFV)</string>
+	<key>14</key>
+	<string>Quest University(QU)</string>
+	<key>15</key>
+	<string>University Canada West(UCW)</string>
+</dict>
+</plist>
