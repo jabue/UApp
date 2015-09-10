@@ -251,7 +251,9 @@
                     </connections>
                 </searchDisplayController>
             </objects>
+
             <point key="canvasLocation" x="-1823" y="986"/>
+
         </scene>
         <!--Page View Controller-->
         <scene sceneID="dVH-Q7-P2g">
@@ -1008,7 +1010,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuItemCell" rowHeight="80" id="u0g-hn-B4b" customClass="MenuItemCell" customModule="UIPageViewController" customModuleProvider="target">
+
                                 <rect key="frame" x="0.0" y="68" width="80" height="80"/>
+
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u0g-hn-B4b" id="TFE-zo-CPw">
                                     <rect key="frame" x="0.0" y="0.0" width="80" height="79"/>
@@ -1017,6 +1021,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fGh-6K-m6z">
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                             <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+
                                                 <rect key="frame" x="8" y="8" width="584" height="63.5"/>
                                             </variation>
                                         </imageView>
@@ -1216,6 +1221,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+
                                     <rect key="frame" x="250" y="50" width="100" height="100"/>
                                     <mask key="constraints">
                                         <include reference="IGx-dF-Udb"/>
@@ -1748,7 +1754,9 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+
                                     <rect key="frame" x="255" y="60" width="90" height="90"/>
+
                                     <mask key="constraints">
                                         <include reference="wNC-Pi-sf4"/>
                                         <include reference="xRj-wX-2QX"/>
@@ -1800,7 +1808,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzM-4L-N4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+
             <point key="canvasLocation" x="-1424" y="3662"/>
+
         </scene>
         <!--Message View Controller-->
         <scene sceneID="3OG-KA-Gox">

@@ -19,12 +19,12 @@ class MenuViewController: UITableViewController {
         super.viewDidLoad()
         print("MenuViewController loading...")
         // Remove the drop shadow from the navigation bar
-        navigationController!.navigationBar.clipsToBounds = true
+       // navigationController!.navigationBar.clipsToBounds = true
+        print("parent=\(self.parentViewController)")
         
-       // (navigationController!.parentViewController as! ContainerViewController).menuItem =
-            (menuItems[0] as! NSDictionary)
+      
     }
-    
+        
    
     
     // MARK: - Table View
@@ -32,9 +32,9 @@ class MenuViewController: UITableViewController {
     // MARK: UITableViewDelegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        print("row=\(indexPath.row)")
+        print("row = \(indexPath.row), parent = \(self.parentViewController)")
         let menuItem = menuItems[indexPath.row] as! NSDictionary
-        (navigationController!.parentViewController as! ContainerViewController).menuItem = menuItem
+         (self.parentViewController as! ContainerViewController).menuItem = menuItem
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

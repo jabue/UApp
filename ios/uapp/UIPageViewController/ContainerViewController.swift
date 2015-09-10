@@ -22,18 +22,217 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     
     var menuItem: NSDictionary? {
         didSet {
-            if let switchViewController = switchViewController {
-                switchViewController.menuItem = menuItem
-                hideOrShowMenu(false, animated: true)
+            let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            if switchViewController == nil {
+                print("no switcheViewController exists")
+                
+                //var topViewController :UIViewController = (UIApplication.sharedApplication().keyWindow?.rootViewController)!
+                //while ((topViewController.presentedViewController) != nil) {
+                   // topViewController = topViewController.presentedViewController!;
+                //}
+                
+                if let newMenuItem = menuItem {
+                    print(newMenuItem["image"]!)
+                    
+                    
+                    switch newMenuItem["image"] as! String{
+                    case "Storage":
+                        print("this is Storage")
+                        
+                    case "logousmall":
+                        print("this is logo, will go home page")
+                        
+                        // home button on sidebar is clicked
+                        
+                        let home = storyBoard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
+                        self.presentViewController(home, animated: true, completion: nil)
+                        
+                    case "favourite":
+                        print("this is favourite")
+                        
+                    case "MessageW":
+                        print("this is message")
+                        // Prepare the two view controllers for the change.
+                        
+                        print("child include: \(self.childViewControllers)")
+                        switchViewController = self.childViewControllers[1] as! SwitchViewController
+                        self.childViewControllers[1].willMoveToParentViewController(nil)
+                        let messageView = storyBoard.instantiateViewControllerWithIdentifier("Message") as! MessageViewController
+                        // Get the start frame of the new view controller and the end frame
+                        // for the old view controller. Both rectangles are offscreen.
+                        let destView : UIView = messageView.view
+                        destView.autoresizingMask = [.FlexibleWidth , .FlexibleHeight]
+                        destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+                        self.addChildViewController(messageView)
+                        self.view.addSubview(destView)
+                        print("child include: \(self.childViewControllers)")
+                       
+                        self.transitionFromViewController(
+                            switchViewController!,
+                            toViewController: messageView,
+                            duration: 0.2,
+                            options: UIViewAnimationOptions.TransitionCrossDissolve,
+                            animations: nil,
+                            completion: { finished in
+                                self.switchViewController?.removeFromParentViewController()
+                                messageView.didMoveToParentViewController(self)
+                                messageView.view.frame = self.view.bounds
+                        })
+                        print("child include2: \(self.childViewControllers)")
+                        messageView.didMoveToParentViewController(self)
+                        self.switchViewController?.removeFromParentViewController()
+                        print("child include3: \(self.childViewControllers)")
+                        hideOrShowMenu(false, animated: true)
+                       
+                    case "ActivitiesW":
+                        print("this is Activites")
+                        print("child include: \(self.childViewControllers)")
+                        switchViewController = self.childViewControllers[1] as! SwitchViewController
+                        self.childViewControllers[1].willMoveToParentViewController(nil)
+                        let activeView = storyBoard.instantiateViewControllerWithIdentifier("Activities") as! ActivitiesViewController
+                        // Get the start frame of the new view controller and the end frame
+                        // for the old view controller. Both rectangles are offscreen.
+                        let destView : UIView = activeView.view
+                        destView.autoresizingMask = [.FlexibleWidth , .FlexibleHeight]
+                        destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+                        self.addChildViewController(activeView)
+                        self.view.addSubview(destView)
+                        print("child include: \(self.childViewControllers)")
+                        
+                        self.transitionFromViewController(
+                            switchViewController!,
+                            toViewController: activeView,
+                            duration: 0.2,
+                            options: UIViewAnimationOptions.TransitionCrossDissolve,
+                            animations: nil,
+                            completion: { finished in
+                                self.switchViewController?.removeFromParentViewController()
+                                activeView.didMoveToParentViewController(self)
+                                activeView.view.frame = self.view.bounds
+                        })
+                        print("child include2: \(self.childViewControllers)")
+                        activeView.didMoveToParentViewController(self)
+                        self.switchViewController?.removeFromParentViewController()
+                        print("child include3: \(self.childViewControllers)")
+                        hideOrShowMenu(false, animated: true)
+
+                       
+                    default:
+                        print("SwitchViewController: something wrong")
+                    }
+                    
+                }
+
+                
+            }else{
+                print("switchVeiwController exists.")
+                print("child include: \(self.childViewControllers)")
+                
+                
+                if let newMenuItem = menuItem {
+                    print(newMenuItem["image"]!)
+                    
+                    
+                    switch newMenuItem["image"] as! String{
+                    case "Storage":
+                        print("this is Storage")
+                        
+                    case "logousmall":
+                        print("this is logo, will go home page")
+                        
+                        // home button on sidebar is clicked
+                        
+                        let home = storyBoard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
+                        self.presentViewController(home, animated: true, completion: nil)
+                        
+                    case "favourite":
+                        print("this is favourite")
+                        
+                    case "MessageW":
+                        print("this is message")
+                        // Prepare the two view controllers for the change.
+                        
+                        print("child include: \(self.childViewControllers)")
+                        let fromController = self.childViewControllers[1]
+                        fromController.willMoveToParentViewController(nil)
+                        let messageView = storyBoard.instantiateViewControllerWithIdentifier("Message") as! MessageViewController
+                        // Get the start frame of the new view controller and the end frame
+                        // for the old view controller. Both rectangles are offscreen.
+                        let destView : UIView = messageView.view
+                        destView.autoresizingMask = [.FlexibleWidth , .FlexibleHeight]
+                        destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+                        self.addChildViewController(messageView)
+                        self.view.addSubview(destView)
+                        print("child include: \(self.childViewControllers)")
+                        
+                        self.transitionFromViewController(
+                            fromController,
+                            toViewController: messageView,
+                            duration: 0.2,
+                            options: UIViewAnimationOptions.TransitionCrossDissolve,
+                            animations: nil,
+                            completion: { finished in
+                                fromController.removeFromParentViewController()
+                                messageView.didMoveToParentViewController(self)
+                                messageView.view.frame = self.view.bounds
+                        })
+                        print("child include2: \(self.childViewControllers)")
+                        messageView.didMoveToParentViewController(self)
+                        fromController.removeFromParentViewController()
+                        print("child include3: \(self.childViewControllers)")
+                        hideOrShowMenu(false, animated: true)
+                        
+                    case "ActivitiesW":
+                        print("this is Activites")
+                        print("child include: \(self.childViewControllers)")
+                        let fromController = self.childViewControllers[1]
+                        fromController.willMoveToParentViewController(nil)
+                        let activeView = storyBoard.instantiateViewControllerWithIdentifier("Activities") as! ActivitiesViewController
+                        // Get the start frame of the new view controller and the end frame
+                        // for the old view controller. Both rectangles are offscreen.
+                        let destView : UIView = activeView.view
+                        destView.autoresizingMask = [.FlexibleWidth , .FlexibleHeight]
+                        destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+                        self.addChildViewController(activeView)
+                        self.view.addSubview(destView)
+                        print("child include: \(self.childViewControllers)")
+                        
+                        self.transitionFromViewController(
+                            fromController,
+                            toViewController: activeView,
+                            duration: 0.2,
+                            options: UIViewAnimationOptions.TransitionCrossDissolve,
+                            animations: nil,
+                            completion: { finished in
+                                fromController.removeFromParentViewController()
+                                activeView.didMoveToParentViewController(self)
+                                activeView.view.frame = self.view.bounds
+                        })
+                        print("child include2: \(self.childViewControllers)")
+                        activeView.didMoveToParentViewController(self)
+                        fromController.removeFromParentViewController()
+                        print("child include3: \(self.childViewControllers)")
+                        hideOrShowMenu(false, animated: true)
+
+                        
+                    default:
+                        print("SwitchViewController: something wrong")
+                    }
+                }
+
+
             }
-            if let activitiesController = activitiesController {
-                activitiesController.menuItem = menuItem
-                hideOrShowMenu(false, animated: true)
-            }
+            
+            
+            
         }
     }
     
-       
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("ContainerViewController loaded ...")
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         hideOrShowMenu(showingMenu, animated: false)
@@ -43,31 +242,14 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print("in ContainerView: segue = \(segue.identifier)")
-        let navigationController = segue.destinationViewController as! UINavigationController
-        
-        switchViewController = navigationController.topViewController as? SwitchViewController
-        switchViewController?.buttonClickedinHome = buttonClickedinHome!
-        
-        
-        /*
-        switch buttonClickedinHome!{
-            case "Profile":
-                if segue.identifier == "DetailViewSegue" {
-                    let navigationController = segue.destinationViewController as! UINavigationController
-                    
-                    detailViewController = navigationController.topViewController as? DetailViewController
-                    
-            }
-            case "Activities":
-                if segue.identifier == "DetailViewSegue" {
-                    let navigationController = segue.destinationViewController as! UINavigationController
-                    activitiesController = navigationController.topViewController as? ActivitiesViewController
-            }
-            default:
-                return
+        if segue.identifier != nil{
+            
+
+            let switchViewController = segue.destinationViewController as! SwitchViewController
+            switchViewController.buttonClickedinHome = buttonClickedinHome!
+            print("switchViewcontroller = \(switchViewController.description)")
         }
         
-        */
         
     }
     

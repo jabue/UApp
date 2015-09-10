@@ -27,45 +27,43 @@ class SwitchViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        print("switch page load")
+        print("switch page load...")
         print("button clike is: \(buttonClickedinHome)")
-        navigationController!.navigationBar.clipsToBounds = true
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hamburgerViewTapped")
-        hamburgerView = HamburgerView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        hamburgerView!.addGestureRecognizer(tapGestureRecognizer)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hamburgerView!)
-        
-        switch buttonClickedinHome! { // buttonClickedinHome is passed from the HomeViewController.
-        case "Profile":
-            print("go profile")
-            self.currentSegueIdentifier = SegueIdentifierFirst
-        case "Activities":
-            print("go activities")
-            self.currentSegueIdentifier = SegueIdentifierSecond
-        case "Message":
-            print("go Message")
-            self.currentSegueIdentifier = SegueIdentifierThird
+        if let _ = buttonClickedinHome {
+            print("button clike is: \(buttonClickedinHome)")
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hamburgerViewTapped")
+            hamburgerView = HamburgerView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
             
+            hamburgerView!.addGestureRecognizer(tapGestureRecognizer)
+            navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hamburgerView!)
             
-        default:
-            print("switch error")
+            switch buttonClickedinHome! { // buttonClickedinHome is passed from the HomeViewController.
+            case "Profile":
+                print("go profile")
+                self.currentSegueIdentifier = SegueIdentifierFirst
+            case "Activities":
+                print("go activities")
+                self.currentSegueIdentifier = SegueIdentifierSecond
+            case "Message":
+                print("go Message")
+                self.currentSegueIdentifier = SegueIdentifierThird
+                
+                
+            default:
+                print("switch error")
+            }
+            
+            self.performSegueWithIdentifier(currentSegueIdentifier, sender: nil)
+            
         }
-
-        self.performSegueWithIdentifier(currentSegueIdentifier, sender: nil)
+       
     }
     
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("go \(buttonClickedinHome)")
-        /*
-        if (segue.identifier == SegueIdentifierFirst) {
-            self.firstViewController = segue.destinationViewController;
-        }
         
-        if (segue.identifier == SegueIdentifierSecond) {
-            self.secondViewController = segue.destinationViewController;
-        }
-        */
-        print("segue = \(segue.identifier)")
+        var back = false
+        print("prepare segue : \(segue.identifier)")
         switch segue.identifier! {
         case SegueIdentifierFirst:
                 self.firstViewController = segue.destinationViewController
@@ -74,90 +72,52 @@ class SwitchViewController: UIViewController {
         case SegueIdentifierThird:
             self.thirdViewController = segue.destinationViewController
         case "backHomeSegue":
+            back = true
             print("go back to home page")
+        
         default:
             print("error: no such segue.")
         }
+        if !back
+        {
+            print("debug in switchViewController's prepareForSegue()")
+            self.addChildViewController(segue.destinationViewController)
+            let destView : UIView = (segue.destinationViewController).view
         
-        self.addChildViewController(segue.destinationViewController)
-        let destView : UIView = (segue.destinationViewController).view
-        
-        //destView.autoresizingMask = UIViewAutoresizingFlexibleWith | UIViewAutoresizingflexibleHeight;
-        destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-        self.view.addSubview(destView)
-        segue.destinationViewController.didMoveToParentViewController(self)
-    }
-    
-    func swapFromViewController(fromViewController: UIViewController, toViewController: UIViewController) -> Void {
-        toViewController.view.frame =  CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
-        fromViewController.willMoveToParentViewController(nil)
-        self.addChildViewController(toViewController)
-        self.transitionFromViewController(
-            fromViewController,
-            toViewController: toViewController,
-            duration:1.0,
-            options: UIViewAnimationOptions.TransitionCrossDissolve,
-            animations: { () -> Void in
-                
-            },
-            completion: { finished in
-                fromViewController.removeFromParentViewController()
-                toViewController.didMoveToParentViewController(self)
-                self.trasitionInProgress = false
-        })
-        
+            destView.autoresizingMask = [.FlexibleWidth , .FlexibleHeight]
+            destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+            self.view.addSubview(destView)
+            segue.destinationViewController.didMoveToParentViewController(self)
+        }else{
+            print("debug2 in switchViewController's prepareForSegue()")
+            
+        }
         
         
     }
-    
-    
-    func swapViewControllers() -> Void {
-        if((self.trasitionInProgress) != nil){
-            return
-        }
-        
-        self.trasitionInProgress = true
-        self.currentSegueIdentifier = (self.currentSegueIdentifier == SegueIdentifierFirst) ? SegueIdentifierSecond : SegueIdentifierFirst
-        
-        if((self.currentSegueIdentifier == SegueIdentifierFirst && self.firstViewController != nil) ){
-            self.swapFromViewController(self.secondViewController!, toViewController: self.firstViewController!)
-            return
-        }
-        
-        if(self.currentSegueIdentifier == SegueIdentifierSecond && self.secondViewController != nil){
-            self.swapFromViewController(self.firstViewController!, toViewController: self.secondViewController!)
-        }
-        
-        self.performSegueWithIdentifier(self.currentSegueIdentifier, sender: nil)
-        
-    }
-    
-    
     
     var menuItem: NSDictionary? {
         didSet {
             if let newMenuItem = menuItem{
-                //view.backgroundColor = UIColor(colorArray: newMenuItem["colors"] as! NSArray)
-                //backgroundImageView?.image = UIImage(named: newMenuItem["bigImage"] as! String)
                 print(newMenuItem["image"]!)
+                
                 switch newMenuItem["image"] as! String{
                 case "Storage":
                     print("this is Storage")
                     
                 case "logousmall":
-                    print("this is logo")
-                    //[[self navigationController] setNavigationBarHidden:YES animated:YES];
-                    self.navigationController?.setNavigationBarHidden(true, animated: true)
-                    self.performSegueWithIdentifier("backHomeSegue", sender: nil)
-                    
+                    print("this is logo, will go home page")
                     
                 case "favourite":
                     print("this is favourite")
                     
-                case "Message":
+                case "MessageW":
                     print("this is message")
-                case "Activites":
+                    
+                    self.performSegueWithIdentifier("switchMessageSegue", sender: nil)
+                case "ActivitiesW":
                     print("this is Activites")
+                    self.performSegueWithIdentifier("switchActivitiesSegue", sender: nil)
                 default:
                     print("SwitchViewController: something wrong")
                 }
