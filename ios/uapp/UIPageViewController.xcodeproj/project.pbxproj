@@ -18,6 +18,7 @@
 		78E75F581AC5FC48001A93F1 /* UIPageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */; };
 		78E75F621AC5FCF1001A93F1 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */; };
 		9368C4761B97CD5100BE6608 /* userinf.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9368C4751B97CD5100BE6608 /* userinf.plist */; };
+		93DC4AE71BA24F7B006237F5 /* firsttimecheck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93DC4AE61BA24F7B006237F5 /* firsttimecheck.plist */; };
 		A409437A1B8D26EF009E824C /* FlickrSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40943791B8D26EF009E824C /* FlickrSearcher.swift */; };
 		A4200F261B8FA353000B3BD2 /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4200F251B8FA353000B3BD2 /* SwitchViewController.swift */; };
 		A4200F281B8FABA7000B3BD2 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */; };
@@ -71,6 +72,7 @@
 		78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerTests.swift; sourceTree = "<group>"; };
 		78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		9368C4751B97CD5100BE6608 /* userinf.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userinf.plist; sourceTree = "<group>"; };
+		93DC4AE61BA24F7B006237F5 /* firsttimecheck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = firsttimecheck.plist; sourceTree = "<group>"; };
 		A40943791B8D26EF009E824C /* FlickrSearcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrSearcher.swift; sourceTree = "<group>"; };
 		A4200F251B8FA353000B3BD2 /* SwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				78E75F3F1AC5FC48001A93F1 /* Supporting Files */,
 				9368C4751B97CD5100BE6608 /* userinf.plist */,
 				2F6EFBFC1B9F9AD4002487DD /* LaunchAfter.swift */,
+				93DC4AE61BA24F7B006237F5 /* firsttimecheck.plist */,
 			);
 			path = UIPageViewController;
 			sourceTree = "<group>";
@@ -279,7 +282,7 @@
 				ORGANIZATIONNAME = "Vea Software";
 				TargetAttributes = {
 					78E75F3B1AC5FC48001A93F1 = {
-						DevelopmentTeam = LD7DY78L8K;
+						DevelopmentTeam = 9J6MV3Q25J;
 					};
 					78E75F501AC5FC48001A93F1 = {
 						CreatedOnToolsVersion = 6.2;
@@ -315,6 +318,7 @@
 				78E75F471AC5FC48001A93F1 /* Main.storyboard in Resources */,
 				78E75F4C1AC5FC48001A93F1 /* LaunchScreen.xib in Resources */,
 				9368C4761B97CD5100BE6608 /* userinf.plist in Resources */,
+				93DC4AE71BA24F7B006237F5 /* firsttimecheck.plist in Resources */,
 				A4DB512D1B8991B700976222 /* MenuItems.plist in Resources */,
 				A4D3EA701B7EA67500A0480E /* podfile in Resources */,
 				0F140FFA1B97D1C800B8FAFE /* school name.plist in Resources */,
@@ -522,7 +526,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;
@@ -539,7 +543,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;
