@@ -119,6 +119,8 @@
                     <connections>
                         <segue destination="V5N-e9-IJ5" kind="show" identifier="LaunchToFindSchool" id="3jO-9X-e0G"/>
                         <segue destination="mGp-Zz-ADn" kind="show" identifier="LaunchToLogin" id="yeh-DR-WwB"/>
+                        <segue destination="v5f-oP-nA8" kind="show" identifier="tohomepage" id="ngK-55-gep"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="welcome" id="itk-C8-9ib"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeU-PE-LV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -536,6 +538,12 @@
                                     </mask>
                                 </variation>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDM-V8-D3H">
+                                <rect key="frame" x="55" y="109" width="123" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="txtFogotPwd" text="Forgot password?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3Dr-ox-Lah">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
@@ -700,7 +708,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8VV-Fn-Cl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-803" y="748"/>
+            <point key="canvasLocation" x="-875" y="932"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="ncd-xn-xI1">
@@ -2130,6 +2138,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.13333334029999999" green="0.57647061349999995" blue="0.62352943419999995" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="-34.5" y="120" width="69" height="20.5"/>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2201,8 +2212,9 @@
         <image name="pic" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yeh-DR-WwB"/>
         <segue reference="3jO-9X-e0G"/>
+        <segue reference="yeh-DR-WwB"/>
+        <segue reference="qZl-hY-h3h"/>
         <segue reference="VUl-g0-Oy9"/>
     </inferredMetricsTieBreakers>
 </document>
