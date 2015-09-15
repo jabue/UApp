@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Snap.png",
+      "filename" : "bookshop.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Storage.png",
       "scale" : "2x"
     },
     {
