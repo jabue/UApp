@@ -28,7 +28,7 @@ class MenuViewController: UITableViewController {
    
     
     // MARK: - Table View
-    
+    /*
     // MARK: UITableViewDelegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -56,5 +56,5 @@ class MenuViewController: UITableViewController {
         cell.configureForMenuItem(menuItem)
         return cell
     }
-
+*/
 }

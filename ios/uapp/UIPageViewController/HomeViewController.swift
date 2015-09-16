@@ -19,23 +19,6 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func showMessage(sender: UIButton) {
-        buttonClicked = "Message"
-        print("showMessage")
-        self.performSegueWithIdentifier("showProfile", sender: self)
-    }
-    
-    @IBAction func showProfile(sender: UIButton) {
-        buttonClicked = "Profile"
-        print("showProfile")
-        self.performSegueWithIdentifier("showProfile", sender: self)
-        
-    }
-   
-    @IBAction func showActivities(sender: UIButton) {
-        buttonClicked = "Activities"
-        self.performSegueWithIdentifier("showProfile", sender: self)
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -46,7 +29,5 @@ class HomeViewController: UIViewController {
         
         // Create a new variable to store the instance of ContainerViewController
         print("HomeViewConroller debug")
-        let destinationVC = segue.destinationViewController as! ContainerViewController
-        destinationVC.buttonClickedinHome = buttonClicked
-    }
+            }
 }

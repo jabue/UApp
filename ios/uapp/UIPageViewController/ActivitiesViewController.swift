@@ -10,26 +10,60 @@ import UIKit
 
 class ActivitiesViewController: UIViewController {
     
-    var hamburgerView: HamburgerView?
+    @IBOutlet var subview: UIView!
+   
+    var setpage:SetBarViewController!
+    var showsetbar:Bool!
+    
+    var setbarinfro:CGFloat = SetBarSetting.sizeofsetbar 
+    var speedofsetbar = SetBarSetting.speedofsetbar
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Activities page loading..")
-        // Remove the drop shadow from the navigation bar
-        /*navigationController!.navigationBar.clipsToBounds = true
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hamburgerViewTapped")
-        hamburgerView = HamburgerView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        hamburgerView!.addGestureRecognizer(tapGestureRecognizer)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hamburgerView!)*/
+        
+        setpage = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SetBarViewController") as! SetBarViewController
+        
+        self.view.addSubview(setpage.view!)
+        setpage.view.frame.size.width = setbarinfro
+        setpage.view.frame.origin.x = -setbarinfro
+        showsetbar = false
+        
+        //hand swipe
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        
+        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        
+        leftSwipe.direction = .Left
+        rightSwipe.direction = .Right
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
         
     }
     
-    func hamburgerViewTapped() {
-        let navigationController = parentViewController as! UINavigationController
-        let containerViewController = navigationController.parentViewController as! ContainerViewController
-        containerViewController.hideOrShowMenu(!containerViewController.showingMenu, animated: true)
+       
+    func handleSwipes(sender:UISwipeGestureRecognizer){
+        if (sender.direction == .Left && showsetbar == true){
+            UIView.animateWithDuration(speedofsetbar , animations: {
+                self.subview.frame.origin.x = self.subview.frame.origin.x - self.setbarinfro
+                self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x - self.setbarinfro
+            
+            })
+            showsetbar = false
+            
+        }
+        if (sender.direction == .Right && showsetbar == false){
+            UIView.animateWithDuration(speedofsetbar, animations: {
+                self.subview.frame.origin.x = self.subview.frame.origin.x + self.setbarinfro
+                self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x + self.setbarinfro
+            
+            })
+            showsetbar = true
+            
+            
+        }
     }
-    
-    
-
 }
+
+

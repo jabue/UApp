@@ -19,8 +19,9 @@
 		78E75F621AC5FCF1001A93F1 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */; };
 		9368C4761B97CD5100BE6608 /* userinf.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9368C4751B97CD5100BE6608 /* userinf.plist */; };
 		93DC4AE71BA24F7B006237F5 /* firsttimecheck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93DC4AE61BA24F7B006237F5 /* firsttimecheck.plist */; };
+		93DC4B6D1BA9E5E6006237F5 /* SetBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC4B6C1BA9E5E6006237F5 /* SetBarViewController.swift */; };
+		93DC4B6F1BA9FD6E006237F5 /* SetBarSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC4B6E1BA9FD6E006237F5 /* SetBarSetting.swift */; };
 		A409437A1B8D26EF009E824C /* FlickrSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40943791B8D26EF009E824C /* FlickrSearcher.swift */; };
-		A4200F261B8FA353000B3BD2 /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4200F251B8FA353000B3BD2 /* SwitchViewController.swift */; };
 		A4200F281B8FABA7000B3BD2 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */; };
 		A4335A371B8E5E3300C14B54 /* MyPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4335A361B8E5E3300C14B54 /* MyPhotoViewController.swift */; };
 		A4335A391B8E694500C14B54 /* MyPhotoCellViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4335A381B8E694500C14B54 /* MyPhotoCellViewCell.swift */; };
@@ -38,7 +39,6 @@
 		A4DB512D1B8991B700976222 /* MenuItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4DB512C1B8991B700976222 /* MenuItems.plist */; };
 		A4DB512F1B89928600976222 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB512E1B89928600976222 /* MenuItemCell.swift */; };
 		A4DB51311B8995FF00976222 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB51301B8995FF00976222 /* DetailViewController.swift */; };
-		A4DB51331B89A93400976222 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB51321B89A93400976222 /* ContainerViewController.swift */; };
 		A4DB51351B89B65100976222 /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB51341B89B65100976222 /* HamburgerView.swift */; };
 		A4ED19611B8B881F004B3D1B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ED19601B8B881F004B3D1B /* libsqlite3.tbd */; };
 		A4F36C3E1B82573E002CC587 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F36C3D1B82573E002CC587 /* Constants.swift */; };
@@ -73,8 +73,9 @@
 		78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		9368C4751B97CD5100BE6608 /* userinf.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userinf.plist; sourceTree = "<group>"; };
 		93DC4AE61BA24F7B006237F5 /* firsttimecheck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = firsttimecheck.plist; sourceTree = "<group>"; };
+		93DC4B6C1BA9E5E6006237F5 /* SetBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBarViewController.swift; sourceTree = "<group>"; };
+		93DC4B6E1BA9FD6E006237F5 /* SetBarSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBarSetting.swift; sourceTree = "<group>"; };
 		A40943791B8D26EF009E824C /* FlickrSearcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrSearcher.swift; sourceTree = "<group>"; };
-		A4200F251B8FA353000B3BD2 /* SwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
 		A4335A361B8E5E3300C14B54 /* MyPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPhotoViewController.swift; sourceTree = "<group>"; };
 		A4335A381B8E694500C14B54 /* MyPhotoCellViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPhotoCellViewCell.swift; sourceTree = "<group>"; };
@@ -92,7 +93,6 @@
 		A4DB512C1B8991B700976222 /* MenuItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MenuItems.plist; sourceTree = "<group>"; };
 		A4DB512E1B89928600976222 /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		A4DB51301B8995FF00976222 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		A4DB51321B89A93400976222 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		A4DB51341B89B65100976222 /* HamburgerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
 		A4ED19601B8B881F004B3D1B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A4F36C3D1B82573E002CC587 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
@@ -147,7 +147,6 @@
 				A4DB51261B8954C700976222 /* HomeViewController.swift */,
 				78E75F411AC5FC48001A93F1 /* AppDelegate.swift */,
 				A4F36C3D1B82573E002CC587 /* Constants.swift */,
-				A4DB51321B89A93400976222 /* ContainerViewController.swift */,
 				A4335A3A1B8E903C00C14B54 /* ActivitiesViewController.swift */,
 				A4DB51341B89B65100976222 /* HamburgerView.swift */,
 				78E75F431AC5FC48001A93F1 /* ViewController.swift */,
@@ -161,7 +160,6 @@
 				0F140FF91B97D1C800B8FAFE /* school name.plist */,
 				A43CFD121B90CC25007342A9 /* MessageViewController.swift */,
 				A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */,
-				A4200F251B8FA353000B3BD2 /* SwitchViewController.swift */,
 				A4335A381B8E694500C14B54 /* MyPhotoCellViewCell.swift */,
 				A4335A361B8E5E3300C14B54 /* MyPhotoViewController.swift */,
 				0FA8D65D1B8CEC5D00172D19 /* NavigationController.swift */,
@@ -175,6 +173,8 @@
 				9368C4751B97CD5100BE6608 /* userinf.plist */,
 				2F6EFBFC1B9F9AD4002487DD /* LaunchAfter.swift */,
 				93DC4AE61BA24F7B006237F5 /* firsttimecheck.plist */,
+				93DC4B6C1BA9E5E6006237F5 /* SetBarViewController.swift */,
+				93DC4B6E1BA9FD6E006237F5 /* SetBarSetting.swift */,
 			);
 			path = UIPageViewController;
 			sourceTree = "<group>";
@@ -282,7 +282,7 @@
 				ORGANIZATIONNAME = "Vea Software";
 				TargetAttributes = {
 					78E75F3B1AC5FC48001A93F1 = {
-						DevelopmentTeam = 9589D48N4E;
+						DevelopmentTeam = 9J6MV3Q25J;
 					};
 					78E75F501AC5FC48001A93F1 = {
 						CreatedOnToolsVersion = 6.2;
@@ -375,11 +375,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				78E75F441AC5FC48001A93F1 /* ViewController.swift in Sources */,
+				93DC4B6F1BA9FD6E006237F5 /* SetBarSetting.swift in Sources */,
+				93DC4B6D1BA9E5E6006237F5 /* SetBarViewController.swift in Sources */,
 				A4335A391B8E694500C14B54 /* MyPhotoCellViewCell.swift in Sources */,
-				A4200F261B8FA353000B3BD2 /* SwitchViewController.swift in Sources */,
 				A4335A3B1B8E903C00C14B54 /* ActivitiesViewController.swift in Sources */,
 				A445F0F21B7D645A004B3E1B /* SignUpViewController.swift in Sources */,
-				A4DB51331B89A93400976222 /* ContainerViewController.swift in Sources */,
 				A4DB512F1B89928600976222 /* MenuItemCell.swift in Sources */,
 				2F6EFBFD1B9F9AD4002487DD /* LaunchAfter.swift in Sources */,
 				A4DB51351B89B65100976222 /* HamburgerView.swift in Sources */,
@@ -526,7 +526,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap98;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;
@@ -543,7 +543,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap98;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;
