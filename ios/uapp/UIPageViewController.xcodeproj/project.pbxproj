@@ -42,6 +42,7 @@
 		A4DB51351B89B65100976222 /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB51341B89B65100976222 /* HamburgerView.swift */; };
 		A4ED19611B8B881F004B3D1B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ED19601B8B881F004B3D1B /* libsqlite3.tbd */; };
 		A4F36C3E1B82573E002CC587 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F36C3D1B82573E002CC587 /* Constants.swift */; };
+		EC7A10FD1BA7978C002BF22E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A10FC1BA7978C002BF22E /* SettingViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		A4ED19601B8B881F004B3D1B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A4F36C3D1B82573E002CC587 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
 		C9BDFD18188BFE32ECE26A67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7A10FC1BA7978C002BF22E /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				A4DB51301B8995FF00976222 /* DetailViewController.swift */,
 				A4DB51281B89904400976222 /* Extensions.swift */,
 				A4DB512E1B89928600976222 /* MenuItemCell.swift */,
+				EC7A10FC1BA7978C002BF22E /* SettingViewController.swift */,
 				A4DB51241B8944BD00976222 /* MenuViewController.swift */,
 				78E75F481AC5FC48001A93F1 /* Images.xcassets */,
 				78E75F4A1AC5FC48001A93F1 /* LaunchScreen.xib */,
@@ -385,6 +388,7 @@
 				A4DB51351B89B65100976222 /* HamburgerView.swift in Sources */,
 				A4DB51311B8995FF00976222 /* DetailViewController.swift in Sources */,
 				A409437A1B8D26EF009E824C /* FlickrSearcher.swift in Sources */,
+				EC7A10FD1BA7978C002BF22E /* SettingViewController.swift in Sources */,
 				A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift in Sources */,
 				A4335A371B8E5E3300C14B54 /* MyPhotoViewController.swift in Sources */,
 				0FA8D65E1B8CEC5D00172D19 /* NavigationController.swift in Sources */,

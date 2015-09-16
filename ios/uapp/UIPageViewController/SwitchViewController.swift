@@ -11,6 +11,7 @@ import UIKit
 let SegueIdentifierFirst = "switchProfileSegue"
 let SegueIdentifierSecond = "switchActivitiesSegue"
 let SegueIdentifierThird = "switchMessageSegue"
+let SegueIdentifierForth = "switchSetting"
 
 class SwitchViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class SwitchViewController: UIViewController {
     var firstViewController: UIViewController!
     var secondViewController: UIViewController!
     var thirdViewController: UIViewController!
+    var forthViewController: UIViewController!
     
     var trasitionInProgress : Bool!
     var currentSegueIdentifier = String()
@@ -47,6 +49,9 @@ class SwitchViewController: UIViewController {
             case "Message":
                 print("go Message")
                 self.currentSegueIdentifier = SegueIdentifierThird
+            case "Setting":
+                print("go Setting")
+                self.currentSegueIdentifier = SegueIdentifierForth
                 
                 
             default:
@@ -70,7 +75,9 @@ class SwitchViewController: UIViewController {
         case SegueIdentifierSecond:
                 self.secondViewController = segue.destinationViewController
         case SegueIdentifierThird:
-            self.thirdViewController = segue.destinationViewController
+                self.thirdViewController = segue.destinationViewController
+        case SegueIdentifierForth:
+                self.forthViewController = segue.destinationViewController
         case "backHomeSegue":
             back = true
             print("go back to home page")

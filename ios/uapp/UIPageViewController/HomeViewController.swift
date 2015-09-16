@@ -31,6 +31,12 @@ class HomeViewController: UIViewController {
         self.performSegueWithIdentifier("showProfile", sender: self)
         
     }
+    
+    @IBAction func showSetting(sender: UIButton) {
+        buttonClicked = "Setting"
+        print("showSetting")
+        self.performSegueWithIdentifier("showProfile", sender: self)
+    }
    
     @IBAction func showActivities(sender: UIButton) {
         buttonClicked = "Activities"
