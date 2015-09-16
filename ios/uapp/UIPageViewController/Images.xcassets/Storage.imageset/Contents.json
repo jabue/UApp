@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Storage.png",
+      "filename" : "ucloud.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Storage-1.png",
       "scale" : "2x"
     },
     {
