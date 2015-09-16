@@ -1,15 +1,15 @@
 //
-//  SettingViewController.swift
-//  UITableViewController
+//  InforViewController.swift
+//  UIPageViewController
 //
-//  Created by Loui on 2015-08-28.
-//  Copyright © 2015 Vea Software. All rights reserved.
+//  Created by joey on 15/9/16.
+//  Copyright © 2015年 Vea Software. All rights reserved.
 //
 
 import UIKit
 
 
-class SettingViewController: UIViewController {
+class InforViewController: UIViewController {
     
     @IBOutlet var subview: UIView!
     

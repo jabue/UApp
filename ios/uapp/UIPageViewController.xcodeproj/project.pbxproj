@@ -21,6 +21,10 @@
 		93DC4AE71BA24F7B006237F5 /* firsttimecheck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93DC4AE61BA24F7B006237F5 /* firsttimecheck.plist */; };
 		93DC4B6D1BA9E5E6006237F5 /* SetBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC4B6C1BA9E5E6006237F5 /* SetBarViewController.swift */; };
 		93DC4B6F1BA9FD6E006237F5 /* SetBarSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC4B6E1BA9FD6E006237F5 /* SetBarSetting.swift */; };
+		93DC4BAB1BAA3346006237F5 /* BookShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC4BAA1BAA3346006237F5 /* BookShopViewController.swift */; };
+		93DC4BAD1BAA3371006237F5 /* UCloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC4BAC1BAA3371006237F5 /* UCloudViewController.swift */; };
+		93DC4BAF1BAA3395006237F5 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC4BAE1BAA3395006237F5 /* CalenderViewController.swift */; };
+		93DC4BB11BAA33B2006237F5 /* InforViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC4BB01BAA33B2006237F5 /* InforViewController.swift */; };
 		A409437A1B8D26EF009E824C /* FlickrSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40943791B8D26EF009E824C /* FlickrSearcher.swift */; };
 		A4200F281B8FABA7000B3BD2 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */; };
 		A4335A371B8E5E3300C14B54 /* MyPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4335A361B8E5E3300C14B54 /* MyPhotoViewController.swift */; };
@@ -76,6 +80,10 @@
 		93DC4AE61BA24F7B006237F5 /* firsttimecheck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = firsttimecheck.plist; sourceTree = "<group>"; };
 		93DC4B6C1BA9E5E6006237F5 /* SetBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBarViewController.swift; sourceTree = "<group>"; };
 		93DC4B6E1BA9FD6E006237F5 /* SetBarSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBarSetting.swift; sourceTree = "<group>"; };
+		93DC4BAA1BAA3346006237F5 /* BookShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookShopViewController.swift; sourceTree = "<group>"; };
+		93DC4BAC1BAA3371006237F5 /* UCloudViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCloudViewController.swift; sourceTree = "<group>"; };
+		93DC4BAE1BAA3395006237F5 /* CalenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
+		93DC4BB01BAA33B2006237F5 /* InforViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InforViewController.swift; sourceTree = "<group>"; };
 		A40943791B8D26EF009E824C /* FlickrSearcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrSearcher.swift; sourceTree = "<group>"; };
 		A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
 		A4335A361B8E5E3300C14B54 /* MyPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPhotoViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +186,10 @@
 				93DC4AE61BA24F7B006237F5 /* firsttimecheck.plist */,
 				93DC4B6C1BA9E5E6006237F5 /* SetBarViewController.swift */,
 				93DC4B6E1BA9FD6E006237F5 /* SetBarSetting.swift */,
+				93DC4BAA1BAA3346006237F5 /* BookShopViewController.swift */,
+				93DC4BAC1BAA3371006237F5 /* UCloudViewController.swift */,
+				93DC4BAE1BAA3395006237F5 /* CalenderViewController.swift */,
+				93DC4BB01BAA33B2006237F5 /* InforViewController.swift */,
 			);
 			path = UIPageViewController;
 			sourceTree = "<group>";
@@ -377,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93DC4BAD1BAA3371006237F5 /* UCloudViewController.swift in Sources */,
 				78E75F441AC5FC48001A93F1 /* ViewController.swift in Sources */,
 				93DC4B6F1BA9FD6E006237F5 /* SetBarSetting.swift in Sources */,
 				93DC4B6D1BA9E5E6006237F5 /* SetBarViewController.swift in Sources */,
@@ -384,12 +397,15 @@
 				A4335A3B1B8E903C00C14B54 /* ActivitiesViewController.swift in Sources */,
 				A445F0F21B7D645A004B3E1B /* SignUpViewController.swift in Sources */,
 				A4DB512F1B89928600976222 /* MenuItemCell.swift in Sources */,
+				93DC4BAB1BAA3346006237F5 /* BookShopViewController.swift in Sources */,
 				2F6EFBFD1B9F9AD4002487DD /* LaunchAfter.swift in Sources */,
 				A4DB51351B89B65100976222 /* HamburgerView.swift in Sources */,
 				A4DB51311B8995FF00976222 /* DetailViewController.swift in Sources */,
 				A409437A1B8D26EF009E824C /* FlickrSearcher.swift in Sources */,
+				93DC4BB11BAA33B2006237F5 /* InforViewController.swift in Sources */,
 				EC7A10FD1BA7978C002BF22E /* SettingViewController.swift in Sources */,
 				A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift in Sources */,
+				93DC4BAF1BAA3395006237F5 /* CalenderViewController.swift in Sources */,
 				A4335A371B8E5E3300C14B54 /* MyPhotoViewController.swift in Sources */,
 				0FA8D65E1B8CEC5D00172D19 /* NavigationController.swift in Sources */,
 				A4DB51251B8944BD00976222 /* MenuViewController.swift in Sources */,
