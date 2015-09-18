@@ -1935,7 +1935,7 @@
                     <navigationItem key="navigationItem" id="oOU-Tp-6ZT">
                         <barButtonItem key="leftBarButtonItem" title="Return" id="clh-ji-Iju">
                             <connections>
-                                <action selector="btnReturnPress:" destination="aFY-k0-0jG" id="QMj-4p-DTz"/>
+                                <action selector="btnReturnPressed:" destination="aFY-k0-0jG" id="p81-NB-idv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

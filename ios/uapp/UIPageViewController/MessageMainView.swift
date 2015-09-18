@@ -148,11 +148,11 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
         }
         else if segue.identifier == "OpenChat" {
             // do some setuo for the Chat view
-            // let nav = segue.destinationViewController as! UINavigationController
-            // let ChatView = nav.topViewController as! MessageViewController
+            let nav = segue.destinationViewController as! UINavigationController
+            let ChatView = nav.topViewController as! ChatViewController
             
-            // let groupId = sender as! String
-            // ChatView.groupId = groupId
+            let groupId = sender as! String
+            ChatView.groupId = groupId
         }
         
     }
