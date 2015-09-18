@@ -8,3 +8,4 @@
 
 #import <AWSCognito/AWSCognito.h>
 #import <AWSLambda/AWSLambda.h>
+#import <JSQMessagesViewController/JSQMessages.h>
