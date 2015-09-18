@@ -1061,7 +1061,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GY4-pL-sBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2095" y="1840"/>
+            <point key="canvasLocation" x="-3055.5" y="1701.75"/>
         </scene>
         <!--My Contacts-->
         <scene sceneID="NlX-mc-G6K">
@@ -1396,7 +1396,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XDU-7v-855" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1480.5" y="1839.75"/>
+            <point key="canvasLocation" x="-2164.5" y="1689.75"/>
         </scene>
         <!--My Photo View Controller-->
         <scene sceneID="h7u-os-7Ap">
@@ -1530,41 +1530,94 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dfe-2c-lWG">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfe-2c-lWG">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j76-uG-I2T">
-                                        <rect key="frame" x="132" y="15" width="160" height="144"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hab-nd-deK">
+                                        <rect key="frame" x="27" y="15" width="106" height="30"/>
+                                        <state key="normal" title="Sidemenu"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j76-uG-I2T">
+                                        <rect key="frame" x="214" y="48" width="160" height="144"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="j76-uG-I2T" secondAttribute="height" multiplier="1:1" id="wNC-Pi-sf4"/>
-                                            <constraint firstAttribute="height" constant="80" id="xRj-wX-2QX">
-                                                <variation key="heightClass=regular-widthClass=compact" constant="90"/>
+                                            <constraint firstAttribute="width" secondItem="j76-uG-I2T" secondAttribute="height" multiplier="10:9" id="1zz-Hb-bFM"/>
+                                            <constraint firstAttribute="width" secondItem="j76-uG-I2T" secondAttribute="height" multiplier="19:18" id="dTJ-qX-xw2"/>
+                                            <constraint firstAttribute="height" constant="120" id="hCk-h6-agf">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="140"/>
                                             </constraint>
                                         </constraints>
                                         <state key="normal" title="Button" image="Activites"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="wNC-Pi-sf4"/>
-                                                <exclude reference="xRj-wX-2QX"/>
+                                                <exclude reference="dTJ-qX-xw2"/>
+                                                <exclude reference="hCk-h6-agf"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
+                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="126" y="45" width="148" height="140"/>
                                             <mask key="constraints">
-                                                <include reference="wNC-Pi-sf4"/>
-                                                <include reference="xRj-wX-2QX"/>
+                                                <exclude reference="1zz-Hb-bFM"/>
+                                                <include reference="dTJ-qX-xw2"/>
+                                                <include reference="hCk-h6-agf"/>
                                             </mask>
                                         </variation>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hab-nd-deK">
-                                        <rect key="frame" x="27" y="15" width="106" height="30"/>
-                                        <state key="normal" title="Sidemenu"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pI5-L1-umV">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Feeds"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="61" y="149" width="68" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="feedbutton:" destination="LAM-Xw-1rB" eventType="touchUpInside" id="t8R-5z-FZb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXS-Oe-lSi">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="HotTopic"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="166" y="149" width="62" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="hottopicbutton:" destination="LAM-Xw-1rB" eventType="touchUpInside" id="XYW-qm-gex"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXb-zg-hgy">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Discover"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="280" y="149" width="60" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="discover:" destination="LAM-Xw-1rB" eventType="touchUpInside" id="6ON-eI-owl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="pI5-L1-umV"/>
+                                        <exclude reference="nXS-Oe-lSi"/>
+                                        <exclude reference="cXb-zg-hgy"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="pI5-L1-umV"/>
+                                        <include reference="nXS-Oe-lSi"/>
+                                        <include reference="cXb-zg-hgy"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.14117647059999999" green="0.54117647059999996" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dfe-2c-lWG" firstAttribute="top" secondItem="Pbs-7I-Vzj" secondAttribute="bottom" constant="-20" id="L5v-6A-gE3"/>
+                            <constraint firstItem="dfe-2c-lWG" firstAttribute="leading" secondItem="X9q-eB-i7u" secondAttribute="leadingMargin" constant="-20" id="MWl-MW-Apc"/>
+                            <constraint firstItem="flU-ST-9cz" firstAttribute="top" secondItem="dfe-2c-lWG" secondAttribute="bottom" id="vbM-0r-aCJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dfe-2c-lWG" secondAttribute="trailing" constant="-20" id="w73-UL-cb7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="43A-VI-mhk"/>
                     <connections>
@@ -1573,7 +1626,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzM-4L-N4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1561" y="-1680"/>
+            <point key="canvasLocation" x="819" y="774"/>
+        </scene>
+        <!--Feeds-->
+        <scene sceneID="84E-Am-Xiw">
+            <objects>
+                <viewController storyboardIdentifier="Feeds" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iET-0Z-2Kh" customClass="Feeds" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1OE-Sk-XdM"/>
+                        <viewControllerLayoutGuide type="bottom" id="ylc-4a-yNM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EGh-Cv-RdA">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.030356831500681025" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="600"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="277-Ya-wZv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1522.5" y="865.5"/>
+        </scene>
+        <!--Hot Topic-->
+        <scene sceneID="bT1-nU-NKL">
+            <objects>
+                <viewController storyboardIdentifier="HotTopic" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tut-Se-q2e" customClass="HotTopic" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KSy-uh-J3D"/>
+                        <viewControllerLayoutGuide type="bottom" id="PKr-rH-cYd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7rW-NP-8l2">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="600"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="78M-lM-qpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2143.5" y="865.5"/>
+        </scene>
+        <!--Discover-->
+        <scene sceneID="q7M-I0-rd7">
+            <objects>
+                <viewController storyboardIdentifier="Discover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EXE-Ht-InT" customClass="Discover" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MSu-yv-qsm"/>
+                        <viewControllerLayoutGuide type="bottom" id="dEV-ro-QKn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YIU-Tz-8Gp">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.47364309210526312" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="600"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bM3-j7-jLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2767.5" y="865.5"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="3OG-KA-Gox">
@@ -1741,7 +1851,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x3h-gm-TMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="954"/>
+            <point key="canvasLocation" x="2276" y="1759"/>
         </scene>
         <!--Book Shop View Controller-->
         <scene sceneID="Vn8-te-W0m">
@@ -1809,7 +1919,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ngK-55-gep"/>
-        <segue reference="yeh-DR-WwB"/>
         <segue reference="3jO-9X-e0G"/>
+        <segue reference="Ilt-oV-26z"/>
     </inferredMetricsTieBreakers>
 </document>

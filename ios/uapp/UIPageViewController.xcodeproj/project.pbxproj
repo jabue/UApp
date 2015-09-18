@@ -18,6 +18,9 @@
 		78E75F581AC5FC48001A93F1 /* UIPageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */; };
 		78E75F621AC5FCF1001A93F1 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */; };
 		9368C4761B97CD5100BE6608 /* userinf.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9368C4751B97CD5100BE6608 /* userinf.plist */; };
+		9384036B1BAB7D6600B2D5AB /* Feeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9384036A1BAB7D6600B2D5AB /* Feeds.swift */; };
+		9384036D1BAB7DCD00B2D5AB /* HotTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9384036C1BAB7DCD00B2D5AB /* HotTopic.swift */; };
+		9384036F1BAB7E0C00B2D5AB /* Discover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9384036E1BAB7E0C00B2D5AB /* Discover.swift */; };
 		93DC4AE71BA24F7B006237F5 /* firsttimecheck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93DC4AE61BA24F7B006237F5 /* firsttimecheck.plist */; };
 		93DC4B6D1BA9E5E6006237F5 /* SetBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC4B6C1BA9E5E6006237F5 /* SetBarViewController.swift */; };
 		93DC4B6F1BA9FD6E006237F5 /* SetBarSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC4B6E1BA9FD6E006237F5 /* SetBarSetting.swift */; };
@@ -77,6 +80,9 @@
 		78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerTests.swift; sourceTree = "<group>"; };
 		78E75F611AC5FCF1001A93F1 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		9368C4751B97CD5100BE6608 /* userinf.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userinf.plist; sourceTree = "<group>"; };
+		9384036A1BAB7D6600B2D5AB /* Feeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feeds.swift; sourceTree = "<group>"; };
+		9384036C1BAB7DCD00B2D5AB /* HotTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotTopic.swift; sourceTree = "<group>"; };
+		9384036E1BAB7E0C00B2D5AB /* Discover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discover.swift; sourceTree = "<group>"; };
 		93DC4AE61BA24F7B006237F5 /* firsttimecheck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = firsttimecheck.plist; sourceTree = "<group>"; };
 		93DC4B6C1BA9E5E6006237F5 /* SetBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBarViewController.swift; sourceTree = "<group>"; };
 		93DC4B6E1BA9FD6E006237F5 /* SetBarSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBarSetting.swift; sourceTree = "<group>"; };
@@ -190,6 +196,9 @@
 				93DC4BAC1BAA3371006237F5 /* UCloudViewController.swift */,
 				93DC4BAE1BAA3395006237F5 /* CalenderViewController.swift */,
 				93DC4BB01BAA33B2006237F5 /* InforViewController.swift */,
+				9384036A1BAB7D6600B2D5AB /* Feeds.swift */,
+				9384036C1BAB7DCD00B2D5AB /* HotTopic.swift */,
+				9384036E1BAB7E0C00B2D5AB /* Discover.swift */,
 			);
 			path = UIPageViewController;
 			sourceTree = "<group>";
@@ -391,12 +400,15 @@
 			files = (
 				93DC4BAD1BAA3371006237F5 /* UCloudViewController.swift in Sources */,
 				78E75F441AC5FC48001A93F1 /* ViewController.swift in Sources */,
+				9384036B1BAB7D6600B2D5AB /* Feeds.swift in Sources */,
+				9384036F1BAB7E0C00B2D5AB /* Discover.swift in Sources */,
 				93DC4B6F1BA9FD6E006237F5 /* SetBarSetting.swift in Sources */,
 				93DC4B6D1BA9E5E6006237F5 /* SetBarViewController.swift in Sources */,
 				A4335A391B8E694500C14B54 /* MyPhotoCellViewCell.swift in Sources */,
 				A4335A3B1B8E903C00C14B54 /* ActivitiesViewController.swift in Sources */,
 				A445F0F21B7D645A004B3E1B /* SignUpViewController.swift in Sources */,
 				A4DB512F1B89928600976222 /* MenuItemCell.swift in Sources */,
+				9384036D1BAB7DCD00B2D5AB /* HotTopic.swift in Sources */,
 				93DC4BAB1BAA3346006237F5 /* BookShopViewController.swift in Sources */,
 				2F6EFBFD1B9F9AD4002487DD /* LaunchAfter.swift in Sources */,
 				A4DB51351B89B65100976222 /* HamburgerView.swift in Sources */,
