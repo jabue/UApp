@@ -26,13 +26,25 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
     @IBOutlet var SwipeRight: UISwipeGestureRecognizer!
     @IBOutlet var SwipeLeft: UISwipeGestureRecognizer!
     @IBOutlet weak var AddButton: UIButton!
+    
+    var sideBarToken = false
     // chat queue
     var ChatArray = ["Jabue"]
-    
-    
+    // side bar setups
+    var setpage:SetBarViewController!
+    var showsetbar:Bool!
+    var setbarinfro:CGFloat = SetBarSetting.sizeofsetbar
+    var speedofsetbar = SetBarSetting.speedofsetbar
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // side bar setups
+        setpage = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SetBarViewController") as! SetBarViewController
+        self.view.addSubview(setpage.view!)
+        setpage.view.frame.size.width = setbarinfro
+        setpage.view.frame.origin.x = -setbarinfro
+        showsetbar = false
         // Do any additional setup after loading the view, typically from a nib.
         // ChatTable setup
         ChatTable.delegate = self
@@ -68,19 +80,48 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     // Mark: Swipe gesture
     @IBAction func swipeRight(sender: AnyObject) {
-        // self.ChatContainer.hidden = true
-        // self.InsideContainer.hidden = false
-        self.ChatTable.hidden = false
-        self.InsideTable.hidden = true
-        SegmentControl.selectedSegmentIndex = 0
+        if SegmentControl.selectedSegmentIndex == 1
+        {
+            // self.ChatContainer.hidden = true
+            // self.InsideContainer.hidden = false
+            self.ChatTable.hidden = false
+            self.InsideTable.hidden = true
+            SegmentControl.selectedSegmentIndex = 0
+        }
+        else
+        {
+            UIView.animateWithDuration(speedofsetbar , animations: {
+                self.view.frame.origin.x = self.view.frame.origin.x + self.setbarinfro
+                // self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x + self.setbarinfro
+                
+            })
+            sideBarToken = true
+        }
+        
     }
     
     @IBAction func swipeLeft(sender: AnyObject) {
-        self.ChatTable.hidden = true
-        self.InsideTable.hidden = false
-        // self.ChatContainer.hidden = false
-        // self.InsideContainer.hidden = true
-        SegmentControl.selectedSegmentIndex = 1
+        if sideBarToken
+        {
+            UIView.animateWithDuration(speedofsetbar , animations: {
+                self.view.frame.origin.x = self.view.frame.origin.x - self.setbarinfro
+                // self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x - self.setbarinfro
+                
+            })
+            sideBarToken = false
+        }
+        else{
+            if SegmentControl.selectedSegmentIndex == 0
+            {
+                self.ChatTable.hidden = true
+                self.InsideTable.hidden = false
+                // self.ChatContainer.hidden = false
+                // self.InsideContainer.hidden = true
+                SegmentControl.selectedSegmentIndex = 1
+                
+            }
+        }
+        
     }
     
     // Mark: add button action
