@@ -18,6 +18,7 @@ import UIKit
 // import JSQMessagesViewController
 
 class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDelegate, AddFriendsDelegate {
+    @IBOutlet weak var subview: UIView!
     
     @IBOutlet weak var BtnEdit: UIButton!
     @IBOutlet weak var ChatTable: UITableView!
@@ -52,6 +53,21 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
         // set up table display
         ChatTable.hidden = false
         InsideTable.hidden = true
+        
+        /*
+        //hand swipe
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        
+        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        
+        leftSwipe.direction = .Left
+        rightSwipe.direction = .Right
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+        */
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -90,12 +106,16 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
         }
         else
         {
-            UIView.animateWithDuration(speedofsetbar , animations: {
-                self.view.frame.origin.x = self.view.frame.origin.x + self.setbarinfro
-                // self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x + self.setbarinfro
-                
-            })
-            sideBarToken = true
+            if !sideBarToken {
+                UIView.animateWithDuration(speedofsetbar , animations: {
+                    
+                    self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x + self.setbarinfro
+                    self.subview.frame.origin.x = self.subview.frame.origin.x + self.setbarinfro
+                    
+                })
+                sideBarToken = true
+            }
+            
         }
         
     }
@@ -104,8 +124,9 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
         if sideBarToken
         {
             UIView.animateWithDuration(speedofsetbar , animations: {
-                self.view.frame.origin.x = self.view.frame.origin.x - self.setbarinfro
-                // self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x - self.setbarinfro
+                
+                self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x - self.setbarinfro
+                self.subview.frame.origin.x = self.subview.frame.origin.x - self.setbarinfro
                 
             })
             sideBarToken = false
@@ -201,6 +222,50 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
     @IBAction func btnEditPressed(sender: AnyObject) {
         
     }
+    
+    /*
+    func handleSwipes(sender:UISwipeGestureRecognizer) ->Bool{
+        
+        if(sender.direction == .Left && swipcount < 3 && showsetbar == false){
+            swipcount = swipcount+1
+            print("11")
+            sbvSwipe(true)
+            return true
+        }
+        if(sender.direction == .Right && swipcount > 1 && showsetbar == false){
+            swipcount = swipcount-1
+            sbvSwipe(false)
+            return true
+        }
+        
+        if (sender.direction == .Left && showsetbar == true && swipcount == 1){
+            UIView.animateWithDuration(speedofsetbar , animations: {
+                self.subview.frame.origin.x = self.subview.frame.origin.x - self.setbarinfro
+                self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x - self.setbarinfro
+                self.sbv_1.view.frame.origin.x = self.sbv_1.view.frame.origin.x - self.setbarinfro
+                
+            })
+            showsetbar = false
+            return true
+        }
+        
+        if (sender.direction == .Right && showsetbar == false && swipcount == 1){
+            UIView.animateWithDuration(speedofsetbar, animations: {
+                self.subview.frame.origin.x = self.subview.frame.origin.x + self.setbarinfro
+                self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x + self.setbarinfro
+                self.sbv_1.view.frame.origin.x = self.sbv_1.view.frame.origin.x + self.setbarinfro
+                
+            })
+            showsetbar = true
+            return true
+            
+        }
+        
+        return true
+    }
+
+    */
+    
 }
 
 
