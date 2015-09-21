@@ -9,7 +9,7 @@
 import UIKit
 
 
-class CalenderViewController: UIViewController {
+class ScheduleViewController: UIViewController, SMRotaryProtocol {
     
     @IBOutlet var subview: UIView!
     
@@ -19,9 +19,14 @@ class CalenderViewController: UIViewController {
     var setbarinfro:CGFloat = SetBarSetting.sizeofsetbar
     var speedofsetbar = SetBarSetting.speedofsetbar
     
+    var valueLabel = UILabel()
+    var delegate: SMRotaryProtocol?
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("MessageView loaded...")
+        print("Schedule View loaded...")
         
         setpage = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SetBarViewController") as! SetBarViewController
         
@@ -41,8 +46,36 @@ class CalenderViewController: UIViewController {
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(rightSwipe)
         
+        // Create sector label
+        valueLabel = UILabel(frame: CGRectMake((self.view.bounds.size.width / 2)-110, 10, 220, 50))
         
+        valueLabel.textAlignment = NSTextAlignment.Center
+        valueLabel.text = "Welcome to Schedule"
+        valueLabel.textColor = UIColor.redColor()
+        self.view.addSubview(valueLabel)
+        
+        
+        
+        let wheel:SMRotaryWheel = SMRotaryWheel.init(frame: CGRectMake(0, 0, 600, 600), del: self, sectionsNum: 9)
+        
+        wheel.center = CGPoint(x: 200,y: 320)
+        self.view.addSubview(wheel)
+
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func wheelDidChangeValue(newValue:String) ->Void
+    {
+        self.valueLabel.text = newValue
+        
+        //print("(self.valueLabel.text) is Choosed.")
+    }
+    
+
     
     func handleSwipes(sender:UISwipeGestureRecognizer){
         if (sender.direction == .Left && showsetbar == true){
