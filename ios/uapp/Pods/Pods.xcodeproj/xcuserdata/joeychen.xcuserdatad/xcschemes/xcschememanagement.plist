@@ -19,6 +19,16 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>JSQMessagesViewController.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>JSQSystemSoundPlayer.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -27,7 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>037CE40EDB2F06DB6694B616724E351F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>221A5B29F386A2E9833D2D463F8BE10D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>471B56D99BCC148F8087752A9A46D5A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5A047AB28829ADF0816D60A4591D85CF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8C1137266BA6A5E31FDB259F1FDA37F5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>94E73ABFC80F6BE19F294392082F2867</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -43,6 +78,11 @@
 			<true/>
 		</dict>
 		<key>E12EEDCF13AE5336C84D1B4D4FC9BC62</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F857CF3370EB2C8C291290B66F6A675B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -130,6 +130,7 @@ class ActivitiesViewController: UIViewController {
         return true
     }
     
+
     func transtocurrent(var transto:Int){
         var tempbooleg:Bool = false
         if transto < 0 {
