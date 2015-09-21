@@ -40,11 +40,12 @@ class ActivitiesViewController: UIViewController {
         
         //add sbv1
         sbv_1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Feeds") as! Feeds
-        self.view.addSubview(sbv_1.view!)
         sbv_1.view.frame.size.width = bounds.size.width
         sbv_1.view.frame.size.height = bounds.size.height*2/3
         sbv_1.view.frame.origin.x=0
         sbv_1.view.frame.origin.y=bounds.size.height*1/3
+        self.view.addSubview(sbv_1.view!)
+
         //add sbv2
         sbv_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HotTopic") as! HotTopic
         self.view.addSubview(sbv_2.view!)
@@ -142,7 +143,6 @@ class ActivitiesViewController: UIViewController {
     }
     
     // swipcount
-    
     @IBAction func feedbutton(sender: AnyObject) {
         let transstate = 1
         let transto = swipcount - transstate
