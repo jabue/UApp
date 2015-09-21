@@ -1,0 +1,32 @@
+{
+      "course_nbr": {
+        "S": 'math150'
+      },
+      "course_section": {
+        "S": 'D100-LEC (1623)'
+      },
+      "days": {
+        "S": 'MoTuWeFr'
+      },
+      "description": {
+        "S": 'Designed for students specializing in mathematics, physics, chemistry, computing science and engineering. Topics as for Math 151 with a more extensive review of functions, their properties and their graphs. Recommended for students with no previous knowledge of Calculus. '
+      },
+      "end_time": {
+        "S": '9:20'
+      },
+      "instructor": {
+        "S": 'Jeremy Chiu'
+      },
+      "meeting_dates": {
+        "S": '2015/09/08 - 2015/12/07'
+      },
+      "room": {
+        "S": 'B9201'
+      },
+      "start_time": {
+        "S": '8:30'
+      },
+      "title": {
+        "S": 'Calculus I with Review'
+      }
+    }
