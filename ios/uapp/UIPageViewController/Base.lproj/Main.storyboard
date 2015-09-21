@@ -738,7 +738,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6VS-a0-JVE" secondAttribute="height" multiplier="750:277" id="aVA-fl-ozV"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="logohomepage"/>
+                                <state key="normal" title="Button" image="header"/>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="aVA-fl-ozV"/>
@@ -809,9 +809,6 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="30" y="197" width="207" height="250"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@SFU" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRE-lV-wQF">
                                 <rect key="frame" x="475.5" y="177" width="49" height="23.5"/>
@@ -831,7 +828,9 @@
                             <constraint firstItem="Z2x-0R-B18" firstAttribute="top" secondItem="1UD-Bn-9R4" secondAttribute="bottom" constant="5" id="BXV-Md-fvu"/>
                             <constraint firstItem="Kau-Em-Foa" firstAttribute="leading" secondItem="c3X-jK-ITe" secondAttribute="trailing" id="D1m-Bx-X4z"/>
                             <constraint firstItem="O6b-AO-HoG" firstAttribute="leading" secondItem="LgS-b6-ZV3" secondAttribute="leadingMargin" constant="-20" id="ELV-YH-rAF"/>
-                            <constraint firstItem="upp-DY-yfe" firstAttribute="top" secondItem="6VS-a0-JVE" secondAttribute="bottom" constant="-4" id="ELb-cy-bkK"/>
+                            <constraint firstItem="upp-DY-yfe" firstAttribute="top" secondItem="6VS-a0-JVE" secondAttribute="bottom" constant="-4" id="ELb-cy-bkK">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="6VS-a0-JVE" firstAttribute="leading" secondItem="LgS-b6-ZV3" secondAttribute="leadingMargin" constant="-20" id="Ed3-WN-pEA"/>
                             <constraint firstItem="c3X-jK-ITe" firstAttribute="top" secondItem="yxr-Ys-FJi" secondAttribute="bottom" id="Fef-B0-caA"/>
                             <constraint firstItem="LPP-C8-7WV" firstAttribute="leading" secondItem="upp-DY-yfe" secondAttribute="trailing" id="ITD-d5-zYh"/>
@@ -870,7 +869,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Kau-Em-Foa" secondAttribute="trailing" constant="-20" id="rrW-YE-WgZ"/>
                             <constraint firstItem="c3X-jK-ITe" firstAttribute="leading" secondItem="abT-h2-86c" secondAttribute="trailing" id="sUl-JL-dgv"/>
                             <constraint firstItem="Kau-Em-Foa" firstAttribute="height" secondItem="0c3-O8-CmG" secondAttribute="height" constant="-4" id="skI-P0-iad">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-6"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="Kau-Em-Foa" firstAttribute="top" secondItem="0c3-O8-CmG" secondAttribute="bottom" id="uPn-Zz-t4L"/>
                             <constraint firstItem="LPP-C8-7WV" firstAttribute="height" secondItem="BdS-qq-JLr" secondAttribute="height" id="wIN-kw-7we"/>
@@ -1988,7 +1987,7 @@
         <image name="Contact" width="128" height="128"/>
         <image name="Message" width="283" height="311"/>
         <image name="Profile" width="283" height="311"/>
-        <image name="QOTD" width="495" height="555"/>
+        <image name="QOTD" width="575" height="632"/>
         <image name="Schedule" width="283" height="311"/>
         <image name="Setting" width="283" height="311"/>
         <image name="Storage" width="283" height="311"/>
@@ -1997,10 +1996,10 @@
         <image name="facebook" width="584" height="576"/>
         <image name="favourite" width="128" height="128"/>
         <image name="gplus" width="455" height="455"/>
+        <image name="header" width="849" height="277"/>
         <image name="launchimage" width="425" height="499"/>
         <image name="like" width="85" height="67"/>
         <image name="logo w app name" width="259" height="395"/>
-        <image name="logohomepage" width="750" height="277"/>
         <image name="pic" width="128" height="128"/>
         <image name="share" width="85" height="67"/>
     </resources>
