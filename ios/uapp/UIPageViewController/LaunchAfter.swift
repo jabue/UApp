@@ -166,7 +166,7 @@ class LaunchAfter: UIViewController {
         })
         //print("333333333")
         while ret == 0{
-            print(ret)
+            //print(ret)
         }
         if ret == 2{
             return true
