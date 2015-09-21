@@ -52,7 +52,7 @@ class SMRotaryWheel: UIControl {
         
         // 1.1 - Get the distance from the center
         let dist = self.calculateDistanceFromCenter(touchPoint)
-        print("when rotate begin, currentSector = \(currentSector)")
+        //print("when rotate begin, currentSector = \(currentSector)")
         // 1.2 - Filter out touches too close to the center
         if (dist < 40 || dist > 250)
         {
@@ -143,31 +143,31 @@ class SMRotaryWheel: UIControl {
                 
                 if currentSector < s.sector {
                     if s.sector == 8  && currentSector == 0{
-                        if rotateDirection > 0 {
-                            print("rotete direction change to clockwise")
-                        }
+                        //if rotateDirection > 0 {
+                            //print("rotete direction change to clockwise")
+                        //}
                         rotateDirection = -1 // clockwise
                         rotateCounter++
                     }else{
-                        if rotateDirection < 0 {
-                            print("rotete direction change to counter-clockwise")
-                        }
+                        //if rotateDirection < 0 {
+                           // print("rotete direction change to counter-clockwise")
+                        //}
                         rotateDirection = 1 // counterclockwise
                         rotateCounter--
                     }
                 }
                 else if currentSector > s.sector{
                     if currentSector == 8 && s.sector == 0{
-                        if rotateDirection < 0 {
-                            print("rotete direction change to counter-clockwise")
-                        }
+                        //if rotateDirection < 0 {
+                            //print("rotete direction change to counter-clockwise")
+                        //}
                         rotateDirection = 1 //counter-clockwise
                         rotateCounter--
                     }else
                     {
-                        if rotateDirection > 0 {
-                            print("rotete direction change to clockwise")
-                        }
+                        //if rotateDirection > 0 {
+                            //print("rotete direction change to clockwise")
+                        //}
                         rotateDirection = -1 // clockwise
                         rotateCounter++
                     }
@@ -190,7 +190,6 @@ class SMRotaryWheel: UIControl {
         // set the 2 invisible sector's label
         
         let labelTextOnCurrentSector = getWeekdayBytSector(currentSector)
-        print("current label is \(labelTextOnCurrentSector)")
         
         //set the lower label as it will appear clockwise
         let labelLower = ((convertWeekday(labelTextOnCurrentSector) + 4) < 7) ? convertWeekday(convertWeekday(labelTextOnCurrentSector) + 4) : convertWeekday(convertWeekday(labelTextOnCurrentSector) - 3)
