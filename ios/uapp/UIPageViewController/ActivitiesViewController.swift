@@ -12,6 +12,7 @@ class ActivitiesViewController: UIViewController {
     
     @IBOutlet var subview: UIView!
    
+    @IBOutlet weak var post: UIButton!
    //three page
     
     var setpage:SetBarViewController!
@@ -74,6 +75,8 @@ class ActivitiesViewController: UIViewController {
         
         swipcount=1
         print(bounds.size.width)
+        
+        post.hidden = true
     }
     
     func sbvSwipe(leftsp:Bool){
@@ -164,9 +167,18 @@ class ActivitiesViewController: UIViewController {
     }
 
     
+    @IBAction func addbutton(sender: AnyObject) {
+        post.hidden = false
+        
+    }
     
+    @IBAction func newposting(sender: AnyObject) {
+        print("123123")
+    }
     
-    
+    @IBAction func np(sender: UIButton, forEvent event: UIEvent) {
+        print("123123123")
+    }
     
     
 }

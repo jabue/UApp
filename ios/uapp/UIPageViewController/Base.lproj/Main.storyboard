@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eL2-Fr-Phc">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -751,7 +752,7 @@
                                     <segue destination="FSE-A0-qJ2" kind="show" id="hFE-B3-Wum"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPP-C8-7WV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPP-C8-7WV">
                                 <rect key="frame" x="400" y="241" width="200" height="91"/>
                                 <state key="normal" title="Button" image="Profile"/>
                                 <connections>
@@ -765,7 +766,7 @@
                                     <segue destination="LAM-Xw-1rB" kind="show" id="FBo-X7-3c2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0c3-O8-CmG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0c3-O8-CmG">
                                 <rect key="frame" x="400" y="423" width="200" height="91"/>
                                 <state key="normal" title="Button" image="Storage"/>
                                 <connections>
@@ -786,7 +787,7 @@
                                     <segue destination="gec-nq-d6g" kind="show" id="jMG-kX-b2c"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="QOTD" translatesAutoresizingMaskIntoConstraints="NO" id="upp-DY-yfe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QOTD" translatesAutoresizingMaskIntoConstraints="NO" id="upp-DY-yfe">
                                 <rect key="frame" x="0.0" y="237" width="400" height="186"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1G2-7P-cnf">
@@ -803,7 +804,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="share"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="As you think, so shall you become.                                 -----Bruce Lee" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UD-Bn-9R4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As you think, so shall you become.                                 -----Bruce Lee" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UD-Bn-9R4">
                                 <rect key="frame" x="30" y="271" width="340" height="112"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1423,11 +1424,11 @@
                         <viewControllerLayoutGuide type="top" id="Pbs-7I-Vzj"/>
                         <viewControllerLayoutGuide type="bottom" id="flU-ST-9cz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="X9q-eB-i7u">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="X9q-eB-i7u">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfe-2c-lWG">
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfe-2c-lWG">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hab-nd-deK">
@@ -1459,6 +1460,16 @@
                                             </mask>
                                         </variation>
                                     </button>
+                                    <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiK-PG-aQA">
+                                        <rect key="frame" x="388" y="144" width="50" height="48"/>
+                                        <state key="normal" title="+"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="254" y="96" width="56" height="37"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="addbutton:" destination="LAM-Xw-1rB" eventType="touchDown" id="EoU-8y-0mW"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pI5-L1-umV">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" title="Feeds"/>
@@ -1487,6 +1498,16 @@
                                         </variation>
                                         <connections>
                                             <action selector="discover:" destination="LAM-Xw-1rB" eventType="touchUpInside" id="6ON-eI-owl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljo-wZ-k8m">
+                                        <rect key="frame" x="382" y="89" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="206" y="45" width="84" height="64"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="np:forEvent:" destination="LAM-Xw-1rB" eventType="touchDragOutside" id="s5f-80-n54"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1518,6 +1539,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="43A-VI-mhk"/>
                     <connections>
+                        <outlet property="post" destination="ljo-wZ-k8m" id="XZo-5R-aBC"/>
                         <outlet property="subview" destination="dfe-2c-lWG" id="A0d-Ad-apW"/>
                     </connections>
                 </viewController>
@@ -1584,6 +1606,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bM3-j7-jLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2767.5" y="865.5"/>
+        </scene>
+        <!--Pinglunand Huifu View Controller-->
+        <scene sceneID="rRx-I1-2n5">
+            <objects>
+                <viewController storyboardIdentifier="PinglunandHuifuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tfl-Jj-G5i" customClass="PinglunandHuifuViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r5U-rh-HTR"/>
+                        <viewControllerLayoutGuide type="bottom" id="UyX-zI-4FD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pk6-Xz-LHQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zCn-o6-QRc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2990" y="1759"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="3OG-KA-Gox">
@@ -1843,7 +1883,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Srt-co-tOe" id="aFI-lO-ZPz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -1864,7 +1904,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PFr-d6-RaE" id="LxW-KN-NuF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>

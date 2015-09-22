@@ -28,7 +28,8 @@
 		9384036F1BAB7E0C00B2D5AB /* Discover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9384036E1BAB7E0C00B2D5AB /* Discover.swift */; };
 		938403731BACBEBD00B2D5AB /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938403721BACBEBD00B2D5AB /* TableViewCell.swift */; };
 		938403751BACC53300B2D5AB /* customerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938403741BACC53300B2D5AB /* customerCell.swift */; };
-		938403781BACD64400B2D5AB /* qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 938403771BACD64400B2D5AB /* qq.png */; };
+		9384037B1BB0DE8900B2D5AB /* PinglunandHuifuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9384037A1BB0DE8900B2D5AB /* PinglunandHuifuViewController.swift */; };
+		938403811BB209F700B2D5AB /* qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 938403801BB209F700B2D5AB /* qq.png */; };
 		93DC4AE71BA24F7B006237F5 /* firsttimecheck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93DC4AE61BA24F7B006237F5 /* firsttimecheck.plist */; };
 		93DC4B6D1BA9E5E6006237F5 /* SetBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC4B6C1BA9E5E6006237F5 /* SetBarViewController.swift */; };
 		93DC4B6F1BA9FD6E006237F5 /* SetBarSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC4B6E1BA9FD6E006237F5 /* SetBarSetting.swift */; };
@@ -102,7 +103,8 @@
 		9384036E1BAB7E0C00B2D5AB /* Discover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discover.swift; sourceTree = "<group>"; };
 		938403721BACBEBD00B2D5AB /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		938403741BACC53300B2D5AB /* customerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customerCell.swift; sourceTree = "<group>"; };
-		938403771BACD64400B2D5AB /* qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qq.png; path = ../../../../../../qq.png; sourceTree = "<group>"; };
+		9384037A1BB0DE8900B2D5AB /* PinglunandHuifuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinglunandHuifuViewController.swift; sourceTree = "<group>"; };
+		938403801BB209F700B2D5AB /* qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq.png; sourceTree = "<group>"; };
 		93DC4AE61BA24F7B006237F5 /* firsttimecheck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = firsttimecheck.plist; sourceTree = "<group>"; };
 		93DC4B6C1BA9E5E6006237F5 /* SetBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBarViewController.swift; sourceTree = "<group>"; };
 		93DC4B6E1BA9FD6E006237F5 /* SetBarSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBarSetting.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		78E75F3E1AC5FC48001A93F1 /* UIPageViewController */ = {
 			isa = PBXGroup;
 			children = (
+				938403791BB0DA2800B2D5AB /* activitysubview */,
 				938403761BACD5C500B2D5AB /* usersimage */,
 				A4DB51261B8954C700976222 /* HomeViewController.swift */,
 				78E75F411AC5FC48001A93F1 /* AppDelegate.swift */,
@@ -267,9 +270,17 @@
 		938403761BACD5C500B2D5AB /* usersimage */ = {
 			isa = PBXGroup;
 			children = (
-				938403771BACD64400B2D5AB /* qq.png */,
+				938403801BB209F700B2D5AB /* qq.png */,
 			);
 			name = usersimage;
+			sourceTree = "<group>";
+		};
+		938403791BB0DA2800B2D5AB /* activitysubview */ = {
+			isa = PBXGroup;
+			children = (
+				9384037A1BB0DE8900B2D5AB /* PinglunandHuifuViewController.swift */,
+			);
+			name = activitysubview;
 			sourceTree = "<group>";
 		};
 		A43DA9C71B85A74D00DA1B6B /* Resource */ = {
@@ -390,7 +401,7 @@
 				9368C4761B97CD5100BE6608 /* userinf.plist in Resources */,
 				93DC4AE71BA24F7B006237F5 /* firsttimecheck.plist in Resources */,
 				A4DB512D1B8991B700976222 /* MenuItems.plist in Resources */,
-				938403781BACD64400B2D5AB /* qq.png in Resources */,
+				938403811BB209F700B2D5AB /* qq.png in Resources */,
 				A4D3EA701B7EA67500A0480E /* podfile in Resources */,
 				0F140FFA1B97D1C800B8FAFE /* school name.plist in Resources */,
 				A43DA9C61B85A3DF00DA1B6B /* schools.txt in Resources */,
@@ -463,11 +474,12 @@
 				2F6EFBFD1B9F9AD4002487DD /* LaunchAfter.swift in Sources */,
 				A4732E031BB08A8300DA2669 /* SMRotaryProtocol.swift in Sources */,
 				A4DB51351B89B65100976222 /* HamburgerView.swift in Sources */,
+				9384037B1BB0DE8900B2D5AB /* PinglunandHuifuViewController.swift in Sources */,
 				A4DB51311B8995FF00976222 /* DetailViewController.swift in Sources */,
 				A409437A1B8D26EF009E824C /* FlickrSearcher.swift in Sources */,
 				93DC4BB11BAA33B2006237F5 /* InforViewController.swift in Sources */,
 				EC7A10FD1BA7978C002BF22E /* SettingViewController.swift in Sources */,
-				A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift  in Sources */,
+				A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift in Sources */,
 				938403731BACBEBD00B2D5AB /* TableViewCell.swift in Sources */,
 				938403751BACC53300B2D5AB /* customerCell.swift in Sources */,
 				93DC4BAF1BAA3395006237F5 /* ScheduleViewController.swift in Sources */,
