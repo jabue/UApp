@@ -165,9 +165,11 @@ class LaunchAfter: UIViewController {
             return nil
         })
         //print("333333333")
+        
         while ret == 0{
             //print(ret)
         }
+        
         if ret == 2{
             return true
         }
@@ -206,10 +208,18 @@ class LaunchAfter: UIViewController {
                 print(flag)
                 print("22222222222222 222 2 2 22 2 2 ")
                 if flag {
+                    
                     dispatch_async(dispatch_get_main_queue(),{
                         self.performSegueWithIdentifier("tohomepage", sender: self)
                     });
                     
+                    
+                    //tohomepage
+                    /*
+                    let myStoryBoard = self.storyboard
+                    let anotherView:UIViewController = (myStoryBoard?.instantiateViewControllerWithIdentifier("Home"))! as UIViewController
+                    self.presentViewController(anotherView, animated: true, completion: nil)
+                    */
                 }
                 else{
                     dispatch_async(dispatch_get_main_queue(), {self.performSegueWithIdentifier("LaunchToLogin", sender: self)

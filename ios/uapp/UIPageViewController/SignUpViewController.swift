@@ -421,7 +421,12 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                     print("password= \"\(pwd)\"")
                     if (pwd == "NotFound"){ // user_id not used. load home page.
                         request.functionName = LambdaSignUp
-                        request.payload = "{\"user_id\": \"\(emailInput)\",\"password\":\"\(self.pwdTextField.text!)\" }"
+                        //request.payload = "{\"user_id\": \"\(emailInput)\",\"password\":\"\(self.pwdTextField.text!)\",\"school\": \"\("111")\" }"
+                        //request.payload = "{\"user_id\": \"\(emailInput)\",\"password\":\"\(self.pwdTextField.text!)\" }"
+                        var schoolinfor = self.findSchoolInfo()
+                        request.payload = "{\"user_id\": \"\(emailInput)\",\"password\":\"\(self.pwdTextField.text!)\",\"school\":\"\(schoolinfor)\" }"
+                        
+                        
                         print(request)
                         Lambda.invoke(request).continueWithBlock({(task1) -> AnyObject! in
                             if let error1 = task1.error {
@@ -507,6 +512,28 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         
         print("Saved GameData.plist file is --> \(resultDictionary?.description)")
     }
+    
+    func findSchoolInfo() -> String {
+        var result:String = ""
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        let documentsDirectory = paths.objectAtIndex(0) as! NSString
+        let path = documentsDirectory.stringByAppendingPathComponent("school name.plist")
+        
+        let resultDictionary = NSMutableDictionary(contentsOfFile: path)
+        
+        let schoolName:String = "school"
+        if resultDictionary?.objectForKey(schoolName) != nil{
+            result = (resultDictionary?.objectForKey(schoolName)) as! String
+        }
+        
+        print("School Info \(result)")
+        
+        return result
+    }
+
+    
+    
 }
 
     
