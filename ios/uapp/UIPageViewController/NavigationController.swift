@@ -12,7 +12,7 @@ class NavigationController: UINavigationController {
 
     override func viewDidLoad() {
         
-        UINavigationBar.appearance().barTintColor = UIColor(red: 36.0/255.0, green: 138.0/255.0, blue: 177.0/255.0, alpha: 1)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 43.0/255.0, green: 98.0/255.0, blue: 158.0/255.0, alpha: 1)
         navigationBar.frame.origin.y = -10
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(),NSFontAttributeName:UIFont(name: "Futura", size: 23)!]
