@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "My pics Inside profile.png",
+      "filename" : "my photo.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "My pics Inside profile-1.png",
       "scale" : "2x"
     },
     {
