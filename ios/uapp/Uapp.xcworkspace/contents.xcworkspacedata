@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:UIPageViewController.xcodeproj">
+      location = "group:/Users/zhaofei/uapp/UApp/ios/uapp/Uapp.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

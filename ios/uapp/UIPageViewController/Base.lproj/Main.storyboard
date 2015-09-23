@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eL2-Fr-Phc">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -30,7 +29,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UIPageViewController" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="SHc-fg-bVa">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Uapp" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="SHc-fg-bVa">
                                 <rect key="frame" x="79" y="140" width="441" height="43"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -213,7 +212,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjc-xm-Pew">
                                 <rect key="frame" x="0.0" y="20" width="600" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Find Your School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="255" translatesAutoresizingMaskIntoConstraints="NO" id="SKC-E6-OZL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Your School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="255" translatesAutoresizingMaskIntoConstraints="NO" id="SKC-E6-OZL">
                                         <rect key="frame" x="174" y="14" width="255" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="SKC-E6-OZL" secondAttribute="height" multiplier="85:12" id="Dtm-Mw-wsy"/>
@@ -469,7 +468,7 @@
                                     <action selector="buttonSubmit:" destination="mGp-Zz-ADn" eventType="touchUpInside" id="Z1G-kL-YZU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="OR LINK TO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OH8-Mv-7QS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR LINK TO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OH8-Mv-7QS">
                                 <rect key="frame" x="259" y="485" width="82" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OH8-Mv-7QS" secondAttribute="height" multiplier="79:14" id="HsJ-xD-rf6"/>
@@ -543,7 +542,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="btnGplus" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fez-pG-rBX">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnGplus" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fez-pG-rBX">
                                 <rect key="frame" x="361" y="512" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="MxA-Ca-GMl"/>
@@ -760,14 +759,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdS-qq-JLr">
-                                <rect key="frame" x="400" y="332" width="200" height="90.5"/>
+                                <rect key="frame" x="400" y="332" width="200" height="91"/>
                                 <state key="normal" image="Activites"/>
                                 <connections>
                                     <segue destination="LAM-Xw-1rB" kind="show" id="FBo-X7-3c2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0c3-O8-CmG">
-                                <rect key="frame" x="400" y="423" width="200" height="90.5"/>
+                                <rect key="frame" x="400" y="423" width="200" height="91"/>
                                 <state key="normal" title="Button" image="Storage"/>
                                 <connections>
                                     <segue destination="GN9-oV-udQ" kind="show" id="LpO-81-Idx"/>
@@ -811,7 +810,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@SFU" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRE-lV-wQF">
-                                <rect key="frame" x="475.5" y="177" width="49" height="23.5"/>
+                                <rect key="frame" x="476" y="177" width="49" height="24"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <color key="textColor" red="0.74763569078947367" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1431,7 +1430,7 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dfe-2c-lWG">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j76-uG-I2T">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j76-uG-I2T">
                                         <rect key="frame" x="132" y="15" width="160" height="144"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="j76-uG-I2T" secondAttribute="height" multiplier="1:1" id="wNC-Pi-sf4"/>
