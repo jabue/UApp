@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "78E75F3B1AC5FC48001A93F1"
-               BuildableName = "UIPageViewController.app"
-               BlueprintName = "UIPageViewController"
-               ReferencedContainer = "container:UIPageViewController.xcodeproj">
+               BuildableName = "Uapp.app"
+               BlueprintName = "Uapp"
+               ReferencedContainer = "container:Uapp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "78E75F501AC5FC48001A93F1"
-               BuildableName = "UIPageViewControllerTests.xctest"
-               BlueprintName = "UIPageViewControllerTests"
-               ReferencedContainer = "container:UIPageViewController.xcodeproj">
+               BuildableName = "Uapp.xctest"
+               BlueprintName = "UappTests"
+               ReferencedContainer = "container:Uapp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "78E75F501AC5FC48001A93F1"
-               BuildableName = "UIPageViewControllerTests.xctest"
-               BlueprintName = "UIPageViewControllerTests"
-               ReferencedContainer = "container:UIPageViewController.xcodeproj">
+               BuildableName = "Uapp.xctest"
+               BlueprintName = "UappTests"
+               ReferencedContainer = "container:Uapp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "78E75F3B1AC5FC48001A93F1"
-            BuildableName = "UIPageViewController.app"
-            BlueprintName = "UIPageViewController"
-            ReferencedContainer = "container:UIPageViewController.xcodeproj">
+            BuildableName = "Uapp.app"
+            BlueprintName = "Uapp"
+            ReferencedContainer = "container:Uapp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "78E75F3B1AC5FC48001A93F1"
-            BuildableName = "UIPageViewController.app"
-            BlueprintName = "UIPageViewController"
-            ReferencedContainer = "container:UIPageViewController.xcodeproj">
+            BuildableName = "Uapp.app"
+            BlueprintName = "Uapp"
+            ReferencedContainer = "container:Uapp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -99,9 +99,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "78E75F3B1AC5FC48001A93F1"
-            BuildableName = "UIPageViewController.app"
-            BlueprintName = "UIPageViewController"
-            ReferencedContainer = "container:UIPageViewController.xcodeproj">
+            BuildableName = "Uapp.app"
+            BlueprintName = "Uapp"
+            ReferencedContainer = "container:Uapp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
