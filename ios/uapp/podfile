@@ -3,3 +3,4 @@ source 'https://github.com/CocoaPods/Specs.git'
 pod 'AWSLambda'
 pod 'AWSCognito'
 pod 'JSQMessagesViewController'
+pod ‘Parse’
