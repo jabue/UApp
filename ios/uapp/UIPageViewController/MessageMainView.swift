@@ -30,7 +30,8 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     var sideBarToken = false
     // chat queue
-    var ChatArray = ["Jabue"]
+    // var ChatArray = ["Jabue"]
+    var messages = [PFObject]()
     // side bar setups
     var setpage:SetBarViewController!
     var showsetbar:Bool!
@@ -54,6 +55,8 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
         ChatTable.hidden = false
         InsideTable.hidden = true
         
+        self.loadMessages()
+        
         /*
         //hand swipe
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
@@ -73,6 +76,24 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Backend methods
+    func loadMessages() {
+        let query = PFQuery(className: "Messages")
+        query.whereKey("user", equalTo: PFUser.currentUser()!)
+        print(PFUser.currentUser())
+        query.includeKey("lastUser")
+        query.orderByDescending("updatedAction")
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                self.messages.removeAll(keepCapacity: false)
+                self.messages += objects as! [PFObject]!
+                self.ChatTable.reloadData()
+            } else {
+                print("fail to load all the messages !")
+            }
+        }
     }
     
     // Mark: Segmented Controller
@@ -162,8 +183,8 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
         // return friendsArray.count
-        print("Chat Array Length:" +  "\(self.ChatArray.count)")
-        return self.ChatArray.count
+        // print("Chat Array Length:" +  "\(self.ChatArray.count)")
+        return self.messages.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
@@ -176,8 +197,12 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
     {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ChatCell", forIndexPath: indexPath) as! UITableViewCell
-        print("cell text:" + "\(ChatArray[indexPath.row])")
-        cell.textLabel?.text = ChatArray[indexPath.row]
+        let message = messages[indexPath.row]
+        // deal with the description String
+        // var description = message["description"] as! String
+        // let userName = PFUser.currentUser()?.username
+        // description.rangeOfString(username)
+        cell.textLabel?.text = message["description"] as! String
         return cell
     }
     
@@ -185,20 +210,18 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
     {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         // open chat selected
-        let chatuser = self.ChatArray[indexPath.row]
-        self.performSegueWithIdentifier("OpenChat", sender: chatuser)
+        let message = self.messages[indexPath.row] as PFObject
+        let groupId = message["groupId"] as! String
+        self.performSegueWithIdentifier("OpenChat", sender: groupId)
     }
     
     // MARK: - SelectMultipleDelegate
     // select friends gonna chat with
-    func didSelectMultipleUsers(selectedUsers: [String]!) {
-        var chatUser:String = ""
-        for temp in selectedUsers {
-            chatUser = temp + "&"
-        }
-        ChatArray.append(chatUser)
-        self.performSegueWithIdentifier("OpenChat", sender: chatUser)
-        print(selectedUsers)
+    func didSelectMultipleUsers(selectedUsers: [PFUser]!) {
+        let groupId = MessageAction.startMultipleChat(selectedUsers)
+        self.loadMessages()
+        self.ChatTable.reloadData()
+        self.performSegueWithIdentifier("OpenChat", sender: groupId)
     }
     
     // MARK: - Prepare for segue to chatVC
@@ -222,49 +245,6 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
     @IBAction func btnEditPressed(sender: AnyObject) {
         
     }
-    
-    /*
-    func handleSwipes(sender:UISwipeGestureRecognizer) ->Bool{
-        
-        if(sender.direction == .Left && swipcount < 3 && showsetbar == false){
-            swipcount = swipcount+1
-            print("11")
-            sbvSwipe(true)
-            return true
-        }
-        if(sender.direction == .Right && swipcount > 1 && showsetbar == false){
-            swipcount = swipcount-1
-            sbvSwipe(false)
-            return true
-        }
-        
-        if (sender.direction == .Left && showsetbar == true && swipcount == 1){
-            UIView.animateWithDuration(speedofsetbar , animations: {
-                self.subview.frame.origin.x = self.subview.frame.origin.x - self.setbarinfro
-                self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x - self.setbarinfro
-                self.sbv_1.view.frame.origin.x = self.sbv_1.view.frame.origin.x - self.setbarinfro
-                
-            })
-            showsetbar = false
-            return true
-        }
-        
-        if (sender.direction == .Right && showsetbar == false && swipcount == 1){
-            UIView.animateWithDuration(speedofsetbar, animations: {
-                self.subview.frame.origin.x = self.subview.frame.origin.x + self.setbarinfro
-                self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x + self.setbarinfro
-                self.sbv_1.view.frame.origin.x = self.sbv_1.view.frame.origin.x + self.setbarinfro
-                
-            })
-            showsetbar = true
-            return true
-            
-        }
-        
-        return true
-    }
-
-    */
     
 }
 
