@@ -1671,6 +1671,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aw2-2m-7TW">
                                         <rect key="frame" x="19" y="32" width="46" height="30"/>
                                         <state key="normal" title="Home"/>
+                                        <connections>
+                                            <action selector="HomeBtnPressed:" destination="gec-nq-d6g" eventType="touchUpInside" id="aZu-kO-G1u"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7S-bQ-w7H">
                                         <rect key="frame" x="552" y="29" width="26" height="23"/>

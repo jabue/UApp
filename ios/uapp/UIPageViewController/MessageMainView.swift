@@ -143,11 +143,15 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        // open chat selected
-        let message = self.messages[indexPath.row] as PFObject
-        let groupId = message["groupId"] as! String
-        self.performSegueWithIdentifier("OpenChat", sender: groupId)
+        // if side bar is out , make the table inedible
+        if !sideBarToken {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            // open chat selected
+            let message = self.messages[indexPath.row] as PFObject
+            let groupId = message["groupId"] as! String
+            self.performSegueWithIdentifier("OpenChat", sender: groupId)
+        }
+        
     }
     
     // MARK: - SelectMultipleDelegate
@@ -177,10 +181,18 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
         
     }
     
-    @IBAction func btnEditPressed(sender: AnyObject) {
-        
+    @IBAction func HomeBtnPressed(sender: AnyObject) {
+        if !sideBarToken {
+            UIView.animateWithDuration(speedofsetbar , animations: {
+                
+                self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x + self.setbarinfro
+                self.subview.frame.origin.x = self.subview.frame.origin.x + self.setbarinfro
+                
+            })
+            sideBarToken = true
+            self
+        }
     }
-    
 }
 
 
