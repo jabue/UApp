@@ -8,73 +8,81 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>AWSCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 		<key>AWSLambda.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
+		</dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>JSQMessagesViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>JSQSystemSoundPlayer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
+		</dict>
+		<key>Parse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>037CE40EDB2F06DB6694B616724E351F</key>
+		<key>3F820EFC2D440AEA0B3405D7A8F447AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>221A5B29F386A2E9833D2D463F8BE10D</key>
+		<key>5846A28660707B1EB5BAA1638949AF22</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>471B56D99BCC148F8087752A9A46D5A3</key>
+		<key>5A5FCE8DA556A7DFAD57FAAF7C5452DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8C1137266BA6A5E31FDB259F1FDA37F5</key>
+		<key>716BE3DDD3277A12B6320B0DB3FB9573</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>94E73ABFC80F6BE19F294392082F2867</key>
+		<key>7C4B897F2D93A8C7A13F453693ADBEBD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F857CF3370EB2C8C291290B66F6A675B</key>
+		<key>C5AB2F32CEBC5FFF4FEB92BD7F345202</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F258356D92A69309AE518A5D66E936EA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F8742274A9F945E7EDEAE7C9208A3361</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -16,12 +16,13 @@ class BookShopViewController: UIViewController {
     var setpage:SetBarViewController!
     var showsetbar:Bool!
     
-    var setbarinfro:CGFloat = SetBarSetting.sizeofsetbar
+    var setbarinfro:CGFloat = CGFloat!
     var speedofsetbar = SetBarSetting.speedofsetbar
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("MessageView loaded...")
+        print("MessageView loading...")
+        setbarinfro = bounds.size.wideth * 2/3
         
         setpage = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SetBarViewController") as! SetBarViewController
         
