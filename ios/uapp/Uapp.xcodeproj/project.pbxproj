@@ -163,6 +163,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F9EAAAD1BB5BEBF006A8126 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				2F75EF451BACA5B9005C167E /* MessageMainView.swift */,
+				2F75EF471BACA938005C167E /* PushInside.swift */,
+				2F75EF491BACA9E2005C167E /* AddFriends.swift */,
+				2F75EF4B1BACAC3F005C167E /* ChatViewController.swift */,
+				2F8A4F261BB476ED007EEACE /* MessageAction.swift */,
+				2F8A4F271BB476ED007EEACE /* UserAction.swift */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
 		78E75F331AC5FC48001A93F1 = {
 			isa = PBXGroup;
 			children = (
@@ -229,12 +242,7 @@
 				9384036A1BAB7D6600B2D5AB /* Feeds.swift */,
 				9384036C1BAB7DCD00B2D5AB /* HotTopic.swift */,
 				9384036E1BAB7E0C00B2D5AB /* Discover.swift */,
-				2F75EF451BACA5B9005C167E /* MessageMainView.swift */,
-				2F75EF471BACA938005C167E /* PushInside.swift */,
-				2F75EF491BACA9E2005C167E /* AddFriends.swift */,
-				2F75EF4B1BACAC3F005C167E /* ChatViewController.swift */,
-				2F8A4F261BB476ED007EEACE /* MessageAction.swift */,
-				2F8A4F271BB476ED007EEACE /* UserAction.swift */,
+				2F9EAAAD1BB5BEBF006A8126 /* Chat */,
 				938403721BACBEBD00B2D5AB /* TableViewCell.swift */,
 				938403741BACC53300B2D5AB /* customerCell.swift */,
 			);
