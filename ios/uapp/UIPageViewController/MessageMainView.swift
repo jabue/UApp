@@ -55,7 +55,10 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
         ChatTable.hidden = false
         InsideTable.hidden = true
         
-        self.loadMessages()
+        if PFUser.currentUser() != nil {
+            self.loadMessages()
+
+        }
         
         /*
         //hand swipe
@@ -82,7 +85,7 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
     func loadMessages() {
         let query = PFQuery(className: "Messages")
         query.whereKey("user", equalTo: PFUser.currentUser()!)
-        print(PFUser.currentUser())
+        // print(PFUser.currentUser())
         query.includeKey("lastUser")
         query.orderByDescending("updatedAction")
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
