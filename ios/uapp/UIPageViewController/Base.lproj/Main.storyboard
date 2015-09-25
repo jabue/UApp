@@ -16,7 +16,7 @@
         <!--Launch After-->
         <scene sceneID="9CT-BS-gIp">
             <objects>
-                <viewController id="eL2-Fr-Phc" customClass="LaunchAfter" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eL2-Fr-Phc" customClass="LaunchAfter" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SWS-nY-QkX"/>
                         <viewControllerLayoutGuide type="bottom" id="F5d-gb-v5N"/>
@@ -130,7 +130,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" userLabel="Welcome View Controller" customClass="ViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" userLabel="Welcome View Controller" customClass="ViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -171,7 +171,7 @@
         <!--Find School-->
         <scene sceneID="8Cr-M7-RQP">
             <objects>
-                <viewController storyboardIdentifier="FindSchoolViewController" title="Find School" modalPresentationStyle="pageSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="V5N-e9-IJ5" customClass="FindSchoolViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindSchoolViewController" title="Find School" modalPresentationStyle="pageSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="V5N-e9-IJ5" customClass="FindSchoolViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EzH-Uf-s1V"/>
                         <viewControllerLayoutGuide type="bottom" id="j2N-Xd-nMk"/>
@@ -189,11 +189,11 @@
                                         <rect key="frame" x="0.0" y="28" width="482" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9nU-vt-EeS" id="BwE-Xd-p6T">
-                                            <rect key="frame" x="0.0" y="0.0" width="482" height="42.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="482" height="42"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OzZ-Ck-2e7">
-                                                    <rect key="frame" x="15" y="0.0" width="452" height="42.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="452" height="42"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -214,7 +214,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjc-xm-Pew">
                                 <rect key="frame" x="0.0" y="20" width="600" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Your School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="255" translatesAutoresizingMaskIntoConstraints="NO" id="SKC-E6-OZL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Find Your School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="255" translatesAutoresizingMaskIntoConstraints="NO" id="SKC-E6-OZL">
                                         <rect key="frame" x="174" y="14" width="255" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="SKC-E6-OZL" secondAttribute="height" multiplier="85:12" id="Dtm-Mw-wsy"/>
@@ -320,7 +320,7 @@
         <!--Content View Controller-->
         <scene sceneID="Yhv-zJ-1WO">
             <objects>
-                <viewController storyboardIdentifier="ContentViewController" id="kU1-1k-Yn1" customClass="ContentViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentViewController" id="kU1-1k-Yn1" customClass="ContentViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vm7-pY-kJI"/>
                         <viewControllerLayoutGuide type="bottom" id="0gC-gl-8bq"/>
@@ -365,7 +365,7 @@
         <!--Set Bar View Controller-->
         <scene sceneID="jZR-sF-d7J">
             <objects>
-                <viewController storyboardIdentifier="SetBarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B06-eV-OBd" customClass="SetBarViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetBarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B06-eV-OBd" customClass="SetBarViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zsr-8x-E4k"/>
                         <viewControllerLayoutGuide type="bottom" id="uAa-YP-2d2"/>
@@ -396,7 +396,7 @@
         <!--Sign Up Scene-->
         <scene sceneID="w6O-ag-do9">
             <objects>
-                <viewController storyboardIdentifier="Sign Up Scene" title="Sign Up Scene" modalPresentationStyle="currentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mGp-Zz-ADn" customClass="SignUpViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Sign Up Scene" title="Sign Up Scene" modalPresentationStyle="currentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mGp-Zz-ADn" customClass="SignUpViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lol-9G-f2p"/>
                         <viewControllerLayoutGuide type="bottom" id="60u-2Z-MMd"/>
@@ -473,7 +473,7 @@
                                     <action selector="buttonSubmit:" destination="mGp-Zz-ADn" eventType="touchUpInside" id="Z1G-kL-YZU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR LINK TO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OH8-Mv-7QS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="OR LINK TO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OH8-Mv-7QS">
                                 <rect key="frame" x="259" y="485" width="82" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OH8-Mv-7QS" secondAttribute="height" multiplier="79:14" id="HsJ-xD-rf6"/>
@@ -547,7 +547,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnGplus" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fez-pG-rBX">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="btnGplus" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fez-pG-rBX">
                                 <rect key="frame" x="361" y="512" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="MxA-Ca-GMl"/>
@@ -714,7 +714,7 @@
         <!--Home View Controller-->
         <scene sceneID="ncd-xn-xI1">
             <objects>
-                <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v5f-oP-nA8" customClass="HomeViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v5f-oP-nA8" customClass="HomeViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dFn-sk-t2d"/>
                         <viewControllerLayoutGuide type="bottom" id="Jdp-j4-a70"/>
@@ -756,7 +756,7 @@
                                     <segue destination="FSE-A0-qJ2" kind="show" id="hFE-B3-Wum"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPP-C8-7WV">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPP-C8-7WV">
                                 <rect key="frame" x="400" y="241" width="200" height="91"/>
                                 <state key="normal" title="Button" image="Profile"/>
                                 <connections>
@@ -770,7 +770,7 @@
                                     <segue destination="LAM-Xw-1rB" kind="show" id="FBo-X7-3c2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0c3-O8-CmG">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0c3-O8-CmG">
                                 <rect key="frame" x="400" y="423" width="200" height="91"/>
                                 <state key="normal" title="Button" image="Storage"/>
                                 <connections>
@@ -791,8 +791,8 @@
                                     <segue destination="gec-nq-d6g" kind="show" id="jMG-kX-b2c"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QOTD" translatesAutoresizingMaskIntoConstraints="NO" id="upp-DY-yfe">
-                                <rect key="frame" x="0.0" y="237" width="400" height="185.5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="QOTD" translatesAutoresizingMaskIntoConstraints="NO" id="upp-DY-yfe">
+                                <rect key="frame" x="0.0" y="237" width="400" height="186"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1G2-7P-cnf">
                                 <rect key="frame" x="338" y="388" width="26" height="20"/>
@@ -808,7 +808,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="share"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As you think, so shall you become.                                 -----Bruce Lee" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UD-Bn-9R4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="As you think, so shall you become.                                 -----Bruce Lee" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UD-Bn-9R4">
                                 <rect key="frame" x="30" y="271" width="340" height="112"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -914,17 +914,17 @@
         <!--Menu View Controller-->
         <scene sceneID="1kk-Xz-YKb">
             <objects>
-                <tableViewController id="q4v-rA-6ie" userLabel="Menu View Controller" customClass="MenuViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="q4v-rA-6ie" userLabel="Menu View Controller" customClass="MenuViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="24" sectionFooterHeight="24" id="1k1-CO-c8E">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuItemCell" rowHeight="80" id="u0g-hn-B4b" customClass="MenuItemCell" customModule="UIPageViewController" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuItemCell" rowHeight="80" id="u0g-hn-B4b" customClass="MenuItemCell" customModule="Uapp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u0g-hn-B4b" id="TFE-zo-CPw">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fGh-6K-m6z">
@@ -1006,7 +1006,7 @@
         <!--Detail View Controller-->
         <scene sceneID="Pl8-E9-6Sp">
             <objects>
-                <viewController id="Utp-Mp-ado" userLabel="Detail View Controller" customClass="DetailViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Utp-Mp-ado" userLabel="Detail View Controller" customClass="DetailViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IkA-FA-S1W"/>
                         <viewControllerLayoutGuide type="bottom" id="FgC-pA-wVV"/>
@@ -1040,7 +1040,7 @@
                                         </variation>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="EV Technologies Inc." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sOA-hP-mm3">
-                                        <rect key="frame" x="50" y="239.5" width="500" height="40"/>
+                                        <rect key="frame" x="50" y="240" width="500" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="chE-Hv-mmc"/>
                                         </constraints>
@@ -1061,8 +1061,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4JJ-Yc-FNV">
-                                        <rect key="frame" x="0.0" y="307.5" width="600" height="272.5"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4JJ-Yc-FNV">
+                                        <rect key="frame" x="0.0" y="308" width="600" height="273"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="t1e-PD-Gyc">
                                                 <rect key="frame" x="25" y="10" width="550" height="31"/>
@@ -1078,7 +1078,7 @@
                                                 <color key="tintColor" red="0.1647058824" green="0.38431372549999998" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                             </segmentedControl>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="t1e-PD-Gyc" firstAttribute="top" secondItem="4JJ-Yc-FNV" secondAttribute="top" constant="10" id="Lae-KW-GD8"/>
                                             <constraint firstAttribute="trailing" secondItem="t1e-PD-Gyc" secondAttribute="trailing" constant="25" id="pdh-d9-p31"/>
@@ -1086,7 +1086,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onF-YF-WyE">
-                                        <rect key="frame" x="40" y="279.5" width="520" height="18.5"/>
+                                        <rect key="frame" x="40" y="280" width="520" height="19"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -1097,10 +1097,10 @@
                                             <constraint firstAttribute="width" secondItem="udG-ZB-L5W" secondAttribute="height" multiplier="12:11" id="d3n-tc-TzA"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJQ-C0-2q1">
-                                        <rect key="frame" x="222" y="74.5" width="24.5" height="22.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Level 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJQ-C0-2q1">
+                                        <rect key="frame" x="222" y="75" width="25" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1177,7 +1177,7 @@
         <!--My Photo View Controller-->
         <scene sceneID="h7u-os-7Ap">
             <objects>
-                <collectionViewController id="0Gq-HK-0QA" customClass="MyPhotoViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="0Gq-HK-0QA" customClass="MyPhotoViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Jct-Kc-Zko">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1189,7 +1189,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlickrCell" id="bVh-Mg-Zeu" customClass="MyPhotoCellViewCell" customModule="UIPageViewController" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlickrCell" id="bVh-Mg-Zeu" customClass="MyPhotoCellViewCell" customModule="Uapp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1261,7 +1261,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Nsm-SF-tEj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rnc-2l-axM" customClass="NavigationController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rnc-2l-axM" customClass="NavigationController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bEN-Zi-lt1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1279,7 +1279,7 @@
         <!--Navigation Controller-->
         <scene sceneID="4uh-1M-4dQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="asP-tS-gnl" customClass="NavigationController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="asP-tS-gnl" customClass="NavigationController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7av-T4-7Sc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1297,7 +1297,7 @@
         <!--Activities View Controller-->
         <scene sceneID="cRl-uA-Slt">
             <objects>
-                <viewController storyboardIdentifier="Activities" id="LAM-Xw-1rB" userLabel="Activities View Controller" customClass="ActivitiesViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Activities" id="LAM-Xw-1rB" userLabel="Activities View Controller" customClass="ActivitiesViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pbs-7I-Vzj"/>
                         <viewControllerLayoutGuide type="bottom" id="flU-ST-9cz"/>
@@ -1428,7 +1428,7 @@
         <!--Feeds-->
         <scene sceneID="84E-Am-Xiw">
             <objects>
-                <viewController storyboardIdentifier="Feeds" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iET-0Z-2Kh" customClass="Feeds" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Feeds" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iET-0Z-2Kh" customClass="Feeds" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1OE-Sk-XdM"/>
                         <viewControllerLayoutGuide type="bottom" id="ylc-4a-yNM"/>
@@ -1448,7 +1448,7 @@
         <!--Hot Topic-->
         <scene sceneID="bT1-nU-NKL">
             <objects>
-                <viewController storyboardIdentifier="HotTopic" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tut-Se-q2e" customClass="HotTopic" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HotTopic" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tut-Se-q2e" customClass="HotTopic" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KSy-uh-J3D"/>
                         <viewControllerLayoutGuide type="bottom" id="PKr-rH-cYd"/>
@@ -1468,7 +1468,7 @@
         <!--Discover-->
         <scene sceneID="q7M-I0-rd7">
             <objects>
-                <viewController storyboardIdentifier="Discover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EXE-Ht-InT" customClass="Discover" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Discover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EXE-Ht-InT" customClass="Discover" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MSu-yv-qsm"/>
                         <viewControllerLayoutGuide type="bottom" id="dEV-ro-QKn"/>
@@ -1488,7 +1488,7 @@
         <!--Pinglunand Huifu View Controller-->
         <scene sceneID="rRx-I1-2n5">
             <objects>
-                <viewController storyboardIdentifier="PinglunandHuifuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tfl-Jj-G5i" customClass="PinglunandHuifuViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PinglunandHuifuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tfl-Jj-G5i" customClass="PinglunandHuifuViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r5U-rh-HTR"/>
                         <viewControllerLayoutGuide type="bottom" id="UyX-zI-4FD"/>
@@ -1503,70 +1503,10 @@
             </objects>
             <point key="canvasLocation" x="2990" y="1759"/>
         </scene>
-        <!--Message View Controller-->
-        <scene sceneID="3OG-KA-Gox">
-            <objects>
-                <viewController storyboardIdentifier="Message" id="lSa-xb-hXX" userLabel="Message View Controller" customClass="MessageViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TZf-Jz-djZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="dUv-iC-1i5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OGq-u1-Een">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9eI-py-jhK">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbB-9B-GKF">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.13333334029999999" green="0.57647061349999995" blue="0.62352943419999995" alpha="1" colorSpace="deviceRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="149" y="99" width="69" height="20.5"/>
-                                        </variation>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="YbB-9B-GKF"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
-                                    <mask key="subviews">
-                                        <include reference="YbB-9B-GKF"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="9eI-py-jhK"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="9eI-py-jhK"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" id="6hb-gg-L0e"/>
-                    <connections>
-                        <outlet property="subview" destination="9eI-py-jhK" id="duO-2v-Y0a"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cYx-1c-ME0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3607" y="-120"/>
-        </scene>
         <!--Schedule View Controller-->
         <scene sceneID="soC-6l-OBu">
             <objects>
-                <viewController id="dl3-cq-8go" customClass="ScheduleViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dl3-cq-8go" customClass="ScheduleViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZRZ-eb-NQu"/>
                         <viewControllerLayoutGuide type="bottom" id="52u-Yo-rk0"/>
@@ -1593,7 +1533,7 @@
         <!--Infor View Controller-->
         <scene sceneID="qrO-1k-TgG">
             <objects>
-                <viewController id="8zg-o9-E2E" customClass="InforViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8zg-o9-E2E" customClass="InforViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3EB-So-ylQ"/>
                         <viewControllerLayoutGuide type="bottom" id="zOI-97-PSv"/>
@@ -1620,7 +1560,7 @@
         <!--Setting View Controller-->
         <scene sceneID="HeK-v6-5Jo">
             <objects>
-                <viewController id="FSE-A0-qJ2" customClass="SettingViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FSE-A0-qJ2" customClass="SettingViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kfm-sd-2gt"/>
                         <viewControllerLayoutGuide type="bottom" id="Xsk-V4-ifY"/>
@@ -1647,7 +1587,7 @@
         <!--Cloud View Controller-->
         <scene sceneID="q0w-kx-vWb">
             <objects>
-                <viewController id="GN9-oV-udQ" customClass="UCloudViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GN9-oV-udQ" customClass="UCloudViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pIU-Hg-CQ3"/>
                         <viewControllerLayoutGuide type="bottom" id="3Wb-fi-qP4"/>
@@ -1674,7 +1614,7 @@
         <!--Book Shop View Controller-->
         <scene sceneID="Vn8-te-W0m">
             <objects>
-                <viewController id="XXn-oI-uU2" customClass="BookShopViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XXn-oI-uU2" customClass="BookShopViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dHN-F8-MXi"/>
                         <viewControllerLayoutGuide type="bottom" id="fHM-VZ-R9g"/>
@@ -1716,7 +1656,7 @@
         <!--Message Main View-->
         <scene sceneID="CsM-mk-p9v">
             <objects>
-                <viewController id="gec-nq-d6g" customClass="MessageMainView" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gec-nq-d6g" customClass="MessageMainView" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Adr-01-wDq"/>
                         <viewControllerLayoutGuide type="bottom" id="twa-hA-wuj"/>
@@ -1729,105 +1669,60 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aw2-2m-7TW">
-                                        <rect key="frame" x="29" y="32" width="46" height="30"/>
+                                        <rect key="frame" x="19" y="32" width="46" height="30"/>
                                         <state key="normal" title="Home"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbM-W3-4Up">
-                                        <rect key="frame" x="276" y="24" width="46" height="32"/>
-                                        <state key="normal" title="IMG"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7S-bQ-w7H">
-                                        <rect key="frame" x="330" y="32" width="26" height="30"/>
+                                        <rect key="frame" x="552" y="29" width="26" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <state key="normal" title="+"/>
                                         <connections>
                                             <action selector="addButtonAction:" destination="gec-nq-d6g" eventType="touchUpInside" id="Auv-S2-5lA"/>
                                         </connections>
                                     </button>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AA7-b1-BEq">
-                                        <rect key="frame" x="35" y="70" width="529" height="29"/>
-                                        <segments>
-                                            <segment title="Chat"/>
-                                            <segment title="Inside"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="SegmentSwitch:" destination="gec-nq-d6g" eventType="valueChanged" id="Mcy-sS-K4G"/>
-                                        </connections>
-                                    </segmentedControl>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4bA-DZ-X9z">
-                                        <rect key="frame" x="19" y="113" width="560" height="487"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4bA-DZ-X9z">
+                                        <rect key="frame" x="19" y="70" width="560" height="530"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" id="Srt-co-tOe">
                                                 <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Srt-co-tOe" id="aFI-lO-ZPz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lhn-9e-uOd">
-                                        <rect key="frame" x="19" y="113" width="560" height="487"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Thing is Coming !" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SB6-vr-eCE">
-                                            <rect key="frame" x="0.0" y="72" width="560" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InsideCell" id="PFr-d6-RaE">
-                                                <rect key="frame" x="0.0" y="28" width="560" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PFr-d6-RaE" id="LxW-KN-NuF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOZ-Od-zKe">
-                                        <rect key="frame" x="533" y="32" width="46" height="30"/>
-                                        <state key="normal" title="Edit"/>
-                                        <connections>
-                                            <action selector="btnEditPressed:" destination="gec-nq-d6g" eventType="touchUpInside" id="nvQ-H7-Knm"/>
-                                        </connections>
-                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="UChat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iB9-SV-TW6">
+                                        <rect key="frame" x="264" y="32" width="73" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" red="0.30936316287878785" green="0.30936316287878785" blue="0.30936316287878785" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="4bA-DZ-X9z" firstAttribute="top" secondItem="AA7-b1-BEq" secondAttribute="bottom" constant="15" id="226-zI-ArK"/>
-                                    <constraint firstItem="4bA-DZ-X9z" firstAttribute="leading" secondItem="oJC-gD-Su2" secondAttribute="leading" constant="19" id="4IM-UP-e1l"/>
-                                    <constraint firstAttribute="bottom" secondItem="lhn-9e-uOd" secondAttribute="bottom" id="5WW-HU-jZC"/>
-                                    <constraint firstAttribute="trailing" secondItem="HOZ-Od-zKe" secondAttribute="trailing" constant="21" id="7WW-2R-XQT"/>
-                                    <constraint firstItem="AA7-b1-BEq" firstAttribute="centerX" secondItem="oJC-gD-Su2" secondAttribute="centerX" id="BvG-LA-Js5"/>
-                                    <constraint firstItem="VbM-W3-4Up" firstAttribute="top" secondItem="oJC-gD-Su2" secondAttribute="top" constant="24" id="JoP-WW-ntD"/>
-                                    <constraint firstItem="K7S-bQ-w7H" firstAttribute="top" secondItem="oJC-gD-Su2" secondAttribute="top" constant="32" id="M9m-UV-nV9"/>
-                                    <constraint firstAttribute="trailing" secondItem="lhn-9e-uOd" secondAttribute="trailing" constant="21" id="NQF-XW-4mp"/>
-                                    <constraint firstItem="lhn-9e-uOd" firstAttribute="leading" secondItem="oJC-gD-Su2" secondAttribute="leading" constant="19" id="OlU-qu-B7T"/>
-                                    <constraint firstAttribute="trailing" secondItem="4bA-DZ-X9z" secondAttribute="trailing" constant="21" id="PQk-eT-xKg"/>
-                                    <constraint firstItem="aw2-2m-7TW" firstAttribute="leading" secondItem="oJC-gD-Su2" secondAttribute="leading" constant="29" id="PyQ-bt-mib"/>
-                                    <constraint firstItem="lhn-9e-uOd" firstAttribute="top" secondItem="AA7-b1-BEq" secondAttribute="bottom" constant="15" id="Qtp-GE-ev8"/>
-                                    <constraint firstItem="aw2-2m-7TW" firstAttribute="top" secondItem="oJC-gD-Su2" secondAttribute="top" constant="32" id="Tb1-tg-egj"/>
-                                    <constraint firstAttribute="trailing" secondItem="AA7-b1-BEq" secondAttribute="trailing" constant="36" id="WkK-JQ-Bdf"/>
-                                    <constraint firstItem="HOZ-Od-zKe" firstAttribute="top" secondItem="oJC-gD-Su2" secondAttribute="top" constant="32" id="b20-F1-XCA"/>
-                                    <constraint firstItem="AA7-b1-BEq" firstAttribute="top" secondItem="K7S-bQ-w7H" secondAttribute="bottom" constant="8" id="cd2-Kg-nIz"/>
-                                    <constraint firstAttribute="bottom" secondItem="4bA-DZ-X9z" secondAttribute="bottom" id="e1B-XW-LZu"/>
-                                    <constraint firstItem="VbM-W3-4Up" firstAttribute="centerX" secondItem="oJC-gD-Su2" secondAttribute="centerX" id="e65-I0-u53"/>
-                                    <constraint firstItem="AA7-b1-BEq" firstAttribute="leading" secondItem="oJC-gD-Su2" secondAttribute="leading" constant="35" id="h2f-ha-JBV"/>
-                                    <constraint firstItem="K7S-bQ-w7H" firstAttribute="leading" secondItem="VbM-W3-4Up" secondAttribute="trailing" constant="8" id="oeT-ap-tdB"/>
+                                    <constraint firstAttribute="trailing" secondItem="K7S-bQ-w7H" secondAttribute="trailing" constant="20" id="9L9-CL-2UB"/>
+                                    <constraint firstItem="aw2-2m-7TW" firstAttribute="top" secondItem="oJC-gD-Su2" secondAttribute="top" constant="32" id="Aa7-Vi-Rr2"/>
+                                    <constraint firstItem="K7S-bQ-w7H" firstAttribute="top" secondItem="oJC-gD-Su2" secondAttribute="top" constant="20" id="OVg-SV-uyB"/>
+                                    <constraint firstItem="iB9-SV-TW6" firstAttribute="top" secondItem="oJC-gD-Su2" secondAttribute="top" constant="32" id="QmT-Sy-jQz"/>
+                                    <constraint firstItem="4bA-DZ-X9z" firstAttribute="top" secondItem="iB9-SV-TW6" secondAttribute="bottom" constant="17" id="SQH-2S-GCz"/>
+                                    <constraint firstAttribute="trailing" secondItem="4bA-DZ-X9z" secondAttribute="trailing" constant="21" id="hFn-ZO-d5y"/>
+                                    <constraint firstItem="4bA-DZ-X9z" firstAttribute="leading" secondItem="oJC-gD-Su2" secondAttribute="leading" constant="19" id="hIT-d5-EOB"/>
+                                    <constraint firstAttribute="bottom" secondItem="4bA-DZ-X9z" secondAttribute="bottom" id="pXA-nf-GGZ"/>
+                                    <constraint firstItem="iB9-SV-TW6" firstAttribute="centerX" secondItem="oJC-gD-Su2" secondAttribute="centerX" id="tLv-Ae-NQp"/>
+                                    <constraint firstItem="aw2-2m-7TW" firstAttribute="leading" secondItem="oJC-gD-Su2" secondAttribute="leading" constant="19" id="xqt-pe-wdm"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="oJC-gD-Su2" firstAttribute="top" secondItem="eXF-dH-zn6" secondAttribute="topMargin" id="Fci-Wp-nkE"/>
-                            <constraint firstItem="twa-hA-wuj" firstAttribute="top" secondItem="oJC-gD-Su2" secondAttribute="bottom" id="JYf-dG-ioL"/>
-                            <constraint firstItem="oJC-gD-Su2" firstAttribute="leading" secondItem="eXF-dH-zn6" secondAttribute="leadingMargin" constant="-20" id="MiF-RF-s21"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oJC-gD-Su2" secondAttribute="trailing" constant="-20" id="YzT-IH-5CU"/>
+                            <constraint firstItem="oJC-gD-Su2" firstAttribute="leading" secondItem="eXF-dH-zn6" secondAttribute="leadingMargin" constant="-20" id="Kwv-0q-Ctz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oJC-gD-Su2" secondAttribute="trailing" constant="-20" id="gal-vZ-L3n"/>
+                            <constraint firstItem="oJC-gD-Su2" firstAttribute="top" secondItem="eXF-dH-zn6" secondAttribute="topMargin" id="lAd-TY-e7C"/>
+                            <constraint firstItem="twa-hA-wuj" firstAttribute="top" secondItem="oJC-gD-Su2" secondAttribute="bottom" id="pz9-8h-8Qa"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="sWE-hv-tSY" appends="YES" id="81t-Xj-Ruj"/>
@@ -1836,10 +1731,7 @@
                     </view>
                     <connections>
                         <outlet property="AddButton" destination="K7S-bQ-w7H" id="KiL-a6-Zzd"/>
-                        <outlet property="BtnEdit" destination="HOZ-Od-zKe" id="fZc-aa-poJ"/>
                         <outlet property="ChatTable" destination="4bA-DZ-X9z" id="WxT-ys-vgW"/>
-                        <outlet property="InsideTable" destination="lhn-9e-uOd" id="I5f-qr-0w2"/>
-                        <outlet property="SegmentControl" destination="AA7-b1-BEq" id="u0t-Is-o1Z"/>
                         <outlet property="SwipeLeft" destination="a85-0V-6bW" id="dRz-uq-w8q"/>
                         <outlet property="SwipeRight" destination="sWE-hv-tSY" id="rOJ-P9-Zeh"/>
                         <outlet property="subview" destination="oJC-gD-Su2" id="Fh6-l5-RQg"/>
@@ -1871,7 +1763,7 @@
         <!--Chat View Controller-->
         <scene sceneID="5UO-Hf-AZl">
             <objects>
-                <viewController storyboardIdentifier="OpenChat" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aFY-k0-0jG" customClass="ChatViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OpenChat" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aFY-k0-0jG" customClass="ChatViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="oOU-Tp-6ZT">
                         <barButtonItem key="leftBarButtonItem" title="Return" id="clh-ji-Iju">
                             <connections>
@@ -1886,12 +1778,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSL-yc-wRY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3781" y="-872"/>
+            <point key="canvasLocation" x="3708" y="-893"/>
         </scene>
         <!--Add Friends-->
         <scene sceneID="6QO-OO-fg4">
             <objects>
-                <viewController id="ziJ-LF-aYd" customClass="AddFriends" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ziJ-LF-aYd" customClass="AddFriends" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sg1-7C-FnN"/>
                         <viewControllerLayoutGuide type="bottom" id="Emg-37-OZf"/>
@@ -1922,7 +1814,7 @@
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GiF-TS-6Ga" id="PP2-D1-GhI">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1962,7 +1854,7 @@
         <!--Push Inside-->
         <scene sceneID="6Pl-IU-eP0">
             <objects>
-                <viewController id="ZLs-vv-gCb" customClass="PushInside" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZLs-vv-gCb" customClass="PushInside" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fVe-1E-DMM"/>
                         <viewControllerLayoutGuide type="bottom" id="oAD-na-hUM"/>
@@ -2017,7 +1909,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hty-Rr-w3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3081" y="-872"/>
+            <point key="canvasLocation" x="2976" y="-893"/>
         </scene>
     </scenes>
     <resources>

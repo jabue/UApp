@@ -131,6 +131,7 @@ class AddFriends: UIViewController, UITableViewDelegate, UITableViewDataSource
         {
             self.dismissViewControllerAnimated(true, completion: { () -> Void in
                 // pass the selectedfriends to next view through delegate
+                self.selectedFriends.append(PFUser.currentUser()!)
                 self.delegate.didSelectMultipleUsers(self.selectedFriends)
             })
         }

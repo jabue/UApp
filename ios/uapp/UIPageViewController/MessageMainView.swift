@@ -19,11 +19,7 @@ import UIKit
 
 class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDelegate, AddFriendsDelegate {
     @IBOutlet weak var subview: UIView!
-    
-    @IBOutlet weak var BtnEdit: UIButton!
     @IBOutlet weak var ChatTable: UITableView!
-    @IBOutlet weak var InsideTable: UITableView!
-    @IBOutlet weak var SegmentControl: UISegmentedControl!
     @IBOutlet var SwipeRight: UISwipeGestureRecognizer!
     @IBOutlet var SwipeLeft: UISwipeGestureRecognizer!
     @IBOutlet weak var AddButton: UIButton!
@@ -51,28 +47,11 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
         // ChatTable setup
         ChatTable.delegate = self
         ChatTable.dataSource = self
-        // set up table display
-        ChatTable.hidden = false
-        InsideTable.hidden = true
         
         if PFUser.currentUser() != nil {
             self.loadMessages()
 
         }
-        
-        /*
-        //hand swipe
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
-        
-        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
-        
-        leftSwipe.direction = .Left
-        rightSwipe.direction = .Right
-        
-        view.addGestureRecognizer(leftSwipe)
-        view.addGestureRecognizer(rightSwipe)
-        */
-        
         
     }
     
@@ -99,49 +78,17 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
         }
     }
     
-    // Mark: Segmented Controller
-    @IBAction func SegmentSwitch(sender: UISegmentedControl) {
-        switch SegmentControl.selectedSegmentIndex
-        {
-        case 0:
-            // self.ChatContainer.hidden = true
-            // self.InsideContainer.hidden = false
-            self.ChatTable.hidden = false
-            self.InsideTable.hidden = true
-        case 1:
-            // self.ChatContainer.hidden = false
-            // self.InsideContainer.hidden = true
-            self.ChatTable.hidden = true
-            self.InsideTable.hidden = false
-        default:
-            break;
-        }
-    }
-    
     // Mark: Swipe gesture
     @IBAction func swipeRight(sender: AnyObject) {
-        if SegmentControl.selectedSegmentIndex == 1
-        {
-            // self.ChatContainer.hidden = true
-            // self.InsideContainer.hidden = false
-            self.ChatTable.hidden = false
-            self.InsideTable.hidden = true
-            SegmentControl.selectedSegmentIndex = 0
+        if !sideBarToken {
+            UIView.animateWithDuration(speedofsetbar , animations: {
+                
+                self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x + self.setbarinfro
+                self.subview.frame.origin.x = self.subview.frame.origin.x + self.setbarinfro
+                
+            })
+            sideBarToken = true
         }
-        else
-        {
-            if !sideBarToken {
-                UIView.animateWithDuration(speedofsetbar , animations: {
-                    
-                    self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x + self.setbarinfro
-                    self.subview.frame.origin.x = self.subview.frame.origin.x + self.setbarinfro
-                    
-                })
-                sideBarToken = true
-            }
-            
-        }
-        
     }
     
     @IBAction func swipeLeft(sender: AnyObject) {
@@ -156,15 +103,7 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
             sideBarToken = false
         }
         else{
-            if SegmentControl.selectedSegmentIndex == 0
-            {
-                self.ChatTable.hidden = true
-                self.InsideTable.hidden = false
-                // self.ChatContainer.hidden = false
-                // self.InsideContainer.hidden = true
-                SegmentControl.selectedSegmentIndex = 1
-                
-            }
+            // add code to edit table cell
         }
         
     }
@@ -172,14 +111,7 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
     // Mark: add button action
     @IBAction func addButtonAction(sender: AnyObject) {
         // go to different views depends on the segmented choice
-        if SegmentControl.selectedSegmentIndex == 0
-        {
-            self.performSegueWithIdentifier("SelectFriends", sender: self)
-        }
-        else
-        {
-            self.performSegueWithIdentifier("PushInsides", sender: self)
-        }
+        self.performSegueWithIdentifier("SelectFriends", sender: self)
     }
     
     //MARK: - Tableview Delegate & Datasource
@@ -222,8 +154,8 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
     // select friends gonna chat with
     func didSelectMultipleUsers(selectedUsers: [PFUser]!) {
         let groupId = MessageAction.startMultipleChat(selectedUsers)
-        self.loadMessages()
-        self.ChatTable.reloadData()
+        // self.loadMessages()
+        // self.ChatTable.reloadData()
         self.performSegueWithIdentifier("OpenChat", sender: groupId)
     }
     
