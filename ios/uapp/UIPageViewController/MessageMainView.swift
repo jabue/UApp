@@ -88,6 +88,9 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
                 
             })
             sideBarToken = true
+            
+            // ban the subview touch action
+            self.subview.userInteractionEnabled = false
         }
     }
     
@@ -101,11 +104,8 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
                 
             })
             sideBarToken = false
+            self.subview.userInteractionEnabled = true
         }
-        else{
-            // add code to edit table cell
-        }
-        
     }
     
     // Mark: add button action
@@ -152,6 +152,24 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
             self.performSegueWithIdentifier("OpenChat", sender: groupId)
         }
         
+    }
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .Normal, title: "delete") { action, index in
+            print("more button tapped")
+        }
+        delete.backgroundColor = UIColor.redColor()
+        
+        return [delete]
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // the cells you would like the actions to appear needs to be editable
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        // you need to implement this method too or you can't swipe to display the actions
     }
     
     // MARK: - SelectMultipleDelegate
