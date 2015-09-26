@@ -46,6 +46,9 @@
 		A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0B31B7D35F7004B3E1B /* FindSchoolViewController.swift */; };
 		A445F0B61B7D3827004B3E1B /* SchoolItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0B51B7D3827004B3E1B /* SchoolItem.swift */; };
 		A445F0F21B7D645A004B3E1B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0F11B7D645A004B3E1B /* SignUpViewController.swift */; };
+		A4533FFE1BB5C7BE00FA2330 /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4533FFD1BB5C7BE00FA2330 /* AddClassViewController.swift */; };
+		A45340011BB5CA5C00FA2330 /* CommFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45340001BB5CA5C00FA2330 /* CommFunc.swift */; };
+		A45340031BB5DC5E00FA2330 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45340021BB5DC5E00FA2330 /* SwiftyJSON.swift */; };
 		A4732E071BB08ED200DA2669 /* wheel2.png in Resources */ = {isa = PBXBuildFile; fileRef = A4732E061BB08ED200DA2669 /* wheel2.png */; };
 		A486411C1BB31663002B261B /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48641181BB31663002B261B /* ScheduleViewController.swift */; };
 		A486411D1BB31663002B261B /* SMRotaryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48641191BB31663002B261B /* SMRotaryProtocol.swift */; };
@@ -122,6 +125,9 @@
 		A445F0B31B7D35F7004B3E1B /* FindSchoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindSchoolViewController.swift; sourceTree = "<group>"; };
 		A445F0B51B7D3827004B3E1B /* SchoolItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolItem.swift; sourceTree = "<group>"; };
 		A445F0F11B7D645A004B3E1B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A4533FFD1BB5C7BE00FA2330 /* AddClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
+		A45340001BB5CA5C00FA2330 /* CommFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommFunc.swift; sourceTree = "<group>"; };
+		A45340021BB5DC5E00FA2330 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		A4732E061BB08ED200DA2669 /* wheel2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheel2.png; sourceTree = "<group>"; };
 		A48641181BB31663002B261B /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleViewController.swift; path = Schedule/ScheduleViewController.swift; sourceTree = "<group>"; };
 		A48641191BB31663002B261B /* SMRotaryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SMRotaryProtocol.swift; path = Schedule/SMRotaryProtocol.swift; sourceTree = "<group>"; };
@@ -187,12 +193,12 @@
 		78E75F3E1AC5FC48001A93F1 /* Uapp */ = {
 			isa = PBXGroup;
 			children = (
+				A4533FFF1BB5C98600FA2330 /* Common */,
 				A48641241BB31C8B002B261B /* qq.png */,
 				A48641201BB31AD3002B261B /* PinglunandHuifuViewController.swift */,
 				A486410E1BB3162F002B261B /* Schedule */,
 				A4DB51261B8954C700976222 /* HomeViewController.swift */,
 				78E75F411AC5FC48001A93F1 /* AppDelegate.swift */,
-				A4F36C3D1B82573E002CC587 /* Constants.swift */,
 				A4335A3A1B8E903C00C14B54 /* ActivitiesViewController.swift */,
 				A4DB51341B89B65100976222 /* HamburgerView.swift */,
 				78E75F431AC5FC48001A93F1 /* ViewController.swift */,
@@ -278,6 +284,16 @@
 			name = Resource;
 			sourceTree = "<group>";
 		};
+		A4533FFF1BB5C98600FA2330 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A4F36C3D1B82573E002CC587 /* Constants.swift */,
+				A45340001BB5CA5C00FA2330 /* CommFunc.swift */,
+				A45340021BB5DC5E00FA2330 /* SwiftyJSON.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		A486410E1BB3162F002B261B /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +301,7 @@
 				A48641191BB31663002B261B /* SMRotaryProtocol.swift */,
 				A486411A1BB31663002B261B /* SMRotaryWheel.swift */,
 				A486411B1BB31663002B261B /* SMSector.swift */,
+				A4533FFD1BB5C7BE00FA2330 /* AddClassViewController.swift */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -358,7 +375,7 @@
 				ORGANIZATIONNAME = "Vea Software";
 				TargetAttributes = {
 					78E75F3B1AC5FC48001A93F1 = {
-						DevelopmentTeam = LD7DY78L8K;
+						DevelopmentTeam = V39EF4QG4J;
 					};
 					78E75F501AC5FC48001A93F1 = {
 						CreatedOnToolsVersion = 6.2;
@@ -453,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A486411E1BB31663002B261B /* SMRotaryWheel.swift in Sources */,
+				A4533FFE1BB5C7BE00FA2330 /* AddClassViewController.swift in Sources */,
 				93DC4BAD1BAA3371006237F5 /* UCloudViewController.swift in Sources */,
 				A486411D1BB31663002B261B /* SMRotaryProtocol.swift in Sources */,
 				78E75F441AC5FC48001A93F1 /* ViewController.swift in Sources */,
@@ -467,6 +485,7 @@
 				A4DB512F1B89928600976222 /* MenuItemCell.swift in Sources */,
 				9384036D1BAB7DCD00B2D5AB /* HotTopic.swift in Sources */,
 				A48641211BB31AD3002B261B /* PinglunandHuifuViewController.swift in Sources */,
+				A45340011BB5CA5C00FA2330 /* CommFunc.swift in Sources */,
 				2F75EF4A1BACA9E2005C167E /* AddFriends.swift in Sources */,
 				93DC4BAB1BAA3346006237F5 /* BookShopViewController.swift in Sources */,
 				2F6EFBFD1B9F9AD4002487DD /* LaunchAfter.swift in Sources */,
@@ -481,6 +500,7 @@
 				938403731BACBEBD00B2D5AB /* TableViewCell.swift in Sources */,
 				938403751BACC53300B2D5AB /* customerCell.swift in Sources */,
 				2F75EF4C1BACAC3F005C167E /* ChatViewController.swift in Sources */,
+				A45340031BB5DC5E00FA2330 /* SwiftyJSON.swift in Sources */,
 				A4335A371B8E5E3300C14B54 /* MyPhotoViewController.swift in Sources */,
 				0FA8D65E1B8CEC5D00172D19 /* NavigationController.swift in Sources */,
 				A4DB51251B8944BD00976222 /* MenuViewController.swift in Sources */,
@@ -624,7 +644,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap29;
 				PRODUCT_NAME = Uapp;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;
@@ -641,7 +661,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap29;
 				PRODUCT_NAME = Uapp;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;
@@ -651,7 +671,6 @@
 		78E75F5F1AC5FC48001A93F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -674,7 +693,6 @@
 		78E75F601AC5FC48001A93F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

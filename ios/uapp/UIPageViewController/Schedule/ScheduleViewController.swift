@@ -37,8 +37,7 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
         
         //hand swipe
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
-        
-        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
         
         leftSwipe.direction = .Left
         rightSwipe.direction = .Right
@@ -54,13 +53,31 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
         valueLabel.textColor = UIColor.redColor()
         self.view.addSubview(valueLabel)
         
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
         
+        print("screen width=\(screenWidth), screen height=\(screenHeight)")
         
-        let wheel:SMRotaryWheel = SMRotaryWheel.init(frame: CGRectMake(0, 0, 600, 600), del: self, sectionsNum: 9)
+        let wheelDiameter = 2 * screenWidth / CGFloat( 1 + cos(2 * M_PI / 9))
+        print("wheel diameter is \(wheelDiameter)")
+        let wheel:SMRotaryWheel = SMRotaryWheel.init(frame: CGRectMake(0, 0, wheelDiameter, wheelDiameter), del: self, sectionsNum: 9)
         
         wheel.center = CGPoint(x: 200,y: 320)
         self.view.addSubview(wheel)
-
+        
+        //let image = UIImage(named: "addButton.png") as UIImage?
+        let add_btn = UIButton(type: UIButtonType.System) as UIButton
+        
+        add_btn.frame = CGRectMake(150, 270, 100, 100)
+        add_btn.addTarget(self, action: "btnTouched:", forControlEvents:.TouchUpInside)
+        self.view.addSubview(add_btn)
+        
+    }
+    
+    func btnTouched(sender:UIButton!){
+        print("add class begin...")
+        self.performSegueWithIdentifier("searchCourse_segue", sender: self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,7 +92,7 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
         //print("(self.valueLabel.text) is Choosed.")
     }
     
-
+    
     
     func handleSwipes(sender:UISwipeGestureRecognizer){
         if (sender.direction == .Left && showsetbar == true){

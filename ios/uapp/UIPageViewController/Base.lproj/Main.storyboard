@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eL2-Fr-Phc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eL2-Fr-Phc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
@@ -16,7 +16,7 @@
         <!--Launch After-->
         <scene sceneID="9CT-BS-gIp">
             <objects>
-                <viewController id="eL2-Fr-Phc" customClass="LaunchAfter" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eL2-Fr-Phc" customClass="LaunchAfter" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SWS-nY-QkX"/>
                         <viewControllerLayoutGuide type="bottom" id="F5d-gb-v5N"/>
@@ -130,7 +130,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" userLabel="Welcome View Controller" customClass="ViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" userLabel="Welcome View Controller" customClass="ViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -171,7 +171,7 @@
         <!--Find School-->
         <scene sceneID="8Cr-M7-RQP">
             <objects>
-                <viewController storyboardIdentifier="FindSchoolViewController" title="Find School" modalPresentationStyle="pageSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="V5N-e9-IJ5" customClass="FindSchoolViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindSchoolViewController" title="Find School" modalPresentationStyle="pageSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="V5N-e9-IJ5" customClass="FindSchoolViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EzH-Uf-s1V"/>
                         <viewControllerLayoutGuide type="bottom" id="j2N-Xd-nMk"/>
@@ -189,11 +189,11 @@
                                         <rect key="frame" x="0.0" y="28" width="482" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9nU-vt-EeS" id="BwE-Xd-p6T">
-                                            <rect key="frame" x="0.0" y="0.0" width="482" height="42.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="482" height="42"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OzZ-Ck-2e7">
-                                                    <rect key="frame" x="15" y="0.0" width="452" height="42.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="452" height="42"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -214,7 +214,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjc-xm-Pew">
                                 <rect key="frame" x="0.0" y="20" width="600" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Your School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="255" translatesAutoresizingMaskIntoConstraints="NO" id="SKC-E6-OZL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Find Your School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="255" translatesAutoresizingMaskIntoConstraints="NO" id="SKC-E6-OZL">
                                         <rect key="frame" x="174" y="14" width="255" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="SKC-E6-OZL" secondAttribute="height" multiplier="85:12" id="Dtm-Mw-wsy"/>
@@ -320,7 +320,7 @@
         <!--Content View Controller-->
         <scene sceneID="Yhv-zJ-1WO">
             <objects>
-                <viewController storyboardIdentifier="ContentViewController" id="kU1-1k-Yn1" customClass="ContentViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentViewController" id="kU1-1k-Yn1" customClass="ContentViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vm7-pY-kJI"/>
                         <viewControllerLayoutGuide type="bottom" id="0gC-gl-8bq"/>
@@ -365,7 +365,7 @@
         <!--Set Bar View Controller-->
         <scene sceneID="jZR-sF-d7J">
             <objects>
-                <viewController storyboardIdentifier="SetBarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B06-eV-OBd" customClass="SetBarViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetBarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B06-eV-OBd" customClass="SetBarViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zsr-8x-E4k"/>
                         <viewControllerLayoutGuide type="bottom" id="uAa-YP-2d2"/>
@@ -396,7 +396,7 @@
         <!--Sign Up Scene-->
         <scene sceneID="w6O-ag-do9">
             <objects>
-                <viewController storyboardIdentifier="Sign Up Scene" title="Sign Up Scene" modalPresentationStyle="currentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mGp-Zz-ADn" customClass="SignUpViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Sign Up Scene" title="Sign Up Scene" modalPresentationStyle="currentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mGp-Zz-ADn" customClass="SignUpViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lol-9G-f2p"/>
                         <viewControllerLayoutGuide type="bottom" id="60u-2Z-MMd"/>
@@ -473,7 +473,7 @@
                                     <action selector="buttonSubmit:" destination="mGp-Zz-ADn" eventType="touchUpInside" id="Z1G-kL-YZU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR LINK TO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OH8-Mv-7QS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="OR LINK TO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OH8-Mv-7QS">
                                 <rect key="frame" x="259" y="485" width="82" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OH8-Mv-7QS" secondAttribute="height" multiplier="79:14" id="HsJ-xD-rf6"/>
@@ -547,7 +547,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnGplus" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fez-pG-rBX">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="btnGplus" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fez-pG-rBX">
                                 <rect key="frame" x="361" y="512" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="MxA-Ca-GMl"/>
@@ -714,7 +714,7 @@
         <!--Home View Controller-->
         <scene sceneID="ncd-xn-xI1">
             <objects>
-                <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v5f-oP-nA8" customClass="HomeViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v5f-oP-nA8" customClass="HomeViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dFn-sk-t2d"/>
                         <viewControllerLayoutGuide type="bottom" id="Jdp-j4-a70"/>
@@ -756,7 +756,7 @@
                                     <segue destination="FSE-A0-qJ2" kind="show" id="hFE-B3-Wum"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPP-C8-7WV">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPP-C8-7WV">
                                 <rect key="frame" x="400" y="241" width="200" height="91"/>
                                 <state key="normal" title="Button" image="Profile"/>
                                 <connections>
@@ -770,7 +770,7 @@
                                     <segue destination="LAM-Xw-1rB" kind="show" id="FBo-X7-3c2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0c3-O8-CmG">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0c3-O8-CmG">
                                 <rect key="frame" x="400" y="423" width="200" height="91"/>
                                 <state key="normal" title="Button" image="Storage"/>
                                 <connections>
@@ -791,8 +791,8 @@
                                     <segue destination="gec-nq-d6g" kind="show" id="jMG-kX-b2c"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QOTD" translatesAutoresizingMaskIntoConstraints="NO" id="upp-DY-yfe">
-                                <rect key="frame" x="0.0" y="237" width="400" height="185.5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="QOTD" translatesAutoresizingMaskIntoConstraints="NO" id="upp-DY-yfe">
+                                <rect key="frame" x="0.0" y="237" width="400" height="186"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1G2-7P-cnf">
                                 <rect key="frame" x="338" y="388" width="26" height="20"/>
@@ -808,7 +808,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="share"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As you think, so shall you become.                                 -----Bruce Lee" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UD-Bn-9R4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="As you think, so shall you become.                                 -----Bruce Lee" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UD-Bn-9R4">
                                 <rect key="frame" x="30" y="271" width="340" height="112"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -914,17 +914,17 @@
         <!--Menu View Controller-->
         <scene sceneID="1kk-Xz-YKb">
             <objects>
-                <tableViewController id="q4v-rA-6ie" userLabel="Menu View Controller" customClass="MenuViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="q4v-rA-6ie" userLabel="Menu View Controller" customClass="MenuViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="24" sectionFooterHeight="24" id="1k1-CO-c8E">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuItemCell" rowHeight="80" id="u0g-hn-B4b" customClass="MenuItemCell" customModule="UIPageViewController" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuItemCell" rowHeight="80" id="u0g-hn-B4b" customClass="MenuItemCell" customModule="Uapp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u0g-hn-B4b" id="TFE-zo-CPw">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fGh-6K-m6z">
@@ -1006,7 +1006,7 @@
         <!--Detail View Controller-->
         <scene sceneID="Pl8-E9-6Sp">
             <objects>
-                <viewController id="Utp-Mp-ado" userLabel="Detail View Controller" customClass="DetailViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Utp-Mp-ado" userLabel="Detail View Controller" customClass="DetailViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IkA-FA-S1W"/>
                         <viewControllerLayoutGuide type="bottom" id="FgC-pA-wVV"/>
@@ -1040,7 +1040,7 @@
                                         </variation>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="EV Technologies Inc." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sOA-hP-mm3">
-                                        <rect key="frame" x="50" y="239.5" width="500" height="40"/>
+                                        <rect key="frame" x="50" y="240" width="500" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="chE-Hv-mmc"/>
                                         </constraints>
@@ -1061,8 +1061,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4JJ-Yc-FNV">
-                                        <rect key="frame" x="0.0" y="307.5" width="600" height="272.5"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4JJ-Yc-FNV">
+                                        <rect key="frame" x="0.0" y="308" width="600" height="273"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="t1e-PD-Gyc">
                                                 <rect key="frame" x="25" y="10" width="550" height="31"/>
@@ -1078,7 +1078,7 @@
                                                 <color key="tintColor" red="0.1647058824" green="0.38431372549999998" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                             </segmentedControl>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="t1e-PD-Gyc" firstAttribute="top" secondItem="4JJ-Yc-FNV" secondAttribute="top" constant="10" id="Lae-KW-GD8"/>
                                             <constraint firstAttribute="trailing" secondItem="t1e-PD-Gyc" secondAttribute="trailing" constant="25" id="pdh-d9-p31"/>
@@ -1086,7 +1086,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onF-YF-WyE">
-                                        <rect key="frame" x="40" y="279.5" width="520" height="18.5"/>
+                                        <rect key="frame" x="40" y="280" width="520" height="19"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -1097,10 +1097,10 @@
                                             <constraint firstAttribute="width" secondItem="udG-ZB-L5W" secondAttribute="height" multiplier="12:11" id="d3n-tc-TzA"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJQ-C0-2q1">
-                                        <rect key="frame" x="222" y="74.5" width="24.5" height="22.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Level 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJQ-C0-2q1">
+                                        <rect key="frame" x="222" y="75" width="25" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1177,7 +1177,7 @@
         <!--My Photo View Controller-->
         <scene sceneID="h7u-os-7Ap">
             <objects>
-                <collectionViewController id="0Gq-HK-0QA" customClass="MyPhotoViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="0Gq-HK-0QA" customClass="MyPhotoViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Jct-Kc-Zko">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1189,7 +1189,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlickrCell" id="bVh-Mg-Zeu" customClass="MyPhotoCellViewCell" customModule="UIPageViewController" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlickrCell" id="bVh-Mg-Zeu" customClass="MyPhotoCellViewCell" customModule="Uapp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1261,7 +1261,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Nsm-SF-tEj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rnc-2l-axM" customClass="NavigationController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rnc-2l-axM" customClass="NavigationController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bEN-Zi-lt1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1279,7 +1279,7 @@
         <!--Navigation Controller-->
         <scene sceneID="4uh-1M-4dQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="asP-tS-gnl" customClass="NavigationController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="asP-tS-gnl" customClass="NavigationController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7av-T4-7Sc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1297,7 +1297,7 @@
         <!--Activities View Controller-->
         <scene sceneID="cRl-uA-Slt">
             <objects>
-                <viewController storyboardIdentifier="Activities" id="LAM-Xw-1rB" userLabel="Activities View Controller" customClass="ActivitiesViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Activities" id="LAM-Xw-1rB" userLabel="Activities View Controller" customClass="ActivitiesViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pbs-7I-Vzj"/>
                         <viewControllerLayoutGuide type="bottom" id="flU-ST-9cz"/>
@@ -1428,7 +1428,7 @@
         <!--Feeds-->
         <scene sceneID="84E-Am-Xiw">
             <objects>
-                <viewController storyboardIdentifier="Feeds" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iET-0Z-2Kh" customClass="Feeds" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Feeds" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iET-0Z-2Kh" customClass="Feeds" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1OE-Sk-XdM"/>
                         <viewControllerLayoutGuide type="bottom" id="ylc-4a-yNM"/>
@@ -1448,7 +1448,7 @@
         <!--Hot Topic-->
         <scene sceneID="bT1-nU-NKL">
             <objects>
-                <viewController storyboardIdentifier="HotTopic" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tut-Se-q2e" customClass="HotTopic" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HotTopic" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tut-Se-q2e" customClass="HotTopic" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KSy-uh-J3D"/>
                         <viewControllerLayoutGuide type="bottom" id="PKr-rH-cYd"/>
@@ -1468,7 +1468,7 @@
         <!--Discover-->
         <scene sceneID="q7M-I0-rd7">
             <objects>
-                <viewController storyboardIdentifier="Discover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EXE-Ht-InT" customClass="Discover" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Discover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EXE-Ht-InT" customClass="Discover" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MSu-yv-qsm"/>
                         <viewControllerLayoutGuide type="bottom" id="dEV-ro-QKn"/>
@@ -1488,7 +1488,7 @@
         <!--Pinglunand Huifu View Controller-->
         <scene sceneID="rRx-I1-2n5">
             <objects>
-                <viewController storyboardIdentifier="PinglunandHuifuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tfl-Jj-G5i" customClass="PinglunandHuifuViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PinglunandHuifuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tfl-Jj-G5i" customClass="PinglunandHuifuViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r5U-rh-HTR"/>
                         <viewControllerLayoutGuide type="bottom" id="UyX-zI-4FD"/>
@@ -1506,7 +1506,7 @@
         <!--Message View Controller-->
         <scene sceneID="3OG-KA-Gox">
             <objects>
-                <viewController storyboardIdentifier="Message" id="lSa-xb-hXX" userLabel="Message View Controller" customClass="MessageViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Message" id="lSa-xb-hXX" userLabel="Message View Controller" customClass="MessageViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TZf-Jz-djZ"/>
                         <viewControllerLayoutGuide type="bottom" id="dUv-iC-1i5"/>
@@ -1566,7 +1566,7 @@
         <!--Schedule View Controller-->
         <scene sceneID="soC-6l-OBu">
             <objects>
-                <viewController id="dl3-cq-8go" customClass="ScheduleViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dl3-cq-8go" customClass="ScheduleViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZRZ-eb-NQu"/>
                         <viewControllerLayoutGuide type="bottom" id="52u-Yo-rk0"/>
@@ -1584,16 +1584,61 @@
                     </view>
                     <connections>
                         <outlet property="subview" destination="gb8-X7-lN1" id="lq7-LN-6OK"/>
+                        <segue destination="sbM-7D-wTy" kind="show" identifier="searchCourse_segue" id="Z20-MC-bMf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4y-rA-6RH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="682" y="1769"/>
         </scene>
+        <!--Add Courses-->
+        <scene sceneID="5Zg-4C-hkb">
+            <objects>
+                <tableViewController id="xxp-jG-NdJ" customClass="AddClassViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gLk-pg-Nh1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search a Course" id="fiZ-tS-2vB">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Ml5-E1-6h9">
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ml5-E1-6h9" id="cPR-19-elZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xxp-jG-NdJ" id="QEe-gn-gTr"/>
+                            <outlet property="delegate" destination="xxp-jG-NdJ" id="vYd-Do-DJI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Courses" id="ymT-sD-snO">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Awb-b8-2fA">
+                            <connections>
+                                <action selector="backBarPressed:" destination="xxp-jG-NdJ" id="P3d-Jw-vgf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="classTable" destination="gLk-pg-Nh1" id="h39-dn-ZMO"/>
+                        <outlet property="searchClass" destination="fiZ-tS-2vB" id="0oi-9O-aPX"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jib-0H-P5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1494" y="2464"/>
+        </scene>
         <!--Infor View Controller-->
         <scene sceneID="qrO-1k-TgG">
             <objects>
-                <viewController id="8zg-o9-E2E" customClass="InforViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8zg-o9-E2E" customClass="InforViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3EB-So-ylQ"/>
                         <viewControllerLayoutGuide type="bottom" id="zOI-97-PSv"/>
@@ -1620,7 +1665,7 @@
         <!--Setting View Controller-->
         <scene sceneID="HeK-v6-5Jo">
             <objects>
-                <viewController id="FSE-A0-qJ2" customClass="SettingViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FSE-A0-qJ2" customClass="SettingViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kfm-sd-2gt"/>
                         <viewControllerLayoutGuide type="bottom" id="Xsk-V4-ifY"/>
@@ -1647,7 +1692,7 @@
         <!--Cloud View Controller-->
         <scene sceneID="q0w-kx-vWb">
             <objects>
-                <viewController id="GN9-oV-udQ" customClass="UCloudViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GN9-oV-udQ" customClass="UCloudViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pIU-Hg-CQ3"/>
                         <viewControllerLayoutGuide type="bottom" id="3Wb-fi-qP4"/>
@@ -1674,7 +1719,7 @@
         <!--Book Shop View Controller-->
         <scene sceneID="Vn8-te-W0m">
             <objects>
-                <viewController id="XXn-oI-uU2" customClass="BookShopViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XXn-oI-uU2" customClass="BookShopViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dHN-F8-MXi"/>
                         <viewControllerLayoutGuide type="bottom" id="fHM-VZ-R9g"/>
@@ -1716,7 +1761,7 @@
         <!--Message Main View-->
         <scene sceneID="CsM-mk-p9v">
             <objects>
-                <viewController id="gec-nq-d6g" customClass="MessageMainView" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gec-nq-d6g" customClass="MessageMainView" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Adr-01-wDq"/>
                         <viewControllerLayoutGuide type="bottom" id="twa-hA-wuj"/>
@@ -1761,7 +1806,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Srt-co-tOe" id="aFI-lO-ZPz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -1782,7 +1827,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PFr-d6-RaE" id="LxW-KN-NuF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -1871,7 +1916,7 @@
         <!--Chat View Controller-->
         <scene sceneID="5UO-Hf-AZl">
             <objects>
-                <viewController storyboardIdentifier="OpenChat" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aFY-k0-0jG" customClass="ChatViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OpenChat" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aFY-k0-0jG" customClass="ChatViewController" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="oOU-Tp-6ZT">
                         <barButtonItem key="leftBarButtonItem" title="Return" id="clh-ji-Iju">
                             <connections>
@@ -1891,7 +1936,7 @@
         <!--Add Friends-->
         <scene sceneID="6QO-OO-fg4">
             <objects>
-                <viewController id="ziJ-LF-aYd" customClass="AddFriends" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ziJ-LF-aYd" customClass="AddFriends" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sg1-7C-FnN"/>
                         <viewControllerLayoutGuide type="bottom" id="Emg-37-OZf"/>
@@ -1922,7 +1967,7 @@
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GiF-TS-6Ga" id="PP2-D1-GhI">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1962,7 +2007,7 @@
         <!--Push Inside-->
         <scene sceneID="6Pl-IU-eP0">
             <objects>
-                <viewController id="ZLs-vv-gCb" customClass="PushInside" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZLs-vv-gCb" customClass="PushInside" customModule="Uapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fVe-1E-DMM"/>
                         <viewControllerLayoutGuide type="bottom" id="oAD-na-hUM"/>
@@ -2019,6 +2064,24 @@
             </objects>
             <point key="canvasLocation" x="3081" y="-872"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CeJ-Jg-Yj9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sbM-7D-wTy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NgJ-vR-xWL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xxp-jG-NdJ" kind="relationship" relationship="rootViewController" id="5gT-zK-6VC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ueG-1E-xUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="682" y="2464"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Activites" width="283" height="311"/>
@@ -2044,8 +2107,8 @@
         <image name="share" width="85" height="67"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yeh-DR-WwB"/>
-        <segue reference="3jO-9X-e0G"/>
         <segue reference="qZl-hY-h3h"/>
+        <segue reference="ghq-ka-zrf"/>
+        <segue reference="Pm3-qp-LnI"/>
     </inferredMetricsTieBreakers>
 </document>
