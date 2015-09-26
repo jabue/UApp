@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("PvsktIlVMIcanN4rU9KnidYN18weR2VkYx13pjDl", clientKey: "UwxtJNj2J6r0lJ5NSFY2NsRHQk1qv0EhuJW1NeHB")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         // user login , please change to your personal login info
-        UserAction.userLogin("kris", password: "kris")
+        // UserAction.userLogin("kris", password: "kris")
         
         // window?.tintColor = themeColor
         return true
