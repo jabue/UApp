@@ -12,10 +12,19 @@ class NavigationController: UINavigationController {
 
     override func viewDidLoad() {
         
-        UINavigationBar.appearance().barTintColor = UIColor(red: 42.0/255.0, green: 98.0/255.0, blue: 158.0/255.0, alpha: 1)
-        navigationBar.frame.origin.y = -10
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(),NSFontAttributeName:UIFont(name: "Futura", size: 23)!]
+        UINavigationBar.appearance().barTintColor = UIColor(red: 53.0/255.0, green: 121.0/255.0, blue: 176.0/255.0, alpha: 1) //Nav bar background color
+        
+        navigationBar.frame.origin.y = -10 //Nav bar height
+        
+        UIBarButtonItem.appearance().tintColor = UIColor.whiteColor() //Nav bar itembutton tint color
+        
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor() //Nav bar back button tint color
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(),NSFontAttributeName:UIFont(name: "Futura", size: 23)!] //Nav bar text color & text font & size
+        
+        let navBgImage:UIImage = UIImage(named: "Navback.png")!
+        UINavigationBar.appearance().setBackgroundImage(navBgImage, forBarMetrics: .Default) //Nav bar background pic
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
