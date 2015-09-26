@@ -41,7 +41,10 @@ class AddFriends: UIViewController, UITableViewDelegate, UITableViewDataSource
         tableView.dataSource = self
         
         // load chat user friends
-        self.loadUsers()
+        if PFUser.currentUser() != nil {
+            self.loadUsers()
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -128,6 +131,7 @@ class AddFriends: UIViewController, UITableViewDelegate, UITableViewDataSource
         {
             self.dismissViewControllerAnimated(true, completion: { () -> Void in
                 // pass the selectedfriends to next view through delegate
+                self.selectedFriends.append(PFUser.currentUser()!)
                 self.delegate.didSelectMultipleUsers(self.selectedFriends)
             })
         }
