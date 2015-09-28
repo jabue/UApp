@@ -52,9 +52,7 @@ class AddClassViewController: UITableViewController, UISearchBarDelegate {
                             self.data += [course_nbr]
                         }
                     }
-                    print(self.data)
-                    self.tableView.reloadData()
-                    print("data loaded.")
+                    dispatch_async(dispatch_get_main_queue(),{self.tableView.reloadData()}) // load course data to the table on the main thread
                 }
                 return nil
             })
@@ -110,6 +108,27 @@ class AddClassViewController: UITableViewController, UISearchBarDelegate {
         }
         return data.count;
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        var school : SchoolItem
+        
+        if (tableView == self.searchDisplayController?.searchResultsTableView)
+        {
+            school = self.filteredSchools[indexPath.row]
+        }
+        else
+        {
+            school = self.schoolsArray[indexPath.row]
+        }
+        NSLog("tableview2")
+        print(school.name)
+        saveSchoolName(school.name)
+        
+    }
+
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = classTable.dequeueReusableCellWithIdentifier("Cell")
