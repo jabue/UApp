@@ -14,5 +14,7 @@ let DefaultServiceRegionType = AWSRegionType.USEast1 // e.g. AWSRegionType.USEas
 let CognitoIdentityPoolId = "us-east-1:cab334cf-8514-4060-82e7-13afbdd331f5"
 let LambdaGetPassword = "queryDB"
 let LambdaSignUp = "simpleWriteDynamoDB"
+let LambdaGetActivities = "getActivities"
+let Lambdatest = "getCourseList"
 //let SNSPlatformApplicationArn = "YourSNSPlatformApplicationArn"
 //let MobileAnalyticsAppId = "YourMobileAnalyticsAppId"
