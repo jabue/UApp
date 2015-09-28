@@ -49,7 +49,7 @@ class AddClassViewController: UITableViewController, UISearchBarDelegate {
                 
                     for (_, item):(String, JSON) in json["Items"] {
                         if let course_nbr = item["course_nbr"].string {
-                            self.data += [course_nbr]
+                            self.data += [course_nbr + " " + item["title"].string!]
                         }
                     }
                     dispatch_async(dispatch_get_main_queue(),{self.tableView.reloadData()}) // load course data to the table on the main thread
@@ -109,14 +109,8 @@ class AddClassViewController: UITableViewController, UISearchBarDelegate {
         return data.count;
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
-    {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        var school : SchoolItem
-        
-       
-        
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("user has selected a cell \(data[indexPath.row])")
     }
 
     
