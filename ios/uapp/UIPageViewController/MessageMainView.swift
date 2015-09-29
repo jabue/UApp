@@ -19,10 +19,12 @@ import UIKit
 
 class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDelegate, AddFriendsDelegate {
     @IBOutlet weak var subview: UIView!
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var ChatTable: UITableView!
     @IBOutlet var SwipeRight: UISwipeGestureRecognizer!
     @IBOutlet var SwipeLeft: UISwipeGestureRecognizer!
     @IBOutlet weak var AddButton: UIButton!
+    @IBOutlet weak var HomeButton: UIButton!
     
     var sideBarToken = false
     // chat queue
@@ -199,7 +201,7 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
         
     }
     
-    @IBAction func HomeBtnPressed(sender: AnyObject) {
+    @IBAction func HomeBtnPress(sender: AnyObject) {
         if !sideBarToken {
             UIView.animateWithDuration(speedofsetbar , animations: {
                 
@@ -210,6 +212,7 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
             sideBarToken = true
             self
         }
+
     }
 }
 
