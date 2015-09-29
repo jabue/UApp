@@ -26,6 +26,7 @@ class AddFriends: UIViewController, UITableViewDelegate, UITableViewDataSource
     @IBOutlet weak var BtnDone: UIButton!
     @IBOutlet weak var BtnCancel: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var TopView: UIView!
     var delegate: AddFriendsDelegate!
     
     // PFUsers Array

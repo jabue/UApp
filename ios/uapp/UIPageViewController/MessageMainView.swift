@@ -210,7 +210,17 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
                 
             })
             sideBarToken = true
-            self
+            // ban the subview touch action
+            self.subview.userInteractionEnabled = false
+        } else {
+            UIView.animateWithDuration(speedofsetbar , animations: {
+                
+                self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x - self.setbarinfro
+                self.subview.frame.origin.x = self.subview.frame.origin.x - self.setbarinfro
+                
+            })
+            sideBarToken = false
+            self.subview.userInteractionEnabled = true
         }
 
     }

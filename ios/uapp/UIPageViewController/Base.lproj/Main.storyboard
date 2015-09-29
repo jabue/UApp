@@ -1821,22 +1821,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ge-uf-aVo">
-                                <rect key="frame" x="27" y="28" width="50" height="30"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="BtnCancelAction:" destination="ziJ-LF-aYd" eventType="touchUpInside" id="9b8-oZ-ZPL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFT-6r-uhK">
-                                <rect key="frame" x="528" y="28" width="46" height="30"/>
-                                <state key="normal" title="Done"/>
-                                <connections>
-                                    <action selector="btnDonePress:" destination="ziJ-LF-aYd" eventType="touchUpInside" id="gmT-ex-VoJ"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vVm-9f-sMr">
-                                <rect key="frame" x="20" y="60" width="560" height="532"/>
+                                <rect key="frame" x="20" y="71" width="560" height="521"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" id="GiF-TS-6Ga">
@@ -1849,30 +1835,57 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select Friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uA8-Ac-5tF">
-                                <rect key="frame" x="243" y="31" width="115" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9q9-tE-umA">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="63"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFT-6r-uhK">
+                                        <rect key="frame" x="535" y="22" width="46" height="30"/>
+                                        <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="btnDonePress:" destination="ziJ-LF-aYd" eventType="touchUpInside" id="gmT-ex-VoJ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select Friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uA8-Ac-5tF">
+                                        <rect key="frame" x="242" y="22" width="115" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ge-uf-aVo">
+                                        <rect key="frame" x="22" y="22" width="50" height="30"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="BtnCancelAction:" destination="ziJ-LF-aYd" eventType="touchUpInside" id="9b8-oZ-ZPL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="2ge-uf-aVo" firstAttribute="top" secondItem="9q9-tE-umA" secondAttribute="top" constant="22" id="BmP-Nc-0Au"/>
+                                    <constraint firstItem="xFT-6r-uhK" firstAttribute="top" secondItem="9q9-tE-umA" secondAttribute="top" constant="22" id="CE2-l0-P9a"/>
+                                    <constraint firstAttribute="trailing" secondItem="xFT-6r-uhK" secondAttribute="trailing" constant="19" id="Gl2-0d-WKe"/>
+                                    <constraint firstItem="2ge-uf-aVo" firstAttribute="leading" secondItem="9q9-tE-umA" secondAttribute="leading" constant="22" id="Jqm-jB-gGi"/>
+                                    <constraint firstItem="uA8-Ac-5tF" firstAttribute="centerX" secondItem="9q9-tE-umA" secondAttribute="centerX" id="S38-0S-Usr"/>
+                                    <constraint firstItem="uA8-Ac-5tF" firstAttribute="top" secondItem="9q9-tE-umA" secondAttribute="top" constant="22" id="ftG-7C-9RA"/>
+                                    <constraint firstAttribute="height" constant="63" id="pVq-RB-g7d"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2ge-uf-aVo" firstAttribute="leading" secondItem="CyO-wf-lh1" secondAttribute="leadingMargin" constant="7" id="CMX-Ab-DhB"/>
-                            <constraint firstItem="vVm-9f-sMr" firstAttribute="top" secondItem="xFT-6r-uhK" secondAttribute="bottom" constant="2" id="HTz-hA-mOv"/>
-                            <constraint firstItem="2ge-uf-aVo" firstAttribute="top" secondItem="sg1-7C-FnN" secondAttribute="bottom" constant="8" id="Rel-Cg-23N"/>
-                            <constraint firstItem="uA8-Ac-5tF" firstAttribute="top" secondItem="sg1-7C-FnN" secondAttribute="bottom" constant="11" id="Vic-5O-9Rn"/>
                             <constraint firstItem="vVm-9f-sMr" firstAttribute="trailing" secondItem="CyO-wf-lh1" secondAttribute="trailingMargin" id="XGn-nN-6p0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xFT-6r-uhK" secondAttribute="trailing" constant="6" id="lFT-Nd-XUO"/>
+                            <constraint firstItem="9q9-tE-umA" firstAttribute="top" secondItem="CyO-wf-lh1" secondAttribute="topMargin" id="XM8-jf-fWX"/>
+                            <constraint firstItem="9q9-tE-umA" firstAttribute="leading" secondItem="CyO-wf-lh1" secondAttribute="leadingMargin" constant="-20" id="j5h-e6-I1s"/>
                             <constraint firstItem="vVm-9f-sMr" firstAttribute="leading" secondItem="CyO-wf-lh1" secondAttribute="leadingMargin" id="lZh-BG-kth"/>
-                            <constraint firstItem="uA8-Ac-5tF" firstAttribute="centerX" secondItem="CyO-wf-lh1" secondAttribute="centerX" id="qso-AC-OiY"/>
-                            <constraint firstItem="xFT-6r-uhK" firstAttribute="top" secondItem="sg1-7C-FnN" secondAttribute="bottom" constant="8" id="uZ3-6d-sYJ"/>
+                            <constraint firstItem="vVm-9f-sMr" firstAttribute="top" secondItem="9q9-tE-umA" secondAttribute="bottom" constant="8" id="r2A-Of-pCh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9q9-tE-umA" secondAttribute="trailing" constant="-20" id="zAo-vO-jhc"/>
                             <constraint firstItem="Emg-37-OZf" firstAttribute="top" secondItem="vVm-9f-sMr" secondAttribute="bottom" constant="8" id="zcF-lM-Ve2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="BtnCancel" destination="2ge-uf-aVo" id="ePh-Jz-ypV"/>
                         <outlet property="BtnDone" destination="xFT-6r-uhK" id="bzC-7C-rEZ"/>
+                        <outlet property="TopView" destination="9q9-tE-umA" id="jGe-H8-mUD"/>
                         <outlet property="tableView" destination="vVm-9f-sMr" id="0T6-NC-PWQ"/>
                     </connections>
                 </viewController>
