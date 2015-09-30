@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import SwiftyJSON
 
 class ActivitiesViewController: UIViewController {
     
@@ -29,7 +28,6 @@ class ActivitiesViewController: UIViewController {
     var sbv_1:Feeds!
     var sbv_2:HotTopic!
     var sbv_3:Discover!
-    
     
     
     override func viewDidLoad() {
@@ -90,75 +88,7 @@ class ActivitiesViewController: UIViewController {
         
         
         
-        //let cm = CommonFunc()
-        //print("school is \(cm.getSchool()), user is \(cm.getEmail())")
-        print("connect to sever...")
-        let Lambda = AWSLambda.defaultLambda()
-        let request = AWSLambdaInvocationRequest()
-        request.functionName = LambdaGetActivities
-        request.payload = "{\"post_date\": \"2015-09-15 12:00:03\"}"
-        //"{\"school\": \"Simon Fraser University(SFU)\"}"
-        
-        
-        print(request)
-        var data:String!
-        
-        Lambda.invoke(request).continueWithBlock({(task) -> AnyObject! in
-            if let error = task.error {
-                print("lambda invoke failed: [\(error)]")
-            }
-            else if let exception = task.exception {
-                print("lambda invoke failed: [\(exception)]")
-            }
-            else{
-                print("DEBUG: call lambda sucessfully")
-                //print(task.result)
-                data = String(task.result.payload)
-                //print(data)
-                
-                
-            }
-            return nil
-        })
-        /*
-        let jsonObject : AnyObject! = NSJSONSerialization.
-            
-            
-            
-            
-            
-            JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil)
-        if let statusesArray = jsonObject as? NSArray{
-            if let aStatus = statusesArray[0] as? NSDictionary{
-                if let user = aStatus["user"] as? NSDictionary{
-                    if let userName = user["name"] as? NSDictionary{
-                        //终于我们得到了`name`
-                        
-                    }
-                }
-            }
-        }
-*/
-        //let datas = NSData(contentsOfFile: data)!
-        /*
-        let json = JSON(data:datas)
-        var str = NSString(data: datas, encoding: NSUTF8StringEncoding)
-        //city.text = weatherinfo.objectForKey("city") as String
-        let jsonObject : AnyObject! = NSJSONSerialization.JSONObjectWithData(dataFromTwitter, options: NSJSONReadingOptions.MutableContainers, error: nil)
-        if let statusesArray = jsonObject as? NSArray{
-            if let aStatus = statusesArray[0] as? NSDictionary{
-                if let user = aStatus["user"] as? NSDictionary{
-                    if let userName = user["name"] as? NSDictionary{
-                        //终于我们得到了`name`
-                        
-                    }
-                }
-            }
-        }
-        */
-        //print(str)
-        
-        //post.hidden = true
+       
     }
     
     func sbvSwipe(leftsp:Bool){

@@ -15,6 +15,8 @@
 		2F75EF4A1BACA9E2005C167E /* AddFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F75EF491BACA9E2005C167E /* AddFriends.swift */; };
 		2F75EF4C1BACAC3F005C167E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F75EF4B1BACAC3F005C167E /* ChatViewController.swift */; };
 		2F75EF4E1BACBD03005C167E /* profile_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F75EF4D1BACBD03005C167E /* profile_blank@2x.png */; };
+		2F8A4F281BB476ED007EEACE /* MessageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A4F261BB476ED007EEACE /* MessageAction.swift */; };
+		2F8A4F291BB476ED007EEACE /* UserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A4F271BB476ED007EEACE /* UserAction.swift */; };
 		78E75F421AC5FC48001A93F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F411AC5FC48001A93F1 /* AppDelegate.swift */; };
 		78E75F441AC5FC48001A93F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F431AC5FC48001A93F1 /* ViewController.swift */; };
 		78E75F471AC5FC48001A93F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E75F451AC5FC48001A93F1 /* Main.storyboard */; };
@@ -45,6 +47,9 @@
 		A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0B31B7D35F7004B3E1B /* FindSchoolViewController.swift */; };
 		A445F0B61B7D3827004B3E1B /* SchoolItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0B51B7D3827004B3E1B /* SchoolItem.swift */; };
 		A445F0F21B7D645A004B3E1B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445F0F11B7D645A004B3E1B /* SignUpViewController.swift */; };
+		A4533FFE1BB5C7BE00FA2330 /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4533FFD1BB5C7BE00FA2330 /* AddClassViewController.swift */; };
+		A45340011BB5CA5C00FA2330 /* CommFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45340001BB5CA5C00FA2330 /* CommFunc.swift */; };
+		A45340031BB5DC5E00FA2330 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45340021BB5DC5E00FA2330 /* SwiftyJSON.swift */; };
 		A4732E071BB08ED200DA2669 /* wheel2.png in Resources */ = {isa = PBXBuildFile; fileRef = A4732E061BB08ED200DA2669 /* wheel2.png */; };
 		A486411C1BB31663002B261B /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48641181BB31663002B261B /* ScheduleViewController.swift */; };
 		A486411D1BB31663002B261B /* SMRotaryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48641191BB31663002B261B /* SMRotaryProtocol.swift */; };
@@ -84,6 +89,8 @@
 		2F75EF491BACA9E2005C167E /* AddFriends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriends.swift; sourceTree = "<group>"; };
 		2F75EF4B1BACAC3F005C167E /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		2F75EF4D1BACBD03005C167E /* profile_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "profile_blank@2x.png"; path = "Resource/profile_blank@2x.png"; sourceTree = "<group>"; };
+		2F8A4F261BB476ED007EEACE /* MessageAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageAction.swift; sourceTree = "<group>"; };
+		2F8A4F271BB476ED007EEACE /* UserAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAction.swift; sourceTree = "<group>"; };
 		44DE8D6FE573C50F52B21B64 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		58E46A51F82C31CF7C5EE6F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		78E75F3C1AC5FC48001A93F1 /* Uapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +127,9 @@
 		A445F0B31B7D35F7004B3E1B /* FindSchoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindSchoolViewController.swift; sourceTree = "<group>"; };
 		A445F0B51B7D3827004B3E1B /* SchoolItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolItem.swift; sourceTree = "<group>"; };
 		A445F0F11B7D645A004B3E1B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A4533FFD1BB5C7BE00FA2330 /* AddClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
+		A45340001BB5CA5C00FA2330 /* CommFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommFunc.swift; sourceTree = "<group>"; };
+		A45340021BB5DC5E00FA2330 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		A4732E061BB08ED200DA2669 /* wheel2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheel2.png; sourceTree = "<group>"; };
 		A48641181BB31663002B261B /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleViewController.swift; path = Schedule/ScheduleViewController.swift; sourceTree = "<group>"; };
 		A48641191BB31663002B261B /* SMRotaryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SMRotaryProtocol.swift; path = Schedule/SMRotaryProtocol.swift; sourceTree = "<group>"; };
@@ -161,6 +171,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F9EAAAD1BB5BEBF006A8126 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				2F8A4F261BB476ED007EEACE /* MessageAction.swift */,
+				2F8A4F271BB476ED007EEACE /* UserAction.swift */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
 		78E75F331AC5FC48001A93F1 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +208,9 @@
 				A4DB51261B8954C700976222 /* HomeViewController.swift */,
 				78E75F411AC5FC48001A93F1 /* AppDelegate.swift */,
 				A4F36C3D1B82573E002CC587 /* Constants.swift */,
+				A4533FFF1BB5C98600FA2330 /* Common */,
+				A48641241BB31C8B002B261B /* qq.png */,
+				A48641201BB31AD3002B261B /* PinglunandHuifuViewController.swift */,
 				A4DB51341B89B65100976222 /* HamburgerView.swift */,
 				78E75F431AC5FC48001A93F1 /* ViewController.swift */,
 				A4DB512C1B8991B700976222 /* MenuItems.plist */,
@@ -226,6 +248,7 @@
 				2F75EF471BACA938005C167E /* PushInside.swift */,
 				2F75EF491BACA9E2005C167E /* AddFriends.swift */,
 				2F75EF4B1BACAC3F005C167E /* ChatViewController.swift */,
+				2F9EAAAD1BB5BEBF006A8126 /* Chat */,
 				938403721BACBEBD00B2D5AB /* TableViewCell.swift */,
 				938403741BACC53300B2D5AB /* customerCell.swift */,
 			);
@@ -264,12 +287,10 @@
 			isa = PBXGroup;
 			children = (
 				A4335A3A1B8E903C00C14B54 /* ActivitiesViewController.swift */,
-				938403851BB4946C00B2D5AB /* Inside.swift */,
 				9384036A1BAB7D6600B2D5AB /* Feeds.swift */,
 				9384036C1BAB7DCD00B2D5AB /* HotTopic.swift */,
 				9384036E1BAB7E0C00B2D5AB /* Discover.swift */,
-				A48641241BB31C8B002B261B /* qq.png */,
-				A48641201BB31AD3002B261B /* PinglunandHuifuViewController.swift */,
+				938403851BB4946C00B2D5AB /* Inside.swift */,
 			);
 			name = activity;
 			sourceTree = "<group>";
@@ -283,6 +304,15 @@
 			name = Resource;
 			sourceTree = "<group>";
 		};
+		A4533FFF1BB5C98600FA2330 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A45340001BB5CA5C00FA2330 /* CommFunc.swift */,
+				A45340021BB5DC5E00FA2330 /* SwiftyJSON.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		A486410E1BB3162F002B261B /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +320,7 @@
 				A48641191BB31663002B261B /* SMRotaryProtocol.swift */,
 				A486411A1BB31663002B261B /* SMRotaryWheel.swift */,
 				A486411B1BB31663002B261B /* SMSector.swift */,
+				A4533FFD1BB5C7BE00FA2330 /* AddClassViewController.swift */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -458,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A486411E1BB31663002B261B /* SMRotaryWheel.swift in Sources */,
+				A4533FFE1BB5C7BE00FA2330 /* AddClassViewController.swift in Sources */,
 				93DC4BAD1BAA3371006237F5 /* UCloudViewController.swift in Sources */,
 				A486411D1BB31663002B261B /* SMRotaryProtocol.swift in Sources */,
 				78E75F441AC5FC48001A93F1 /* ViewController.swift in Sources */,
@@ -472,6 +504,7 @@
 				A4DB512F1B89928600976222 /* MenuItemCell.swift in Sources */,
 				9384036D1BAB7DCD00B2D5AB /* HotTopic.swift in Sources */,
 				A48641211BB31AD3002B261B /* PinglunandHuifuViewController.swift in Sources */,
+				A45340011BB5CA5C00FA2330 /* CommFunc.swift in Sources */,
 				2F75EF4A1BACA9E2005C167E /* AddFriends.swift in Sources */,
 				93DC4BAB1BAA3346006237F5 /* BookShopViewController.swift in Sources */,
 				2F6EFBFD1B9F9AD4002487DD /* LaunchAfter.swift in Sources */,
@@ -480,17 +513,20 @@
 				A409437A1B8D26EF009E824C /* FlickrSearcher.swift in Sources */,
 				A486411F1BB31663002B261B /* SMSector.swift in Sources */,
 				93DC4BB11BAA33B2006237F5 /* InforViewController.swift in Sources */,
+				2F8A4F281BB476ED007EEACE /* MessageAction.swift in Sources */,
 				EC7A10FD1BA7978C002BF22E /* SettingViewController.swift in Sources */,
 				A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift in Sources */,
 				938403731BACBEBD00B2D5AB /* TableViewCell.swift in Sources */,
 				938403751BACC53300B2D5AB /* customerCell.swift in Sources */,
 				938403861BB4946C00B2D5AB /* Inside.swift in Sources */,
 				2F75EF4C1BACAC3F005C167E /* ChatViewController.swift in Sources */,
+				A45340031BB5DC5E00FA2330 /* SwiftyJSON.swift in Sources */,
 				A4335A371B8E5E3300C14B54 /* MyPhotoViewController.swift in Sources */,
 				0FA8D65E1B8CEC5D00172D19 /* NavigationController.swift in Sources */,
 				A4DB51251B8944BD00976222 /* MenuViewController.swift in Sources */,
 				2F75EF461BACA5B9005C167E /* MessageMainView.swift in Sources */,
 				78E75F621AC5FCF1001A93F1 /* ContentViewController.swift in Sources */,
+				2F8A4F291BB476ED007EEACE /* UserAction.swift in Sources */,
 				A4DB51291B89904400976222 /* Extensions.swift in Sources */,
 				A4DB51271B8954C700976222 /* HomeViewController.swift in Sources */,
 				A4200F281B8FABA7000B3BD2 /* EmptySegue.swift in Sources */,
@@ -655,7 +691,6 @@
 		78E75F5F1AC5FC48001A93F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -678,7 +713,6 @@
 		78E75F601AC5FC48001A93F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

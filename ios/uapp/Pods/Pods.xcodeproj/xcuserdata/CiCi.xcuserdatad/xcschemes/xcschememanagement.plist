@@ -6,31 +6,53 @@
 	<dict>
 		<key>AWSCognito.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
 		<key>AWSCore.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
 		<key>AWSLambda.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>JSQMessagesViewController.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
 		<key>JSQSystemSoundPlayer.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>Parse.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
@@ -47,12 +69,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>3F820EFC2D440AEA0B3405D7A8F447AC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>471B56D99BCC148F8087752A9A46D5A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5846A28660707B1EB5BAA1638949AF22</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5A047AB28829ADF0816D60A4591D85CF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5A5FCE8DA556A7DFAD57FAAF7C5452DF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>716BE3DDD3277A12B6320B0DB3FB9573</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7C4B897F2D93A8C7A13F453693ADBEBD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +124,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C5AB2F32CEBC5FFF4FEB92BD7F345202</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E12EEDCF13AE5336C84D1B4D4FC9BC62</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>F258356D92A69309AE518A5D66E936EA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>F857CF3370EB2C8C291290B66F6A675B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F8742274A9F945E7EDEAE7C9208A3361</key>
 		<dict>
 			<key>primary</key>
 			<true/>

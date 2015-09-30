@@ -424,6 +424,8 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                         //request.payload = "{\"user_id\": \"\(emailInput)\",\"password\":\"\(self.pwdTextField.text!)\",\"school\": \"\("111")\" }"
                         //request.payload = "{\"user_id\": \"\(emailInput)\",\"password\":\"\(self.pwdTextField.text!)\" }"
                         var schoolinfor = self.findSchoolInfo()
+                        //print("school name is")
+                        //print(schoolinfor)
                         request.payload = "{\"user_id\": \"\(emailInput)\",\"password\":\"\(self.pwdTextField.text!)\",\"school\":\"\(schoolinfor)\" }"
                         
                         

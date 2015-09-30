@@ -19,18 +19,15 @@ import UIKit
 
 class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDelegate, AddFriendsDelegate {
     @IBOutlet weak var subview: UIView!
-    
-    @IBOutlet weak var BtnEdit: UIButton!
     @IBOutlet weak var ChatTable: UITableView!
-    @IBOutlet weak var InsideTable: UITableView!
-    @IBOutlet weak var SegmentControl: UISegmentedControl!
     @IBOutlet var SwipeRight: UISwipeGestureRecognizer!
     @IBOutlet var SwipeLeft: UISwipeGestureRecognizer!
     @IBOutlet weak var AddButton: UIButton!
     
     var sideBarToken = false
     // chat queue
-    var ChatArray = ["Jabue"]
+    // var ChatArray = ["Jabue"]
+    var messages = [PFObject]()
     // side bar setups
     var setpage:SetBarViewController!
     var showsetbar:Bool!
@@ -50,23 +47,11 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
         // ChatTable setup
         ChatTable.delegate = self
         ChatTable.dataSource = self
-        // set up table display
-        ChatTable.hidden = false
-        InsideTable.hidden = true
         
-        /*
-        //hand swipe
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
-        
-        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
-        
-        leftSwipe.direction = .Left
-        rightSwipe.direction = .Right
-        
-        view.addGestureRecognizer(leftSwipe)
-        view.addGestureRecognizer(rightSwipe)
-        */
-        
+        if PFUser.currentUser() != nil {
+            self.loadMessages()
+
+        }
         
     }
     
@@ -75,49 +60,38 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    // Mark: Segmented Controller
-    @IBAction func SegmentSwitch(sender: UISegmentedControl) {
-        switch SegmentControl.selectedSegmentIndex
-        {
-        case 0:
-            // self.ChatContainer.hidden = true
-            // self.InsideContainer.hidden = false
-            self.ChatTable.hidden = false
-            self.InsideTable.hidden = true
-        case 1:
-            // self.ChatContainer.hidden = false
-            // self.InsideContainer.hidden = true
-            self.ChatTable.hidden = true
-            self.InsideTable.hidden = false
-        default:
-            break;
+    // MARK: - Backend methods
+    func loadMessages() {
+        let query = PFQuery(className: "Messages")
+        query.whereKey("user", equalTo: PFUser.currentUser()!)
+        // print(PFUser.currentUser())
+        query.includeKey("lastUser")
+        query.orderByDescending("updatedAction")
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                self.messages.removeAll(keepCapacity: false)
+                self.messages += objects as! [PFObject]!
+                self.ChatTable.reloadData()
+            } else {
+                print("fail to load all the messages !")
+            }
         }
     }
     
     // Mark: Swipe gesture
     @IBAction func swipeRight(sender: AnyObject) {
-        if SegmentControl.selectedSegmentIndex == 1
-        {
-            // self.ChatContainer.hidden = true
-            // self.InsideContainer.hidden = false
-            self.ChatTable.hidden = false
-            self.InsideTable.hidden = true
-            SegmentControl.selectedSegmentIndex = 0
-        }
-        else
-        {
-            if !sideBarToken {
-                UIView.animateWithDuration(speedofsetbar , animations: {
-                    
-                    self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x + self.setbarinfro
-                    self.subview.frame.origin.x = self.subview.frame.origin.x + self.setbarinfro
-                    
-                })
-                sideBarToken = true
-            }
+        if !sideBarToken {
+            UIView.animateWithDuration(speedofsetbar , animations: {
+                
+                self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x + self.setbarinfro
+                self.subview.frame.origin.x = self.subview.frame.origin.x + self.setbarinfro
+                
+            })
+            sideBarToken = true
             
+            // ban the subview touch action
+            self.subview.userInteractionEnabled = false
         }
-        
     }
     
     @IBAction func swipeLeft(sender: AnyObject) {
@@ -130,40 +104,22 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
                 
             })
             sideBarToken = false
+            self.subview.userInteractionEnabled = true
         }
-        else{
-            if SegmentControl.selectedSegmentIndex == 0
-            {
-                self.ChatTable.hidden = true
-                self.InsideTable.hidden = false
-                // self.ChatContainer.hidden = false
-                // self.InsideContainer.hidden = true
-                SegmentControl.selectedSegmentIndex = 1
-                
-            }
-        }
-        
     }
     
     // Mark: add button action
     @IBAction func addButtonAction(sender: AnyObject) {
         // go to different views depends on the segmented choice
-        if SegmentControl.selectedSegmentIndex == 0
-        {
-            self.performSegueWithIdentifier("SelectFriends", sender: self)
-        }
-        else
-        {
-            self.performSegueWithIdentifier("PushInsides", sender: self)
-        }
+        self.performSegueWithIdentifier("SelectFriends", sender: self)
     }
     
     //MARK: - Tableview Delegate & Datasource
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
         // return friendsArray.count
-        print("Chat Array Length:" +  "\(self.ChatArray.count)")
-        return self.ChatArray.count
+        // print("Chat Array Length:" +  "\(self.ChatArray.count)")
+        return self.messages.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
@@ -176,29 +132,53 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
     {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ChatCell", forIndexPath: indexPath) as! UITableViewCell
-        print("cell text:" + "\(ChatArray[indexPath.row])")
-        cell.textLabel?.text = ChatArray[indexPath.row]
+        let message = messages[indexPath.row]
+        // deal with the description String
+        // var description = message["description"] as! String
+        // let userName = PFUser.currentUser()?.username
+        // description.rangeOfString(username)
+        cell.textLabel?.text = message["description"] as! String
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        // open chat selected
-        let chatuser = self.ChatArray[indexPath.row]
-        self.performSegueWithIdentifier("OpenChat", sender: chatuser)
+        // if side bar is out , make the table inedible
+        if !sideBarToken {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            // open chat selected
+            let message = self.messages[indexPath.row] as PFObject
+            let groupId = message["groupId"] as! String
+            self.performSegueWithIdentifier("OpenChat", sender: groupId)
+        }
+        
+    }
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .Normal, title: "delete") { action, index in
+            print("more button tapped")
+        }
+        delete.backgroundColor = UIColor.redColor()
+        
+        return [delete]
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // the cells you would like the actions to appear needs to be editable
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        // you need to implement this method too or you can't swipe to display the actions
     }
     
     // MARK: - SelectMultipleDelegate
     // select friends gonna chat with
-    func didSelectMultipleUsers(selectedUsers: [String]!) {
-        var chatUser:String = ""
-        for temp in selectedUsers {
-            chatUser = temp + "&"
-        }
-        ChatArray.append(chatUser)
-        self.performSegueWithIdentifier("OpenChat", sender: chatUser)
-        print(selectedUsers)
+    func didSelectMultipleUsers(selectedUsers: [PFUser]!) {
+        let groupId = MessageAction.startMultipleChat(selectedUsers)
+        // self.loadMessages()
+        // self.ChatTable.reloadData()
+        self.performSegueWithIdentifier("OpenChat", sender: groupId)
     }
     
     // MARK: - Prepare for segue to chatVC
@@ -219,53 +199,18 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
         
     }
     
-    @IBAction func btnEditPressed(sender: AnyObject) {
-        
-    }
-    
-    /*
-    func handleSwipes(sender:UISwipeGestureRecognizer) ->Bool{
-        
-        if(sender.direction == .Left && swipcount < 3 && showsetbar == false){
-            swipcount = swipcount+1
-            print("11")
-            sbvSwipe(true)
-            return true
-        }
-        if(sender.direction == .Right && swipcount > 1 && showsetbar == false){
-            swipcount = swipcount-1
-            sbvSwipe(false)
-            return true
-        }
-        
-        if (sender.direction == .Left && showsetbar == true && swipcount == 1){
+    @IBAction func HomeBtnPressed(sender: AnyObject) {
+        if !sideBarToken {
             UIView.animateWithDuration(speedofsetbar , animations: {
-                self.subview.frame.origin.x = self.subview.frame.origin.x - self.setbarinfro
-                self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x - self.setbarinfro
-                self.sbv_1.view.frame.origin.x = self.sbv_1.view.frame.origin.x - self.setbarinfro
                 
-            })
-            showsetbar = false
-            return true
-        }
-        
-        if (sender.direction == .Right && showsetbar == false && swipcount == 1){
-            UIView.animateWithDuration(speedofsetbar, animations: {
-                self.subview.frame.origin.x = self.subview.frame.origin.x + self.setbarinfro
                 self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x + self.setbarinfro
-                self.sbv_1.view.frame.origin.x = self.sbv_1.view.frame.origin.x + self.setbarinfro
+                self.subview.frame.origin.x = self.subview.frame.origin.x + self.setbarinfro
                 
             })
-            showsetbar = true
-            return true
-            
+            sideBarToken = true
+            self
         }
-        
-        return true
     }
-
-    */
-    
 }
 
 

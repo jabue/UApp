@@ -63,8 +63,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "165"
             endingLineNumber = "165"
-            landmarkName = "FindSchoolViewController"
-            landmarkType = "3">
+            landmarkName = "searchDisplayController(_:shouldReloadTableForSearchString:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

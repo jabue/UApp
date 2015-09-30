@@ -26,9 +26,67 @@ class Inside: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var refreshControl: UIRefreshControl!
     
     
+    var numberofpost:Int!
+    var postDate:[String]=[]
+    var postId:[String]=[]
+    var likes:[String]=[]
+    var userId:[String]=[]
+    var descriptions:[String]=[]
+    var userName:[String]=[]
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var conti:Bool=false
+        //let cm = CommonFunc()
+        //print("school is \(cm.getSchool()), user is \(cm.getEmail())")
+        print("connect to sever...")
+        let Lambda = AWSLambda.defaultLambda()
+        let request = AWSLambdaInvocationRequest()
+        request.functionName = LambdaGetActivities
+        request.payload = "{\"post_date\": \"2015-09-15 12:00:03\"}"
+        //"{\"school\": \"Simon Fraser University(SFU)\"}"
+        
+        
+        print(request)
+        var json:JSON!
+        
+        Lambda.invoke(request).continueWithBlock({(task) -> AnyObject! in
+            if let error = task.error {
+                print("lambda invoke failed: [\(error)]")
+            }
+            else if let exception = task.exception {
+                print("lambda invoke failed: [\(exception)]")
+            }
+            else{
+                print("DEBUG: call lambda sucessfully")
+                //print(task.result)
+                json = JSON(task.result.payload)
+                print(json)
+                let a:Int = Int(String(json["Count"]))!
+                
+                self.numberofpost = a
+                for (var i=0;i<a;i++){
+                    print("23333333333")
+                    print(String(json["Items"][i]["post_date"]["S"]))
+                    self.postDate += [String(json["Items"][i]["post_date"]["S"])]
+                    self.postId += [String(json["Items"][i]["]post_id"]["S"])]
+                    
+                }
+                print(a)
+                conti=true
+            }
+            return nil
+        })
+        while !conti {
+        }
+        print("1213123213123")
+        
+        
+        
+
         tableView = UITableView()
         
         tableView.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height*2/3)
@@ -43,6 +101,7 @@ class Inside: UIViewController, UITableViewDelegate, UITableViewDataSource{
         tableView.addSubview(refreshControl)
         
         self.setupInfiniteScrollingView()
+        
         
     }
     
@@ -72,7 +131,7 @@ class Inside: UIViewController, UITableViewDelegate, UITableViewDataSource{
     //MARK: - Tableview Delegate & Datasource
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
-        return 5
+        return numberofpost
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
@@ -85,7 +144,7 @@ class Inside: UIViewController, UITableViewDelegate, UITableViewDataSource{
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as! TableViewCell!
         
         
-        if (indexPath.row <= 4) {
+        if (indexPath.row <= numberofpost-1) {
         print(indexPath.row)
         var rectRect1:CGRect = CGRectMake(80,0,100, 60)
         var timeforpost = UILabel(frame:rectRect1)
@@ -94,7 +153,7 @@ class Inside: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
         var rectRect2:CGRect = CGRectMake(0,80,300, 100)
         var information = UILabel(frame:rectRect2)
-        information.text = "this is the first post, just test for length"
+        information.text = postDate[indexPath.row]//"this is the first post, just test for length"
         cell.addSubview(information)
         //var rectRect:CGRect = CGRectMake(0,0,60, 60)
         
@@ -113,10 +172,10 @@ class Inside: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
         }
         
-        cell.detailTextLabel?.text  = "hlello";
+        //cell.detailTextLabel?.text  = "hlello";
         
         //当下拉到底部，执行loadMore()  loadMoreEnabled &&
-        if (indexPath.row == 4) {
+        if (indexPath.row == numberofpost-1) {
             
             self.tableView.tableFooterView = self.infiniteScrollingView
             print("get infor")
