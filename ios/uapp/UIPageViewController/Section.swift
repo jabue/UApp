@@ -8,6 +8,7 @@
 
 import Foundation
 
+// store section info
 class Section {
     var users: [User] = []
     

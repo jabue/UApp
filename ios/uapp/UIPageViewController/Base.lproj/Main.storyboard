@@ -1900,11 +1900,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vVm-9f-sMr">
-                                <rect key="frame" x="20" y="71" width="560" height="521"/>
+                                <rect key="frame" x="10" y="71" width="570" height="529"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" id="GiF-TS-6Ga">
-                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="570" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GiF-TS-6Ga" id="PP2-D1-GhI">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
@@ -1954,10 +1954,10 @@
                             <constraint firstItem="vVm-9f-sMr" firstAttribute="trailing" secondItem="CyO-wf-lh1" secondAttribute="trailingMargin" id="XGn-nN-6p0"/>
                             <constraint firstItem="9q9-tE-umA" firstAttribute="top" secondItem="CyO-wf-lh1" secondAttribute="topMargin" id="XM8-jf-fWX"/>
                             <constraint firstItem="9q9-tE-umA" firstAttribute="leading" secondItem="CyO-wf-lh1" secondAttribute="leadingMargin" constant="-20" id="j5h-e6-I1s"/>
-                            <constraint firstItem="vVm-9f-sMr" firstAttribute="leading" secondItem="CyO-wf-lh1" secondAttribute="leadingMargin" id="lZh-BG-kth"/>
+                            <constraint firstItem="vVm-9f-sMr" firstAttribute="leading" secondItem="CyO-wf-lh1" secondAttribute="leadingMargin" constant="-10" id="lZh-BG-kth"/>
                             <constraint firstItem="vVm-9f-sMr" firstAttribute="top" secondItem="9q9-tE-umA" secondAttribute="bottom" constant="8" id="r2A-Of-pCh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9q9-tE-umA" secondAttribute="trailing" constant="-20" id="zAo-vO-jhc"/>
-                            <constraint firstItem="Emg-37-OZf" firstAttribute="top" secondItem="vVm-9f-sMr" secondAttribute="bottom" constant="8" id="zcF-lM-Ve2"/>
+                            <constraint firstItem="Emg-37-OZf" firstAttribute="top" secondItem="vVm-9f-sMr" secondAttribute="bottom" id="zcF-lM-Ve2"/>
                         </constraints>
                     </view>
                     <connections>
