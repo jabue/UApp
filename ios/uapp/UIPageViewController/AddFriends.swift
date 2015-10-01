@@ -34,7 +34,7 @@ class AddFriends: UIViewController, UITableViewDelegate, UITableViewDataSource
     // used to put selected item
     var selectedFriends = [PFUser]()
     
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // set the delegate & datasource of tableView
@@ -70,7 +70,7 @@ class AddFriends: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    //MARK: - Tableview Delegate & Datasource
+    // MARK: - Tableview Delegate & Datasource
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
         return users.count
@@ -116,12 +116,14 @@ class AddFriends: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    //MARK: Button Action
+    // MARK: Button Action
+    // cancel the view
     @IBAction func BtnCancelAction(sender: AnyObject) {
         // dismiss the view
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // done button action
     @IBAction func btnDonePress(sender: AnyObject) {
         // none is selected
         if selectedFriends.count == 0

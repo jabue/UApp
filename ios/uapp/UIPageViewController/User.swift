@@ -10,6 +10,7 @@ import Foundation
 
 // to store user information
 class User: NSObject {
+    var userId: String?
     var name: String
     var image: UIImage?
     var insection: Int?
