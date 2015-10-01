@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0F140FFA1B97D1C800B8FAFE /* school name.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F140FF91B97D1C800B8FAFE /* school name.plist */; };
 		0FA8D65E1B8CEC5D00172D19 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA8D65D1B8CEC5D00172D19 /* NavigationController.swift */; };
+		2F5E43721BBCB25C002435E2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5E43711BBCB25C002435E2 /* User.swift */; };
+		2F5E43741BBCB608002435E2 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5E43731BBCB608002435E2 /* Section.swift */; };
 		2F6EFBFD1B9F9AD4002487DD /* LaunchAfter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EFBFC1B9F9AD4002487DD /* LaunchAfter.swift */; };
 		2F75EF461BACA5B9005C167E /* MessageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F75EF451BACA5B9005C167E /* MessageMainView.swift */; };
 		2F75EF481BACA938005C167E /* PushInside.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F75EF471BACA938005C167E /* PushInside.swift */; };
@@ -82,6 +84,8 @@
 /* Begin PBXFileReference section */
 		0F140FF91B97D1C800B8FAFE /* school name.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "school name.plist"; sourceTree = "<group>"; };
 		0FA8D65D1B8CEC5D00172D19 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		2F5E43711BBCB25C002435E2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2F5E43731BBCB608002435E2 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		2F6EFBFC1B9F9AD4002487DD /* LaunchAfter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchAfter.swift; sourceTree = "<group>"; };
 		2F75EF451BACA5B9005C167E /* MessageMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageMainView.swift; sourceTree = "<group>"; };
 		2F75EF471BACA938005C167E /* PushInside.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushInside.swift; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 				2F75EF4B1BACAC3F005C167E /* ChatViewController.swift */,
 				2F8A4F261BB476ED007EEACE /* MessageAction.swift */,
 				2F8A4F271BB476ED007EEACE /* UserAction.swift */,
+				2F5E43711BBCB25C002435E2 /* User.swift */,
+				2F5E43731BBCB608002435E2 /* Section.swift */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -479,6 +485,7 @@
 			files = (
 				A486411E1BB31663002B261B /* SMRotaryWheel.swift in Sources */,
 				A4533FFE1BB5C7BE00FA2330 /* AddClassViewController.swift in Sources */,
+				2F5E43721BBCB25C002435E2 /* User.swift in Sources */,
 				93DC4BAD1BAA3371006237F5 /* UCloudViewController.swift in Sources */,
 				A486411D1BB31663002B261B /* SMRotaryProtocol.swift in Sources */,
 				78E75F441AC5FC48001A93F1 /* ViewController.swift in Sources */,
@@ -521,6 +528,7 @@
 				2F75EF481BACA938005C167E /* PushInside.swift in Sources */,
 				A43CFD131B90CC25007342A9 /* MessageViewController.swift in Sources */,
 				A4F36C3E1B82573E002CC587 /* Constants.swift in Sources */,
+				2F5E43741BBCB608002435E2 /* Section.swift in Sources */,
 				78E75F421AC5FC48001A93F1 /* AppDelegate.swift in Sources */,
 				A445F0B61B7D3827004B3E1B /* SchoolItem.swift in Sources */,
 			);

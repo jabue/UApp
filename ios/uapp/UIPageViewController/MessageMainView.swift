@@ -201,6 +201,7 @@ class MessageMainView: UIViewController, UITableViewDataSource, UITableViewDeleg
         
     }
     
+    // Home button pressed function
     @IBAction func HomeBtnPress(sender: AnyObject) {
         if !sideBarToken {
             UIView.animateWithDuration(speedofsetbar , animations: {
