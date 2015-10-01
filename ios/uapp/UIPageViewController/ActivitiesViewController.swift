@@ -24,9 +24,11 @@ class ActivitiesViewController: UIViewController {
     var swipcount:Int!
     var bounds = UIScreen.mainScreen().bounds
     
+    var sbv_0:Inside!
     var sbv_1:Feeds!
     var sbv_2:HotTopic!
     var sbv_3:Discover!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +41,19 @@ class ActivitiesViewController: UIViewController {
         setpage.view.frame.origin.x = -setbarinfro
         showsetbar = false
         
+        //add sbv0
+        sbv_0 = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Inside") as! Inside
+        sbv_0.view.frame.size.width = bounds.size.width
+        sbv_0.view.frame.size.height = bounds.size.height*2/3
+        sbv_0.view.frame.origin.x=0
+        sbv_0.view.frame.origin.y=bounds.size.height*1/3
+        self.view.addSubview(sbv_0.view!)
+        
         //add sbv1
         sbv_1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Feeds") as! Feeds
         sbv_1.view.frame.size.width = bounds.size.width
         sbv_1.view.frame.size.height = bounds.size.height*2/3
-        sbv_1.view.frame.origin.x=0
+        sbv_1.view.frame.origin.x=bounds.size.width
         sbv_1.view.frame.origin.y=bounds.size.height*1/3
         self.view.addSubview(sbv_1.view!)
 
@@ -52,14 +62,14 @@ class ActivitiesViewController: UIViewController {
         self.view.addSubview(sbv_2.view!)
         sbv_2.view.frame.size.width = bounds.size.width
         sbv_2.view.frame.size.height = bounds.size.height*2/3
-        sbv_2.view.frame.origin.x=bounds.size.width
+        sbv_2.view.frame.origin.x=bounds.size.width*2
         sbv_2.view.frame.origin.y=bounds.size.height*1/3
         //add sbv3
         sbv_3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Discover") as! Discover
         self.view.addSubview(sbv_3.view!)
         sbv_3.view.frame.size.width = bounds.size.width
         sbv_3.view.frame.size.height = bounds.size.height*2/3
-        sbv_3.view.frame.origin.x=bounds.size.width*2
+        sbv_3.view.frame.origin.x=bounds.size.width*3
         sbv_3.view.frame.origin.y=bounds.size.height*1/3
         
         //hand swipe
@@ -74,9 +84,11 @@ class ActivitiesViewController: UIViewController {
         view.addGestureRecognizer(rightSwipe)
         
         swipcount=1
-        print(bounds.size.width)
+        //print(bounds.size.width)
         
-        post.hidden = true
+        
+        
+       
     }
     
     func sbvSwipe(leftsp:Bool){
@@ -85,6 +97,7 @@ class ActivitiesViewController: UIViewController {
             bsize = -bsize
         }
         UIView.animateWithDuration(0.5 , animations: {
+            self.sbv_0.view.frame.origin.x = self.sbv_0.view.frame.origin.x + bsize
             self.sbv_1.view.frame.origin.x = self.sbv_1.view.frame.origin.x + bsize
             self.sbv_2.view.frame.origin.x = self.sbv_2.view.frame.origin.x + bsize
             self.sbv_3.view.frame.origin.x = self.sbv_3.view.frame.origin.x + bsize
@@ -92,10 +105,10 @@ class ActivitiesViewController: UIViewController {
         })
         
     }
-       
+    
     func handleSwipes(sender:UISwipeGestureRecognizer) ->Bool{
         
-        if(sender.direction == .Left && swipcount < 3 && showsetbar == false){
+        if(sender.direction == .Left && swipcount < 4 && showsetbar == false){
             swipcount = swipcount+1
             print("11")
             sbvSwipe(true)
@@ -111,7 +124,7 @@ class ActivitiesViewController: UIViewController {
             UIView.animateWithDuration(speedofsetbar , animations: {
                 self.subview.frame.origin.x = self.subview.frame.origin.x - self.setbarinfro
                 self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x - self.setbarinfro
-                self.sbv_1.view.frame.origin.x = self.sbv_1.view.frame.origin.x - self.setbarinfro
+                self.sbv_0.view.frame.origin.x = self.sbv_0.view.frame.origin.x - self.setbarinfro
             
             })
             showsetbar = false
@@ -122,7 +135,7 @@ class ActivitiesViewController: UIViewController {
             UIView.animateWithDuration(speedofsetbar, animations: {
                 self.subview.frame.origin.x = self.subview.frame.origin.x + self.setbarinfro
                 self.setpage.view.frame.origin.x = self.setpage.view.frame.origin.x + self.setbarinfro
-                self.sbv_1.view.frame.origin.x = self.sbv_1.view.frame.origin.x + self.setbarinfro
+                self.sbv_0.view.frame.origin.x = self.sbv_0.view.frame.origin.x + self.setbarinfro
             
             })
             showsetbar = true
@@ -147,25 +160,34 @@ class ActivitiesViewController: UIViewController {
     }
     
     // swipcount
-    @IBAction func feedbutton(sender: AnyObject) {
+    @IBAction func Insidebutton(sender: AnyObject) {
         let transstate = 1
         let transto = swipcount - transstate
         transtocurrent(transto)
         swipcount=1
     }
-    @IBAction func hottopicbutton(sender: AnyObject) {
+    @IBAction func feedbutton(sender: AnyObject) {
         let transstate = 2
         let transto = swipcount - transstate
         transtocurrent(transto)
         swipcount=2
     }
-    @IBAction func discover(sender: AnyObject) {
+    @IBAction func hottopicbutton(sender: AnyObject) {
         let transstate = 3
         let transto = swipcount - transstate
         transtocurrent(transto)
         swipcount=3
     }
+    @IBAction func discover(sender: AnyObject) {
+        let transstate = 4
+        let transto = swipcount - transstate
+        transtocurrent(transto)
+        swipcount=4
+    }
 
+    
+    
+    
     
     @IBAction func addbutton(sender: AnyObject) {
         post.hidden = false

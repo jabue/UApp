@@ -32,6 +32,7 @@
 		9384036F1BAB7E0C00B2D5AB /* Discover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9384036E1BAB7E0C00B2D5AB /* Discover.swift */; };
 		938403731BACBEBD00B2D5AB /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938403721BACBEBD00B2D5AB /* TableViewCell.swift */; };
 		938403751BACC53300B2D5AB /* customerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938403741BACC53300B2D5AB /* customerCell.swift */; };
+		938403861BB4946C00B2D5AB /* Inside.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938403851BB4946C00B2D5AB /* Inside.swift */; };
 		93DC4AE71BA24F7B006237F5 /* firsttimecheck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93DC4AE61BA24F7B006237F5 /* firsttimecheck.plist */; };
 		93DC4B6D1BA9E5E6006237F5 /* SetBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC4B6C1BA9E5E6006237F5 /* SetBarViewController.swift */; };
 		93DC4B6F1BA9FD6E006237F5 /* SetBarSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC4B6E1BA9FD6E006237F5 /* SetBarSetting.swift */; };
@@ -113,6 +114,7 @@
 		9384036E1BAB7E0C00B2D5AB /* Discover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discover.swift; sourceTree = "<group>"; };
 		938403721BACBEBD00B2D5AB /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		938403741BACC53300B2D5AB /* customerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customerCell.swift; sourceTree = "<group>"; };
+		938403851BB4946C00B2D5AB /* Inside.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inside.swift; sourceTree = "<group>"; };
 		93DC4AE61BA24F7B006237F5 /* firsttimecheck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = firsttimecheck.plist; sourceTree = "<group>"; };
 		93DC4B6C1BA9E5E6006237F5 /* SetBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBarViewController.swift; sourceTree = "<group>"; };
 		93DC4B6E1BA9FD6E006237F5 /* SetBarSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBarSetting.swift; sourceTree = "<group>"; };
@@ -176,10 +178,6 @@
 		2F9EAAAD1BB5BEBF006A8126 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				2F75EF451BACA5B9005C167E /* MessageMainView.swift */,
-				2F75EF471BACA938005C167E /* PushInside.swift */,
-				2F75EF491BACA9E2005C167E /* AddFriends.swift */,
-				2F75EF4B1BACAC3F005C167E /* ChatViewController.swift */,
 				2F8A4F261BB476ED007EEACE /* MessageAction.swift */,
 				2F8A4F271BB476ED007EEACE /* UserAction.swift */,
 				2F5E43711BBCB25C002435E2 /* User.swift */,
@@ -212,13 +210,13 @@
 		78E75F3E1AC5FC48001A93F1 /* Uapp */ = {
 			isa = PBXGroup;
 			children = (
-				A4533FFF1BB5C98600FA2330 /* Common */,
-				A48641241BB31C8B002B261B /* qq.png */,
-				A48641201BB31AD3002B261B /* PinglunandHuifuViewController.swift */,
 				A486410E1BB3162F002B261B /* Schedule */,
 				A4DB51261B8954C700976222 /* HomeViewController.swift */,
 				78E75F411AC5FC48001A93F1 /* AppDelegate.swift */,
-				A4335A3A1B8E903C00C14B54 /* ActivitiesViewController.swift */,
+				A4F36C3D1B82573E002CC587 /* Constants.swift */,
+				A4533FFF1BB5C98600FA2330 /* Common */,
+				A48641241BB31C8B002B261B /* qq.png */,
+				A48641201BB31AD3002B261B /* PinglunandHuifuViewController.swift */,
 				A4DB51341B89B65100976222 /* HamburgerView.swift */,
 				78E75F431AC5FC48001A93F1 /* ViewController.swift */,
 				A4DB512C1B8991B700976222 /* MenuItems.plist */,
@@ -232,6 +230,7 @@
 				A43CFD121B90CC25007342A9 /* MessageViewController.swift */,
 				A4200F271B8FABA7000B3BD2 /* EmptySegue.swift */,
 				A4335A381B8E694500C14B54 /* MyPhotoCellViewCell.swift */,
+				938403841BB4749A00B2D5AB /* activity */,
 				A4335A361B8E5E3300C14B54 /* MyPhotoViewController.swift */,
 				0FA8D65D1B8CEC5D00172D19 /* NavigationController.swift */,
 				A4DB51301B8995FF00976222 /* DetailViewController.swift */,
@@ -251,9 +250,10 @@
 				93DC4BAA1BAA3346006237F5 /* BookShopViewController.swift */,
 				93DC4BAC1BAA3371006237F5 /* UCloudViewController.swift */,
 				93DC4BB01BAA33B2006237F5 /* InforViewController.swift */,
-				9384036A1BAB7D6600B2D5AB /* Feeds.swift */,
-				9384036C1BAB7DCD00B2D5AB /* HotTopic.swift */,
-				9384036E1BAB7E0C00B2D5AB /* Discover.swift */,
+				2F75EF451BACA5B9005C167E /* MessageMainView.swift */,
+				2F75EF471BACA938005C167E /* PushInside.swift */,
+				2F75EF491BACA9E2005C167E /* AddFriends.swift */,
+				2F75EF4B1BACAC3F005C167E /* ChatViewController.swift */,
 				2F9EAAAD1BB5BEBF006A8126 /* Chat */,
 				938403721BACBEBD00B2D5AB /* TableViewCell.swift */,
 				938403741BACC53300B2D5AB /* customerCell.swift */,
@@ -289,6 +289,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		938403841BB4749A00B2D5AB /* activity */ = {
+			isa = PBXGroup;
+			children = (
+				A4335A3A1B8E903C00C14B54 /* ActivitiesViewController.swift */,
+				9384036A1BAB7D6600B2D5AB /* Feeds.swift */,
+				9384036C1BAB7DCD00B2D5AB /* HotTopic.swift */,
+				9384036E1BAB7E0C00B2D5AB /* Discover.swift */,
+				938403851BB4946C00B2D5AB /* Inside.swift */,
+			);
+			name = activity;
+			sourceTree = "<group>";
+		};
 		A43DA9C71B85A74D00DA1B6B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,7 +313,6 @@
 		A4533FFF1BB5C98600FA2330 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A4F36C3D1B82573E002CC587 /* Constants.swift */,
 				A45340001BB5CA5C00FA2330 /* CommFunc.swift */,
 				A45340021BB5DC5E00FA2330 /* SwiftyJSON.swift */,
 			);
@@ -389,7 +400,7 @@
 				ORGANIZATIONNAME = "Vea Software";
 				TargetAttributes = {
 					78E75F3B1AC5FC48001A93F1 = {
-						DevelopmentTeam = LD7DY78L8K;
+						DevelopmentTeam = 9J6MV3Q25J;
 					};
 					78E75F501AC5FC48001A93F1 = {
 						CreatedOnToolsVersion = 6.2;
@@ -514,6 +525,7 @@
 				A445F0B41B7D35F7004B3E1B /* FindSchoolViewController.swift in Sources */,
 				938403731BACBEBD00B2D5AB /* TableViewCell.swift in Sources */,
 				938403751BACC53300B2D5AB /* customerCell.swift in Sources */,
+				938403861BB4946C00B2D5AB /* Inside.swift in Sources */,
 				2F75EF4C1BACAC3F005C167E /* ChatViewController.swift in Sources */,
 				A45340031BB5DC5E00FA2330 /* SwiftyJSON.swift in Sources */,
 				A4335A371B8E5E3300C14B54 /* MyPhotoViewController.swift in Sources */,
@@ -660,7 +672,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap299;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap99;
 				PRODUCT_NAME = Uapp;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;
@@ -677,7 +689,7 @@
 				INFOPLIST_FILE = UIPageViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap299;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.evtechnologies.uap99;
 				PRODUCT_NAME = Uapp;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ObjectiveC_Bridging_Header.h;
