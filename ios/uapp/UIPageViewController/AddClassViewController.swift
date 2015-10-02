@@ -17,6 +17,7 @@ class AddClassViewController: UITableViewController, UISearchBarDelegate {
     
     var data: [String] = []
     var filtered:[String] = []
+    var course:[JSON] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +27,14 @@ class AddClassViewController: UITableViewController, UISearchBarDelegate {
         classTable.delegate = self
         classTable.dataSource = self
         searchClass.delegate = self
-    }
-    
-    override func viewDidAppear(animated: Bool) {
+        
         let cm = CommonFunc()
         let Lambda = AWSLambda.defaultLambda()
         let request = AWSLambdaInvocationRequest()
         
         request.functionName = LambdaGetCourseList
         request.payload = "{\"school\": \"\(cm.getSchool())\"}"
-        
+        print("course count: \(data.count)")
         Lambda.invoke(request)
             .continueWithBlock({(task) -> AnyObject! in
                 if let error = task.error {
@@ -46,22 +45,31 @@ class AddClassViewController: UITableViewController, UISearchBarDelegate {
                 }
                 else {
                     let json = JSON(task.result.payload)
-                
+                    
                     for (_, item):(String, JSON) in json["Items"] {
+                        //print("itme is \(item)")
                         if let course_nbr = item["course_nbr"].string {
                             self.data += [course_nbr + " " + item["title"].string!]
+                            self.course += [item]
+                            
+                            
                         }
                     }
                     dispatch_async(dispatch_get_main_queue(),{self.tableView.reloadData()}) // load course data to the table on the main thread
                 }
                 return nil
             })
+
     }
+    
+    
     
     // go back to Schedule page when 'back' bar is clicked
     @IBAction func backBarPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true;
@@ -110,7 +118,8 @@ class AddClassViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("user has selected a cell \(data[indexPath.row])")
+        //print("user has selected a cell \(data[indexPath.row])")
+        performSegueWithIdentifier("addCourse_segue", sender: self)
     }
 
     
@@ -122,6 +131,23 @@ class AddClassViewController: UITableViewController, UISearchBarDelegate {
             cell!.textLabel?.text = data[indexPath.row]
         }
         return cell!
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "addCourse_segue" {
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                // get what you need from the cell or the DataSource object
+                let controller = segue.destinationViewController as! AddCourseToScheduleViewController
+                controller.course = course[indexPath.row]
+                //print("select row: \(indexPath.row)")
+                
+            }
+            
+            
+            
+            
+        }
     }
 }
 

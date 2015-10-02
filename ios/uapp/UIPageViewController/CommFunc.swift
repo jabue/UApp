@@ -46,6 +46,15 @@ class CommonFunc {
         return result
     }
     
+    func unwrapString(str: String?) -> String {
+        if let s = str {
+            return s
+        }
+        else {
+            return ""
+        }
+    }
+    
     
     
 }
