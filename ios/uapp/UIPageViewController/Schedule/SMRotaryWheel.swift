@@ -12,7 +12,6 @@ import QuartzCore
 
 class SMRotaryWheel: UIControl {
     
-    
     var delegate: SMRotaryProtocol?
     var container: UIView?
     var numberOfSections: Int  = 7
@@ -26,9 +25,6 @@ class SMRotaryWheel: UIControl {
     var rotateCounter = 0
     
     var currentSector = 0 // the sector that is choosed by user to show the schedule
-    
-    
-    
     init(frame: CGRect, del:ScheduleViewController, sectionsNum: Int) {
         
         self.numberOfSections = sectionsNum
@@ -345,7 +341,6 @@ class SMRotaryWheel: UIControl {
         
         let angleSize:CGFloat = CGFloat(2 * M_PI) / CGFloat(numberOfSections)
         let outerRidus:CGFloat = (container?.frame.width)! * 0.82 / 2 // outer ring for weekday
-        let innerRidus = 70.0  // inner ring for hours
         
         let calendar:NSCalendar = NSCalendar.currentCalendar()
         let dateComps:NSDateComponents = calendar.components(.Weekday , fromDate: NSDate())
@@ -365,28 +360,9 @@ class SMRotaryWheel: UIControl {
         bg.image = UIImage(named: "wheel2.png")
         self.addSubview(bg)
         
-        
-        
-        
         // Create the sectors
         for var i = 0; i < numberOfSections; ++i {
             
-            // Create image view
-            let im = UIImageView()
-            im.image = UIImage(named: "segment.png")
-            
-            im.layer.anchorPoint = CGPointMake(1.0, 0.5)
-            im.layer.position = CGPointMake((container?.bounds.size.width)!/2, (container?.bounds.size.height)!/2)
-            im.transform = CGAffineTransformMakeRotation(angleSize * CGFloat(i))
-            im.alpha = minAlphavalue
-            im.tag = i
-            
-            
-            if i == 0 {
-                im.alpha = maxAlphavalue
-            }
-            
-            self.addSubview(im)
             
             let ilabel = UILabel(frame: CGRectMake(0, 0, 50, 40))
             let dateLabel = UILabel(frame: CGRectMake(0, 0, 50, 40))
@@ -476,7 +452,13 @@ class SMRotaryWheel: UIControl {
         
         // 9- Call protocol method
         self.delegate?.wheelDidChangeValue(String("\(convertWeekday(todayWeekday - 1)) is selected"))
+        
+        
+        
+        
     }
+    
+    
     
     private func getSectorByValue(value: Int) -> UIImageView{
         var res = UIImageView()

@@ -66,6 +66,12 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
         wheel.center = CGPoint(x: 200,y: 320)
         self.view.addSubview(wheel)
         
+        let clockDiameter = wheelDiameter * 0.7
+        
+        let clockWheel: SMClockWheel = SMClockWheel.init(frame: CGRectMake(0, 0, clockDiameter, clockDiameter), del: self, sectionsNum: 21)
+        clockWheel.center = CGPoint(x: 200, y: 320)
+        self.view.addSubview(clockWheel)
+        
         //let image = UIImage(named: "addButton.png") as UIImage?
         let add_btn = UIButton(type: UIButtonType.System) as UIButton
         

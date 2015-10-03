@@ -66,6 +66,7 @@
 		A4DB51311B8995FF00976222 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB51301B8995FF00976222 /* DetailViewController.swift */; };
 		A4DB51351B89B65100976222 /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB51341B89B65100976222 /* HamburgerView.swift */; };
 		A4ED19611B8B881F004B3D1B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ED19601B8B881F004B3D1B /* libsqlite3.tbd */; };
+		A4ED4B4D1BBF24640012A314 /* SMClockWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ED4B4C1BBF24640012A314 /* SMClockWheel.swift */; };
 		A4F36C3E1B82573E002CC587 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F36C3D1B82573E002CC587 /* Constants.swift */; };
 		EC7A10FD1BA7978C002BF22E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A10FC1BA7978C002BF22E /* SettingViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -146,6 +147,7 @@
 		A4DB51301B8995FF00976222 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A4DB51341B89B65100976222 /* HamburgerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
 		A4ED19601B8B881F004B3D1B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A4ED4B4C1BBF24640012A314 /* SMClockWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SMClockWheel.swift; path = Schedule/SMClockWheel.swift; sourceTree = "<group>"; };
 		A4F36C3D1B82573E002CC587 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
 		C9BDFD18188BFE32ECE26A67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7A10FC1BA7978C002BF22E /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				A48641181BB31663002B261B /* ScheduleViewController.swift */,
 				A48641191BB31663002B261B /* SMRotaryProtocol.swift */,
 				A486411A1BB31663002B261B /* SMRotaryWheel.swift */,
+				A4ED4B4C1BBF24640012A314 /* SMClockWheel.swift */,
 				A486411B1BB31663002B261B /* SMSector.swift */,
 				A4533FFD1BB5C7BE00FA2330 /* AddClassViewController.swift */,
 				A49856A41BB9F56900D65CB9 /* AddCourseToScheduleViewController.swift */,
@@ -526,6 +529,7 @@
 				A43CFD131B90CC25007342A9 /* MessageViewController.swift in Sources */,
 				A4F36C3E1B82573E002CC587 /* Constants.swift in Sources */,
 				78E75F421AC5FC48001A93F1 /* AppDelegate.swift in Sources */,
+				A4ED4B4D1BBF24640012A314 /* SMClockWheel.swift in Sources */,
 				A445F0B61B7D3827004B3E1B /* SchoolItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,7 +28,7 @@ class AddCourseToScheduleViewController: UIViewController {
     @IBOutlet weak var labelLocation: UILabel!
     
     
-    var _grids = ["day1", "day2"]
+    var _grids = [String]()
     
     var course:JSON = []
     
@@ -54,16 +54,85 @@ class AddCourseToScheduleViewController: UIViewController {
         labelLocation.layer.borderWidth = 0.5;
         labelLocation.font = UIFont(name: "TrebuchetMS-Bold", size: 18)
         
-        var day = []
-        let days = course["days"].string
         
-        var index: Int
-        for index = 0; ; ++index {
-            day += [days?.substringToIndex(<#T##index: Index##Index#>)]
-            
-            
+        var days = course["days"].string
+        var room = course["room"].string
+        print("days: \(days) location: \(room)")
+        
+        for var idx = 0; ; ++idx {
+            if days?.characters.count != 0 && days != "TBD" {
+                let startIndex = advance(days!.startIndex, 2)
+                let day = days!.substringToIndex(startIndex)
+                days = days!.substringFromIndex(startIndex)
+                
+                print("day = \(day)")
+                
+                let wid = labelDayTime.frame.width
+                let het = labelDayTime.frame.height
+                let x = labelDayTime.frame.origin.x
+                let y = labelDayTime.frame.origin.y + CGFloat(idx + 1) * het
+                
+                
+                let ilabel = UILabel(frame: CGRectMake(x, y, wid, het))
+                ilabel.text = day
+                ilabel.layer.borderColor = UIColor.blackColor().CGColor
+                ilabel.layer.borderWidth = 0.5;
+                ilabel.textAlignment = .Center
 
+                self.view.addSubview(ilabel)
+                
+                if let range = room!.rangeOfString("|") {
+                    var index: Int = distance(room!.startIndex, range.startIndex)
+                    let roomLabel = UILabel(frame: CGRectMake(x + wid, y, wid, het))
+                    
+                    var locationIdx = advance(room!.startIndex, index)
+                    roomLabel.text = room?.substringToIndex(locationIdx)
+                    roomLabel.layer.borderColor = UIColor.blackColor().CGColor
+                    roomLabel.layer.borderWidth = 0.5
+                    roomLabel.textAlignment = .Center
+                    self.view.addSubview(roomLabel)
+                    locationIdx = advance((room?.startIndex)!, index + 1)
+                    room = room?.substringFromIndex(locationIdx)
+                    print("room = \(room)")
+                }else {
+                    let roomLabel = UILabel(frame: CGRectMake(x + wid, y, wid, het))
+                    roomLabel.text = room
+                    roomLabel.layer.borderColor = UIColor.blackColor().CGColor
+                    roomLabel.layer.borderWidth = 0.5
+                    roomLabel.textAlignment = .Center
+                    self.view.addSubview(roomLabel)
+                }                
+            }
+            else{
+                if days == "TBD" {
+                    let wid = labelDayTime.frame.width
+                    let het = labelDayTime.frame.height
+                    let x = labelDayTime.frame.origin.x
+                    let y = labelDayTime.frame.origin.y + het
+                    
+                    let ilabel = UILabel(frame: CGRectMake(x, y, wid, het))
+                    ilabel.text = days
+                    ilabel.layer.borderColor = UIColor.blackColor().CGColor
+                    ilabel.layer.borderWidth = 0.5;
+                    ilabel.textAlignment = .Center
+                    self.view.addSubview(ilabel)
+                    
+                    let roomLabel = UILabel(frame: CGRectMake(x + wid, y, wid, het))
+                    
+                    roomLabel.text = room
+                    roomLabel.layer.borderColor = UIColor.blackColor().CGColor
+                    roomLabel.layer.borderWidth = 0.5
+                    roomLabel.textAlignment = .Center
+                    self.view.addSubview(roomLabel)
+                    
+                }
+                break
+            }
         }
+            
+            
+            
+        
         
         
 

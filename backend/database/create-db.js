@@ -1,5 +1,6 @@
 //create database
 //useage: run these scripts in terminal
+//prerequiste: install aws cli
 
 
 //table: user_info

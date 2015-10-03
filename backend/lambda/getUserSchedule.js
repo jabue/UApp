@@ -1,26 +1,41 @@
 /*
-get course list for user.
+get schedule list for user.
 author: rafy
-date: 2015-9-25
+date: 2015-10-2
 */
-console.log('Loading event');
+
 var doc = require('dynamodb-doc');
 var db = new doc.DynamoDB();
 
 exports.handler = function(event, context) {
     
     console.log("school is: " + event.school);
+    
     var table_name = ''; 
+    
     if (event.school == "University of British Columbia(UBC)") {
-        pa = "course_ubc";
+        pa = "user_course_ubc";
     }else if (event.school == "Simon Fraser University(SFU)"){
-        pa = "course_sfu"
+        pa = "user_course_sfu";
     }
-    console.log("to query table: " + pa)
-        
-    db.scan({
+    
+    console.log("to query table: " + pa);
+    
+    var params = {
+           
         TableName : pa,
-        Limit : 50
+        ProjectionExpression:"course_nbr, course_section,days,description,end_time,instructor,meeting_dates,room,start_time,title",
+        KeyConditionExpression: "#nbr = :course_nbr",
+        ExpressionAttributeNames:{
+        "#nbr": "user_id"
+        },
+        ExpressionAttributeValues: {
+            ":user_id":event.user_id
+        }
+   };
+    
+    db.getItem({
+        params
     }, function(err, data) {
         if (err){
             console.log("get item err." + err);
