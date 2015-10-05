@@ -24,7 +24,7 @@ class Inside: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var tableView: UITableView!
     
     var refreshControl: UIRefreshControl!
-    
+    //var bounds = UIScreen.mainScreen().bounds
     
     var numberofpost:Int!
     var postDate:[String]=[]
@@ -72,8 +72,11 @@ class Inside: UIViewController, UITableViewDelegate, UITableViewDataSource{
                     print("23333333333")
                     print(String(json["Items"][i]["post_date"]["S"]))
                     self.postDate += [String(json["Items"][i]["post_date"]["S"])]
-                    self.postId += [String(json["Items"][i]["]post_id"]["S"])]
-                    
+                    self.postId += [String(json["Items"][i]["post_id"]["S"])]
+                    self.likes += [String(json["Items"][i]["likes"]["N"])]
+                    self.userId += [String(json["Items"][i]["user_id"]["S"])]
+                    self.descriptions += [String(json["Items"][i]["description"]["S"])]
+                    self.userName += [String(json["Items"][i]["user_name"]["S"])]
                 }
                 print(a)
                 conti=true
@@ -93,6 +96,7 @@ class Inside: UIViewController, UITableViewDelegate, UITableViewDataSource{
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
+        //tableView.selec
         self.view.addSubview(tableView)
         
         // add refresh
@@ -112,6 +116,7 @@ class Inside: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var infiniteScrollingView:UIView!
     private func setupInfiniteScrollingView() {
+        
         self.infiniteScrollingView = UIView(frame: CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, 60))
         self.infiniteScrollingView!.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         self.infiniteScrollingView!.backgroundColor = UIColor.whiteColor()
@@ -120,8 +125,9 @@ class Inside: UIViewController, UITableViewDelegate, UITableViewDataSource{
         activityViewIndicator.frame = CGRectMake(self.infiniteScrollingView!.frame.size.width/2-activityViewIndicator.frame.width/2, self.infiniteScrollingView!.frame.size.height/2-activityViewIndicator.frame.height/2, activityViewIndicator.frame.width, activityViewIndicator.frame.height)
         activityViewIndicator.startAnimating()
         self.infiniteScrollingView!.addSubview(activityViewIndicator)
-        
-        
+        sleep(2)
+        infiniteScrollingView.removeFromSuperview()
+        //activityViewIndicator.stopAnimating()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -131,7 +137,7 @@ class Inside: UIViewController, UITableViewDelegate, UITableViewDataSource{
     //MARK: - Tableview Delegate & Datasource
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
-        return numberofpost
+        return numberofpost+1
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
@@ -139,28 +145,49 @@ class Inside: UIViewController, UITableViewDelegate, UITableViewDataSource{
         return 1
     }
     
+    var temp:Int = 0;
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
+        
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as! TableViewCell!
         
         
-        if (indexPath.row <= numberofpost-1) {
+        
+        if (indexPath.row < numberofpost) {
         print(indexPath.row)
-        var rectRect1:CGRect = CGRectMake(80,0,100, 60)
+            
+            var rectRect:CGRect = CGRectMake(0,0,self.tableView.bounds.size.width, 400)
+            var viewincell = UIView(frame: rectRect)
+            viewincell.backgroundColor = UIColor.whiteColor()
+            cell.addSubview(viewincell)
+
+            
+            //post time
+        var outputtime = (postDate[indexPath.row] as NSString).substringWithRange(NSMakeRange(5, 11))
+        var rectRect1:CGRect = CGRectMake(200,0,100, 60)
         var timeforpost = UILabel(frame:rectRect1)
-        timeforpost.text = "post time later"
+        timeforpost.text = outputtime//"post time later"
         cell.addSubview(timeforpost)
         
+            //post infor
         var rectRect2:CGRect = CGRectMake(0,80,300, 100)
         var information = UILabel(frame:rectRect2)
-        information.text = postDate[indexPath.row]//"this is the first post, just test for length"
+        information.text = descriptions[indexPath.row]
         cell.addSubview(information)
-        //var rectRect:CGRect = CGRectMake(0,0,60, 60)
+        //print(descriptions[indexPath.row])
         
+            //头像
         let image = UIImage(named:"qq.png")
         var vImg = UIImageView(image: image);
         vImg.frame = CGRectMake(0, 0, 50, 50)
         cell.addSubview(vImg)
+            
+            //name
+        var rectRect3:CGRect = CGRectMake(100,0,100, 60)
+        var name = UILabel(frame:rectRect3)
+        name.text = userName[indexPath.row]
+        cell.addSubview(name)
+        
         
         var rectRectdianzan:CGRect = CGRectMake(0,200,100, 50)
         let dianzan = UIButton(frame: rectRectdianzan)
@@ -169,16 +196,34 @@ class Inside: UIViewController, UITableViewDelegate, UITableViewDataSource{
         dianzan.addTarget(self,action:"buttonActions:",forControlEvents:UIControlEvents.TouchUpInside)
         cell.addSubview(dianzan)
         
-        
-        }
-        
-        //cell.detailTextLabel?.text  = "hlello";
-        
-        //当下拉到底部，执行loadMore()  loadMoreEnabled &&
-        if (indexPath.row == numberofpost-1) {
             
-            self.tableView.tableFooterView = self.infiniteScrollingView
+        }
+        /*
+        if temp != indexPath.row{
+            tableView.reloadData()
+            temp = indexPath.row
+        //cell.detailTextLabel?.text  = "hlello";
+        }
+*/
+        if (indexPath.row == numberofpost) {
             print("get infor")
+            self.tableView.tableFooterView = self.infiniteScrollingView
+            /*
+            cell.removeFromSuperview()
+            
+            
+            */
+            /*
+            var rectRect:CGRect = CGRectMake(0,0,self.tableView.bounds.size.width, 100)
+            var viewincell = UIView(frame: rectRect)
+            viewincell.backgroundColor = UIColor.whiteColor()
+            cell.addSubview(viewincell)
+            
+            var rectRect4:CGRect = CGRectMake(100,0,100, 60)
+            var last = UILabel(frame:rectRect4)
+            last.text = "load more"
+            cell.addSubview(last)
+            */
             //sleep(2)
             
             //tableView.reloadData()
@@ -201,6 +246,7 @@ class Inside: UIViewController, UITableViewDelegate, UITableViewDataSource{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         let cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell?.selectionStyle = UITableViewCellSelectionStyle.None
         
         print(indexPath.row)
         /*
