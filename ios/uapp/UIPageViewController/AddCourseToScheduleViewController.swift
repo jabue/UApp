@@ -5,7 +5,7 @@
 //  Created by zhaofei on 2015-09-28.
 //  Copyright © 2015 Vea Software. All rights reserved.
 //
-//  Add a course to schedule
+//  Display the details of a course. User can add this course to his schedule here.
 
 import UIKit
 
@@ -36,7 +36,7 @@ class AddCourseToScheduleViewController: UIViewController {
         
         print("AddCourseToScheduleViewController loading...")
         self.title = course["course_nbr"].string
-        //self.navigationItem.backBarButtonItem?.title = "BACd" // gosh, it won't work.
+        //self.navigationItem.backBarButtonItem?.title = "Back" // gosh, it won't work.
         self.navigationItem.hidesBackButton = true
         let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("myCustomBack"))
         self.navigationItem.leftBarButtonItem = backButton
@@ -178,12 +178,14 @@ class AddCourseToScheduleViewController: UIViewController {
                     // Create and add 'go to see your schedule' option
                     let seeScheduleAction: UIAlertAction = UIAlertAction(title: "Go to see your schedule", style: .Default) { action -> Void in
                         //Code for displaying schedule goes here
+                        self.dismissViewControllerAnimated(true, completion: nil)
                     }
                     actionSheetController.addAction(seeScheduleAction)
                     
                     // Create and add 'add another course' option action
                     let addAnotherAction: UIAlertAction = UIAlertAction(title: "Add another course", style: .Default) { action -> Void in
                         //Code for adding another course roll goes here
+                        navigationController?.popViewControllerAnimated(true)
                         
                     }
                     actionSheetController.addAction(addAnotherAction)                    

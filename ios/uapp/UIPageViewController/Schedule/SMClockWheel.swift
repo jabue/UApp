@@ -203,7 +203,7 @@ class SMClockWheel: UIControl {
     }
     
     // draw and display schedule on the selected day.
-    // day: indicating how many days between today and the day need to display schedule.
+    // day: indicating how many days exist between today and the day need to display schedule.
     func drawSchedule(day: Int) -> Void {
         let cm = CommonFunc()
         let Lambda = AWSLambda.defaultLambda()
@@ -213,6 +213,7 @@ class SMClockWheel: UIControl {
         let dateMonth  = newDate.month      // "Jun"
         let date   = newDate.date     // "07"
         
+        // caculate the date according to the sections the user rotated.
         let dayToDraw = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: day, toDate: newDate, options: [])
         print("-------------")
         print("\(dateMonth)-\(date)")
@@ -227,6 +228,7 @@ class SMClockWheel: UIControl {
         request.functionName = LambdaGetUserSchedule
         request.payload = "{\"user_id\": \"\(cm.getEmail())\",\"school\":\"\(cm.getSchool())\"}"
        
+        // get the course list the user registered.
         Lambda.invoke(request)
             .continueWithBlock({(task) -> AnyObject! in
                 if let error = task.error {
@@ -237,15 +239,15 @@ class SMClockWheel: UIControl {
                 }
                 else {
                     let json = JSON(task.result.payload)
-                    print(json)
+                    //print(json)
                     
                     for (_, item):(String, JSON) in json["Items"] {
                         //print("itme is \(item)")
                         if let course_nbr = item["course_nbr"].string {
                             print("course is \(course_nbr)")
                             print(item["days"].string)
-                            print(item["start_time"].string)
-                            print(item["end_time"].string)
+                            //print(item["start_time"].string)
+                            //print(item["end_time"].string)
                             if var days = item["days"].string {
                                 print("days = \(days)")
                                 if days != "TBD" {
@@ -266,7 +268,7 @@ class SMClockWheel: UIControl {
                                         }
                                         
                                         if self.weekdayToAbbreviation(weekdayToDraw) == theDay {
-                                            print("will draw on the day: \(theDay), course: \(course_nbr), red? \(self.color)")
+                                            //print("will draw on the day: \(theDay), course: \(course_nbr), red? \(self.color)")
                                             if var startTime = item["start_time"].string {
                                                 if startTime.rangeOfString("|") == nil {
                                                     let startAngle = self.timeToAngle(startTime)
@@ -280,6 +282,7 @@ class SMClockWheel: UIControl {
                                                 else{
                                                     var i = 0
                                                     var endTime = item["end_time"].string
+                                                    //print("there is | in time. check the number is \(dayNum). startTime is \(startTime)")
                                                     while let range = startTime.rangeOfString("|") {
                                                         
                                                         let timeIdx = distance(startTime.startIndex, range.startIndex)
@@ -287,25 +290,33 @@ class SMClockWheel: UIControl {
                                                         let moveIdx = advance(startTime.startIndex, timeIdx + 1)
                                                         let classStartTime = startTime.substringToIndex(locationIdx)
                                                         let classEndTime = endTime!.substringToIndex(locationIdx)
-                                                        print("classTime is \(classStartTime), \(classEndTime)")
+                                                        //print("classTime is \(classStartTime), \(classEndTime)")
+                                                        
                                                         startTime = startTime.substringFromIndex(moveIdx)
                                                         endTime = endTime!.substringFromIndex(moveIdx)
-                                                        let startAngle = self.timeToAngle(startTime)
-                                                        let endAngle = self.timeToAngle(endTime!)
+                                                        let startAngle = self.timeToAngle(classStartTime)
+                                                        let endAngle = self.timeToAngle(classEndTime)
+                                                        
+                                                        // for example: day = 'MoTuWe' startTime = '8:20|9:30|8:20', you have to get the valid time according to the date. if it is 'Tu', the time will be '9:30'
+                                                        if i == dayNum { // i: the number of the time in the varible 'startTime'; dayNum: the number of the weekday in the varible 'days'
+                                                            //print("will draw the \(i) time on \(dayNum) day")
+                                                            if startAngle > endAngle {
+                                                                dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: endAngle  , endAngle: startAngle)})
+                                                            }else {
+                                                                dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: startAngle  , endAngle: endAngle)})
+                                                            }
+                                                        }
+                                                        i++
+                                                    }
+                                                    //print("after loop, classTime is \(startTime), \(endTime!)")
+                                                    let startAngle = self.timeToAngle(startTime)
+                                                    let endAngle = self.timeToAngle(endTime!)
+                                                    if i == dayNum {
                                                         if startAngle > endAngle {
                                                             dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: endAngle  , endAngle: startAngle)})
                                                         }else {
                                                             dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: startAngle  , endAngle: endAngle)})
                                                         }
-                                                        i++
-                                                    }
-                                                    print("after loop, classTime is \(startTime), \(endTime!)")
-                                                    let startAngle = self.timeToAngle(startTime)
-                                                    let endAngle = self.timeToAngle(endTime!)
-                                                    if startAngle > endAngle {
-                                                        dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: endAngle  , endAngle: startAngle)})
-                                                    }else {
-                                                        dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: startAngle  , endAngle: endAngle)})
                                                     }
                                                 }
                                             }
@@ -358,23 +369,27 @@ class SMClockWheel: UIControl {
             let moveIdx = advance(scope.startIndex, sepIdx + 1)
             let start = scope.substringToIndex(locationIdx)
             let end = scope.substringFromIndex(moveIdx)
-            print("classTime is \(start), \(end)")
+            //print("to check if \(day) are in \(scope)")
+            //print("classTime is \(start), \(end)")
             
-            if dayCompare(day, stringDate: start) == true && dayCompare(day, stringDate: end) == false {
+            if dayLess(day, stringDate: start) == true && dayGreater(day, stringDate: end) == true {
+                //print("the result is YES")
                 return true
             }else {
+                //print("the result is NO")
                 return false
             }
         }
         else {
+            //print("the result is NO")
             return false
         }
     }
     
-    func dayCompare(day: NSDate, stringDate: String) -> Bool {
+    func dayLess(day: NSDate, stringDate: String) -> Bool {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd"
-        if let date = dateFormatter.dateFromString(stringDate) {
+        dateFormatter.dateFormat = "yyyy/MM/ddH"
+        if let date = dateFormatter.dateFromString(stringDate + "0") {
             if day.compare(date) == NSComparisonResult.OrderedAscending {
                 return false
             }else {
@@ -384,13 +399,27 @@ class SMClockWheel: UIControl {
         return false
     }
     
+    //if the user use this function after 23:00, there will be a little bug here. but who cares?
+    func dayGreater(day: NSDate, stringDate: String) -> Bool {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/ddHH"
+        if let date = dateFormatter.dateFromString(stringDate + "23") {
+            if day.compare(date) == NSComparisonResult.OrderedDescending {
+                return false
+            }else {
+                return true
+            }
+        }
+        return false
+    }
+    
     func timeToAngle(time: String) -> CGFloat {
-        print("time = \(time)")
+        //print("time = \(time)")
         var alpha : CGFloat = 0
         if time == "TBD" {
             return 0
         }
-        print("numberOfSections = \(numberOfSections)")
+        //print("numberOfSections = \(numberOfSections)")
         
         let unitSection = 2 * π / CGFloat(numberOfSections)
         let timeFloat = stringTimeToFloat(time)
@@ -407,7 +436,7 @@ class SMClockWheel: UIControl {
     
     // convert string of time like '8:30' to float as '8.5'
     func stringTimeToFloat(time: String) -> Float {
-        print("time = \(time)")
+        //print("time = \(time)")
         
         if let sep = time.rangeOfString(":")
         {
@@ -439,7 +468,7 @@ class SMClockWheel: UIControl {
     */
     func drawRect(rect: CGRect, startAngle:CGFloat, endAngle:CGFloat) {
     
-        print("to draw a schedule section in red? \(color)")
+        //print("to draw a schedule section in red? \(color)")
         //print("startAngle = \(startAngle), endAngle = \(endAngle)")
         let center = CGPoint(x:rect.width/2, y: self.bounds.height/2)
         //print("center:\(center)")

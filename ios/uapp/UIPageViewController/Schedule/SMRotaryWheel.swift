@@ -1,6 +1,6 @@
 //
 //  SMRotaryWheel.swift
-//
+//  display the weekday and date on the outer wheel.
 //
 //  Created by zhaofei on 2015-09-21.
 //
@@ -265,21 +265,41 @@ class SMRotaryWheel: UIControl {
         // to check which label is on the current sector
         let labels = getLabelsInView()
         
-        if currentSector == 0 {
-            self.delegate?.wheelDidChangeValue(rotateCounter)
-        }else {
-            var indicator = 0
-            for _ in labels {
-                if indicator == abs(currentSector - 9) {
-                    self.delegate?.wheelDidChangeValue(rotateCounter)
-                    break
-                }
-                indicator++
-            }
+        var indicator = 0
+        
+        for label in labels {
+            label.textColor = UIColor.whiteColor()
         }
         
-        rotateDirection = 0 // set the rotating direction to initial value when rotating ends.
+        // set the text on the choosed lable to be purple
+        for label in labels {
+            
+            //print("currentSector is \(currentSector), lable is \(label.text),  \(indicator)")
+            if currentSector == 0 {
+                if indicator == 1 {
+                    label.textColor = UIColor.purpleColor()
+                    break
+                }
+                if indicator == 0 {
+                    label.textColor = UIColor.purpleColor()
+                }
+            }
+            
+            if indicator == abs(currentSector - 9) * 2 { //weekday label
+                    label.textColor = UIColor.purpleColor()
+            }
+            
+            if indicator == abs(currentSector - 9) * 2 + 1 { // date label
+                    label.textColor = UIColor.purpleColor()
+                    break
+            }
+            indicator++
+        }
+        
+        self.delegate?.wheelDidChangeValue(rotateCounter)
+        rotateDirection = 0 // set the rotating direction to initial value when rotation ends.
     }
+    
     
     func getLabelsInView() -> [UILabel] {
         var results = [UILabel]()
@@ -306,6 +326,7 @@ class SMRotaryWheel: UIControl {
     func btnTouched(){
         return
     }
+    
     
     private func drawWheel() -> Void {
         container = UIView(frame: self.frame)
@@ -404,6 +425,7 @@ class SMRotaryWheel: UIControl {
         self.delegate?.wheelDidChangeValue(0)
     }
     
+    
     private func getSectorByValue(value: Int) -> UIImageView{
         var res = UIImageView()
         let views = [container?.subviews]
@@ -416,6 +438,7 @@ class SMRotaryWheel: UIControl {
         }
         return res
     }
+    
     
     func buildSectorsOdd() -> Void {
         // 1 - Define sector length
@@ -444,6 +467,7 @@ class SMRotaryWheel: UIControl {
             sectors.append(sector)
         }
     }
+    
     
     func buildSectorsEven() -> Void {
         // 1 - Define sector length
@@ -474,6 +498,7 @@ class SMRotaryWheel: UIControl {
         }
     }
     
+    
     private func convertWeekday(number: Int) -> String{
         switch number{
         case 0:
@@ -494,6 +519,7 @@ class SMRotaryWheel: UIControl {
             return "SUN"
         }
     }
+    
     
     private func convertWeekday(weekday: String) -> Int {
         switch weekday {
@@ -517,6 +543,7 @@ class SMRotaryWheel: UIControl {
         }
     }
 }
+
 
 extension NSDate {
     var month: String {
