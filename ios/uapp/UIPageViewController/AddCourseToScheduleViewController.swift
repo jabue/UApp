@@ -33,10 +33,12 @@ class AddCourseToScheduleViewController: UIViewController {
     var course:JSON = []
     
     override func viewDidLoad() {
+        
+        print("AddCourseToScheduleViewController loading...")
         self.title = course["course_nbr"].string
         //self.navigationItem.backBarButtonItem?.title = "BACd" // gosh, it won't work.
         self.navigationItem.hidesBackButton = true
-        let backButton = UIBarButtonItem(title: "< Back", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("myCustomBack"))
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("myCustomBack"))
         self.navigationItem.leftBarButtonItem = backButton
         
         
@@ -57,10 +59,10 @@ class AddCourseToScheduleViewController: UIViewController {
         
         var days = course["days"].string
         var room = course["room"].string
-        print("days: \(days) location: \(room)")
+        print("days: \(days) \(days?.characters.count) location: \(room)")
         
         for var idx = 0; ; ++idx {
-            if days?.characters.count != 0 && days != "TBD" {
+            if days?.characters.count != 0 && days != nil && days != "TBD" {
                 let startIndex = advance(days!.startIndex, 2)
                 let day = days!.substringToIndex(startIndex)
                 days = days!.substringFromIndex(startIndex)
@@ -129,14 +131,6 @@ class AddCourseToScheduleViewController: UIViewController {
                 break
             }
         }
-            
-            
-            
-        
-        
-        
-
-        
     }
     
     
@@ -155,7 +149,7 @@ class AddCourseToScheduleViewController: UIViewController {
         let Lambda = AWSLambda.defaultLambda()
         let request = AWSLambdaInvocationRequest()
         
-        request.functionName = LamdaAddCourseToSchedule
+        request.functionName = LambdaAddCourseToSchedule
         
         let days = course["days"].string
         let end_time = course["end_time"].string

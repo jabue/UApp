@@ -12,6 +12,6 @@ import UIKit
 protocol SMRotaryProtocol {
     
     // protocol definition goes here
-    func wheelDidChangeValue(newValue: String ) -> Void
+    func wheelDidChangeValue(newValue: Int) -> Void
 }
 

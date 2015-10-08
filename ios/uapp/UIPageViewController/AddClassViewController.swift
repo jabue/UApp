@@ -51,8 +51,6 @@ class AddClassViewController: UITableViewController, UISearchBarDelegate {
                         if let course_nbr = item["course_nbr"].string {
                             self.data += [course_nbr + " " + item["title"].string!]
                             self.course += [item]
-                            
-                            
                         }
                     }
                     dispatch_async(dispatch_get_main_queue(),{self.tableView.reloadData()}) // load course data to the table on the main thread
@@ -68,8 +66,6 @@ class AddClassViewController: UITableViewController, UISearchBarDelegate {
     @IBAction func backBarPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true;
@@ -135,20 +131,17 @@ class AddClassViewController: UITableViewController, UISearchBarDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "addCourse_segue" {
-            
             if let indexPath = tableView.indexPathForSelectedRow {
+                
                 // get what you need from the cell or the DataSource object
                 let controller = segue.destinationViewController as! AddCourseToScheduleViewController
                 controller.course = course[indexPath.row]
                 //print("select row: \(indexPath.row)")
                 
             }
-            
-            
-            
-            
         }
     }
+
 }
 
 

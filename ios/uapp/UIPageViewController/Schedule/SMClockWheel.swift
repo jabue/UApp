@@ -8,13 +8,14 @@
 
 import UIKit
 import QuartzCore
+import CoreGraphics
 
 
 class SMClockWheel: UIControl {
     
     var delegate: SMRotaryProtocol?
     var container: UIView?
-    var numberOfSections: Int  = 7
+    var numberOfSections: Int  = 0
     var startTransform: CGAffineTransform = CGAffineTransformMake(1.0, 0.0, 0.0, -1.0, 0.0, 200.0)
     var deltaAngle : Float
     var sectors = [SMSector]()
@@ -23,6 +24,21 @@ class SMClockWheel: UIControl {
     let maxAlphavalue: CGFloat = 1.0
     var rotateDirection = 0
     var rotateCounter = 0
+    var scheduleItems = [JSON]?()
+    var color = true
+    
+    // when user rotates the date wheel, we need to draw the schedule chart of the day user choosed.
+    var rotateDaysCounter: Int = 0 {
+        didSet {
+            for subview in (container?.subviews)! {
+                if let imageView = subview as? UIImageView {
+                    imageView.removeFromSuperview()
+                }
+            }
+
+            drawSchedule(rotateDaysCounter) //rotateDaysCounter: how many days the user rotated?
+        }
+    }
     
     var currentSector = 0 // the sector that is choosed by user to show the schedule
     init(frame: CGRect, del:ScheduleViewController, sectionsNum: Int) {
@@ -33,10 +49,7 @@ class SMClockWheel: UIControl {
         self.deltaAngle = 0
         super.init(frame: frame)
         self.drawWheel()
-        
-        // 4 - Timer for rotating wheel
-        // NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "rotate", userInfo: nil, repeats: true)
-        
+        self.opaque = false
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,8 +78,6 @@ class SMClockWheel: UIControl {
         
         return true
     }
-    
-    
     
     override func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         
@@ -127,30 +138,7 @@ class SMClockWheel: UIControl {
             let t: CGAffineTransform = CGAffineTransformRotate(self.container!.transform, CGFloat(-newVal))
             self.container!.transform = t
         }
-        
-        // to check which label is on the current sector
-        let labels = getLabelsInView()
-        
-        if currentSector == 0 {
-            //self.delegate?.wheelDidChangeValue(String("\(labels[0].text!) is selected"))
-        }else {
-                    }
-        
-        
     }
-    
-    func getLabelsInView() -> [UILabel] {
-        var results = [UILabel]()
-        for subview in (container?.subviews)! {
-            if let labelView = subview as? UILabel {
-                results += [labelView]
-            } else {
-                results += getLabelsInView()
-            }
-        }
-        return results
-    }
-    
     
     private func calculateDistanceFromCenter(point: CGPoint) -> Float{
         let center: CGPoint = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2)
@@ -160,20 +148,12 @@ class SMClockWheel: UIControl {
         return Float(sqrt(dx*dx + dy*dy))
     }
     
-    
-    func btnTouched(){
-        return
-    }
-    
-    
     private func drawWheel() -> Void {
         container = UIView(frame: self.frame)
         print("clock frame : \(container?.frame)")
         
         let angleSize:CGFloat = CGFloat(2 * M_PI) / CGFloat(numberOfSections)
         let outerRidus:CGFloat = (container?.frame.width)! / 2 // outer ring for weekday
-        
-       
         
         // Create the sectors
         for var i = 0; i < numberOfSections; ++i {
@@ -196,7 +176,6 @@ class SMClockWheel: UIControl {
             }
             
             ilabel.textAlignment = .Center
-            
             ilabel.font = ilabel.font.fontWithSize(12)
             
             ilabel.layer.anchorPoint = CGPointMake(0.5, 0.5)
@@ -207,43 +186,46 @@ class SMClockWheel: UIControl {
             t = CGAffineTransformRotate(t, CGFloat(M_PI / 2.0) - angleSize * CGFloat(i) + CGFloat(M_PI) )
             
             ilabel.transform = t
-            
             ilabel.tag = i
             container?.addSubview(ilabel)
-            
-            // 5- Set sector image
-            /*let sectorImage = UIImageView(frame: CGRectMake(12, 15, 40, 40))
-            sectorImage.image = UIImage(named: String(format: "icon%i.png", i))
-            im.addSubview(sectorImage)
-            container?.addSubview(im)*/
         }
         
         container?.userInteractionEnabled = false
         self.addSubview(container!)
         
-        //let mask = UIImageView(frame: CGRectMake(72, 175, 58, 58))
-        // mask.image = UIImage(named: "centerButton.png")
-        // self.addSubview(mask)
-        
         // 8 - Initialize sectors
-        
         if numberOfSections % 2 == 0{
             self.buildSectorsEven()
-        }else
-        {
+        }else {
             self.buildSectorsOdd()
         }
-        
+        drawSchedule(0)
     }
     
     // draw and display schedule on the selected day.
-    func drawSchedule(day: String) -> Void {
+    // day: indicating how many days between today and the day need to display schedule.
+    func drawSchedule(day: Int) -> Void {
         let cm = CommonFunc()
         let Lambda = AWSLambda.defaultLambda()
         let request = AWSLambdaInvocationRequest()
         
-        request.functionName = LambdaGetCourseList
-        request.payload = "{\"school\": \"\(cm.getSchool())\"}"
+        let newDate = NSDate()
+        let dateMonth  = newDate.month      // "Jun"
+        let date   = newDate.date     // "07"
+        
+        let dayToDraw = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: day, toDate: newDate, options: [])
+        print("-------------")
+        print("\(dateMonth)-\(date)")
+        print(dayToDraw?.month)
+        print(dayToDraw?.date)
+        let formatter  = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let weekdayToDraw = cm.getDayOfWeek(formatter.stringFromDate(dayToDraw!))
+        print("to draw: \(weekdayToAbbreviation(weekdayToDraw))")
+        print("-------------")
+        
+        request.functionName = LambdaGetUserSchedule
+        request.payload = "{\"user_id\": \"\(cm.getEmail())\",\"school\":\"\(cm.getSchool())\"}"
        
         Lambda.invoke(request)
             .continueWithBlock({(task) -> AnyObject! in
@@ -255,22 +237,260 @@ class SMClockWheel: UIControl {
                 }
                 else {
                     let json = JSON(task.result.payload)
+                    print(json)
                     
                     for (_, item):(String, JSON) in json["Items"] {
                         //print("itme is \(item)")
                         if let course_nbr = item["course_nbr"].string {
-                            self.data += [course_nbr + " " + item["title"].string!]
-                            self.course += [item]
-                            
-                            
+                            print("course is \(course_nbr)")
+                            print(item["days"].string)
+                            print(item["start_time"].string)
+                            print(item["end_time"].string)
+                            if var days = item["days"].string {
+                                print("days = \(days)")
+                                if days != "TBD" {
+                                    var dayNum = 0
+                                    while days.characters.count > 1 {
+                                        let locationIdx = advance(days.startIndex, 2)
+                                        let theDay = days.substringToIndex(locationIdx) // the day when there is a class
+                                        
+                                        if let meeting_dates = item["meeting_dates"].string {
+                                            if self.dayInScope(dayToDraw!, scope: meeting_dates) == false // if the day is not in the scope, then skip this course, check another one.
+                                            {
+                                                print("day not in the scope. skip this course.")
+                                                break
+                                            }
+                                        }else {
+                                            print("no meeting_dates exists. skip this course.")
+                                            break
+                                        }
+                                        
+                                        if self.weekdayToAbbreviation(weekdayToDraw) == theDay {
+                                            print("will draw on the day: \(theDay), course: \(course_nbr), red? \(self.color)")
+                                            if var startTime = item["start_time"].string {
+                                                if startTime.rangeOfString("|") == nil {
+                                                    let startAngle = self.timeToAngle(startTime)
+                                                    let endAngle = self.timeToAngle(item["end_time"].string!)
+                                                    if startAngle > endAngle {
+                                                        dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: endAngle  , endAngle: startAngle)})
+                                                    }else {
+                                                        dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: startAngle  , endAngle: endAngle)})
+                                                    }
+                                                }
+                                                else{
+                                                    var i = 0
+                                                    var endTime = item["end_time"].string
+                                                    while let range = startTime.rangeOfString("|") {
+                                                        
+                                                        let timeIdx = distance(startTime.startIndex, range.startIndex)
+                                                        let locationIdx = advance(startTime.startIndex, timeIdx )
+                                                        let moveIdx = advance(startTime.startIndex, timeIdx + 1)
+                                                        let classStartTime = startTime.substringToIndex(locationIdx)
+                                                        let classEndTime = endTime!.substringToIndex(locationIdx)
+                                                        print("classTime is \(classStartTime), \(classEndTime)")
+                                                        startTime = startTime.substringFromIndex(moveIdx)
+                                                        endTime = endTime!.substringFromIndex(moveIdx)
+                                                        let startAngle = self.timeToAngle(startTime)
+                                                        let endAngle = self.timeToAngle(endTime!)
+                                                        if startAngle > endAngle {
+                                                            dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: endAngle  , endAngle: startAngle)})
+                                                        }else {
+                                                            dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: startAngle  , endAngle: endAngle)})
+                                                        }
+                                                        i++
+                                                    }
+                                                    print("after loop, classTime is \(startTime), \(endTime!)")
+                                                    let startAngle = self.timeToAngle(startTime)
+                                                    let endAngle = self.timeToAngle(endTime!)
+                                                    if startAngle > endAngle {
+                                                        dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: endAngle  , endAngle: startAngle)})
+                                                    }else {
+                                                        dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: startAngle  , endAngle: endAngle)})
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        ++dayNum
+                                        days = days.substringFromIndex(locationIdx)
+                                    }
+                                }
+                            }
                         }
                     }
-                    dispatch_async(dispatch_get_main_queue(),{self.tableView.reloadData()}) // load course data to the table on the main thread
                 }
                 return nil
             })
-
+        
     }
+    
+    // to convert
+    func weekdayToAbbreviation(weekday: Int) -> String {
+        switch weekday {
+        case 1:
+            return "Su"
+        case 2:
+            return "Mo"
+        case 3:
+            return "Tu"
+        case 4:
+            return "We"
+        case 5:
+            return "Th"
+        case 6:
+            return "Fr"
+        case 7:
+            return "Sa"
+        default:
+            return "NO"
+        }
+    }
+    
+    /* to check if the day in that scope
+    *  scope: "2015/09/08 - 2015/12/07"
+    *  date: 2015-9-24
+    *  return: True
+    */
+    func dayInScope(day: NSDate, scope: String) -> Bool {
+        if let range = scope.rangeOfString("-") { // find the seporating character first.
+            
+            let sepIdx = distance(scope.startIndex, range.startIndex)
+            let locationIdx = advance(scope.startIndex, sepIdx )
+            let moveIdx = advance(scope.startIndex, sepIdx + 1)
+            let start = scope.substringToIndex(locationIdx)
+            let end = scope.substringFromIndex(moveIdx)
+            print("classTime is \(start), \(end)")
+            
+            if dayCompare(day, stringDate: start) == true && dayCompare(day, stringDate: end) == false {
+                return true
+            }else {
+                return false
+            }
+        }
+        else {
+            return false
+        }
+    }
+    
+    func dayCompare(day: NSDate, stringDate: String) -> Bool {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        if let date = dateFormatter.dateFromString(stringDate) {
+            if day.compare(date) == NSComparisonResult.OrderedAscending {
+                return false
+            }else {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func timeToAngle(time: String) -> CGFloat {
+        print("time = \(time)")
+        var alpha : CGFloat = 0
+        if time == "TBD" {
+            return 0
+        }
+        print("numberOfSections = \(numberOfSections)")
+        
+        let unitSection = 2 * π / CGFloat(numberOfSections)
+        let timeFloat = stringTimeToFloat(time)
+        print(timeFloat)
+        
+        if timeFloat >= 12 {
+            alpha = π - unitSection * CGFloat(timeFloat - 12)
+        }
+        else {
+            alpha = π + unitSection * CGFloat(12 - timeFloat)
+        }
+        return alpha
+    }
+    
+    // convert string of time like '8:30' to float as '8.5'
+    func stringTimeToFloat(time: String) -> Float {
+        print("time = \(time)")
+        
+        if let sep = time.rangeOfString(":")
+        {
+            let index: Int = distance(time.startIndex, sep.startIndex)
+            var locationIdx = advance(time.startIndex, index)
+            
+            let hour = time.substringToIndex(locationIdx)
+            //print("hour= \(hour)")
+            
+            locationIdx = advance(time.startIndex, index + 1)
+            let minute = time.substringFromIndex(locationIdx)
+            //print("minute = \(minute)")
+            
+            let hourFloat = Float(hour)
+            let minuteFloat = Float(minute)
+            
+            return hourFloat! + minuteFloat! / 60
+        }
+        else {
+            return 0
+        }
+    }
+    
+    /*
+        Draw the course time section on the time wheel.
+        endAngle must greater than startAngle.
+        color: true- draw in red; false- draw in blue
+    
+    */
+    func drawRect(rect: CGRect, startAngle:CGFloat, endAngle:CGFloat) {
+    
+        print("to draw a schedule section in red? \(color)")
+        //print("startAngle = \(startAngle), endAngle = \(endAngle)")
+        let center = CGPoint(x:rect.width/2, y: self.bounds.height/2)
+        //print("center:\(center)")
+        
+        let radius: CGFloat = max(self.bounds.width, self.bounds.height) / 2
+        //print("radius: \(radius)")
+        //print("createing image")
+        var imageView : UIImageView
+        imageView = UIImageView(frame:CGRectMake(0, 0, rect.width, rect.height))
+        imageView.contentMode = .ScaleAspectFit
+        
+        container!.addSubview(imageView)
+        
+        let size = CGSizeMake(rect.width, rect.height)
+        UIGraphicsBeginImageContext(size)
+        
+        let context = UIGraphicsGetCurrentContext()
+        
+        // draw the outer arc
+        let outlinePath = UIBezierPath(arcCenter: center,
+            radius: radius - 10,
+            startAngle: startAngle,
+            endAngle: endAngle,
+            clockwise: true)
+        
+        //draw the inner arc
+        outlinePath.addArcWithCenter(center,
+            radius: 18.5,
+            startAngle: endAngle,
+            endAngle: startAngle,
+            clockwise: false)
+        
+        outlinePath.closePath()
+        
+        if color == true {
+            UIColor.redColor().setFill()
+        }else {
+            UIColor.blueColor().setFill()
+        }
+        outlinePath.fill()
+        
+        CGContextAddPath(context, outlinePath.CGPath)
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        imageView.image = result
+        imageView.setNeedsDisplay()
+        
+        color = !color //change color before draw another section
+    }
+    
     
     private func getSectorByValue(value: Int) -> UIImageView{
         var res = UIImageView()
@@ -285,13 +505,6 @@ class SMClockWheel: UIControl {
         }
         return res
     }
-    
-    
-    
-    /*func rotate() -> Void {
-    let t: CGAffineTransform = CGAffineTransformRotate(container!.transform, -0.78)
-    container!.transform = t
-    }*/
     
     func buildSectorsOdd() -> Void {
         // 1 - Define sector length
@@ -354,12 +567,6 @@ class SMClockWheel: UIControl {
             
         }
     }
-    
-       
-    
-    
-    
-    
     
 }
 
