@@ -18,20 +18,9 @@ exports.handler = function(event, context) {
     }
     console.log("to query table: " + pa)
         
-    var params = {
-    TableName: pa,
-    ProjectionExpression: "#day, title, course_nbr",
-    FilterExpression: "#day <> :filterCondition",
-    ExpressionAttributeNames: {
-        "#day": "days",
-    },
-    ExpressionAttributeValues: {
-         ":filterCondition": "TBD" 
-    }
-};
-
     db.scan({
-        params
+        TableName : pa,
+        Limit : 50
     }, function(err, data) {
         if (err){
             console.log("get item err." + err);

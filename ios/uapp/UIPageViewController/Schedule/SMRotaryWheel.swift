@@ -1,6 +1,6 @@
 //
 //  SMRotaryWheel.swift
-//
+//  display the weekday and date on the outer wheel.
 //
 //  Created by zhaofei on 2015-09-21.
 //
@@ -9,9 +9,7 @@
 import UIKit
 import QuartzCore
 
-
 class SMRotaryWheel: UIControl {
-    
     
     var delegate: SMRotaryProtocol?
     var container: UIView?
@@ -24,23 +22,15 @@ class SMRotaryWheel: UIControl {
     let maxAlphavalue: CGFloat = 1.0
     var rotateDirection = 0
     var rotateCounter = 0
-    
     var currentSector = 0 // the sector that is choosed by user to show the schedule
     
-    
-    
     init(frame: CGRect, del:ScheduleViewController, sectionsNum: Int) {
-        
         self.numberOfSections = sectionsNum
         delegate = del
         self.container = del.view
         self.deltaAngle = 0
         super.init(frame: frame)
         self.drawWheel()
-        
-        // 4 - Timer for rotating wheel
-        // NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "rotate", userInfo: nil, repeats: true)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -74,11 +64,10 @@ class SMRotaryWheel: UIControl {
         return true
     }
     
-    
     func setWeekdayBySector(sector: Int, weekday: String) -> String {
         let labels = getLabelsInView()
         var indicator = 0
-        print("to set sector \(sector) to \(weekday)")
+        //print("to set sector \(sector) to \(weekday)")
         if sector == 0 {
             labels[0].text = weekday
         }else {
@@ -91,13 +80,12 @@ class SMRotaryWheel: UIControl {
             }
         }
         return labels[indicator].text!
-        
     }
     
     func setDateBySector(sector: Int, date: NSDate) -> String {
         let labels = getLabelsInView()
         var indicator = 0
-        print("to set sector \(sector) to \(date)")
+        //print("to set sector \(sector) to \(date)")
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MMM dd"
@@ -126,7 +114,7 @@ class SMRotaryWheel: UIControl {
         }else {
             var indicator = 0
             for label in labels {
-                print("lable \(indicator) = \(label.text!)")
+                //print("lable \(indicator) = \(label.text!)")
                 if indicator == 1 + abs(sector - 9) * 2  {
                     labelText = label.text!
                 }
@@ -148,7 +136,7 @@ class SMRotaryWheel: UIControl {
         }else {
             var indicator = 0
             for label in labels {
-                print("lable \(indicator) = \(label.text!)")
+                //print("lable \(indicator) = \(label.text!)")
                 if indicator == abs(sector - 9) * 2 {
                     return label.text!
                 }
@@ -169,7 +157,6 @@ class SMRotaryWheel: UIControl {
         if (dist < 40 || dist > 250)
         {
             // forcing a tap to be on the ferrule
-            print("ignoring tap (%f,%f)", touchPoint.x, touchPoint.y);
             return false
         }
         
@@ -182,37 +169,24 @@ class SMRotaryWheel: UIControl {
         container?.transform = CGAffineTransformRotate(startTransform, -angleDifference)
         
         let radians = atan2f(Float((container?.transform.b)!), Float((container?.transform.a)!))
-        for s in sectors{
-            if (radians > s.minValue && radians < s.maxValue) {
-                //print("last Sector = \(currentSector), now is \(s.sector)")
-                
+        
+        for s in sectors {
+            if radians > s.minValue && radians < s.maxValue {
                 if currentSector < s.sector {
-                    if s.sector == 8  && currentSector == 0{
-                        //if rotateDirection > 0 {
-                        //print("rotete direction change to clockwise")
-                        //}
+                    if s.sector == 8  && currentSector == 0 {
                         rotateDirection = -1 // clockwise
                         rotateCounter++
                     }else{
-                        //if rotateDirection < 0 {
-                        // print("rotete direction change to counter-clockwise")
-                        //}
                         rotateDirection = 1 // counterclockwise
                         rotateCounter--
                     }
                 }
                 else if currentSector > s.sector{
                     if currentSector == 8 && s.sector == 0{
-                        //if rotateDirection < 0 {
-                        //print("rotete direction change to counter-clockwise")
-                        //}
                         rotateDirection = 1 //counter-clockwise
                         rotateCounter--
                     }else
                     {
-                        //if rotateDirection > 0 {
-                        //print("rotete direction change to clockwise")
-                        //}
                         rotateDirection = -1 // clockwise
                         rotateCounter++
                     }
@@ -222,7 +196,7 @@ class SMRotaryWheel: UIControl {
         }
         
         // if the rotation angle is less than an sector, judge the rotation direction by its angle.
-        if rotateDirection == 0{
+        if rotateDirection == 0 {
             if angleDifference < 0 {
                 //print("rotate Direction is setted to clockwise")
                 rotateDirection = -1 // clockwise
@@ -233,13 +207,11 @@ class SMRotaryWheel: UIControl {
             
         }
         // set the 2 invisible sector's label
-        
         let labelTextOnCurrentSector = getWeekdayBytSector(currentSector)
         
         //set the lower label as it will appear clockwise
         let labelLower = ((convertWeekday(labelTextOnCurrentSector) + 4) < 7) ? convertWeekday(convertWeekday(labelTextOnCurrentSector) + 4) : convertWeekday(convertWeekday(labelTextOnCurrentSector) - 3)
         let dateOnCurrentSector = getDateBySector(currentSector)
-        
         let dateOnLower = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: 4, toDate: dateOnCurrentSector, options: [])!
         
         // set the upper label as it will appear counter-clockwise
@@ -293,24 +265,41 @@ class SMRotaryWheel: UIControl {
         // to check which label is on the current sector
         let labels = getLabelsInView()
         
-        if currentSector == 0 {
-            self.delegate?.wheelDidChangeValue(String("\(labels[0].text!) is selected"))
-        }else {
-            var indicator = 0
-            for label in labels {
-                if indicator == abs(currentSector - 9)  {
-                    self.delegate?.wheelDidChangeValue(String("\(label.text!) is selected"))
-                    break
-                }
-                indicator++
-            }
+        var indicator = 0
+        
+        for label in labels {
+            label.textColor = UIColor.whiteColor()
         }
         
-        let im = self.getSectorByValue(currentSector)
-        im.alpha = maxAlphavalue
+        // set the text on the choosed lable to be purple
+        for label in labels {
+            
+            //print("currentSector is \(currentSector), lable is \(label.text),  \(indicator)")
+            if currentSector == 0 {
+                if indicator == 1 {
+                    label.textColor = UIColor.purpleColor()
+                    break
+                }
+                if indicator == 0 {
+                    label.textColor = UIColor.purpleColor()
+                }
+            }
+            
+            if indicator == abs(currentSector - 9) * 2 { //weekday label
+                    label.textColor = UIColor.purpleColor()
+            }
+            
+            if indicator == abs(currentSector - 9) * 2 + 1 { // date label
+                    label.textColor = UIColor.purpleColor()
+                    break
+            }
+            indicator++
+        }
         
-        rotateDirection = 0 // set the rotating direction to initial value when rotating ends.
+        self.delegate?.wheelDidChangeValue(rotateCounter)
+        rotateDirection = 0 // set the rotating direction to initial value when rotation ends.
     }
+    
     
     func getLabelsInView() -> [UILabel] {
         var results = [UILabel]()
@@ -341,78 +330,48 @@ class SMRotaryWheel: UIControl {
     
     private func drawWheel() -> Void {
         container = UIView(frame: self.frame)
-        print("frame : \(container?.frame)")
+        //print("frame : \(container?.frame)")
         
         let angleSize:CGFloat = CGFloat(2 * M_PI) / CGFloat(numberOfSections)
         let outerRidus:CGFloat = (container?.frame.width)! * 0.82 / 2 // outer ring for weekday
-        let innerRidus = 70.0  // inner ring for hours
         
         let calendar:NSCalendar = NSCalendar.currentCalendar()
         let dateComps:NSDateComponents = calendar.components(.Weekday , fromDate: NSDate())
         let todayWeekday:Int = dateComps.weekday
         
         let newDate = NSDate()
-        let dateMonth  = newDate.month      // "Jun"
-        let date   = newDate.date     // "07"
-        
-        let twoDaysLater = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: 2, toDate: newDate, options: [])
-        
-        print("\(dateMonth)-\(date)")
-        print(twoDaysLater?.month)
-        print(twoDaysLater?.date)
-        
         let bg = UIImageView(frame: self.frame)
-        bg.image = UIImage(named: "wheel2.png")
+        
+        bg.image = UIImage(named: "wheel2.png") // set the backgroud image for wheel
         self.addSubview(bg)
-        
-        
-        
         
         // Create the sectors
         for var i = 0; i < numberOfSections; ++i {
             
-            // Create image view
-            let im = UIImageView()
-            im.image = UIImage(named: "segment.png")
-            
-            im.layer.anchorPoint = CGPointMake(1.0, 0.5)
-            im.layer.position = CGPointMake((container?.bounds.size.width)!/2, (container?.bounds.size.height)!/2)
-            im.transform = CGAffineTransformMakeRotation(angleSize * CGFloat(i))
-            im.alpha = minAlphavalue
-            im.tag = i
-            
-            
-            if i == 0 {
-                im.alpha = maxAlphavalue
-            }
-            
-            self.addSubview(im)
-            
-            let ilabel = UILabel(frame: CGRectMake(0, 0, 50, 40))
-            let dateLabel = UILabel(frame: CGRectMake(0, 0, 50, 40))
+            let ilabel = UILabel(frame: CGRectMake(0, 0, 50, 40)) // labels to show weekday
+            let dateLabel = UILabel(frame: CGRectMake(0, 0, 50, 40)) // labels to show date
             ilabel.backgroundColor = UIColor.clearColor()
             dateLabel.backgroundColor = UIColor.clearColor()
             
             var rotateToDay = NSDate()
             
-            if i < 4 {
+            // there are 9 sections on the wheel.
+            if i < 4 { // set the lower semi-wheel
                 ilabel.text = convertWeekday(((i + todayWeekday - 1) < 7) ? (i + todayWeekday - 1): (i + todayWeekday - 8))
                 rotateToDay = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: i, toDate: newDate, options: [])!
                 
-            }else if i > 5{
-                
+            }else if i > 5 { // set the upper semi-wheel
                 ilabel.text = convertWeekday(((todayWeekday - 1 - numberOfSections + i) > 0) ? (todayWeekday - 1 - numberOfSections + i): (todayWeekday - 1 - numberOfSections + i + 7))
                 rotateToDay = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: i - 9, toDate: newDate, options: [])!
-            }else{
+            }else { // set the 2 invisible sections
                 ilabel.text = "tbd"
-                
             }
             
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "MMM dd"
             dateLabel.text = dateFormatter.stringFromDate(rotateToDay)
             
-            print("date: \(dateLabel.text)")
+            //print("date: \(dateLabel.text)")
             ilabel.textAlignment = .Center
             ilabel.textColor = UIColor.whiteColor()
             ilabel.font = ilabel.font.fontWithSize(12)
@@ -421,9 +380,7 @@ class SMRotaryWheel: UIControl {
             dateLabel.textColor = UIColor.whiteColor()
             dateLabel.font = dateLabel.font.fontWithSize(12)
             
-            
             if i == 0{ // highlight today on the wheel
-                //print("make today purple: \(i)")
                 ilabel.textColor = UIColor.purpleColor()
                 dateLabel.textColor = UIColor.purpleColor()
             }
@@ -451,32 +408,23 @@ class SMRotaryWheel: UIControl {
             
             dateLabel.tag = i
             container?.addSubview(dateLabel)
-            // 5- Set sector image
-            /*let sectorImage = UIImageView(frame: CGRectMake(12, 15, 40, 40))
-            sectorImage.image = UIImage(named: String(format: "icon%i.png", i))
-            im.addSubview(sectorImage)
-            container?.addSubview(im)*/
+            
         }
         
         container?.userInteractionEnabled = false
         self.addSubview(container!)
         
-        //let mask = UIImageView(frame: CGRectMake(72, 175, 58, 58))
-        // mask.image = UIImage(named: "centerButton.png")
-        // self.addSubview(mask)
-        
         // 8 - Initialize sectors
-        
         if numberOfSections % 2 == 0{
             self.buildSectorsEven()
-        }else
-        {
-            self.buildSectorsOdd()
+        } else {
+          self.buildSectorsOdd()
         }
         
         // 9- Call protocol method
-        self.delegate?.wheelDidChangeValue(String("\(convertWeekday(todayWeekday - 1)) is selected"))
+        self.delegate?.wheelDidChangeValue(0)
     }
+    
     
     private func getSectorByValue(value: Int) -> UIImageView{
         var res = UIImageView()
@@ -487,17 +435,10 @@ class SMRotaryWheel: UIControl {
                     res = imageView
                 }
             }
-            
         }
         return res
     }
     
-    
-    
-    /*func rotate() -> Void {
-    let t: CGAffineTransform = CGAffineTransformRotate(container!.transform, -0.78)
-    container!.transform = t
-    }*/
     
     func buildSectorsOdd() -> Void {
         // 1 - Define sector length
@@ -524,11 +465,9 @@ class SMRotaryWheel: UIControl {
             
             // 5 - Add sector to arry
             sectors.append(sector)
-            //print("sector minvalue=\(sector.minValue)")
-            //print("sector: \(sector.sector), mid:\(sector.midValue * 180 / Float(M_PI)))")
-            
         }
     }
+    
     
     func buildSectorsEven() -> Void {
         // 1 - Define sector length
@@ -556,10 +495,9 @@ class SMRotaryWheel: UIControl {
             
             // 5 - Add sector to arry
             sectors.append(sector)
-            
-            
         }
     }
+    
     
     private func convertWeekday(number: Int) -> String{
         switch number{
@@ -582,6 +520,7 @@ class SMRotaryWheel: UIControl {
         }
     }
     
+    
     private func convertWeekday(weekday: String) -> Int {
         switch weekday {
         case "SUN":
@@ -603,13 +542,8 @@ class SMRotaryWheel: UIControl {
             
         }
     }
-    
-    
-    
-    
-    
-    
 }
+
 
 extension NSDate {
     var month: String {
@@ -617,7 +551,6 @@ extension NSDate {
         dateFormatter.dateFormat = "MMM"
         return dateFormatter.stringFromDate(self)
     }
-    
     var date: String {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd"

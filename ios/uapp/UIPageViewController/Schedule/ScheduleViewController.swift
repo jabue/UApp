@@ -21,13 +21,14 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
     
     var valueLabel = UILabel()
     var delegate: SMRotaryProtocol?
+    var clockWheel: SMClockWheel?
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Schedule View loaded...")
-        
+        //print("sdk: \(AmazonSDKUtil.userAgentString)")
         setpage = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SetBarViewController") as! SetBarViewController
         
         self.view.addSubview(setpage.view!)
@@ -59,14 +60,19 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
         
         print("screen width=\(screenWidth), screen height=\(screenHeight)")
         
-        let wheelDiameter = 2 * screenWidth / CGFloat( 1 + cos(2 * M_PI / 9))
+        let wheelDiameter = 2 * screenWidth / CGFloat( 1 + cos(2 * π / 9))
         print("wheel diameter is \(wheelDiameter)")
         let wheel:SMRotaryWheel = SMRotaryWheel.init(frame: CGRectMake(0, 0, wheelDiameter, wheelDiameter), del: self, sectionsNum: 9)
         
-        wheel.center = CGPoint(x: 200,y: 320)
+        wheel.center = CGPoint(x: 200, y: 320)
         self.view.addSubview(wheel)
         
-        //let image = UIImage(named: "addButton.png") as UIImage?
+        let clockDiameter = wheelDiameter * 0.7
+        
+        clockWheel = SMClockWheel.init(frame: CGRectMake(0, 0, clockDiameter, clockDiameter), del: self, sectionsNum: 21)
+        clockWheel!.center = CGPoint(x: 200, y: 320)
+        self.view.addSubview(clockWheel!)
+        
         let add_btn = UIButton(type: UIButtonType.System) as UIButton
         
         add_btn.frame = CGRectMake(150, 270, 100, 100)
@@ -75,7 +81,7 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
         
     }
     
-    func btnTouched(sender:UIButton!){
+    func btnTouched(sender:UIButton!) {
         print("add class begin...")
         self.performSegueWithIdentifier("searchCourse_segue", sender: self)
     }
@@ -85,16 +91,14 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
         // Dispose of any resources that can be recreated.
     }
     
-    func wheelDidChangeValue(newValue:String) ->Void
+    func wheelDidChangeValue(newValue: Int) -> Void
     {
-        self.valueLabel.text = newValue
-        
-        //print("(self.valueLabel.text) is Choosed.")
+        self.valueLabel.text = String(newValue)
+        clockWheel?.rotateDaysCounter = newValue
+        print("DEBUG: \(newValue)")
     }
     
-    
-    
-    func handleSwipes(sender:UISwipeGestureRecognizer){
+    func handleSwipes(sender:UISwipeGestureRecognizer) {
         if (sender.direction == .Left && showsetbar == true){
             UIView.animateWithDuration(speedofsetbar , animations: {
                 self.subview.frame.origin.x = self.subview.frame.origin.x - self.setbarinfro
@@ -102,7 +106,6 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
                 
             })
             showsetbar = false
-            
         }
         if (sender.direction == .Right && showsetbar == false){
             UIView.animateWithDuration(speedofsetbar, animations: {
@@ -111,8 +114,6 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
                 
             })
             showsetbar = true
-            
-            
         }
     }
     

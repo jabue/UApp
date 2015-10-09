@@ -46,6 +46,26 @@ class CommonFunc {
         return result
     }
     
+    func unwrapString(str: String?) -> String {
+        if let s = str {
+            return s
+        }
+        else {
+            return ""
+        }
+    }
+    
+    func getDayOfWeek(today:String)->Int {
+        print("getDayofWeek for \(today)")
+        let formatter  = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let todayDate = formatter.dateFromString(today)!
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let myComponents = myCalendar.components(NSCalendarUnit.NSWeekdayCalendarUnit, fromDate: todayDate)
+        let weekDay = myComponents.weekday
+        return weekDay
+    }
+    
     
     
 }

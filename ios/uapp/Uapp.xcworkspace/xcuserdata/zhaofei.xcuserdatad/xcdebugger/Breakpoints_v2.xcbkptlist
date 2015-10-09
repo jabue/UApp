@@ -119,13 +119,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UIPageViewController/AddClassViewController.swift"
-            timestampString = "464919702.729004"
+            filePath = "UIPageViewController/Schedule/SMClockWheel.swift"
+            timestampString = "466029170.753407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            startingLineNumber = "519"
+            endingLineNumber = "519"
+            landmarkName = "drawRect(_:startAngle:endAngle:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -135,13 +135,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UIPageViewController/AddClassViewController.swift"
-            timestampString = "464920171.599514"
+            filePath = "UIPageViewController/Schedule/SMClockWheel.swift"
+            timestampString = "466029170.753407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            startingLineNumber = "429"
+            endingLineNumber = "429"
+            landmarkName = "timeToAngle(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
