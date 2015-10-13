@@ -1,0 +1,118 @@
+/*
+save a course to user's schedule.
+1. create a course table for the user if there is a course table for this user_id.
+2. put the course information into the table.
+
+author: rafy
+date: 2015-9-29
+*/
+
+var doc = require('dynamodb-doc');
+var db = new doc.DynamoDB();
+
+exports.handler = function(event, context) {
+    
+    console.log("user_id is: " + event.user_id);
+    
+    var table_name = event.user_id.replace(/[@]/, '___') + '_course';
+    var table = table_name.replace(/[\\.]/, '____')
+    console.log("table name: " + table);
+    
+    var checkTable = {TableName: table};
+    db.describeTable(checkTable, function(err, data) {
+        if (err) {
+            //console.log(JSON.stringify(err, null, 2));
+        
+            console.log("check table " + table + ': ' + err.statusCode)
+            if (err.statusCode == 400){ // the table does not exist, create a table for the user
+                var params = {TableName: table,
+                    "AttributeDefinitions": [
+                    {
+                        "AttributeName": "course_nbr",
+                        "AttributeType": "S"
+                    },
+                    {
+                        "AttributeName": "course_section",
+                        "AttributeType": "S"
+                    }
+                    ],
+                    "ProvisionedThroughput": {
+                        "ReadCapacityUnits": 1,
+                        "WriteCapacityUnits": 1
+                    },
+                    "KeySchema": [
+                    {
+                        "AttributeName": "course_nbr",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "course_section",
+                        "KeyType": "RANGE"
+                    }
+                    ]
+                }
+                console.log("to create table...");
+                db.createTable(params, function(err, data) {
+                    if (err) {
+                        console.log("create table failed.")
+                        console.log(JSON.stringify(err, null, 2));
+                        context.done('error', 'save course failed: ' + err)
+                    }
+                    else {
+                        console.log("create table sucessfully.")
+                    }
+                });
+            }
+            else {
+                console.log("create table failed.")
+                context.done('error','save course failed: ' + err);
+            }
+        }
+        db.describeTable(checkTable, function(err, data) {
+            if (err) {
+                console.log("describe table error");
+                console.log(JSON.stringify(err, null, 2));
+                context.done('error', 'table building, try later')
+            }
+            else {
+                console.log(data)
+                console.log("table status: " + data.Table.TableStatus)
+                if (data.Table.TableStatus == "ACTIVE") {
+                    console.info("table status is active, begin save data...");
+                    var saveParams = {
+                        Item: {
+                            "course_nbr":event.course_nbr,
+                            "course_section":event.course_section,
+                            "title":event.title,
+                            "days":event.days,
+                            "description": event.description,
+                            "end_time": event.end_time,
+                            "instructor":event.instructor,
+                            "room":event.room,
+                            "start_time":event.start_time,
+                            "meeting_dates":event.meeting_dates
+                        },
+                        TableName: table
+                    }
+                    db.putItem(saveParams,
+                     function(err, data) {
+                        if (err) {
+                            console.log("put item err." + err);
+                            context.done('error','putting item into dynamodb failed: '+err);
+                        }
+                        else {
+                            console.log('great success: '+JSON.stringify(data, null, '  '));
+                            context.succeed('save course successfully.');
+                        }
+                    });
+                }
+                else {
+                    console.log("table status is not suitable to save data now.");
+                    context.succeed('try later.');
+                }
+            }
+        });
+        
+    
+    });
+}
