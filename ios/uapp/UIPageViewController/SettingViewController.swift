@@ -19,6 +19,8 @@ class SettingViewController: UIViewController {
     var setbarinfro:CGFloat = SetBarSetting.sizeofsetbar
     var speedofsetbar = SetBarSetting.speedofsetbar
     
+    var settingsub:ViewControllerSetting!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("MessageView loaded...")
@@ -40,7 +42,19 @@ class SettingViewController: UIViewController {
         
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(rightSwipe)
+        /*
+        settingsub = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("settingstartpage") as! ViewControllerSetting
+        self.subview.addSubview(settingsub.view!)
+
+        var rootViewController = ViewControllerSetting()
+        var rootNavigationController = UINavigationController(rootViewController: rootViewController)
+        rootNavigationController.pushViewController(rootViewController, animated: false)
+        */
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var rootViewController = storyboard.instantiateViewControllerWithIdentifier("settingstartpage")
+        self.subview.addSubview(rootViewController.view!)
         
+        //rootViewController = rootNavigationController
         
     }
     

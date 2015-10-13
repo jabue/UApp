@@ -10,12 +10,13 @@ import UIKit
 
 class PinglunandHuifuViewController: UIViewController {
     
-    var tesst:String!
-    @IBOutlet var test: UILabel!
+    @IBOutlet var posttitle: UITextField!
+    
+    @IBOutlet var postinfor: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(tesst)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -24,5 +25,7 @@ class PinglunandHuifuViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func send(sender: AnyObject) {
+    }
     
 }

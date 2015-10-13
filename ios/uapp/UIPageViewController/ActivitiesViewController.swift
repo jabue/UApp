@@ -44,9 +44,9 @@ class ActivitiesViewController: UIViewController {
         //add sbv0
         sbv_0 = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Inside") as! Inside
         sbv_0.view.frame.size.width = bounds.size.width
-        sbv_0.view.frame.size.height = bounds.size.height*2/3
+        sbv_0.view.frame.size.height = bounds.size.height
         sbv_0.view.frame.origin.x=0
-        sbv_0.view.frame.origin.y=bounds.size.height*1/3
+        sbv_0.view.frame.origin.y=50
         self.view.addSubview(sbv_0.view!)
         
         //add sbv1

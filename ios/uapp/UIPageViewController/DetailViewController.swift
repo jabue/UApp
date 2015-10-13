@@ -41,6 +41,7 @@ class DetailViewController: UIViewController {
         
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(rightSwipe)
+        
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
