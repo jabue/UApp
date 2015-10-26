@@ -33,9 +33,11 @@ class SMRotaryWheel: UIControl {
         self.drawWheel()
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         let touchPoint: CGPoint = touch.locationInView(self)
@@ -64,6 +66,7 @@ class SMRotaryWheel: UIControl {
         return true
     }
     
+    
     func setWeekdayBySector(sector: Int, weekday: String) -> String {
         let labels = getLabelsInView()
         var indicator = 0
@@ -81,6 +84,7 @@ class SMRotaryWheel: UIControl {
         }
         return labels[indicator].text!
     }
+    
     
     func setDateBySector(sector: Int, date: NSDate) -> String {
         let labels = getLabelsInView()
@@ -104,6 +108,7 @@ class SMRotaryWheel: UIControl {
         return labels[indicator].text!
     }
     
+    
     func getDateBySector(sector: Int) -> NSDate {
         // to check which label is on the current sector
         let labels = getLabelsInView()
@@ -126,6 +131,7 @@ class SMRotaryWheel: UIControl {
         return dateFormatter.dateFromString(labelText)!
     }
     
+    
     func getWeekdayBytSector(sector: Int) -> String {
         
         // to check which label is on the current sector
@@ -145,6 +151,7 @@ class SMRotaryWheel: UIControl {
         }
         return ""
     }
+    
     
     override func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         
@@ -228,6 +235,7 @@ class SMRotaryWheel: UIControl {
         
         return true
     }
+    
     
     override func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?) {
         // 1- Get current container rotation in radians
@@ -567,4 +575,3 @@ extension NSDate {
         return dateFormatter.stringFromDate(self)
     }
 }
-

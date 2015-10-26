@@ -45,7 +45,6 @@ class AddClassViewController: UITableViewController, UISearchBarDelegate {
                 }
                 else {
                     let json = JSON(task.result.payload)
-                    
                     for (_, item):(String, JSON) in json["Items"] {
                         //print("itme is \(item)")
                         if let course_nbr = item["course_nbr"].string {

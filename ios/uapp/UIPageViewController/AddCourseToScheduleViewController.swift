@@ -67,13 +67,10 @@ class AddCourseToScheduleViewController: UIViewController {
                 let day = days!.substringToIndex(startIndex)
                 days = days!.substringFromIndex(startIndex)
                 
-                print("day = \(day)")
-                
                 let wid = labelDayTime.frame.width
                 let het = labelDayTime.frame.height
                 let x = labelDayTime.frame.origin.x
                 let y = labelDayTime.frame.origin.y + CGFloat(idx + 1) * het
-                
                 
                 let ilabel = UILabel(frame: CGRectMake(x, y, wid, het))
                 ilabel.text = day
@@ -84,7 +81,7 @@ class AddCourseToScheduleViewController: UIViewController {
                 self.view.addSubview(ilabel)
                 
                 if let range = room!.rangeOfString("|") {
-                    var index: Int = distance(room!.startIndex, range.startIndex)
+                    let index: Int = distance(room!.startIndex, range.startIndex)
                     let roomLabel = UILabel(frame: CGRectMake(x + wid, y, wid, het))
                     
                     var locationIdx = advance(room!.startIndex, index)
@@ -194,9 +191,8 @@ class AddCourseToScheduleViewController: UIViewController {
                 }
                 return nil
             })
-
-        
     }
+    
     
     func initAndFillGridArray() -> Void {
         for var i = 0; i < 4; ++i {
@@ -204,6 +200,7 @@ class AddCourseToScheduleViewController: UIViewController {
         }
         print(_grids)
     }
+    
     
     override func loadView() -> Void {
         super.loadView()

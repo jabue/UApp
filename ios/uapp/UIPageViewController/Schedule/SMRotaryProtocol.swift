@@ -13,5 +13,6 @@ protocol SMRotaryProtocol {
     
     // protocol definition goes here
     func wheelDidChangeValue(newValue: Int) -> Void
+    func courseSelected(course: String) -> Void
 }
 

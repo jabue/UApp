@@ -17,6 +17,7 @@ let LambdaGetActivities = "getActivities"
 let LambdaGetCourseList = "getCourseList"
 let LambdaAddCourseToSchedule = "addCourseToSchedule"
 let LambdaGetUserSchedule = "getUserSchedule"
+let LambdaGetClassmates = "getClassmates"
 let π: CGFloat = CGFloat(M_PI)
 //let SNSPlatformApplicationArn = "YourSNSPlatformApplicationArn"
 //let MobileAnalyticsAppId = "YourMobileAnalyticsAppId"

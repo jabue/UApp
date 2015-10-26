@@ -120,12 +120,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UIPageViewController/Schedule/SMClockWheel.swift"
-            timestampString = "466029170.753407"
+            timestampString = "467065500.742743"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "519"
-            endingLineNumber = "519"
-            landmarkName = "drawRect(_:startAngle:endAngle:)"
+            startingLineNumber = "622"
+            endingLineNumber = "622"
+            landmarkName = "drawRect(_:startAngle:endAngle:ind:imageText:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -136,13 +136,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UIPageViewController/Schedule/SMClockWheel.swift"
-            timestampString = "466029170.753407"
+            timestampString = "467065500.742743"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "429"
-            endingLineNumber = "429"
+            startingLineNumber = "518"
+            endingLineNumber = "518"
             landmarkName = "timeToAngle(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UIPageViewController/Schedule/SMClockWheel.swift"
+            timestampString = "467065500.742743"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "379"
+            endingLineNumber = "379"
+            landmarkName = "drawSchedule(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Uapp.SMClockWheel.(drawSchedule (Uapp.SMClockWheel) -&gt; (Swift.Int) -&gt; ()).(closure #1)"
+                  moduleName = "Uapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhaofei/ev/uapp/ios/uapp/UIPageViewController/Schedule/SMClockWheel.swift"
+                  timestampString = "466984311.863899"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "341"
+                  endingLineNumber = "341"
+                  offsetFromSymbolStart = "18272">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Uapp.SMClockWheel.(drawSchedule (Uapp.SMClockWheel) -&gt; (Swift.Int) -&gt; ()).(closure #1).(closure #3)"
+                  moduleName = "Uapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhaofei/ev/uapp/ios/uapp/UIPageViewController/Schedule/SMClockWheel.swift"
+                  timestampString = "466984311.864939"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "341"
+                  endingLineNumber = "341"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -23,6 +23,8 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
     var delegate: SMRotaryProtocol?
     var clockWheel: SMClockWheel?
     
+    var courseTap: String?
+    
     
     
     override func viewDidLoad() {
@@ -56,12 +58,11 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
         
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let screenWidth = screenSize.width
-        let screenHeight = screenSize.height
-        
-        print("screen width=\(screenWidth), screen height=\(screenHeight)")
+         
+        //print("screen width=\(screenWidth), screen height=\(screenHeight)")
         
         let wheelDiameter = 2 * screenWidth / CGFloat( 1 + cos(2 * π / 9))
-        print("wheel diameter is \(wheelDiameter)")
+        //print("wheel diameter is \(wheelDiameter)")
         let wheel:SMRotaryWheel = SMRotaryWheel.init(frame: CGRectMake(0, 0, wheelDiameter, wheelDiameter), del: self, sectionsNum: 9)
         
         wheel.center = CGPoint(x: 200, y: 320)
@@ -81,6 +82,16 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "displayCourse_segue" {
+            // get what you need from the cell or the DataSource object
+            let nav = segue.destinationViewController as! UINavigationController
+            let controller = nav.topViewController as! DisplayClassmateViewController
+            controller.course = courseTap!
+        }
+    }
+
+    
     func btnTouched(sender:UIButton!) {
         print("add class begin...")
         self.performSegueWithIdentifier("searchCourse_segue", sender: self)
@@ -98,6 +109,11 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
         print("DEBUG: \(newValue)")
     }
     
+    func courseSelected(course: String) {
+        courseTap = course
+        print("course \(course) is selected.")
+        
+    }
     func handleSwipes(sender:UISwipeGestureRecognizer) {
         if (sender.direction == .Left && showsetbar == true){
             UIView.animateWithDuration(speedofsetbar , animations: {

@@ -1,5 +1,5 @@
 //
-//  SMRotaryWheel.swift
+//  SMClockWheel.swift
 //
 //
 //  Created by zhaofei on 2015-09-21.
@@ -26,21 +26,25 @@ class SMClockWheel: UIControl {
     var rotateCounter = 0
     var scheduleItems = [JSON]?()
     var color = true
+    var tapFlag = true // the flag to indicate that the touch is a 'tap' or a 'rotation'
+    var originalTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
+    var courseNbr = [Int:String]()
     
     // when user rotates the date wheel, we need to draw the schedule chart of the day user choosed.
     var rotateDaysCounter: Int = 0 {
         didSet {
-            for subview in (container?.subviews)! {
+            for subview in (container?.subviews)! { // remove all the schedule images on other day first.
                 if let imageView = subview as? UIImageView {
                     imageView.removeFromSuperview()
                 }
             }
-
-            drawSchedule(rotateDaysCounter) //rotateDaysCounter: how many days the user rotated?
+            drawSchedule(rotateDaysCounter) //rotateDaysCounter: how many days the user rotated
         }
     }
     
     var currentSector = 0 // the sector that is choosed by user to show the schedule
+    
+    
     init(frame: CGRect, del:ScheduleViewController, sectionsNum: Int) {
         
         self.numberOfSections = sectionsNum
@@ -52,12 +56,16 @@ class SMClockWheel: UIControl {
         self.opaque = false
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         let touchPoint: CGPoint = touch.locationInView(self)
+        
+        originalTouchPoint = touchPoint
         
         // 1.1 - Get the distance from the center
         let dist = self.calculateDistanceFromCenter(touchPoint)
@@ -79,16 +87,21 @@ class SMClockWheel: UIControl {
         return true
     }
     
+    
     override func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         
         let touchPoint: CGPoint = touch.locationInView(self)
+        
+        // to determine whether it is a tap, or rotation.
+        if calculateDistance(originalTouchPoint, point2: touchPoint) > 10 { //it is not a tap if the touch point offsets from the original one.
+            tapFlag = false
+        }
         
         // 1.1 - Get the distance from the center
         let dist = self.calculateDistanceFromCenter(touchPoint)
         
         // 1.2 - Filter out touches too close to the center
-        if (dist < 40 || dist > 180)
-        {
+        if (dist < 40 || dist > 180){
             // forcing a tap to be on the ferrule
             print("ignoring tap (%f,%f)", touchPoint.x, touchPoint.y);
             return false
@@ -102,51 +115,101 @@ class SMClockWheel: UIControl {
         //print("angleDifference=\(angleDifference), \(angleDifference * 9.0 / CGFloat(2 * M_PI))")
         container?.transform = CGAffineTransformRotate(startTransform, -angleDifference)
         
-        
-        return true
-    }
-    
-    override func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?) {
-        // 1- Get current container rotation in radians
         let radians = atan2f(Float((container?.transform.b)!), Float((container?.transform.a)!))
         
-        // 2- Initialize new value
-        var newVal = 0.0
-        
-        // 3- Iterate through all the sectors
-        for s in sectors{
-            // 4 - Check for anomaly (occurs with even number of sectors)
-            if (s.minValue > 0 && s.maxValue < 0) {
-                if (s.maxValue > radians || s.minValue < radians) {
-                    // 5 - Find the quadrant (positive or negative)
-                    if (radians > 0) {
-                        newVal = Double(radians) - M_PI
-                    } else {
-                        newVal = M_PI + Double(radians)
+        for s in sectors {
+            if radians > s.minValue && radians < s.maxValue {
+                if currentSector < s.sector {
+                    if s.sector == 20  && currentSector == 0 {
+                        rotateDirection = -1 // clockwise
+                        rotateCounter++
+                    }else{
+                        rotateDirection = 1 // counterclockwise
+                        rotateCounter--
                     }
-                    currentSector = s.sector
                 }
-            }
-                // 6 - All non-anomalous cases
-            else if (radians > s.minValue && radians < s.maxValue) {
-                newVal = Double(radians) - Double(s.midValue)
+                else if currentSector > s.sector{
+                    if currentSector == 20 && s.sector == 0{
+                        rotateDirection = 1 //counter-clockwise
+                        rotateCounter--
+                    }else
+                    {
+                        rotateDirection = -1 // clockwise
+                        rotateCounter++
+                    }
+                }
                 currentSector = s.sector
             }
         }
-        // 7- set up animation for final rotation
-        UIView.animateWithDuration(0.2) {
-            let t: CGAffineTransform = CGAffineTransformRotate(self.container!.transform, CGFloat(-newVal))
-            self.container!.transform = t
+        
+        // if the rotation angle is less than an sector, judge the rotation direction by its angle.
+        if rotateDirection == 0 {
+            if angleDifference < 0 {
+                //print("rotate Direction is setted to clockwise")
+                rotateDirection = -1 // clockwise
+            }else{
+                rotateDirection = 1 // counterclockwise
+                //print("rotate Direction is setted to counter-clockwise")
+            }            
         }
+        return true
     }
+    
+    
+    override func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?) {
+       
+        if tapFlag == true {
+            longPressed(touch!.locationInView(self))
+        }else {
+            // 1- Get current container rotation in radians
+            let radians = atan2f(Float((container?.transform.b)!), Float((container?.transform.a)!))
+        
+            // 2- Initialize new value
+            var newVal = 0.0
+        
+            // 3- Iterate through all the sectors
+            for s in sectors{
+                // 4 - Check for anomaly (occurs with even number of sectors)
+                if (s.minValue > 0 && s.maxValue < 0) {
+                    if (s.maxValue > radians || s.minValue < radians) {
+                        // 5 - Find the quadrant (positive or negative)
+                        if (radians > 0) {
+                            newVal = Double(radians) - M_PI
+                        } else {
+                            newVal = M_PI + Double(radians)
+                        }
+                        currentSector = s.sector
+                    }
+                }
+                // 6 - All non-anomalous cases
+                else if (radians > s.minValue && radians < s.maxValue) {
+                    newVal = Double(radians) - Double(s.midValue)
+                    currentSector = s.sector
+                }
+            }
+            // 7- set up animation for final rotation
+            UIView.animateWithDuration(0.2) {
+                let t: CGAffineTransform = CGAffineTransformRotate(self.container!.transform, CGFloat(-newVal))
+                self.container!.transform = t
+            }
+        }
+        tapFlag = true
+        rotateDirection = 0 // set the rotating direction to initial value when rotation ends.
+    }
+    
     
     private func calculateDistanceFromCenter(point: CGPoint) -> Float{
         let center: CGPoint = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2)
-        
-        let dx = point.x - center.x
-        let dy = point.y - center.y
-        return Float(sqrt(dx*dx + dy*dy))
+        return calculateDistance(point, point2: center)
     }
+    
+    
+    private func calculateDistance(point1: CGPoint, point2: CGPoint) -> Float {
+        let dx = point1.x - point2.x
+        let dy = point1.y - point2.y
+        return Float(sqrt(dx * dx + dy * dy))
+    }
+    
     
     private func drawWheel() -> Void {
         container = UIView(frame: self.frame)
@@ -174,7 +237,7 @@ class SMClockWheel: UIControl {
                 ilabel.text = String(format: "%d", i - 9)
                 ilabel.textColor = UIColor.yellowColor()
             }
-            
+            print("create sector: \(i), \(ilabel.text)")
             ilabel.textAlignment = .Center
             ilabel.font = ilabel.font.fontWithSize(12)
             
@@ -187,20 +250,21 @@ class SMClockWheel: UIControl {
             
             ilabel.transform = t
             ilabel.tag = i
-            container?.addSubview(ilabel)
+            self.container?.addSubview(ilabel)
         }
         
         container?.userInteractionEnabled = false
         self.addSubview(container!)
         
         // 8 - Initialize sectors
-        if numberOfSections % 2 == 0{
+        if numberOfSections % 2 == 0 {
             self.buildSectorsEven()
         }else {
             self.buildSectorsOdd()
         }
         drawSchedule(0)
     }
+    
     
     // draw and display schedule on the selected day.
     // day: indicating how many days exist between today and the day need to display schedule.
@@ -227,6 +291,8 @@ class SMClockWheel: UIControl {
         
         request.functionName = LambdaGetUserSchedule
         request.payload = "{\"user_id\": \"\(cm.getEmail())\",\"school\":\"\(cm.getSchool())\"}"
+        
+        courseNbr.removeAll() // clear the course array first.
        
         // get the course list the user registered.
         Lambda.invoke(request)
@@ -241,6 +307,7 @@ class SMClockWheel: UIControl {
                     let json = JSON(task.result.payload)
                     //print(json)
                     
+                    var imageIndicator = 0
                     for (_, item):(String, JSON) in json["Items"] {
                         //print("itme is \(item)")
                         if let course_nbr = item["course_nbr"].string {
@@ -259,11 +326,11 @@ class SMClockWheel: UIControl {
                                         if let meeting_dates = item["meeting_dates"].string {
                                             if self.dayInScope(dayToDraw!, scope: meeting_dates) == false // if the day is not in the scope, then skip this course, check another one.
                                             {
-                                                print("day not in the scope. skip this course.")
+                                                //print("day not in the scope. skip this course.")
                                                 break
                                             }
                                         }else {
-                                            print("no meeting_dates exists. skip this course.")
+                                            //print("no meeting_dates exists. skip this course.")
                                             break
                                         }
                                         
@@ -273,10 +340,17 @@ class SMClockWheel: UIControl {
                                                 if startTime.rangeOfString("|") == nil {
                                                     let startAngle = self.timeToAngle(startTime)
                                                     let endAngle = self.timeToAngle(item["end_time"].string!)
+                                                    imageIndicator = self.getSectorByTime(self.stringTimeToFloat(startTime))
                                                     if startAngle > endAngle {
-                                                        dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: endAngle  , endAngle: startAngle)})
+                                                        self.courseNbr[imageIndicator] = course_nbr
+                                                        print("1will call draw funciton. indicatior = \(imageIndicator)")
+                                                        dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: endAngle, endAngle: startAngle, ind: imageIndicator, imageText: course_nbr)})
+                                                        //dispatch_async(dispatch_get_main_queue(),{imageIndicator++})
                                                     }else {
-                                                        dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: startAngle  , endAngle: endAngle)})
+                                                        self.courseNbr[imageIndicator] = course_nbr
+                                                        print("2will call draw funciton. indicatior = \(imageIndicator)")
+                                                        dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: startAngle, endAngle: endAngle, ind: imageIndicator, imageText: course_nbr)})
+                                                        //dispatch_async(dispatch_get_main_queue(),{imageIndicator++})
                                                     }
                                                 }
                                                 else{
@@ -293,6 +367,7 @@ class SMClockWheel: UIControl {
                                                         //print("classTime is \(classStartTime), \(classEndTime)")
                                                         
                                                         startTime = startTime.substringFromIndex(moveIdx)
+                                                        imageIndicator = self.getSectorByTime(self.stringTimeToFloat(classStartTime))
                                                         endTime = endTime!.substringFromIndex(moveIdx)
                                                         let startAngle = self.timeToAngle(classStartTime)
                                                         let endAngle = self.timeToAngle(classEndTime)
@@ -301,9 +376,15 @@ class SMClockWheel: UIControl {
                                                         if i == dayNum { // i: the number of the time in the varible 'startTime'; dayNum: the number of the weekday in the varible 'days'
                                                             //print("will draw the \(i) time on \(dayNum) day")
                                                             if startAngle > endAngle {
-                                                                dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: endAngle  , endAngle: startAngle)})
+                                                                self.courseNbr[imageIndicator] = course_nbr
+                                                                print("3will call draw funciton. indicatior = \(imageIndicator)")
+                                                                dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: endAngle, endAngle: startAngle, ind: imageIndicator, imageText: course_nbr)})
+                                                                //dispatch_async(dispatch_get_main_queue(),{imageIndicator++})
                                                             }else {
-                                                                dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: startAngle  , endAngle: endAngle)})
+                                                                self.courseNbr[imageIndicator] = course_nbr
+                                                                print("4will call draw funciton. indicatior = \(imageIndicator)")
+                                                                dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: startAngle, endAngle: endAngle, ind: imageIndicator, imageText: course_nbr)})
+                                                                //dispatch_async(dispatch_get_main_queue(),{imageIndicator++})
                                                             }
                                                         }
                                                         i++
@@ -312,10 +393,17 @@ class SMClockWheel: UIControl {
                                                     let startAngle = self.timeToAngle(startTime)
                                                     let endAngle = self.timeToAngle(endTime!)
                                                     if i == dayNum {
+                                                        imageIndicator = self.getSectorByTime(self.stringTimeToFloat(startTime))
                                                         if startAngle > endAngle {
-                                                            dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: endAngle  , endAngle: startAngle)})
+                                                            self.courseNbr[imageIndicator] = course_nbr
+                                                            print("5will call draw funciton. indicatior = \(imageIndicator)")
+                                                            dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: endAngle, endAngle: startAngle, ind: imageIndicator, imageText: course_nbr)})
+                                                            //dispatch_async(dispatch_get_main_queue(),{imageIndicator++})
                                                         }else {
-                                                            dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: startAngle  , endAngle: endAngle)})
+                                                            self.courseNbr[imageIndicator] = course_nbr
+                                                            print("6will call draw funciton. indicatior = \(imageIndicator)")
+                                                            dispatch_async(dispatch_get_main_queue(),{self.drawRect((self.container?.bounds)!, startAngle: startAngle, endAngle: endAngle, ind: imageIndicator, imageText: course_nbr)})
+                                                            //dispatch_async(dispatch_get_main_queue(),{imageIndicator++})
                                                         }
                                                     }
                                                 }
@@ -331,8 +419,8 @@ class SMClockWheel: UIControl {
                 }
                 return nil
             })
-        
     }
+    
     
     // to convert
     func weekdayToAbbreviation(weekday: Int) -> String {
@@ -355,6 +443,7 @@ class SMClockWheel: UIControl {
             return "NO"
         }
     }
+    
     
     /* to check if the day in that scope
     *  scope: "2015/09/08 - 2015/12/07"
@@ -386,6 +475,7 @@ class SMClockWheel: UIControl {
         }
     }
     
+    
     func dayLess(day: NSDate, stringDate: String) -> Bool {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/ddH"
@@ -398,6 +488,7 @@ class SMClockWheel: UIControl {
         }
         return false
     }
+    
     
     //if the user use this function after 23:00, there will be a little bug here. but who cares?
     func dayGreater(day: NSDate, stringDate: String) -> Bool {
@@ -412,6 +503,7 @@ class SMClockWheel: UIControl {
         }
         return false
     }
+    
     
     func timeToAngle(time: String) -> CGFloat {
         //print("time = \(time)")
@@ -433,6 +525,7 @@ class SMClockWheel: UIControl {
         }
         return alpha
     }
+    
     
     // convert string of time like '8:30' to float as '8.5'
     func stringTimeToFloat(time: String) -> Float {
@@ -460,15 +553,15 @@ class SMClockWheel: UIControl {
         }
     }
     
+    
     /*
         Draw the course time section on the time wheel.
         endAngle must greater than startAngle.
         color: true- draw in red; false- draw in blue
     
     */
-    func drawRect(rect: CGRect, startAngle:CGFloat, endAngle:CGFloat) {
+    func drawRect(rect: CGRect, startAngle:CGFloat, endAngle:CGFloat, ind: Int, imageText: String) {
     
-        //print("to draw a schedule section in red? \(color)")
         //print("startAngle = \(startAngle), endAngle = \(endAngle)")
         let center = CGPoint(x:rect.width/2, y: self.bounds.height/2)
         //print("center:\(center)")
@@ -480,7 +573,14 @@ class SMClockWheel: UIControl {
         imageView = UIImageView(frame:CGRectMake(0, 0, rect.width, rect.height))
         imageView.contentMode = .ScaleAspectFit
         
-        container!.addSubview(imageView)
+        let textColor: UIColor = UIColor.whiteColor()
+        let textFont: UIFont = UIFont(name: "Helvetica Bold", size: 12)!
+        
+        //Setups up the font attributes that will be later used to dictate how the text should be drawn
+        let textFontAttributes = [
+            NSFontAttributeName: textFont,
+            NSForegroundColorAttributeName: textColor,
+        ]
         
         let size = CGSizeMake(rect.width, rect.height)
         UIGraphicsBeginImageContext(size)
@@ -501,6 +601,10 @@ class SMClockWheel: UIControl {
             endAngle: startAngle,
             clockwise: false)
         
+        //Now Draw the text into an image.
+        //imageText.drawInRect(rect, withAttributes: textFontAttributes)
+
+        
         outlinePath.closePath()
         
         if color == true {
@@ -516,24 +620,170 @@ class SMClockWheel: UIControl {
         
         imageView.image = result
         imageView.setNeedsDisplay()
-        
+        imageView.tag = ind
+        print("image tag is \(ind)")
+        self.container!.addSubview(imageView)
         color = !color //change color before draw another section
     }
     
     
-    private func getSectorByValue(value: Int) -> UIImageView{
-        var res = UIImageView()
-        let views = [container?.subviews]
-        for im in views {
-            if let imageView = im as? UIImageView {
-                if imageView.tag == value {
-                    res = imageView
+    func longPressed(touchPoint: CGPoint) {
+        
+        let tapAtSector = whichSection(touchPoint)
+        if tapAtSector > 0 {
+            let courseSelected = getCourseBySector(tapAtSector)
+            print("will show course: \(courseSelected)")
+            if courseSelected != "" {
+                print("found course, display ...")
+                self.delegate?.courseSelected(courseSelected)
+                
+                let viewController = self.superview?.nextResponder() as! UIViewController
+                viewController.performSegueWithIdentifier("displayCourse_segue", sender: self)
+                
+            }
+        }
+    }
+    
+    
+    
+    // to get which section the point is in the circle
+    func whichSection(touchPoint: CGPoint) -> Int {
+        
+        //container = UIView(frame: self.frame)
+        //print("clock frame : \(container?.frame)")
+        
+        var sector: Int
+        
+        let angleSize:CGFloat = CGFloat(2 * M_PI) / CGFloat(numberOfSections)
+        let outerRidus:CGFloat = (container?.frame.width)! / 2 // outer ring for weekday
+        
+        if calculateDistanceFromCenter(touchPoint) > Float(outerRidus) {
+            return -1
+        }
+        else {
+            let center: CGPoint = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2)
+            let dx = touchPoint.x - center.x
+            let dy = touchPoint.y - center.y
+            
+            let alpha = abs(atan(dy/dx))
+            
+            if dx <= 0 {
+                if dy <= 0 {
+                    sector = Int((2 * π - alpha) / angleSize)
+                }
+                else {
+                    sector = Int(alpha / angleSize)
+                }
+            }else {
+                if dy <= 0 {
+                    sector = Int((π + alpha) / angleSize)
+                }else{
+                    sector = Int((π - alpha) / angleSize)
                 }
             }
-            
+            print("tap on the \(sector) sector.")
+            return sector
+        }
+    }
+    
+    
+    // to get the course number by the section
+    private func getCourseBySector(sector: Int) -> String {
+        
+        let sectorInClock = (rotateCounter % 21 + sector) % 21 //because the sequence
+        var course = ""
+        for subview in (container?.subviews)! {
+            if let imagelView = subview as? UIImageView {
+                if imagelView.tag == sectorInClock {
+                    course = courseNbr[imagelView.tag]!
+                    break
+                }
+            }
+        }
+        
+        return course
+    }
+    
+    
+    // to get the start time of the sector
+    private func getTimeBySector(sector: Int) -> Int {
+        if sector < 10 {
+            return sector + 12
+        }else if sector < 12 {
+            return 25
+        }else {
+            return sector - 8
+        }
+    }
+    
+    
+    private func getSectorByTime(startTime: Float) -> Int {
+        if startTime < 4 {
+            return -1
+        }else if startTime < 5 {
+            return 13
+        }else if startTime < 6 {
+            return 14
+        }else if startTime < 7 {
+            return 15
+        }else if startTime < 8 {
+            return 16
+        }else if startTime < 9 {
+            return 17
+        }else if startTime < 10 {
+            return 18
+        }else if startTime < 11 {
+            return 19
+        }else if startTime < 12 {
+            return 20
+        }else if startTime < 13 {
+            return 0
+        }else if startTime < 14 {
+            return 1
+        }else if startTime < 15 {
+            return 2
+        }else if startTime < 16 {
+            return 3
+        }else if startTime < 17 {
+            return 4
+        }else if startTime < 18 {
+            return 5
+        }else if startTime < 19 {
+            return 6
+        }else if startTime < 20 {
+            return 7
+        }else if startTime < 21 {
+            return 8
+        }else if startTime < 22 {
+            return 9
+        }else {
+            return -1
+        }
+    }
+    
+    
+    private func getSectorByValue(value: Int) -> UIImageView {
+        var res = UIImageView()
+        print("course has \(courseNbr.count) members: ")
+        
+        for course in courseNbr {
+            print(course)
+        }
+        
+        if let views = container?.subviews {
+            for im in views {
+                if let imageView = im as? UIImageView {
+                    print(imageView.tag)
+                    print(courseNbr[imageView.tag])
+                    if imageView.tag == value {
+                        res = imageView
+                    }
+                }
+            }
         }
         return res
     }
+    
     
     func buildSectorsOdd() -> Void {
         // 1 - Define sector length
@@ -562,9 +812,9 @@ class SMClockWheel: UIControl {
             sectors.append(sector)
             //print("sector minvalue=\(sector.minValue)")
             //print("sector: \(sector.sector), mid:\(sector.midValue * 180 / Float(M_PI)))")
-            
         }
     }
+    
     
     func buildSectorsEven() -> Void {
         // 1 - Define sector length
@@ -588,12 +838,9 @@ class SMClockWheel: UIControl {
                 sector.minValue = fabsf(sector.maxValue)
             }
             mid -= Float(fanWidth)
-            //print("cl is \(sector.midValue)")
             
             // 5 - Add sector to arry
             sectors.append(sector)
-            
-            
         }
     }
     
