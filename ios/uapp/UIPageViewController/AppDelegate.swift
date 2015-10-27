@@ -14,6 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    let cognitoAccountId = "8128-3377-8746"
+    let cognitoIdentityPoolId = "us-east-1:781d7f31-f491-4775-9fc5-22cea0b6dca3"
+    let cognitoUnauthRoleArn = "arn:aws:iam::812833778746:role/Cognito_loui_server_testingUnauth_Role"
+    let cognitoAuthRoleArn = "arn:aws:iam::812833778746:role/Cognito_loui_server_testingAuth_Role"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -32,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("PvsktIlVMIcanN4rU9KnidYN18weR2VkYx13pjDl", clientKey: "UwxtJNj2J6r0lJ5NSFY2NsRHQk1qv0EhuJW1NeHB")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         // user login , please change to your personal login info
-        UserAction.userLogin("joey", password: "joey")
+        // UserAction.userLogin("joey", password: "joey")
         
         // window?.tintColor = themeColor
         return true

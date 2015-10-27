@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AWSAutoScaling.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSCloudWatch.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>AWSCognito.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -14,7 +24,62 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AWSDynamoDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSEC2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSElasticLoadBalancing.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSKinesis.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>AWSLambda.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSMachineLearning.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSMobileAnalytics.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSS3.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSSES.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSSNS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSSQS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSSimpleDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,42 +112,107 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>053F06A6E8CF90521737FBC3C0D014C8</key>
+		<key>09DF43FA145EA91FEDF465106946C639</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4EF1D2A69581D3C111416B931097F0CE</key>
+		<key>2474C68B0DA9932C86BF04B1D5B690A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5DE4B19E2E1C5C6EFB8F44E5FA0BB531</key>
+		<key>2CF980AA815255E5CFC5D07DD69EEB74</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>61CD55AD7502FD1B3187446C25C92E56</key>
+		<key>3135CC449F462CD02772269A3E9EAD35</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>673962FA6AC5A184BF63D99049584491</key>
+		<key>37A3812D5B68DBA63BDD7F414F4B05BD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>716BE3DDD3277A12B6320B0DB3FB9573</key>
+		<key>3B5F808887DE4A3D86DBA2B02E5B7CD7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E14768EE120092C834AA745A68179EED</key>
+		<key>4B12DAE93A878B99FF2D5D97098DA397</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA0FDEFA126412FF38090A4507151F28</key>
+		<key>527D1B7C868F89ECEB7D9132530C64DA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>59F88D6BCB481F128F1E0CED5CE718B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5E2EE01479D6978F37B1245DE5A1F48F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7D7C564D36536182B6E50C178F0993C3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>841915F60CE902F568EA0A4E98976119</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8A54EEE8DEB223ECB601E124657D0A6F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>97C4C770D35A1DDBC124B414280C385E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A411263C87C90E144EBD3EFF92BE8A39</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ABBB1178231197649CA44AE552824487</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B1117A26E3AA14832462D7EC4C916892</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B180661EAF040239DFD8088B5267B0E1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DF72C00ADE946AC055B7564587B5E949</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E5D075755B031C3B95B031C358F4E997</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EDF454E4097EDA2BA6DF851C20FE1961</key>
 		<dict>
 			<key>primary</key>
 			<true/>

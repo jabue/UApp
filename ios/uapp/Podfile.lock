@@ -1,9 +1,35 @@
 PODS:
-  - AWSCognito (2.2.6):
-    - AWSCore (= 2.2.6)
-  - AWSCore (2.2.6)
-  - AWSLambda (2.2.6):
-    - AWSCore (= 2.2.6)
+  - AWSAutoScaling (2.2.3):
+    - AWSCore (= 2.2.3)
+  - AWSCloudWatch (2.2.3):
+    - AWSCore (= 2.2.3)
+  - AWSCognito (2.2.3):
+    - AWSCore (= 2.2.3)
+  - AWSCore (2.2.3)
+  - AWSDynamoDB (2.2.3):
+    - AWSCore (= 2.2.3)
+  - AWSEC2 (2.2.3):
+    - AWSCore (= 2.2.3)
+  - AWSElasticLoadBalancing (2.2.3):
+    - AWSCore (= 2.2.3)
+  - AWSKinesis (2.2.3):
+    - AWSCore (= 2.2.3)
+  - AWSLambda (2.2.3):
+    - AWSCore (= 2.2.3)
+  - AWSMachineLearning (2.2.3):
+    - AWSCore (= 2.2.3)
+  - AWSMobileAnalytics (2.2.3):
+    - AWSCore (= 2.2.3)
+  - AWSS3 (2.2.3):
+    - AWSCore (= 2.2.3)
+  - AWSSES (2.2.3):
+    - AWSCore (= 2.2.3)
+  - AWSSimpleDB (2.2.3):
+    - AWSCore (= 2.2.3)
+  - AWSSNS (2.2.3):
+    - AWSCore (= 2.2.3)
+  - AWSSQS (2.2.3):
+    - AWSCore (= 2.2.3)
   - Bolts/Tasks (1.3.0)
   - JSQMessagesViewController (7.2.0):
     - JSQSystemSoundPlayer (~> 2.0.1)
@@ -12,15 +38,42 @@ PODS:
     - Bolts/Tasks (>= 1.2.2)
 
 DEPENDENCIES:
+  - AWSAutoScaling
+  - AWSCloudWatch
   - AWSCognito
+  - AWSCore
+  - AWSDynamoDB
+  - AWSEC2
+  - AWSElasticLoadBalancing
+  - AWSKinesis
   - AWSLambda
+  - AWSMachineLearning
+  - AWSMobileAnalytics
+  - AWSS3
+  - AWSSES
+  - AWSSimpleDB
+  - AWSSNS
+  - AWSSQS
   - JSQMessagesViewController
   - Parse
 
 SPEC CHECKSUMS:
-  AWSCognito: 4cb0bd389dedf6673048609408577bb6c871422b
-  AWSCore: dd05203bf44d45b58b7667754ce4fa6f1bdb1c3e
-  AWSLambda: e8559b162b6dc3ae02dc7234d7143b23c80cd164
+  AWSAutoScaling: f9dd3c2eedfc12bbd712626bd3649e467cf4900d
+  AWSCloudWatch: f21ebb0d32e04b77187126268c8d838168b52b00
+  AWSCognito: ae340057e5f8c535aabd39234c7bd5b704b1955e
+  AWSCore: 30510dc1bf3e4cc975868ed4cc9ae16ba402790b
+  AWSDynamoDB: e3a88b170845ae0aea73d1daf2dcfd8faa9495ed
+  AWSEC2: 82fba6f3049399dd159c6ef73bf55e737f39457f
+  AWSElasticLoadBalancing: 9dce58a6fe3cd582cab07e61125fc5cbadf159ce
+  AWSKinesis: ad16d2d79f086abf2d2a98b59ae62216924e1137
+  AWSLambda: e65dd2fbec1c56fff17ccca243d6922ebf7517e9
+  AWSMachineLearning: ea869caf9aa368d13f431cbb63d3a491bf09b912
+  AWSMobileAnalytics: d6207510bbceeefed28bcf7694df544b29c8162d
+  AWSS3: 9c03206264668b69ca94e4f05caa8926a4b0660f
+  AWSSES: a7e09d062c0d05e2cedfb73ee1f596cce3ac6d77
+  AWSSimpleDB: 117db44141ac9542d59c8448d82969750a4e533e
+  AWSSNS: fac1edf1fd6ba5c74cd446330278f930e089fd79
+  AWSSQS: 888f04ee28a2050aeced66e96415cdbf6c073865
   Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
   JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
