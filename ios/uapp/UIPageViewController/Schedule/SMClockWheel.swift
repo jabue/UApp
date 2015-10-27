@@ -291,24 +291,15 @@ class SMClockWheel: UIControl {
         let request = AWSLambdaInvocationRequest()
         
         let newDate = NSDate()
-        let dateMonth  = newDate.month      // "Jun"
-        let date   = newDate.date     // "07"
         
         // caculate the date according to the sections the user rotated.
         let dayToDraw = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: day, toDate: newDate, options: [])
-        print("-------------")
-        print("\(dateMonth)-\(date)")
-        print(dayToDraw?.month)
-        print(dayToDraw?.date)
         let formatter  = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let weekdayToDraw = cm.getDayOfWeek(formatter.stringFromDate(dayToDraw!))
-        print("to draw: \(weekdayToAbbreviation(weekdayToDraw))")
-        print("-------------")
         
         request.functionName = LambdaGetUserSchedule
         request.payload = "{\"user_id\": \"\(cm.getEmail())\",\"school\":\"\(cm.getSchool())\"}"
-
         
         courseNbr.removeAll() // clear the course array first.
        
@@ -330,10 +321,6 @@ class SMClockWheel: UIControl {
                     for (_, item):(String, JSON) in json["Items"] {
                         //print("itme is \(item)")
                         if let course_nbr = item["course_nbr"].string {
-                            print("course is \(course_nbr)")
-                            print(item["days"].string)
-                            //print(item["start_time"].string)
-                            //print(item["end_time"].string)
                             if var days = item["days"].string {
                                 print("days = \(days)")
                                 if days != "TBD" {
@@ -605,7 +592,6 @@ class SMClockWheel: UIControl {
             NSFontAttributeName: textFont,
             NSForegroundColorAttributeName: textColor,
         ]
-
         
         let size = CGSizeMake(rect.width, rect.height)
         UIGraphicsBeginImageContext(size)
@@ -630,8 +616,6 @@ class SMClockWheel: UIControl {
         //Now Draw the text into an image.
         //imageText.drawInRect(rect, withAttributes: textFontAttributes)
 
-        
-
         outlinePath.closePath()
         
         if color == true {
@@ -649,7 +633,6 @@ class SMClockWheel: UIControl {
         imageView.setNeedsDisplay()
 
         imageView.tag = ind
-        print("image tag is \(ind)")
         self.container!.addSubview(imageView)
         color = !color //change color before draw another section
     }
@@ -666,8 +649,7 @@ class SMClockWheel: UIControl {
                 self.delegate?.courseSelected(courseSelected)
                 
                 let viewController = self.superview?.nextResponder() as! UIViewController
-                viewController.performSegueWithIdentifier("displayCourse_segue", sender: self)
-                
+                viewController.performSegueWithIdentifier("displayClassmates_segue", sender: self)
             }
         }
     }

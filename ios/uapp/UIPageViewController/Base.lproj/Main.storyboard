@@ -789,7 +789,7 @@
                                 <rect key="frame" x="400" y="514" width="200" height="87"/>
                                 <state key="normal" title="Button" image="Setting"/>
                                 <connections>
-                                    <segue destination="MGF-pG-te3" kind="show" id="Zdj-i2-IMe"/>
+                                    <segue destination="MGF-pG-te3" kind="show" identifier="" id="Zdj-i2-IMe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1583,6 +1583,7 @@
                     <connections>
                         <outlet property="subview" destination="gb8-X7-lN1" id="lq7-LN-6OK"/>
                         <segue destination="sbM-7D-wTy" kind="show" identifier="searchCourse_segue" id="Z20-MC-bMf"/>
+                        <segue destination="wgU-Xw-Chj" kind="show" identifier="displayClassmates_segue" id="Ozg-qg-KKe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4y-rA-6RH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1796,7 +1797,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BD9-aH-isA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2991" y="1769"/>
+            <point key="canvasLocation" x="3044" y="1774"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="HeK-v6-5Jo">
@@ -1823,7 +1824,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6o-WU-tES" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2345" y="1785"/>
+            <point key="canvasLocation" x="4520" y="1743"/>
         </scene>
         <!--Cloud View Controller-->
         <scene sceneID="q0w-kx-vWb">
@@ -1850,7 +1851,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x3h-gm-TMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4712" y="1759"/>
+            <point key="canvasLocation" x="5524" y="1759"/>
         </scene>
         <!--Book Shop View Controller-->
         <scene sceneID="Vn8-te-W0m">
@@ -2841,7 +2842,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agZ-re-WqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3043" y="1774"/>
+            <point key="canvasLocation" x="3855" y="1774"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pa6-0U-4W0">
@@ -2859,6 +2860,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxd-Sn-58o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vGG-Gd-Ib6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wgU-Xw-Chj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qpJ-ZP-mYd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fpt-G2-57u" kind="relationship" relationship="rootViewController" id="iHW-CX-aPp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YcO-Tr-GIQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2232" y="1774"/>
         </scene>
     </scenes>
     <resources>

@@ -1,8 +1,7 @@
 //
-//  CalenderViewController.swift
-//  UIPageViewController
+//  ScheduleViewController.swift
 //
-//  Created by joey on 15/9/16.
+//  Created by rafy on 15/9/16.
 //  Copyright © 2015年 Vea Software. All rights reserved.
 //
 
@@ -24,7 +23,6 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
     var clockWheel: SMClockWheel?
     
     var courseTap: String?
-    
     
     
     override func viewDidLoad() {
@@ -83,7 +81,7 @@ class ScheduleViewController: UIViewController, SMRotaryProtocol {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "displayCourse_segue" {
+        if segue.identifier == "displayClassmates_segue" {
             // get what you need from the cell or the DataSource object
             let nav = segue.destinationViewController as! UINavigationController
             let controller = nav.topViewController as! DisplayClassmateViewController
